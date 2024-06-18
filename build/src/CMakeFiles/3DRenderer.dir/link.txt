@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/3DRenderer.dir/main.cpp.o CMakeFiles/3DRenderer.dir/my_source.cpp.o -o ../3DRenderer  -L/usr/lib/x86_64-linux-gnu  -lSDL2 
