@@ -182,6 +182,36 @@ TestMyClass_unit.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/TestMyClass_unit.cpp.s
 .PHONY : TestMyClass_unit.cpp.s
 
+__/__/src/Fibonacci.o: __/__/src/Fibonacci.cpp.o
+.PHONY : __/__/src/Fibonacci.o
+
+# target to build an object file
+__/__/src/Fibonacci.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/__/__/src/Fibonacci.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/__/__/src/Fibonacci.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/__/__/src/Fibonacci.cpp.o
+.PHONY : __/__/src/Fibonacci.cpp.o
+
+__/__/src/Fibonacci.i: __/__/src/Fibonacci.cpp.i
+.PHONY : __/__/src/Fibonacci.i
+
+# target to preprocess a source file
+__/__/src/Fibonacci.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/__/__/src/Fibonacci.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/__/__/src/Fibonacci.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/__/__/src/Fibonacci.cpp.i
+.PHONY : __/__/src/Fibonacci.cpp.i
+
+__/__/src/Fibonacci.s: __/__/src/Fibonacci.cpp.s
+.PHONY : __/__/src/Fibonacci.s
+
+# target to generate assembly for a file
+__/__/src/Fibonacci.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/__/__/src/Fibonacci.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/__/__/src/Fibonacci.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/__/__/src/Fibonacci.cpp.s
+.PHONY : __/__/src/Fibonacci.cpp.s
+
 test_1.o: test_1.cpp.o
 .PHONY : test_1.o
 
@@ -244,6 +274,9 @@ help:
 	@echo "... TestMyClass_unit.o"
 	@echo "... TestMyClass_unit.i"
 	@echo "... TestMyClass_unit.s"
+	@echo "... __/__/src/Fibonacci.o"
+	@echo "... __/__/src/Fibonacci.i"
+	@echo "... __/__/src/Fibonacci.s"
 	@echo "... test_1.o"
 	@echo "... test_1.i"
 	@echo "... test_1.s"

@@ -7,20 +7,26 @@ project(UnitTests)
 # Glob all test source files in this directory
 file(GLOB_RECURSE TEST_SOURCES "*.cpp")
 
+# Include directories for headers from libraries and src
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../libraries)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../src)
+
+# Optionally, link libraries from libraries directory
+file(GLOB LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/*.cpp")
+
+# Source files from src directory, excluding main.cpp
+file(GLOB SRC_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../src/*.cpp")
+list(REMOVE_ITEM SRC_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../src/main.cpp")
+
 # Iterate through each test source file
 foreach(test_source ${TEST_SOURCES})
     # Get the base name of the test (without extension)
     get_filename_component(test_name ${test_source} NAME_WE)
 
     # Create an executable for each test file
-    add_executable(${test_name} ${test_source})
+    add_executable(${test_name} ${test_source} ${SRC_SOURCES})
 
-    # Include directories for headers from libraries and src
-    target_include_directories(${test_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries)
-    target_include_directories(${test_name} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../src)
-
-    # Optionally, link libraries from libraries directory
-    file(GLOB LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/*.cpp")
+    # Link the executable with the necessary libraries
     target_link_libraries(${test_name} ${LIBRARY_SOURCES})
 
     # Set C++ standard if needed

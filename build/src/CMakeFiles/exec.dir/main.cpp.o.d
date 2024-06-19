@@ -3,6 +3,7 @@ src/CMakeFiles/exec.dir/main.cpp.o: \
  /usr/include/stdc-predef.h \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/the_library.h \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/new_library.h \
+ /home/shane/3DRenderer/3DRenderer/src/Fibonacci.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

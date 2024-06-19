@@ -1,5 +1,6 @@
 #include "the_library.h"
 #include "new_library.h"
+#include "Fibonacci.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -18,11 +19,15 @@ void readDocument(const std::string& filename) {
 }
 
 int main() {
+
+    Fibonacci fib;
     hello(); // Call function from my_library
     greet(); // Call function from new_library
 
     std::string filename = "files/document.txt"; // Reference to the file in the build directory
     readDocument(filename); // Read and print the contents of document.txt
+    
+    std::cout << fib.getNthFibonacci(4);
 
     return 0;
 }
