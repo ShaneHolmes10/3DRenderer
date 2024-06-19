@@ -9,4 +9,13 @@ cmake --build .
 To clean the build folder, stay in the build folder and call
 rm -rf *
 
+to run the main file call (while still in the build directory)
+./bin/exec
+
+to run any of the test files run this (while still in the build directory)
+./bin/unit_tests/[name of test]
+./bin/integration_tests/[name of test]
+./bin/performance_tests/[name of test]
+
+
 
