@@ -137,7 +137,7 @@ tests/clean: tests/performance_tests/clean
 # Directory level rules for directory tests/integration_tests
 
 # Recursive "all" directory target.
-tests/integration_tests/all: tests/integration_tests/CMakeFiles/integration_tests_exec.dir/all
+tests/integration_tests/all: tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/all
 .PHONY : tests/integration_tests/all
 
 # Recursive "preinstall" directory target.
@@ -145,14 +145,14 @@ tests/integration_tests/preinstall:
 .PHONY : tests/integration_tests/preinstall
 
 # Recursive "clean" directory target.
-tests/integration_tests/clean: tests/integration_tests/CMakeFiles/integration_tests_exec.dir/clean
+tests/integration_tests/clean: tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/clean
 .PHONY : tests/integration_tests/clean
 
 #=============================================================================
 # Directory level rules for directory tests/performance_tests
 
 # Recursive "all" directory target.
-tests/performance_tests/all: tests/performance_tests/CMakeFiles/performance_tests_exec.dir/all
+tests/performance_tests/all: tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/all
 .PHONY : tests/performance_tests/all
 
 # Recursive "preinstall" directory target.
@@ -160,7 +160,7 @@ tests/performance_tests/preinstall:
 .PHONY : tests/performance_tests/preinstall
 
 # Recursive "clean" directory target.
-tests/performance_tests/clean: tests/performance_tests/CMakeFiles/performance_tests_exec.dir/clean
+tests/performance_tests/clean: tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/clean
 .PHONY : tests/performance_tests/clean
 
 #=============================================================================
@@ -189,7 +189,7 @@ tests/unit_tests/clean: tests/unit_tests/CMakeFiles/test_2.dir/clean
 libraries/CMakeFiles/new_library.dir/all:
 	$(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/depend
 	$(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=9,10 "Built target new_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=13,14 "Built target new_library"
 .PHONY : libraries/CMakeFiles/new_library.dir/all
 
 # Build rule for subdir invocation for target.
@@ -215,7 +215,7 @@ libraries/CMakeFiles/new_library.dir/clean:
 libraries/CMakeFiles/the_library.dir/all:
 	$(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/depend
 	$(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=19,20 "Built target the_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=21,22 "Built target the_library"
 .PHONY : libraries/CMakeFiles/the_library.dir/all
 
 # Build rule for subdir invocation for target.
@@ -242,7 +242,7 @@ src/CMakeFiles/exec.dir/all: libraries/CMakeFiles/new_library.dir/all
 src/CMakeFiles/exec.dir/all: libraries/CMakeFiles/the_library.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=4,5,6 "Built target exec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=10,11,12 "Built target exec"
 .PHONY : src/CMakeFiles/exec.dir/all
 
 # Build rule for subdir invocation for target.
@@ -268,7 +268,7 @@ src/CMakeFiles/exec.dir/clean:
 tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=1,2,3 "Built target TestMyClass_unit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=7,8,9 "Built target TestMyClass_unit"
 .PHONY : tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/all
 
 # Build rule for subdir invocation for target.
@@ -294,7 +294,7 @@ tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/clean:
 tests/unit_tests/CMakeFiles/test_1.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=13,14,15 "Built target test_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=15,16,17 "Built target test_1"
 .PHONY : tests/unit_tests/CMakeFiles/test_1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -320,7 +320,7 @@ tests/unit_tests/CMakeFiles/test_1.dir/clean:
 tests/unit_tests/CMakeFiles/test_2.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=16,17,18 "Built target test_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=18,19,20 "Built target test_2"
 .PHONY : tests/unit_tests/CMakeFiles/test_2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -340,56 +340,56 @@ tests/unit_tests/CMakeFiles/test_2.dir/clean:
 .PHONY : tests/unit_tests/CMakeFiles/test_2.dir/clean
 
 #=============================================================================
-# Target rules for target tests/integration_tests/CMakeFiles/integration_tests_exec.dir
+# Target rules for target tests/integration_tests/CMakeFiles/TestMyClass_integration.dir
 
 # All Build rule for target.
-tests/integration_tests/CMakeFiles/integration_tests_exec.dir/all:
-	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build.make tests/integration_tests/CMakeFiles/integration_tests_exec.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build.make tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=7,8 "Built target integration_tests_exec"
-.PHONY : tests/integration_tests/CMakeFiles/integration_tests_exec.dir/all
+tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build.make tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build.make tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=1,2,3 "Built target TestMyClass_integration"
+.PHONY : tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/all
 
 # Build rule for subdir invocation for target.
-tests/integration_tests/CMakeFiles/integration_tests_exec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/integration_tests/CMakeFiles/integration_tests_exec.dir/all
+tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
-.PHONY : tests/integration_tests/CMakeFiles/integration_tests_exec.dir/rule
+.PHONY : tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/rule
 
 # Convenience name for target.
-integration_tests_exec: tests/integration_tests/CMakeFiles/integration_tests_exec.dir/rule
-.PHONY : integration_tests_exec
+TestMyClass_integration: tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/rule
+.PHONY : TestMyClass_integration
 
 # clean rule for target.
-tests/integration_tests/CMakeFiles/integration_tests_exec.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build.make tests/integration_tests/CMakeFiles/integration_tests_exec.dir/clean
-.PHONY : tests/integration_tests/CMakeFiles/integration_tests_exec.dir/clean
+tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build.make tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/clean
+.PHONY : tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/clean
 
 #=============================================================================
-# Target rules for target tests/performance_tests/CMakeFiles/performance_tests_exec.dir
+# Target rules for target tests/performance_tests/CMakeFiles/TestMyClass_performance.dir
 
 # All Build rule for target.
-tests/performance_tests/CMakeFiles/performance_tests_exec.dir/all:
-	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build.make tests/performance_tests/CMakeFiles/performance_tests_exec.dir/depend
-	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build.make tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=11,12 "Built target performance_tests_exec"
-.PHONY : tests/performance_tests/CMakeFiles/performance_tests_exec.dir/all
+tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=4,5,6 "Built target TestMyClass_performance"
+.PHONY : tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/all
 
 # Build rule for subdir invocation for target.
-tests/performance_tests/CMakeFiles/performance_tests_exec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/performance_tests_exec.dir/all
+tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
-.PHONY : tests/performance_tests/CMakeFiles/performance_tests_exec.dir/rule
+.PHONY : tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule
 
 # Convenience name for target.
-performance_tests_exec: tests/performance_tests/CMakeFiles/performance_tests_exec.dir/rule
-.PHONY : performance_tests_exec
+TestMyClass_performance: tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule
+.PHONY : TestMyClass_performance
 
 # clean rule for target.
-tests/performance_tests/CMakeFiles/performance_tests_exec.dir/clean:
-	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build.make tests/performance_tests/CMakeFiles/performance_tests_exec.dir/clean
-.PHONY : tests/performance_tests/CMakeFiles/performance_tests_exec.dir/clean
+tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/clean
+.PHONY : tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

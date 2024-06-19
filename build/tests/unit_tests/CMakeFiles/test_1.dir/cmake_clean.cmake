@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../bin/test_1"
-  "../../bin/test_1.pdb"
+  "../../bin/unit_tests/test_1"
+  "../../bin/unit_tests/test_1.pdb"
   "CMakeFiles/test_1.dir/__/__/src/Fibonacci.cpp.o"
   "CMakeFiles/test_1.dir/__/__/src/Fibonacci.cpp.o.d"
   "CMakeFiles/test_1.dir/test_1.cpp.o"

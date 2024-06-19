@@ -195,30 +195,30 @@ test_2/fast:
 .PHONY : test_2/fast
 
 #=============================================================================
-# Target rules for targets named integration_tests_exec
+# Target rules for targets named TestMyClass_integration
 
 # Build rule for target.
-integration_tests_exec: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 integration_tests_exec
-.PHONY : integration_tests_exec
+TestMyClass_integration: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMyClass_integration
+.PHONY : TestMyClass_integration
 
 # fast build rule for target.
-integration_tests_exec/fast:
-	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build.make tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build
-.PHONY : integration_tests_exec/fast
+TestMyClass_integration/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build.make tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build
+.PHONY : TestMyClass_integration/fast
 
 #=============================================================================
-# Target rules for targets named performance_tests_exec
+# Target rules for targets named TestMyClass_performance
 
 # Build rule for target.
-performance_tests_exec: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests_exec
-.PHONY : performance_tests_exec
+TestMyClass_performance: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMyClass_performance
+.PHONY : TestMyClass_performance
 
 # fast build rule for target.
-performance_tests_exec/fast:
-	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build.make tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build
-.PHONY : performance_tests_exec/fast
+TestMyClass_performance/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build
+.PHONY : TestMyClass_performance/fast
 
 # Help Target
 help:
@@ -228,11 +228,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... TestMyClass_integration"
+	@echo "... TestMyClass_performance"
 	@echo "... TestMyClass_unit"
 	@echo "... exec"
-	@echo "... integration_tests_exec"
 	@echo "... new_library"
-	@echo "... performance_tests_exec"
 	@echo "... test_1"
 	@echo "... test_2"
 	@echo "... the_library"

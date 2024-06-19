@@ -1,0 +1,2 @@
+# Empty dependencies file for TestMyClass_integration.
+# This may be replaced when dependencies are built.

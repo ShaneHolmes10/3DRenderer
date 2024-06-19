@@ -14,9 +14,9 @@
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/test_2.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/rebuild_cache.dir
-/home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/integration_tests_exec.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/TestMyClass_integration.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/rebuild_cache.dir
-/home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/performance_tests_exec.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/TestMyClass_performance.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/rebuild_cache.dir
