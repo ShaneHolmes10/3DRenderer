@@ -155,6 +155,71 @@ exec/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
 .PHONY : exec/fast
 
+#=============================================================================
+# Target rules for targets named TestMyClass_unit
+
+# Build rule for target.
+TestMyClass_unit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMyClass_unit
+.PHONY : TestMyClass_unit
+
+# fast build rule for target.
+TestMyClass_unit/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build
+.PHONY : TestMyClass_unit/fast
+
+#=============================================================================
+# Target rules for targets named test_1
+
+# Build rule for target.
+test_1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_1
+.PHONY : test_1
+
+# fast build rule for target.
+test_1/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/build
+.PHONY : test_1/fast
+
+#=============================================================================
+# Target rules for targets named test_2
+
+# Build rule for target.
+test_2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_2
+.PHONY : test_2
+
+# fast build rule for target.
+test_2/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/build
+.PHONY : test_2/fast
+
+#=============================================================================
+# Target rules for targets named integration_tests_exec
+
+# Build rule for target.
+integration_tests_exec: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 integration_tests_exec
+.PHONY : integration_tests_exec
+
+# fast build rule for target.
+integration_tests_exec/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build.make tests/integration_tests/CMakeFiles/integration_tests_exec.dir/build
+.PHONY : integration_tests_exec/fast
+
+#=============================================================================
+# Target rules for targets named performance_tests_exec
+
+# Build rule for target.
+performance_tests_exec: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 performance_tests_exec
+.PHONY : performance_tests_exec
+
+# fast build rule for target.
+performance_tests_exec/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build.make tests/performance_tests/CMakeFiles/performance_tests_exec.dir/build
+.PHONY : performance_tests_exec/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -163,8 +228,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... TestMyClass_unit"
 	@echo "... exec"
+	@echo "... integration_tests_exec"
 	@echo "... new_library"
+	@echo "... performance_tests_exec"
+	@echo "... test_1"
+	@echo "... test_2"
 	@echo "... the_library"
 .PHONY : help
 

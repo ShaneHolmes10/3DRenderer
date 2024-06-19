@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/TestMyClass_unit.dir/TestMyClass_unit.cpp.o -o ../../bin/TestMyClass_unit  ../../../tests/unit_tests/../../libraries/new_library.cpp ../../../tests/unit_tests/../../libraries/the_library.cpp 

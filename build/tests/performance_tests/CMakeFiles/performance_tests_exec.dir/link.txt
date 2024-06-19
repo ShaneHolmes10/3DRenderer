@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/performance_tests_exec.dir/TestMyClass_performance.cpp.o -o ../../bin/performance_tests_exec  ../../../tests/performance_tests/../../libraries/new_library.cpp ../../../tests/performance_tests/../../libraries/the_library.cpp 
