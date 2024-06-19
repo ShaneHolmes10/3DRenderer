@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/TestMyClass_performance.dir/TestMyClass_performance.cpp.o CMakeFiles/TestMyClass_performance.dir/__/__/src/Fibonacci.cpp.o -o ../../bin/performance_tests/TestMyClass_performance  ../../../tests/performance_tests/../../libraries/new_library.cpp ../../../tests/performance_tests/../../libraries/the_library.cpp 

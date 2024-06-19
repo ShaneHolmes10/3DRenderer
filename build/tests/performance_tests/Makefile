@@ -117,49 +117,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule
-.PHONY : tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule
+tests/performance_tests/CMakeFiles/test_int.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/test_int.dir/rule
+.PHONY : tests/performance_tests/CMakeFiles/test_int.dir/rule
 
 # Convenience name for target.
-TestMyClass_performance: tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/rule
-.PHONY : TestMyClass_performance
+test_int: tests/performance_tests/CMakeFiles/test_int.dir/rule
+.PHONY : test_int
 
 # fast build rule for target.
-TestMyClass_performance/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build
-.PHONY : TestMyClass_performance/fast
-
-TestMyClass_performance.o: TestMyClass_performance.cpp.o
-.PHONY : TestMyClass_performance.o
-
-# target to build an object file
-TestMyClass_performance.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/TestMyClass_performance.cpp.o
-.PHONY : TestMyClass_performance.cpp.o
-
-TestMyClass_performance.i: TestMyClass_performance.cpp.i
-.PHONY : TestMyClass_performance.i
-
-# target to preprocess a source file
-TestMyClass_performance.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/TestMyClass_performance.cpp.i
-.PHONY : TestMyClass_performance.cpp.i
-
-TestMyClass_performance.s: TestMyClass_performance.cpp.s
-.PHONY : TestMyClass_performance.s
-
-# target to generate assembly for a file
-TestMyClass_performance.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/TestMyClass_performance.cpp.s
-.PHONY : TestMyClass_performance.cpp.s
+test_int/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/build
+.PHONY : test_int/fast
 
 __/__/src/Fibonacci.o: __/__/src/Fibonacci.cpp.o
 .PHONY : __/__/src/Fibonacci.o
 
 # target to build an object file
 __/__/src/Fibonacci.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/__/__/src/Fibonacci.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/__/__/src/Fibonacci.cpp.o
 .PHONY : __/__/src/Fibonacci.cpp.o
 
 __/__/src/Fibonacci.i: __/__/src/Fibonacci.cpp.i
@@ -167,7 +143,7 @@ __/__/src/Fibonacci.i: __/__/src/Fibonacci.cpp.i
 
 # target to preprocess a source file
 __/__/src/Fibonacci.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/__/__/src/Fibonacci.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/__/__/src/Fibonacci.cpp.i
 .PHONY : __/__/src/Fibonacci.cpp.i
 
 __/__/src/Fibonacci.s: __/__/src/Fibonacci.cpp.s
@@ -175,8 +151,32 @@ __/__/src/Fibonacci.s: __/__/src/Fibonacci.cpp.s
 
 # target to generate assembly for a file
 __/__/src/Fibonacci.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/__/__/src/Fibonacci.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/__/__/src/Fibonacci.cpp.s
 .PHONY : __/__/src/Fibonacci.cpp.s
+
+test_int.o: test_int.cpp.o
+.PHONY : test_int.o
+
+# target to build an object file
+test_int.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/test_int.cpp.o
+.PHONY : test_int.cpp.o
+
+test_int.i: test_int.cpp.i
+.PHONY : test_int.i
+
+# target to preprocess a source file
+test_int.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/test_int.cpp.i
+.PHONY : test_int.cpp.i
+
+test_int.s: test_int.cpp.s
+.PHONY : test_int.s
+
+# target to generate assembly for a file
+test_int.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/test_int.cpp.s
+.PHONY : test_int.cpp.s
 
 # Help Target
 help:
@@ -186,13 +186,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TestMyClass_performance"
-	@echo "... TestMyClass_performance.o"
-	@echo "... TestMyClass_performance.i"
-	@echo "... TestMyClass_performance.s"
+	@echo "... test_int"
 	@echo "... __/__/src/Fibonacci.o"
 	@echo "... __/__/src/Fibonacci.i"
 	@echo "... __/__/src/Fibonacci.s"
+	@echo "... test_int.o"
+	@echo "... test_int.i"
+	@echo "... test_int.s"
 .PHONY : help
 
 

@@ -208,17 +208,17 @@ TestMyClass_integration/fast:
 .PHONY : TestMyClass_integration/fast
 
 #=============================================================================
-# Target rules for targets named TestMyClass_performance
+# Target rules for targets named test_int
 
 # Build rule for target.
-TestMyClass_performance: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMyClass_performance
-.PHONY : TestMyClass_performance
+test_int: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_int
+.PHONY : test_int
 
 # fast build rule for target.
-TestMyClass_performance/fast:
-	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build.make tests/performance_tests/CMakeFiles/TestMyClass_performance.dir/build
-.PHONY : TestMyClass_performance/fast
+test_int/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/build
+.PHONY : test_int/fast
 
 # Help Target
 help:
@@ -229,12 +229,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... TestMyClass_integration"
-	@echo "... TestMyClass_performance"
 	@echo "... TestMyClass_unit"
 	@echo "... exec"
 	@echo "... new_library"
 	@echo "... test_1"
 	@echo "... test_2"
+	@echo "... test_int"
 	@echo "... the_library"
 .PHONY : help
 
