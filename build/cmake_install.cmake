@@ -44,7 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/shane/3DRenderer/3DRenderer/build/googletest/cmake_install.cmake")
   include("/home/shane/3DRenderer/3DRenderer/build/libraries/cmake_install.cmake")
   include("/home/shane/3DRenderer/3DRenderer/build/src/cmake_install.cmake")
   include("/home/shane/3DRenderer/3DRenderer/build/tests/cmake_install.cmake")

@@ -11,8 +11,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 #Copy entire files directory to the build directory
 file(COPY ${CMAKE_SOURCE_DIR}/files DESTINATION ${CMAKE_BINARY_DIR})
 
-#Add Google Test subdirectory
-add_subdirectory(googletest)
 
 #Subdirectories
 add_subdirectory(libraries)
