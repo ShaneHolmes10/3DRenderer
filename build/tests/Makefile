@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/shane/3DRenderer/3DRenderer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles /home/shane/3DRenderer/3DRenderer/build/tests//CMakeFiles/progress.marks
@@ -116,44 +161,6 @@ depend:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-tests/CMakeFiles/3DRendererTests.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/3DRendererTests.dir/rule
-.PHONY : tests/CMakeFiles/3DRendererTests.dir/rule
-
-# Convenience name for target.
-3DRendererTests: tests/CMakeFiles/3DRendererTests.dir/rule
-.PHONY : 3DRendererTests
-
-# fast build rule for target.
-3DRendererTests/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/3DRendererTests.dir/build.make tests/CMakeFiles/3DRendererTests.dir/build
-.PHONY : 3DRendererTests/fast
-
-test_main.o: test_main.cpp.o
-.PHONY : test_main.o
-
-# target to build an object file
-test_main.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/3DRendererTests.dir/build.make tests/CMakeFiles/3DRendererTests.dir/test_main.cpp.o
-.PHONY : test_main.cpp.o
-
-test_main.i: test_main.cpp.i
-.PHONY : test_main.i
-
-# target to preprocess a source file
-test_main.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/3DRendererTests.dir/build.make tests/CMakeFiles/3DRendererTests.dir/test_main.cpp.i
-.PHONY : test_main.cpp.i
-
-test_main.s: test_main.cpp.s
-.PHONY : test_main.s
-
-# target to generate assembly for a file
-test_main.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/3DRendererTests.dir/build.make tests/CMakeFiles/3DRendererTests.dir/test_main.cpp.s
-.PHONY : test_main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -161,11 +168,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... 3DRendererTests"
-	@echo "... test_main.o"
-	@echo "... test_main.i"
-	@echo "... test_main.s"
 .PHONY : help
 
 

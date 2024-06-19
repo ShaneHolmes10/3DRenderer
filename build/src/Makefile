@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/shane/3DRenderer/3DRenderer/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles /home/shane/3DRenderer/3DRenderer/build/src//CMakeFiles/progress.marks
@@ -117,40 +162,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/3DRenderer.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/3DRenderer.dir/rule
-.PHONY : src/CMakeFiles/3DRenderer.dir/rule
+src/CMakeFiles/exec.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/exec.dir/rule
+.PHONY : src/CMakeFiles/exec.dir/rule
 
 # Convenience name for target.
-3DRenderer: src/CMakeFiles/3DRenderer.dir/rule
-.PHONY : 3DRenderer
+exec: src/CMakeFiles/exec.dir/rule
+.PHONY : exec
 
 # fast build rule for target.
-3DRenderer/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/build
-.PHONY : 3DRenderer/fast
+exec/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
+.PHONY : exec/fast
 
-# Convenience name for target.
-src/CMakeFiles/renderer_lib.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/renderer_lib.dir/rule
-.PHONY : src/CMakeFiles/renderer_lib.dir/rule
+Fibonacci.o: Fibonacci.cpp.o
+.PHONY : Fibonacci.o
 
-# Convenience name for target.
-renderer_lib: src/CMakeFiles/renderer_lib.dir/rule
-.PHONY : renderer_lib
+# target to build an object file
+Fibonacci.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Fibonacci.cpp.o
+.PHONY : Fibonacci.cpp.o
 
-# fast build rule for target.
-renderer_lib/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/build
-.PHONY : renderer_lib/fast
+Fibonacci.i: Fibonacci.cpp.i
+.PHONY : Fibonacci.i
+
+# target to preprocess a source file
+Fibonacci.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Fibonacci.cpp.i
+.PHONY : Fibonacci.cpp.i
+
+Fibonacci.s: Fibonacci.cpp.s
+.PHONY : Fibonacci.s
+
+# target to generate assembly for a file
+Fibonacci.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Fibonacci.cpp.s
+.PHONY : Fibonacci.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/main.cpp.o
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/main.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -158,8 +212,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/main.cpp.i
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/main.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -167,36 +220,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/main.cpp.s
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/main.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-my_source.o: my_source.cpp.o
-.PHONY : my_source.o
-
-# target to build an object file
-my_source.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/my_source.cpp.o
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/my_source.cpp.o
-.PHONY : my_source.cpp.o
-
-my_source.i: my_source.cpp.i
-.PHONY : my_source.i
-
-# target to preprocess a source file
-my_source.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/my_source.cpp.i
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/my_source.cpp.i
-.PHONY : my_source.cpp.i
-
-my_source.s: my_source.cpp.s
-.PHONY : my_source.s
-
-# target to generate assembly for a file
-my_source.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/3DRenderer.dir/build.make src/CMakeFiles/3DRenderer.dir/my_source.cpp.s
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/renderer_lib.dir/build.make src/CMakeFiles/renderer_lib.dir/my_source.cpp.s
-.PHONY : my_source.cpp.s
 
 # Help Target
 help:
@@ -205,15 +230,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... 3DRenderer"
-	@echo "... renderer_lib"
+	@echo "... exec"
+	@echo "... Fibonacci.o"
+	@echo "... Fibonacci.i"
+	@echo "... Fibonacci.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... my_source.o"
-	@echo "... my_source.i"
-	@echo "... my_source.s"
 .PHONY : help
 
 

@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/3DRendererTests.dir/test_main.cpp.o -o ../3DRendererTests  ../src/librenderer_lib.a -L/usr/lib/x86_64-linux-gnu  -lSDL2 
