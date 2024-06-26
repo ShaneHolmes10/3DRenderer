@@ -116,68 +116,6 @@ depend:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-tests/performance_tests/CMakeFiles/test_int.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/test_int.dir/rule
-.PHONY : tests/performance_tests/CMakeFiles/test_int.dir/rule
-
-# Convenience name for target.
-test_int: tests/performance_tests/CMakeFiles/test_int.dir/rule
-.PHONY : test_int
-
-# fast build rule for target.
-test_int/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/build
-.PHONY : test_int/fast
-
-__/__/src/Fibonacci.o: __/__/src/Fibonacci.cpp.o
-.PHONY : __/__/src/Fibonacci.o
-
-# target to build an object file
-__/__/src/Fibonacci.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/__/__/src/Fibonacci.cpp.o
-.PHONY : __/__/src/Fibonacci.cpp.o
-
-__/__/src/Fibonacci.i: __/__/src/Fibonacci.cpp.i
-.PHONY : __/__/src/Fibonacci.i
-
-# target to preprocess a source file
-__/__/src/Fibonacci.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/__/__/src/Fibonacci.cpp.i
-.PHONY : __/__/src/Fibonacci.cpp.i
-
-__/__/src/Fibonacci.s: __/__/src/Fibonacci.cpp.s
-.PHONY : __/__/src/Fibonacci.s
-
-# target to generate assembly for a file
-__/__/src/Fibonacci.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/__/__/src/Fibonacci.cpp.s
-.PHONY : __/__/src/Fibonacci.cpp.s
-
-test_int.o: test_int.cpp.o
-.PHONY : test_int.o
-
-# target to build an object file
-test_int.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/test_int.cpp.o
-.PHONY : test_int.cpp.o
-
-test_int.i: test_int.cpp.i
-.PHONY : test_int.i
-
-# target to preprocess a source file
-test_int.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/test_int.cpp.i
-.PHONY : test_int.cpp.i
-
-test_int.s: test_int.cpp.s
-.PHONY : test_int.s
-
-# target to generate assembly for a file
-test_int.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/test_int.cpp.s
-.PHONY : test_int.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,13 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_int"
-	@echo "... __/__/src/Fibonacci.o"
-	@echo "... __/__/src/Fibonacci.i"
-	@echo "... __/__/src/Fibonacci.s"
-	@echo "... test_int.o"
-	@echo "... test_int.i"
-	@echo "... test_int.s"
 .PHONY : help
 
 

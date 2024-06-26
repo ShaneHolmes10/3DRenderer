@@ -1,1 +1,0 @@
-Wow this is the second version of the document that lets us see that the build environment is appropriatly reacting to the change.

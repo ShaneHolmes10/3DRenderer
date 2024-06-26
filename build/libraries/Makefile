@@ -116,82 +116,6 @@ depend:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-libraries/CMakeFiles/new_library.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libraries/CMakeFiles/new_library.dir/rule
-.PHONY : libraries/CMakeFiles/new_library.dir/rule
-
-# Convenience name for target.
-new_library: libraries/CMakeFiles/new_library.dir/rule
-.PHONY : new_library
-
-# fast build rule for target.
-new_library/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/build
-.PHONY : new_library/fast
-
-# Convenience name for target.
-libraries/CMakeFiles/the_library.dir/rule:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libraries/CMakeFiles/the_library.dir/rule
-.PHONY : libraries/CMakeFiles/the_library.dir/rule
-
-# Convenience name for target.
-the_library: libraries/CMakeFiles/the_library.dir/rule
-.PHONY : the_library
-
-# fast build rule for target.
-the_library/fast:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/build
-.PHONY : the_library/fast
-
-new_library.o: new_library.cpp.o
-.PHONY : new_library.o
-
-# target to build an object file
-new_library.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/new_library.cpp.o
-.PHONY : new_library.cpp.o
-
-new_library.i: new_library.cpp.i
-.PHONY : new_library.i
-
-# target to preprocess a source file
-new_library.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/new_library.cpp.i
-.PHONY : new_library.cpp.i
-
-new_library.s: new_library.cpp.s
-.PHONY : new_library.s
-
-# target to generate assembly for a file
-new_library.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/new_library.cpp.s
-.PHONY : new_library.cpp.s
-
-the_library.o: the_library.cpp.o
-.PHONY : the_library.o
-
-# target to build an object file
-the_library.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/the_library.cpp.o
-.PHONY : the_library.cpp.o
-
-the_library.i: the_library.cpp.i
-.PHONY : the_library.i
-
-# target to preprocess a source file
-the_library.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/the_library.cpp.i
-.PHONY : the_library.cpp.i
-
-the_library.s: the_library.cpp.s
-.PHONY : the_library.s
-
-# target to generate assembly for a file
-the_library.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/the_library.cpp.s
-.PHONY : the_library.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,14 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... new_library"
-	@echo "... the_library"
-	@echo "... new_library.o"
-	@echo "... new_library.i"
-	@echo "... new_library.s"
-	@echo "... the_library.o"
-	@echo "... the_library.i"
-	@echo "... the_library.s"
 .PHONY : help
 
 

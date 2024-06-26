@@ -1,2 +1,0 @@
-/usr/bin/ar qc libnew_library.a CMakeFiles/new_library.dir/new_library.cpp.o
-/usr/bin/ranlib libnew_library.a

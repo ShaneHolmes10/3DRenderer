@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test_1.dir/test_1.cpp.o CMakeFiles/test_1.dir/__/__/src/Fibonacci.cpp.o -o ../../bin/unit_tests/test_1  ../../../tests/unit_tests/../../libraries/new_library.cpp ../../../tests/unit_tests/../../libraries/the_library.cpp 

@@ -130,30 +130,6 @@ exec/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
 .PHONY : exec/fast
 
-Fibonacci.o: Fibonacci.cpp.o
-.PHONY : Fibonacci.o
-
-# target to build an object file
-Fibonacci.cpp.o:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Fibonacci.cpp.o
-.PHONY : Fibonacci.cpp.o
-
-Fibonacci.i: Fibonacci.cpp.i
-.PHONY : Fibonacci.i
-
-# target to preprocess a source file
-Fibonacci.cpp.i:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Fibonacci.cpp.i
-.PHONY : Fibonacci.cpp.i
-
-Fibonacci.s: Fibonacci.cpp.s
-.PHONY : Fibonacci.s
-
-# target to generate assembly for a file
-Fibonacci.cpp.s:
-	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Fibonacci.cpp.s
-.PHONY : Fibonacci.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -187,9 +163,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... exec"
-	@echo "... Fibonacci.o"
-	@echo "... Fibonacci.i"
-	@echo "... Fibonacci.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

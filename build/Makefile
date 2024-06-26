@@ -117,32 +117,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named new_library
-
-# Build rule for target.
-new_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 new_library
-.PHONY : new_library
-
-# fast build rule for target.
-new_library/fast:
-	$(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/new_library.dir/build.make libraries/CMakeFiles/new_library.dir/build
-.PHONY : new_library/fast
-
-#=============================================================================
-# Target rules for targets named the_library
-
-# Build rule for target.
-the_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 the_library
-.PHONY : the_library
-
-# fast build rule for target.
-the_library/fast:
-	$(MAKE) $(MAKESILENT) -f libraries/CMakeFiles/the_library.dir/build.make libraries/CMakeFiles/the_library.dir/build
-.PHONY : the_library/fast
-
-#=============================================================================
 # Target rules for targets named exec
 
 # Build rule for target.
@@ -155,71 +129,6 @@ exec/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
 .PHONY : exec/fast
 
-#=============================================================================
-# Target rules for targets named TestMyClass_unit
-
-# Build rule for target.
-TestMyClass_unit: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMyClass_unit
-.PHONY : TestMyClass_unit
-
-# fast build rule for target.
-TestMyClass_unit/fast:
-	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build.make tests/unit_tests/CMakeFiles/TestMyClass_unit.dir/build
-.PHONY : TestMyClass_unit/fast
-
-#=============================================================================
-# Target rules for targets named test_1
-
-# Build rule for target.
-test_1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_1
-.PHONY : test_1
-
-# fast build rule for target.
-test_1/fast:
-	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_1.dir/build.make tests/unit_tests/CMakeFiles/test_1.dir/build
-.PHONY : test_1/fast
-
-#=============================================================================
-# Target rules for targets named test_2
-
-# Build rule for target.
-test_2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_2
-.PHONY : test_2
-
-# fast build rule for target.
-test_2/fast:
-	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/test_2.dir/build.make tests/unit_tests/CMakeFiles/test_2.dir/build
-.PHONY : test_2/fast
-
-#=============================================================================
-# Target rules for targets named TestMyClass_integration
-
-# Build rule for target.
-TestMyClass_integration: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestMyClass_integration
-.PHONY : TestMyClass_integration
-
-# fast build rule for target.
-TestMyClass_integration/fast:
-	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build.make tests/integration_tests/CMakeFiles/TestMyClass_integration.dir/build
-.PHONY : TestMyClass_integration/fast
-
-#=============================================================================
-# Target rules for targets named test_int
-
-# Build rule for target.
-test_int: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_int
-.PHONY : test_int
-
-# fast build rule for target.
-test_int/fast:
-	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/test_int.dir/build.make tests/performance_tests/CMakeFiles/test_int.dir/build
-.PHONY : test_int/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -228,14 +137,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TestMyClass_integration"
-	@echo "... TestMyClass_unit"
 	@echo "... exec"
-	@echo "... new_library"
-	@echo "... test_1"
-	@echo "... test_2"
-	@echo "... test_int"
-	@echo "... the_library"
 .PHONY : help
 
 
