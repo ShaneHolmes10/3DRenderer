@@ -130,6 +130,30 @@ exec/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
 .PHONY : exec/fast
 
+Math_Position_Object.o: Math_Position_Object.cpp.o
+.PHONY : Math_Position_Object.o
+
+# target to build an object file
+Math_Position_Object.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o
+.PHONY : Math_Position_Object.cpp.o
+
+Math_Position_Object.i: Math_Position_Object.cpp.i
+.PHONY : Math_Position_Object.i
+
+# target to preprocess a source file
+Math_Position_Object.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Math_Position_Object.cpp.i
+.PHONY : Math_Position_Object.cpp.i
+
+Math_Position_Object.s: Math_Position_Object.cpp.s
+.PHONY : Math_Position_Object.s
+
+# target to generate assembly for a file
+Math_Position_Object.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Math_Position_Object.cpp.s
+.PHONY : Math_Position_Object.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -163,6 +187,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... exec"
+	@echo "... Math_Position_Object.o"
+	@echo "... Math_Position_Object.i"
+	@echo "... Math_Position_Object.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

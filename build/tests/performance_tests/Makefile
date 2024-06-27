@@ -116,6 +116,68 @@ depend:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule
+.PHONY : tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule
+
+# Convenience name for target.
+Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule
+.PHONY : Eigen_Lib_Perf_Test
+
+# fast build rule for target.
+Eigen_Lib_Perf_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build
+.PHONY : Eigen_Lib_Perf_Test/fast
+
+Eigen_Lib_Perf_Test.o: Eigen_Lib_Perf_Test.cpp.o
+.PHONY : Eigen_Lib_Perf_Test.o
+
+# target to build an object file
+Eigen_Lib_Perf_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/Eigen_Lib_Perf_Test.cpp.o
+.PHONY : Eigen_Lib_Perf_Test.cpp.o
+
+Eigen_Lib_Perf_Test.i: Eigen_Lib_Perf_Test.cpp.i
+.PHONY : Eigen_Lib_Perf_Test.i
+
+# target to preprocess a source file
+Eigen_Lib_Perf_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/Eigen_Lib_Perf_Test.cpp.i
+.PHONY : Eigen_Lib_Perf_Test.cpp.i
+
+Eigen_Lib_Perf_Test.s: Eigen_Lib_Perf_Test.cpp.s
+.PHONY : Eigen_Lib_Perf_Test.s
+
+# target to generate assembly for a file
+Eigen_Lib_Perf_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/Eigen_Lib_Perf_Test.cpp.s
+.PHONY : Eigen_Lib_Perf_Test.cpp.s
+
+__/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
+.PHONY : __/__/src/Math_Position_Object.o
+
+# target to build an object file
+__/__/src/Math_Position_Object.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.o
+.PHONY : __/__/src/Math_Position_Object.cpp.o
+
+__/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
+.PHONY : __/__/src/Math_Position_Object.i
+
+# target to preprocess a source file
+__/__/src/Math_Position_Object.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.i
+.PHONY : __/__/src/Math_Position_Object.cpp.i
+
+__/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
+.PHONY : __/__/src/Math_Position_Object.s
+
+# target to generate assembly for a file
+__/__/src/Math_Position_Object.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.s
+.PHONY : __/__/src/Math_Position_Object.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +186,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Eigen_Lib_Perf_Test"
+	@echo "... Eigen_Lib_Perf_Test.o"
+	@echo "... Eigen_Lib_Perf_Test.i"
+	@echo "... Eigen_Lib_Perf_Test.s"
+	@echo "... __/__/src/Math_Position_Object.o"
+	@echo "... __/__/src/Math_Position_Object.i"
+	@echo "... __/__/src/Math_Position_Object.s"
 .PHONY : help
 
 

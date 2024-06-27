@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.cpp" "src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o" "gcc" "src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/main.cpp" "src/CMakeFiles/exec.dir/main.cpp.o" "gcc" "src/CMakeFiles/exec.dir/main.cpp.o.d"
   )
 

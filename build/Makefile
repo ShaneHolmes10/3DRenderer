@@ -129,6 +129,45 @@ exec/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
 .PHONY : exec/fast
 
+#=============================================================================
+# Target rules for targets named Eigen_Lib_Unit_Test
+
+# Build rule for target.
+Eigen_Lib_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Eigen_Lib_Unit_Test
+.PHONY : Eigen_Lib_Unit_Test
+
+# fast build rule for target.
+Eigen_Lib_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build
+.PHONY : Eigen_Lib_Unit_Test/fast
+
+#=============================================================================
+# Target rules for targets named Eigen_Lib_Inte_Test
+
+# Build rule for target.
+Eigen_Lib_Inte_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Eigen_Lib_Inte_Test
+.PHONY : Eigen_Lib_Inte_Test
+
+# fast build rule for target.
+Eigen_Lib_Inte_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build
+.PHONY : Eigen_Lib_Inte_Test/fast
+
+#=============================================================================
+# Target rules for targets named Eigen_Lib_Perf_Test
+
+# Build rule for target.
+Eigen_Lib_Perf_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Eigen_Lib_Perf_Test
+.PHONY : Eigen_Lib_Perf_Test
+
+# fast build rule for target.
+Eigen_Lib_Perf_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build
+.PHONY : Eigen_Lib_Perf_Test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -137,6 +176,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Eigen_Lib_Inte_Test"
+	@echo "... Eigen_Lib_Perf_Test"
+	@echo "... Eigen_Lib_Unit_Test"
 	@echo "... exec"
 .PHONY : help
 
