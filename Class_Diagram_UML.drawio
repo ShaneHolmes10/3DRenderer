@@ -1,13 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2024-06-26T18:08:53.972Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="dgIAvCgppCfqrfojWstB" version="24.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2024-06-26T20:26:37.819Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="6Fg3VXusFLJnMn-H2hLC" version="24.6.2" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1500" dy="1846" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="298" dy="1398" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="okh86VpJrS4wdpOfNebr-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;" edge="1" parent="1" source="C-vyLk0tnHw3VtMMgP7b-23" target="okh86VpJrS4wdpOfNebr-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-23" value="Reference_Frame" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-23" value="ReferenceFrame" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
           <mxGeometry x="155" y="10" width="540" height="380" as="geometry">
             <mxRectangle x="20" y="120" width="140" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -20,7 +20,7 @@
             <mxRectangle width="30" height="140" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-26" value="- defining_frame Math_Position_Object*&#xa;- transformation_matrix Eigen::Matrix4d&#xa;- angles Eigen::Vector3d&#xa;- placement_vector Eigen::Vector3d&#xa;- children_list Math_Position_Object[]" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-24" vertex="1">
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-26" value="- defining_frame MathPositionObject*&#xa;- transformation_matrix Eigen::Matrix4d&#xa;- angles Eigen::Vector3d&#xa;- placement_vector Eigen::Vector3d&#xa;- children_list Math_Position_Object[]" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-24" vertex="1">
           <mxGeometry x="30" width="510" height="140" as="geometry">
             <mxRectangle width="510" height="140" as="alternateBounds" />
           </mxGeometry>
@@ -33,7 +33,7 @@
             <mxRectangle width="30" height="200" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-29" value="+ get_expressed_in(Reference_Frame*) Math_Position_Object&#xa;+ add(Math_Position_Object*) VOID&#xa;+ set_ax(float) VOID&#xa;+ set_ay(float) VOID&#xa;+ set_az(float) VOID&#xa;+ set_ox(float) VOID&#xa;+ set_oy(float) VOID&#xa;+ set_oz(float) VOID&#xa;+ get_angles() Eigan::Vector3d&#xa;+ get_placement_vector() Eigan::Vector3d&#xa;+ static calculate_transformation_matrix(Eigan::Vector3d, Eigan::Vector3d) Eigen::Matrix4d&#xa;- get_inverse_transformation_matrix() Eigen::Matrix4d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-27" vertex="1">
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-29" value="+ get_expressed_in(ReferenceFrame*) MathPositionObject&#xa;+ add(MathPositionObject*) VOID&#xa;+ set_ax(float) VOID&#xa;+ set_ay(float) VOID&#xa;+ set_az(float) VOID&#xa;+ set_ox(float) VOID&#xa;+ set_oy(float) VOID&#xa;+ set_oz(float) VOID&#xa;+ get_angles() Eigan::Vector3d&#xa;+ get_placement_vector() Eigan::Vector3d&#xa;+ static calculate_transformation_matrix(Eigan::Vector3d, Eigan::Vector3d) Eigen::Matrix4d&#xa;- get_inverse_transformation_matrix() Eigen::Matrix4d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-27" vertex="1">
           <mxGeometry x="30" width="510" height="200" as="geometry">
             <mxRectangle width="510" height="200" as="alternateBounds" />
           </mxGeometry>
@@ -41,7 +41,7 @@
         <mxCell id="okh86VpJrS4wdpOfNebr-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;" edge="1" parent="1" source="okh86VpJrS4wdpOfNebr-8" target="okh86VpJrS4wdpOfNebr-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-8" value="Vector_Object" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="okh86VpJrS4wdpOfNebr-8" value="VectorObject" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="750" y="10" width="540" height="380" as="geometry">
             <mxRectangle x="20" y="120" width="140" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -54,7 +54,7 @@
             <mxRectangle width="30" height="140" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-11" value="- defining_frame Math_Position_Object*&#xa;- placement_vector Eigen::Vector3d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-9">
+        <mxCell id="okh86VpJrS4wdpOfNebr-11" value="- defining_frame MathPositionObject*&#xa;- placement_vector Eigen::Vector3d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-9">
           <mxGeometry x="30" width="510" height="140" as="geometry">
             <mxRectangle width="510" height="140" as="alternateBounds" />
           </mxGeometry>
@@ -67,12 +67,12 @@
             <mxRectangle width="30" height="200" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-14" value="+ get_expressed_in(Reference_Frame*) Math_Position_Object&#xa;+ set_ox(float) VOID&#xa;+ set_oy(float) VOID&#xa;+ set_oz(float) VOID&#xa;+ get_placement_vector() Eigen::Vector3d&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-12">
+        <mxCell id="okh86VpJrS4wdpOfNebr-14" value="+ get_expressed_in(ReferenceFrame*) MathPositionObject&#xa;+ set_ox(float) VOID&#xa;+ set_oy(float) VOID&#xa;+ set_oz(float) VOID&#xa;+ get_placement_vector() Eigen::Vector3d&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-12">
           <mxGeometry x="30" width="510" height="200" as="geometry">
             <mxRectangle width="510" height="200" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-15" value="Math_Position_Object" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+        <mxCell id="okh86VpJrS4wdpOfNebr-15" value="MathPositionObject" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
           <mxGeometry x="450" y="-460" width="540" height="380" as="geometry">
             <mxRectangle x="20" y="120" width="140" height="30" as="alternateBounds" />
           </mxGeometry>
@@ -85,7 +85,7 @@
             <mxRectangle width="30" height="140" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-18" value="- defining_frame Math_Position_Object*&#xa;- placement_vector Eigan::Vector3d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-16">
+        <mxCell id="okh86VpJrS4wdpOfNebr-18" value="- defining_frame MathPositionObject*&#xa;- placement_vector Eigan::Vector3d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-16">
           <mxGeometry x="30" width="510" height="140" as="geometry">
             <mxRectangle width="510" height="140" as="alternateBounds" />
           </mxGeometry>
@@ -98,7 +98,7 @@
             <mxRectangle width="30" height="200" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-21" value="+ get_expressed_in(Math_Position_Object*) Math_Position_Object&#xa;+ set_ox(float) VOID&#xa;+ set_oy(float) VOID&#xa;+ set_oz(float) VOID&#xa;+ get_placement_vector() Eigan::Vector3d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-19">
+        <mxCell id="okh86VpJrS4wdpOfNebr-21" value="# get_expressed_in(MathPositionObject*) MathPositionObject&#xa;+ set_ox(float) VOID&#xa;+ set_oy(float) VOID&#xa;+ set_oz(float) VOID&#xa;+ get_placement_vector() Eigan::Vector3d" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="okh86VpJrS4wdpOfNebr-19">
           <mxGeometry x="30" width="510" height="200" as="geometry">
             <mxRectangle width="510" height="200" as="alternateBounds" />
           </mxGeometry>
