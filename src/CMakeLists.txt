@@ -5,7 +5,9 @@ file(GLOB_RECURSE SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp" "${CMAKE_CURRENT_S
 add_executable(exec ${SOURCES})
 
 # Include the libraries directory if needed
-target_include_directories(exec PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../libraries)
+target_include_directories(exec PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/../libraries/eigen/
+${CMAKE_CURRENT_SOURCE_DIR}/../libraries)
 
 # Link all libraries in the libraries directory
 file(GLOB LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../libraries/*.cpp")
