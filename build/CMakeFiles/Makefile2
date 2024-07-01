@@ -166,6 +166,7 @@ tests/performance_tests/clean: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf
 
 # Recursive "all" directory target.
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all
+tests/unit_tests/all: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
 .PHONY : tests/unit_tests/all
 
 # Recursive "preinstall" directory target.
@@ -174,6 +175,7 @@ tests/unit_tests/preinstall:
 
 # Recursive "clean" directory target.
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clean
+tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean
 .PHONY : tests/unit_tests/clean
 
 #=============================================================================
@@ -183,12 +185,12 @@ tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clea
 src/CMakeFiles/exec.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=10,11,12 "Built target exec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=17,18,19,20 "Built target exec"
 .PHONY : src/CMakeFiles/exec.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/exec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/exec.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/exec.dir/rule
@@ -209,12 +211,12 @@ src/CMakeFiles/exec.dir/clean:
 tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=7,8,9 "Built target Eigen_Lib_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=9,10,11,12 "Built target Eigen_Lib_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/rule
@@ -229,18 +231,44 @@ tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clean:
 .PHONY : tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clean
 
 #=============================================================================
+# Target rules for target tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir
+
+# All Build rule for target.
+tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=13,14,15,16 "Built target Reference_Frame_1_Unit_Test"
+.PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
+.PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule
+
+# Convenience name for target.
+Reference_Frame_1_Unit_Test: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule
+.PHONY : Reference_Frame_1_Unit_Test
+
+# clean rule for target.
+tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean
+.PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean
+
+#=============================================================================
 # Target rules for target tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir
 
 # All Build rule for target.
 tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=1,2,3 "Built target Eigen_Lib_Inte_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=1,2,3,4 "Built target Eigen_Lib_Inte_Test"
 .PHONY : tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/rule
@@ -261,12 +289,12 @@ tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/clean:
 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=4,5,6 "Built target Eigen_Lib_Perf_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=5,6,7,8 "Built target Eigen_Lib_Perf_Test"
 .PHONY : tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule

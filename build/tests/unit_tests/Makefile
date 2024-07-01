@@ -130,6 +130,20 @@ Eigen_Lib_Unit_Test/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build
 .PHONY : Eigen_Lib_Unit_Test/fast
 
+# Convenience name for target.
+tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule
+.PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule
+
+# Convenience name for target.
+Reference_Frame_1_Unit_Test: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule
+.PHONY : Reference_Frame_1_Unit_Test
+
+# fast build rule for target.
+Reference_Frame_1_Unit_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build
+.PHONY : Reference_Frame_1_Unit_Test/fast
+
 Eigen_Lib_Unit_Test.o: Eigen_Lib_Unit_Test.cpp.o
 .PHONY : Eigen_Lib_Unit_Test.o
 
@@ -154,12 +168,37 @@ Eigen_Lib_Unit_Test.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/Eigen_Lib_Unit_Test.cpp.s
 .PHONY : Eigen_Lib_Unit_Test.cpp.s
 
+Reference_Frame_1_Unit_Test.o: Reference_Frame_1_Unit_Test.cpp.o
+.PHONY : Reference_Frame_1_Unit_Test.o
+
+# target to build an object file
+Reference_Frame_1_Unit_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/Reference_Frame_1_Unit_Test.cpp.o
+.PHONY : Reference_Frame_1_Unit_Test.cpp.o
+
+Reference_Frame_1_Unit_Test.i: Reference_Frame_1_Unit_Test.cpp.i
+.PHONY : Reference_Frame_1_Unit_Test.i
+
+# target to preprocess a source file
+Reference_Frame_1_Unit_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/Reference_Frame_1_Unit_Test.cpp.i
+.PHONY : Reference_Frame_1_Unit_Test.cpp.i
+
+Reference_Frame_1_Unit_Test.s: Reference_Frame_1_Unit_Test.cpp.s
+.PHONY : Reference_Frame_1_Unit_Test.s
+
+# target to generate assembly for a file
+Reference_Frame_1_Unit_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/Reference_Frame_1_Unit_Test.cpp.s
+.PHONY : Reference_Frame_1_Unit_Test.cpp.s
+
 __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.o
 
 # target to build an object file
 __/__/src/Math_Position_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.cpp.o
 
 __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
@@ -168,6 +207,7 @@ __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
 # target to preprocess a source file
 __/__/src/Math_Position_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 .PHONY : __/__/src/Math_Position_Object.cpp.i
 
 __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
@@ -176,7 +216,35 @@ __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
 # target to generate assembly for a file
 __/__/src/Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 .PHONY : __/__/src/Math_Position_Object.cpp.s
+
+__/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
+.PHONY : __/__/src/Reference_Frame.o
+
+# target to build an object file
+__/__/src/Reference_Frame.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
+.PHONY : __/__/src/Reference_Frame.cpp.o
+
+__/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
+.PHONY : __/__/src/Reference_Frame.i
+
+# target to preprocess a source file
+__/__/src/Reference_Frame.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
+.PHONY : __/__/src/Reference_Frame.cpp.i
+
+__/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
+.PHONY : __/__/src/Reference_Frame.s
+
+# target to generate assembly for a file
+__/__/src/Reference_Frame.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
+.PHONY : __/__/src/Reference_Frame.cpp.s
 
 # Help Target
 help:
@@ -187,12 +255,19 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Eigen_Lib_Unit_Test"
+	@echo "... Reference_Frame_1_Unit_Test"
 	@echo "... Eigen_Lib_Unit_Test.o"
 	@echo "... Eigen_Lib_Unit_Test.i"
 	@echo "... Eigen_Lib_Unit_Test.s"
+	@echo "... Reference_Frame_1_Unit_Test.o"
+	@echo "... Reference_Frame_1_Unit_Test.i"
+	@echo "... Reference_Frame_1_Unit_Test.s"
 	@echo "... __/__/src/Math_Position_Object.o"
 	@echo "... __/__/src/Math_Position_Object.i"
 	@echo "... __/__/src/Math_Position_Object.s"
+	@echo "... __/__/src/Reference_Frame.o"
+	@echo "... __/__/src/Reference_Frame.i"
+	@echo "... __/__/src/Reference_Frame.s"
 .PHONY : help
 
 

@@ -154,6 +154,30 @@ Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Math_Position_Object.cpp.s
 .PHONY : Math_Position_Object.cpp.s
 
+Reference_Frame.o: Reference_Frame.cpp.o
+.PHONY : Reference_Frame.o
+
+# target to build an object file
+Reference_Frame.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Reference_Frame.cpp.o
+.PHONY : Reference_Frame.cpp.o
+
+Reference_Frame.i: Reference_Frame.cpp.i
+.PHONY : Reference_Frame.i
+
+# target to preprocess a source file
+Reference_Frame.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Reference_Frame.cpp.i
+.PHONY : Reference_Frame.cpp.i
+
+Reference_Frame.s: Reference_Frame.cpp.s
+.PHONY : Reference_Frame.s
+
+# target to generate assembly for a file
+Reference_Frame.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Reference_Frame.cpp.s
+.PHONY : Reference_Frame.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -190,6 +214,9 @@ help:
 	@echo "... Math_Position_Object.o"
 	@echo "... Math_Position_Object.i"
 	@echo "... Math_Position_Object.s"
+	@echo "... Reference_Frame.o"
+	@echo "... Reference_Frame.i"
+	@echo "... Reference_Frame.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

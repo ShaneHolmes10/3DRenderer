@@ -178,6 +178,30 @@ __/__/src/Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.s
 .PHONY : __/__/src/Math_Position_Object.cpp.s
 
+__/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
+.PHONY : __/__/src/Reference_Frame.o
+
+# target to build an object file
+__/__/src/Reference_Frame.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.o
+.PHONY : __/__/src/Reference_Frame.cpp.o
+
+__/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
+.PHONY : __/__/src/Reference_Frame.i
+
+# target to preprocess a source file
+__/__/src/Reference_Frame.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.i
+.PHONY : __/__/src/Reference_Frame.cpp.i
+
+__/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
+.PHONY : __/__/src/Reference_Frame.s
+
+# target to generate assembly for a file
+__/__/src/Reference_Frame.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.s
+.PHONY : __/__/src/Reference_Frame.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -193,6 +217,9 @@ help:
 	@echo "... __/__/src/Math_Position_Object.o"
 	@echo "... __/__/src/Math_Position_Object.i"
 	@echo "... __/__/src/Math_Position_Object.s"
+	@echo "... __/__/src/Reference_Frame.o"
+	@echo "... __/__/src/Reference_Frame.i"
+	@echo "... __/__/src/Reference_Frame.s"
 .PHONY : help
 
 
