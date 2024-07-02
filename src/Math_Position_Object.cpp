@@ -3,7 +3,7 @@
 
 
 MathPositionObject::MathPositionObject(float ox, float oy, float oz) 
-    : defining_frame(nullptr), placement_vector(ox, oy, oz) {
+    : placement_vector(ox, oy, oz) {
     
 }
 

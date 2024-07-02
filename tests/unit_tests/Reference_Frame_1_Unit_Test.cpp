@@ -16,6 +16,8 @@ Verify that the getter for the transformation_matrix works
 Verify that the setters work
 Verify that the rotation matricies work
 Verify that the transformation matrix calc works
+Verify that expression works
+Verify that adding children work
 
 */
 
@@ -247,9 +249,35 @@ void test_14() {
     reference_frame_A.set_oy(11);
     reference_frame_A.set_oz(12);
 
-    TestUtils::pass_or_fail_printout(TestUtils::check_matrix_4_similarity(compare_1, reference_frame_A.get_expressed_in(&reference_frame_B)->get_transformation_matrix()));
+    TestUtils::pass_or_fail_printout(TestUtils::check_matrix_4_similarity(compare_1, reference_frame_A.get_expressed_in(reference_frame_B)->get_transformation_matrix()));
 
 }
+
+/*
+    This tests if the child adding system works, this will control how reference frames are defined
+*/
+void test_15() {
+
+    Eigen::Matrix4d compare_1;
+    compare_1 << 0.96, -0.22, -0.18, 10.02,
+                 0.09, 0.83, -0.56, 6.02,
+                 0.27, 0.52, 0.81, 9.98,
+                 0,     0,    0,     1;
+
+    ReferenceFrame reference_frame_A(7, 8, 9, 10, 11, 12);
+    ReferenceFrame reference_frame_B(1, 2, 3, 4, 5, 6);
+
+    reference_frame_A.add(reference_frame_B);
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_matrix_4_similarity(
+            compare_1, 
+            reference_frame_B.get_transformation_matrix()
+        )
+    );
+
+}
+
 
 
 int main() {
@@ -270,6 +298,7 @@ int main() {
     TestUtils::perform_test(test_12);
     TestUtils::perform_test(test_13);
     TestUtils::perform_test(test_14);
+    TestUtils::perform_test(test_15);
 
     TestUtils::end_testing();
 

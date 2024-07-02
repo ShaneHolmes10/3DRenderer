@@ -3,7 +3,8 @@
 #include <iostream>
 
 ReferenceFrame::ReferenceFrame(float ox, float oy, float oz, float ax, float ay, float az) 
-    : MathPositionObject(ox, oy, oz), 
+    : defining_frame(nullptr),
+    MathPositionObject(ox, oy, oz), 
     angles(ax, ay, az),
     children_list() {
 
@@ -48,19 +49,29 @@ void ReferenceFrame::set_oz(float value) {
 
 const Eigen::Vector3d& ReferenceFrame::get_angles() const {
     return angles;
+
 }
 
-const Eigen::Matrix4d& ReferenceFrame::get_transformation_matrix() const {
-    return transformation_matrix;
-}
-
-void ReferenceFrame::add(ReferenceFrame* child) {
-    children_list.push_back(child);
-}
-
-ReferenceFrame* ReferenceFrame::get_expressed_in(ReferenceFrame* expressing_frame) { 
+const Eigen::Matrix4d ReferenceFrame::get_transformation_matrix() const {
+    if(defining_frame != nullptr) {
         
-    Eigen::Matrix4d result_matrix = expressing_frame->get_transformation_matrix().inverse() * transformation_matrix;
+        return defining_frame->get_transformation_matrix()*transformation_matrix;
+    } else {
+        
+        return transformation_matrix;
+    }
+    
+}
+
+void ReferenceFrame::add(ReferenceFrame& child) {
+    children_list.push_back(&child);
+    child.defining_frame = this;
+
+}
+
+ReferenceFrame* ReferenceFrame::get_expressed_in(ReferenceFrame& expressing_frame) { 
+        
+    Eigen::Matrix4d result_matrix = expressing_frame.get_transformation_matrix().inverse() * transformation_matrix;
 
     Eigen::Matrix3d rotation_matrix = result_matrix.block<3, 3>(0,0);
     Eigen::Vector3d placement_vector = result_matrix.block<3, 1>(0, 3);
@@ -69,8 +80,6 @@ ReferenceFrame* ReferenceFrame::get_expressed_in(ReferenceFrame* expressing_fram
 
     return new ReferenceFrame(placement_vector.x(), placement_vector.y(), placement_vector.z(),
                                 euler_angles.z(), euler_angles.y(), euler_angles.x());
-
-
 
 }
 

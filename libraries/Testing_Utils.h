@@ -46,9 +46,9 @@ inline void pass_or_fail_printout(bool value) {
 }
 
 inline void start_testing() {
-    std::cout << CYAN << "************************************************************************************" << RESET << std::endl;
+    std::cout << CYAN << "********************" << RESET << std::endl;
     std::cout << BLUE << "[TESTING STARTED]" << RESET << std::endl;
-    std::cout << CYAN << "************************************************************************************" << RESET << std::endl;
+    std::cout << CYAN << "********************" << RESET << std::endl;
 }
 
 inline void perform_test(std::function<void(void)> func) {
@@ -58,10 +58,10 @@ inline void perform_test(std::function<void(void)> func) {
 }
 
 inline void end_testing() {
-    std::cout << CYAN << "************************************************************************************" << RESET << std::endl;
+    std::cout << CYAN << "********************" << RESET << std::endl;
     std::cout << BLUE << "[TESTING ENDED]" << RESET << std::endl;
     std::cout << "TEST RESULTS " << correct_counter_testUtils << " / " << test_counter_testUtils-1 << std::endl;
-    std::cout << CYAN << "************************************************************************************" << RESET << std::endl;
+    std::cout << CYAN << "********************" << RESET << std::endl;
 }
 
 } 

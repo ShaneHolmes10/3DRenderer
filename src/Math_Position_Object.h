@@ -6,7 +6,6 @@
 
 class MathPositionObject {
 protected:
-    MathPositionObject* defining_frame;
     Eigen::Vector3d placement_vector;
     
 protected:
