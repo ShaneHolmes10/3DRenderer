@@ -401,4 +401,5 @@ tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_F
  /home/shane/3DRenderer/3DRenderer/tests/../libraries/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /home/shane/3DRenderer/3DRenderer/tests/../libraries/eigen/Eigen/src/Eigenvalues/./RealQZ.h \
  /home/shane/3DRenderer/3DRenderer/tests/../libraries/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /home/shane/3DRenderer/3DRenderer/src/Vector_Object.h \
  /usr/include/c++/11/iostream

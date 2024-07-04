@@ -1,5 +1,6 @@
 
 #include "Reference_Frame.h"
+#include "Vector_Object.h"
 #include <iostream>
 
 ReferenceFrame::ReferenceFrame(float ox, float oy, float oz, float ax, float ay, float az) 
@@ -64,6 +65,12 @@ const Eigen::Matrix4d ReferenceFrame::get_transformation_matrix() const {
 }
 
 void ReferenceFrame::add(ReferenceFrame& child) {
+    children_list.push_back(&child);
+    child.defining_frame = this;
+
+}
+
+void ReferenceFrame::add(VectorObject& child) {
     children_list.push_back(&child);
     child.defining_frame = this;
 

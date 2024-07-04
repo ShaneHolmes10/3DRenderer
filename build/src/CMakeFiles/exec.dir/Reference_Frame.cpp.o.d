@@ -401,4 +401,5 @@ src/CMakeFiles/exec.dir/Reference_Frame.cpp.o: \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/eigen/Eigen/src/Eigenvalues/./RealQZ.h \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /home/shane/3DRenderer/3DRenderer/src/Vector_Object.h \
  /usr/include/c++/11/iostream

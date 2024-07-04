@@ -6,13 +6,16 @@
 #include <Eigen/Dense>
 #include <vector>
 
+class VectorObject;
 
 class ReferenceFrame : public MathPositionObject {
 private:
-    ReferenceFrame* defining_frame;
     Eigen::Matrix4d transformation_matrix;
     Eigen::Vector3d angles;
     std::vector<MathPositionObject*> children_list;
+
+public:
+    ReferenceFrame* defining_frame;
 
 public:
     ReferenceFrame(float ox, float oy, float oz) = delete;
@@ -28,6 +31,7 @@ public:
     const Eigen::Matrix4d get_transformation_matrix() const;
 
     void add(ReferenceFrame& child);
+    void add(VectorObject& child);
 
     ReferenceFrame* get_expressed_in(ReferenceFrame& expressing_frame);
 
