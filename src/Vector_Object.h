@@ -13,7 +13,7 @@ public:
     ReferenceFrame* defining_frame;
 
 public:
-    VectorObject(float ox, float oy, float oz);
+    VectorObject(float ox = 0, float oy = 0, float oz = 0);
     Eigen::Vector3d get_transformed_vector();
     VectorObject* get_expressed_in(ReferenceFrame& expressing_frame);
 

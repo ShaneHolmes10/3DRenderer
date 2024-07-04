@@ -202,6 +202,30 @@ __/__/src/Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Reference_Frame.cpp.s
 .PHONY : __/__/src/Reference_Frame.cpp.s
 
+__/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
+.PHONY : __/__/src/Vector_Object.o
+
+# target to build an object file
+__/__/src/Vector_Object.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.o
+.PHONY : __/__/src/Vector_Object.cpp.o
+
+__/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
+.PHONY : __/__/src/Vector_Object.i
+
+# target to preprocess a source file
+__/__/src/Vector_Object.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.i
+.PHONY : __/__/src/Vector_Object.cpp.i
+
+__/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
+.PHONY : __/__/src/Vector_Object.s
+
+# target to generate assembly for a file
+__/__/src/Vector_Object.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.s
+.PHONY : __/__/src/Vector_Object.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -220,6 +244,9 @@ help:
 	@echo "... __/__/src/Reference_Frame.o"
 	@echo "... __/__/src/Reference_Frame.i"
 	@echo "... __/__/src/Reference_Frame.s"
+	@echo "... __/__/src/Vector_Object.o"
+	@echo "... __/__/src/Vector_Object.i"
+	@echo "... __/__/src/Vector_Object.s"
 .PHONY : help
 
 

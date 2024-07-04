@@ -178,6 +178,30 @@ Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Reference_Frame.cpp.s
 .PHONY : Reference_Frame.cpp.s
 
+Vector_Object.o: Vector_Object.cpp.o
+.PHONY : Vector_Object.o
+
+# target to build an object file
+Vector_Object.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Vector_Object.cpp.o
+.PHONY : Vector_Object.cpp.o
+
+Vector_Object.i: Vector_Object.cpp.i
+.PHONY : Vector_Object.i
+
+# target to preprocess a source file
+Vector_Object.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Vector_Object.cpp.i
+.PHONY : Vector_Object.cpp.i
+
+Vector_Object.s: Vector_Object.cpp.s
+.PHONY : Vector_Object.s
+
+# target to generate assembly for a file
+Vector_Object.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Vector_Object.cpp.s
+.PHONY : Vector_Object.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -217,6 +241,9 @@ help:
 	@echo "... Reference_Frame.o"
 	@echo "... Reference_Frame.i"
 	@echo "... Reference_Frame.s"
+	@echo "... Vector_Object.o"
+	@echo "... Vector_Object.i"
+	@echo "... Vector_Object.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

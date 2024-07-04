@@ -6,34 +6,131 @@
 
 
 /*
-This test will confirm some basic functionality of the ReferenceFrame class. Below is a list
+This test will confirm some basic functionality of the VectorObject class. Below is a list
 of desired functions we wish to test.
 
 
 Set the values for the frame using the constructor
-Verify that the getter for angles works
 Verify that the getter for place vector works
-Verify that the getter for the transformation_matrix works
+verify that the getter for transform vector
 Verify that the setters work
-Verify that the rotation matricies work
-Verify that the transformation matrix calc works
 Verify that expression works
-Verify that adding children work
 
 */
 
 
 
 /*
-    Tests to make sure constructor is setting the angles properly for default constructor
+
 */
 void test_1() {
 
     Eigen::Vector3d compare_1(0,0,0);
 
-    ReferenceFrame reference_frame_A;
+    VectorObject vector_1;
 
-    TestUtils::pass_or_fail_printout(TestUtils::check_vector_3_similarity(compare_1, reference_frame_A.get_angles()));
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_placement_vector()
+        )
+    );
+
+}
+
+/*
+
+*/
+void test_2() {
+
+    Eigen::Vector3d compare_1(1,2,3);
+
+    VectorObject vector_1(1, 2, 3);
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_placement_vector()
+        )
+    );
+
+}
+
+/*
+
+*/
+void test_3() {
+
+    Eigen::Vector3d compare_1(0,0,0);
+
+    VectorObject vector_1;
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_transformed_vector()
+        )
+    );
+
+}
+
+/*
+
+*/
+void test_4() {
+
+    Eigen::Vector3d compare_1(1,2,3);
+
+    VectorObject vector_1(1, 2, 3);
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_transformed_vector()
+        )
+    );
+
+}
+
+/*
+
+*/
+void test_5() {
+
+    Eigen::Vector3d compare_1(4,5,6);
+
+    VectorObject vector_1;
+    vector_1.set_ox(4);
+    vector_1.set_oy(5);
+    vector_1.set_oz(6);
+
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_transformed_vector()
+        )
+    );
+
+}
+
+/*
+
+*/
+void test_6() {
+
+    Eigen::Vector3d compare_1(1,2,3);
+
+    ReferenceFrame reference_frame_A;
+    VectorObject vector_1(1, 2, 3);
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_expressed_in(reference_frame_A)->get_placement_vector()
+        )
+    );
+
 }
 
 
@@ -42,6 +139,12 @@ int main() {
     TestUtils::start_testing();
 
     TestUtils::perform_test(test_1);
+    TestUtils::perform_test(test_2);
+    TestUtils::perform_test(test_3);
+    TestUtils::perform_test(test_4);
+    TestUtils::perform_test(test_5);
+    TestUtils::perform_test(test_6);
+    
 
     TestUtils::end_testing();
 

@@ -156,6 +156,19 @@ Reference_Frame_1_Unit_Test/fast:
 .PHONY : Reference_Frame_1_Unit_Test/fast
 
 #=============================================================================
+# Target rules for targets named Vector_Object_1_Unit_Test
+
+# Build rule for target.
+Vector_Object_1_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Vector_Object_1_Unit_Test
+.PHONY : Vector_Object_1_Unit_Test
+
+# fast build rule for target.
+Vector_Object_1_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build
+.PHONY : Vector_Object_1_Unit_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Inte_Test
 
 # Build rule for target.
@@ -193,6 +206,7 @@ help:
 	@echo "... Eigen_Lib_Perf_Test"
 	@echo "... Eigen_Lib_Unit_Test"
 	@echo "... Reference_Frame_1_Unit_Test"
+	@echo "... Vector_Object_1_Unit_Test"
 	@echo "... exec"
 .PHONY : help
 
