@@ -38,7 +38,7 @@ inline std::array<std::vector<int>, 2> Bresenham(int x1, int y1, int x2, int y2)
             
             x_values.push_back(x);
             y_values.push_back(y);
-            std::cout << "(" << x << ", " << y << ")\n";
+            //std::cout << "(" << x << ", " << y << ")\n";
             
         }
         
@@ -62,7 +62,7 @@ inline std::array<std::vector<int>, 2> Bresenham(int x1, int y1, int x2, int y2)
             
             x_values.push_back(x);
             y_values.push_back(y);
-            std::cout << "(" << x << ", " << y << ")\n";
+            //std::cout << "(" << x << ", " << y << ")\n";
             
         }
     }

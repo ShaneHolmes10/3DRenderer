@@ -117,6 +117,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/rule
+.PHONY : tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/rule
+
+# Convenience name for target.
+Bresenham_algorithm_1_Performance_Test: tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/rule
+.PHONY : Bresenham_algorithm_1_Performance_Test
+
+# fast build rule for target.
+Bresenham_algorithm_1_Performance_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build
+.PHONY : Bresenham_algorithm_1_Performance_Test/fast
+
+# Convenience name for target.
 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule
 .PHONY : tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule
@@ -129,6 +143,44 @@ Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/
 Eigen_Lib_Perf_Test/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build
 .PHONY : Eigen_Lib_Perf_Test/fast
+
+# Convenience name for target.
+tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/rule
+.PHONY : tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/rule
+
+# Convenience name for target.
+Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/rule
+.PHONY : Performance_Test_Examples
+
+# fast build rule for target.
+Performance_Test_Examples/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build
+.PHONY : Performance_Test_Examples/fast
+
+Bresenham_algorithm_1_Performance_Test.o: Bresenham_algorithm_1_Performance_Test.cpp.o
+.PHONY : Bresenham_algorithm_1_Performance_Test.o
+
+# target to build an object file
+Bresenham_algorithm_1_Performance_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/Bresenham_algorithm_1_Performance_Test.cpp.o
+.PHONY : Bresenham_algorithm_1_Performance_Test.cpp.o
+
+Bresenham_algorithm_1_Performance_Test.i: Bresenham_algorithm_1_Performance_Test.cpp.i
+.PHONY : Bresenham_algorithm_1_Performance_Test.i
+
+# target to preprocess a source file
+Bresenham_algorithm_1_Performance_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/Bresenham_algorithm_1_Performance_Test.cpp.i
+.PHONY : Bresenham_algorithm_1_Performance_Test.cpp.i
+
+Bresenham_algorithm_1_Performance_Test.s: Bresenham_algorithm_1_Performance_Test.cpp.s
+.PHONY : Bresenham_algorithm_1_Performance_Test.s
+
+# target to generate assembly for a file
+Bresenham_algorithm_1_Performance_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/Bresenham_algorithm_1_Performance_Test.cpp.s
+.PHONY : Bresenham_algorithm_1_Performance_Test.cpp.s
 
 Eigen_Lib_Perf_Test.o: Eigen_Lib_Perf_Test.cpp.o
 .PHONY : Eigen_Lib_Perf_Test.o
@@ -154,12 +206,38 @@ Eigen_Lib_Perf_Test.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/Eigen_Lib_Perf_Test.cpp.s
 .PHONY : Eigen_Lib_Perf_Test.cpp.s
 
+Performance_Test_Examples.o: Performance_Test_Examples.cpp.o
+.PHONY : Performance_Test_Examples.o
+
+# target to build an object file
+Performance_Test_Examples.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o
+.PHONY : Performance_Test_Examples.cpp.o
+
+Performance_Test_Examples.i: Performance_Test_Examples.cpp.i
+.PHONY : Performance_Test_Examples.i
+
+# target to preprocess a source file
+Performance_Test_Examples.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.i
+.PHONY : Performance_Test_Examples.cpp.i
+
+Performance_Test_Examples.s: Performance_Test_Examples.cpp.s
+.PHONY : Performance_Test_Examples.s
+
+# target to generate assembly for a file
+Performance_Test_Examples.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.s
+.PHONY : Performance_Test_Examples.cpp.s
+
 __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.o
 
 # target to build an object file
 __/__/src/Math_Position_Object.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.cpp.o
 
 __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
@@ -167,7 +245,9 @@ __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
 
 # target to preprocess a source file
 __/__/src/Math_Position_Object.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.i
 .PHONY : __/__/src/Math_Position_Object.cpp.i
 
 __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
@@ -175,7 +255,9 @@ __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
 
 # target to generate assembly for a file
 __/__/src/Math_Position_Object.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.s
 .PHONY : __/__/src/Math_Position_Object.cpp.s
 
 __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
@@ -183,7 +265,9 @@ __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
 
 # target to build an object file
 __/__/src/Reference_Frame.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o
 .PHONY : __/__/src/Reference_Frame.cpp.o
 
 __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
@@ -191,7 +275,9 @@ __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
 
 # target to preprocess a source file
 __/__/src/Reference_Frame.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.i
 .PHONY : __/__/src/Reference_Frame.cpp.i
 
 __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
@@ -199,7 +285,9 @@ __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
 
 # target to generate assembly for a file
 __/__/src/Reference_Frame.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.s
 .PHONY : __/__/src/Reference_Frame.cpp.s
 
 __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
@@ -207,7 +295,9 @@ __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
 
 # target to build an object file
 __/__/src/Vector_Object.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o
 .PHONY : __/__/src/Vector_Object.cpp.o
 
 __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
@@ -215,7 +305,9 @@ __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
 
 # target to preprocess a source file
 __/__/src/Vector_Object.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.i
 .PHONY : __/__/src/Vector_Object.cpp.i
 
 __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
@@ -223,7 +315,9 @@ __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
 
 # target to generate assembly for a file
 __/__/src/Vector_Object.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.s
 .PHONY : __/__/src/Vector_Object.cpp.s
 
 # Help Target
@@ -234,10 +328,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Bresenham_algorithm_1_Performance_Test"
 	@echo "... Eigen_Lib_Perf_Test"
+	@echo "... Performance_Test_Examples"
+	@echo "... Bresenham_algorithm_1_Performance_Test.o"
+	@echo "... Bresenham_algorithm_1_Performance_Test.i"
+	@echo "... Bresenham_algorithm_1_Performance_Test.s"
 	@echo "... Eigen_Lib_Perf_Test.o"
 	@echo "... Eigen_Lib_Perf_Test.i"
 	@echo "... Eigen_Lib_Perf_Test.s"
+	@echo "... Performance_Test_Examples.o"
+	@echo "... Performance_Test_Examples.i"
+	@echo "... Performance_Test_Examples.s"
 	@echo "... __/__/src/Math_Position_Object.o"
 	@echo "... __/__/src/Math_Position_Object.i"
 	@echo "... __/__/src/Math_Position_Object.s"

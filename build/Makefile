@@ -208,6 +208,19 @@ Reference_Frame_and_Vector_Object_1_Integration_Test/fast:
 .PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test/fast
 
 #=============================================================================
+# Target rules for targets named Bresenham_algorithm_1_Performance_Test
+
+# Build rule for target.
+Bresenham_algorithm_1_Performance_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Bresenham_algorithm_1_Performance_Test
+.PHONY : Bresenham_algorithm_1_Performance_Test
+
+# fast build rule for target.
+Bresenham_algorithm_1_Performance_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build
+.PHONY : Bresenham_algorithm_1_Performance_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Perf_Test
 
 # Build rule for target.
@@ -220,6 +233,19 @@ Eigen_Lib_Perf_Test/fast:
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build
 .PHONY : Eigen_Lib_Perf_Test/fast
 
+#=============================================================================
+# Target rules for targets named Performance_Test_Examples
+
+# Build rule for target.
+Performance_Test_Examples: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Performance_Test_Examples
+.PHONY : Performance_Test_Examples
+
+# fast build rule for target.
+Performance_Test_Examples/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build
+.PHONY : Performance_Test_Examples/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -228,10 +254,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Bresenham_algorithm_1_Performance_Test"
 	@echo "... Bresenham_algorithm_1_Unit_Test"
 	@echo "... Eigen_Lib_Inte_Test"
 	@echo "... Eigen_Lib_Perf_Test"
 	@echo "... Eigen_Lib_Unit_Test"
+	@echo "... Performance_Test_Examples"
 	@echo "... Reference_Frame_1_Unit_Test"
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test"
 	@echo "... Vector_Object_1_Unit_Test"
