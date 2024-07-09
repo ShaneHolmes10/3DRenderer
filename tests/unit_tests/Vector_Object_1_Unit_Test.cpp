@@ -14,14 +14,13 @@ Set the values for the frame using the constructor
 Verify that the getter for place vector works
 verify that the getter for transform vector
 Verify that the setters work
-Verify that expression works
 
 */
 
 
 
 /*
-
+    This tests the default constructor
 */
 void test_1() {
 
@@ -39,7 +38,7 @@ void test_1() {
 }
 
 /*
-
+    This tests a parameter constructor
 */
 void test_2() {
 
@@ -57,7 +56,7 @@ void test_2() {
 }
 
 /*
-
+    This tests the get transformed vector method with default constructor
 */
 void test_3() {
 
@@ -75,7 +74,7 @@ void test_3() {
 }
 
 /*
-
+    This tests the get transformed vector method with parameter constructor
 */
 void test_4() {
 
@@ -93,9 +92,31 @@ void test_4() {
 }
 
 /*
-
+    This tests the setter methods, for placement vector
 */
 void test_5() {
+
+    Eigen::Vector3d compare_1(4,5,6);
+
+    VectorObject vector_1;
+    vector_1.set_ox(4);
+    vector_1.set_oy(5);
+    vector_1.set_oz(6);
+
+
+    TestUtils::pass_or_fail_printout(
+        TestUtils::check_vector_3_similarity(
+            compare_1, 
+            vector_1.get_placement_vector()
+        )
+    );
+
+}
+
+/*
+    This tests the setter methods, for transformed vector vector 
+*/
+void test_6() {
 
     Eigen::Vector3d compare_1(4,5,6);
 
@@ -114,24 +135,6 @@ void test_5() {
 
 }
 
-/*
-
-*/
-void test_6() {
-
-    Eigen::Vector3d compare_1(1,2,3);
-
-    ReferenceFrame reference_frame_A;
-    VectorObject vector_1(1, 2, 3);
-
-    TestUtils::pass_or_fail_printout(
-        TestUtils::check_vector_3_similarity(
-            compare_1, 
-            vector_1.get_expressed_in(reference_frame_A)->get_placement_vector()
-        )
-    );
-
-}
 
 
 int main() {
@@ -144,7 +147,6 @@ int main() {
     TestUtils::perform_test(test_4);
     TestUtils::perform_test(test_5);
     TestUtils::perform_test(test_6);
-    
 
     TestUtils::end_testing();
 

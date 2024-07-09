@@ -130,6 +130,19 @@ exec/fast:
 .PHONY : exec/fast
 
 #=============================================================================
+# Target rules for targets named Bresenham_algorithm_1_Unit_Test
+
+# Build rule for target.
+Bresenham_algorithm_1_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Bresenham_algorithm_1_Unit_Test
+.PHONY : Bresenham_algorithm_1_Unit_Test
+
+# fast build rule for target.
+Bresenham_algorithm_1_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build
+.PHONY : Bresenham_algorithm_1_Unit_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Unit_Test
 
 # Build rule for target.
@@ -182,6 +195,19 @@ Eigen_Lib_Inte_Test/fast:
 .PHONY : Eigen_Lib_Inte_Test/fast
 
 #=============================================================================
+# Target rules for targets named Reference_Frame_and_Vector_Object_1_Integration_Test
+
+# Build rule for target.
+Reference_Frame_and_Vector_Object_1_Integration_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Reference_Frame_and_Vector_Object_1_Integration_Test
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test
+
+# fast build rule for target.
+Reference_Frame_and_Vector_Object_1_Integration_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Perf_Test
 
 # Build rule for target.
@@ -202,10 +228,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Bresenham_algorithm_1_Unit_Test"
 	@echo "... Eigen_Lib_Inte_Test"
 	@echo "... Eigen_Lib_Perf_Test"
 	@echo "... Eigen_Lib_Unit_Test"
 	@echo "... Reference_Frame_1_Unit_Test"
+	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test"
 	@echo "... Vector_Object_1_Unit_Test"
 	@echo "... exec"
 .PHONY : help

@@ -130,6 +130,20 @@ Eigen_Lib_Inte_Test/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build
 .PHONY : Eigen_Lib_Inte_Test/fast
 
+# Convenience name for target.
+tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/rule
+.PHONY : tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/rule
+
+# Convenience name for target.
+Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/rule
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test
+
+# fast build rule for target.
+Reference_Frame_and_Vector_Object_1_Integration_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test/fast
+
 Eigen_Lib_Inte_Test.o: Eigen_Lib_Inte_Test.cpp.o
 .PHONY : Eigen_Lib_Inte_Test.o
 
@@ -154,12 +168,37 @@ Eigen_Lib_Inte_Test.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/Eigen_Lib_Inte_Test.cpp.s
 .PHONY : Eigen_Lib_Inte_Test.cpp.s
 
+Reference_Frame_and_Vector_Object_1_Integration_Test.o: Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.o
+
+# target to build an object file
+Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o
+
+Reference_Frame_and_Vector_Object_1_Integration_Test.i: Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.i
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.i
+
+# target to preprocess a source file
+Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.i
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.i
+
+Reference_Frame_and_Vector_Object_1_Integration_Test.s: Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.s
+
+# target to generate assembly for a file
+Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s
+.PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s
+
 __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.o
 
 # target to build an object file
 __/__/src/Math_Position_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Math_Position_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.cpp.o
 
 __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
@@ -168,6 +207,7 @@ __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
 # target to preprocess a source file
 __/__/src/Math_Position_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Math_Position_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.i
 .PHONY : __/__/src/Math_Position_Object.cpp.i
 
 __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
@@ -176,6 +216,7 @@ __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
 # target to generate assembly for a file
 __/__/src/Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Math_Position_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.s
 .PHONY : __/__/src/Math_Position_Object.cpp.s
 
 __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
@@ -184,6 +225,7 @@ __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
 # target to build an object file
 __/__/src/Reference_Frame.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Reference_Frame.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o
 .PHONY : __/__/src/Reference_Frame.cpp.o
 
 __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
@@ -192,6 +234,7 @@ __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
 # target to preprocess a source file
 __/__/src/Reference_Frame.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Reference_Frame.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.i
 .PHONY : __/__/src/Reference_Frame.cpp.i
 
 __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
@@ -200,6 +243,7 @@ __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
 # target to generate assembly for a file
 __/__/src/Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Reference_Frame.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.s
 .PHONY : __/__/src/Reference_Frame.cpp.s
 
 __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
@@ -208,6 +252,7 @@ __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
 # target to build an object file
 __/__/src/Vector_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o
 .PHONY : __/__/src/Vector_Object.cpp.o
 
 __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
@@ -216,6 +261,7 @@ __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
 # target to preprocess a source file
 __/__/src/Vector_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.i
 .PHONY : __/__/src/Vector_Object.cpp.i
 
 __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
@@ -224,6 +270,7 @@ __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
 # target to generate assembly for a file
 __/__/src/Vector_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.s
 .PHONY : __/__/src/Vector_Object.cpp.s
 
 # Help Target
@@ -235,9 +282,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Eigen_Lib_Inte_Test"
+	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test"
 	@echo "... Eigen_Lib_Inte_Test.o"
 	@echo "... Eigen_Lib_Inte_Test.i"
 	@echo "... Eigen_Lib_Inte_Test.s"
+	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test.o"
+	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test.i"
+	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test.s"
 	@echo "... __/__/src/Math_Position_Object.o"
 	@echo "... __/__/src/Math_Position_Object.i"
 	@echo "... __/__/src/Math_Position_Object.s"

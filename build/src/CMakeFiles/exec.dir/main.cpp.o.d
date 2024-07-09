@@ -399,4 +399,9 @@ src/CMakeFiles/exec.dir/main.cpp.o: \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/eigen/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/eigen/Eigen/src/Eigenvalues/./RealQZ.h \
  /home/shane/3DRenderer/3DRenderer/src/../libraries/eigen/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /usr/include/c++/11/iostream
+ /usr/include/c++/11/iostream \
+ /home/shane/3DRenderer/3DRenderer/src/../libraries/Testing_Utils.h \
+ /home/shane/3DRenderer/3DRenderer/src/../libraries/Testing_Methods.h \
+ /home/shane/3DRenderer/3DRenderer/src/Reference_Frame.h \
+ /home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.h \
+ /home/shane/3DRenderer/3DRenderer/src/Vector_Object.h

@@ -35,6 +35,11 @@ inline bool check_vector_3_similarity(const Eigen::Vector3d& v1, const Eigen::Ve
     return ( 0.1 > (v1 - v2).norm()) ;
 }
 
+inline bool check_std_vector_similarity(const std::vector<int>& v1, const std::vector<int>& v2) {
+
+    return v1 == v2;
+}
+
 inline void pass_or_fail_printout(bool value) {
     if(value) {
         std::cout << GREEN << "[TEST SUCCESSFUL]" << RESET << std::endl;
