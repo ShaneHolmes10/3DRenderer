@@ -7,7 +7,7 @@
 
 
 /*
-    Measure the time it takes to 
+    Measure the time it takes to draw lines using this algorithm
 */
 void test_1() {
 

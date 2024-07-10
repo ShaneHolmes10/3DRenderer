@@ -6,6 +6,7 @@
 
 #include <Eigen/Dense>
 #include <iostream>
+#include <vector>
 
 namespace TestMeth {
 
@@ -70,6 +71,28 @@ inline std::array<std::vector<int>, 2> Bresenham(int x1, int y1, int x2, int y2)
     return {x_values, y_values};
     
 }
+
+
+inline std::vector<std::array<int, 3>> color_interpolation(const std::array<int, 3>& start_point, const std::array<int, 3>& end_point, int N) {
+
+    float Nr = N-1;
+    std::vector<std::array<int, 3>> return_vector = {};
+
+    for(float k = 1; k < Nr; k++) {
+
+        return_vector.push_back({
+            (int)(((Nr - k) / (Nr))*start_point[0] + ((k) / (Nr))*end_point[0]),
+            (int)(((Nr - k) / (Nr))*start_point[1] + ((k) / (Nr))*end_point[1]),
+            (int)(((Nr - k) / (Nr))*start_point[2] + ((k) / (Nr))*end_point[2]),
+        });
+
+    }
+
+    return return_vector;
+
+}
+
+
 
 
 } 

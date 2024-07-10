@@ -8,6 +8,7 @@
 /home/shane/3DRenderer/3DRenderer/build/tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/CMakeFiles/rebuild_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir
@@ -18,6 +19,7 @@
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/rebuild_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/edit_cache.dir
