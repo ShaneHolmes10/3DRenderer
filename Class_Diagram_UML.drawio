@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2024-07-12T22:21:07.594Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.6.4" etag="oQzbCkKrOpfdAiK69PZp" type="github">
+<mxfile host="app.diagrams.net" modified="2024-07-12T22:34:22.864Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.6.4" etag="84B_yaFOCoAEpN0qg_uQ" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="3218" dy="1714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1313" dy="1753" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="okh86VpJrS4wdpOfNebr-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;" parent="1" source="C-vyLk0tnHw3VtMMgP7b-23" target="okh86VpJrS4wdpOfNebr-15" edge="1">
+        <mxCell id="okh86VpJrS4wdpOfNebr-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;endSize=20;" parent="1" source="C-vyLk0tnHw3VtMMgP7b-23" target="okh86VpJrS4wdpOfNebr-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="C-vyLk0tnHw3VtMMgP7b-23" value="ReferenceFrame" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
@@ -20,7 +20,7 @@
             <mxRectangle width="30" height="140" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-26" value="- placement_vector Eigan::Vector3d &lt;&lt;inherited&gt;&gt;&#xa;&#xa;- transformation_matrix Eigen::Matrix4d&#xa;- angles Eigen::Vector3d&#xa;- children_list std::vector&lt;Math_Position_Object*&gt;&#xa;&#xa;+ defining_frame ReferenceFrame*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-24" vertex="1">
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-26" value="# placement_vector Eigan::Vector3d &lt;&lt;inherited&gt;&gt;&#xa;&#xa;- transformation_matrix Eigen::Matrix4d&#xa;- angles Eigen::Vector3d&#xa;- children_list std::vector&lt;Math_Position_Object*&gt;&#xa;&#xa;+ defining_frame ReferenceFrame*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-24" vertex="1">
           <mxGeometry x="30" width="510" height="140" as="geometry">
             <mxRectangle width="510" height="140" as="alternateBounds" />
           </mxGeometry>
@@ -33,12 +33,12 @@
             <mxRectangle width="30" height="320" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="C-vyLk0tnHw3VtMMgP7b-29" value="+ ReferenceFrame(float = 0, float = 0, float = 0, float = 0, float = 0, float = 0)&#xa;+ set_ax(float) VOID&#xa;+ set_ay(float) VOID&#xa;+ set_az(float) VOID&#xa;+ set_ox(float) VOID &lt;&lt;overriden&gt;&gt;&#xa;+ set_oy(float) VOID &lt;&lt;overriden&gt;&gt;&#xa;+ set_oz(float) VOID &lt;&lt;overriden&gt;&gt;&#xa;&#xa;# get_placement_vector() const Eigan::Vector3d&amp; &lt;&lt;inherited&gt;&gt;&#xa;+ get_angles() const Eigen::Vector3d&amp;&#xa;+ get_transformation_matrix() const Eigen::Matrix4d&amp;&#xa;&#xa;+ add(ReferenceFrame&amp;)&#xa;+ add(VectorObject&amp;)&#xa;&#xa;+ get_expressed_in(ReferenceFrame&amp;) ReferenceFrame*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-27" vertex="1">
+        <mxCell id="C-vyLk0tnHw3VtMMgP7b-29" value="+ ReferenceFrame(float = 0, float = 0, float = 0, float = 0, float = 0, float = 0)&#xa;+ set_ax(float) VOID&#xa;+ set_ay(float) VOID&#xa;+ set_az(float) VOID&#xa;+ set_ox(float) VOID &lt;&lt;overriden&gt;&gt;&#xa;+ set_oy(float) VOID &lt;&lt;overriden&gt;&gt;&#xa;+ set_oz(float) VOID &lt;&lt;overriden&gt;&gt;&#xa;&#xa;+ get_placement_vector() const Eigan::Vector3d&amp; &lt;&lt;inherited&gt;&gt;&#xa;+ get_angles() const Eigen::Vector3d&amp;&#xa;+ get_transformation_matrix() const Eigen::Matrix4d&amp;&#xa;&#xa;+ add(ReferenceFrame&amp;)&#xa;+ add(VectorObject&amp;)&#xa;&#xa;+ get_expressed_in(ReferenceFrame&amp;) ReferenceFrame*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" parent="C-vyLk0tnHw3VtMMgP7b-27" vertex="1">
           <mxGeometry x="30" width="510" height="320" as="geometry">
             <mxRectangle width="510" height="320" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;" parent="1" source="okh86VpJrS4wdpOfNebr-8" target="okh86VpJrS4wdpOfNebr-15" edge="1">
+        <mxCell id="okh86VpJrS4wdpOfNebr-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;endSize=20;" parent="1" source="okh86VpJrS4wdpOfNebr-8" target="okh86VpJrS4wdpOfNebr-15" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="okh86VpJrS4wdpOfNebr-8" value="VectorObject" style="shape=table;startSize=40;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
@@ -54,7 +54,7 @@
             <mxRectangle width="30" height="140" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-11" value="- placement_vector Eigen::Vector3d &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ defining_frame ReferenceFrame*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" parent="okh86VpJrS4wdpOfNebr-9" vertex="1">
+        <mxCell id="okh86VpJrS4wdpOfNebr-11" value="# placement_vector Eigen::Vector3d &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ defining_frame ReferenceFrame*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" parent="okh86VpJrS4wdpOfNebr-9" vertex="1">
           <mxGeometry x="30" width="510" height="140" as="geometry">
             <mxRectangle width="510" height="140" as="alternateBounds" />
           </mxGeometry>
@@ -67,7 +67,7 @@
             <mxRectangle width="30" height="200" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="okh86VpJrS4wdpOfNebr-14" value="+ VectorObject(float = 0, float = 0, float = 0)&#xa;&#xa;+ set_ox(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_oy(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_oz(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;# get_placement_vector() const Eigan::Vector3d&amp; &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ get_transformed_vector() Eigen::Vector3d&#xa;+ get_expressed_in(ReferenceFrame&amp;) VectorObject*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" parent="okh86VpJrS4wdpOfNebr-12" vertex="1">
+        <mxCell id="okh86VpJrS4wdpOfNebr-14" value="+ VectorObject(float = 0, float = 0, float = 0)&#xa;&#xa;+ set_ox(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_oy(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_oz(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ get_placement_vector() const Eigan::Vector3d&amp; &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ get_transformed_vector() Eigen::Vector3d&#xa;+ get_expressed_in(ReferenceFrame&amp;) VectorObject*&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" parent="okh86VpJrS4wdpOfNebr-12" vertex="1">
           <mxGeometry x="30" width="510" height="200" as="geometry">
             <mxRectangle width="510" height="200" as="alternateBounds" />
           </mxGeometry>
@@ -104,7 +104,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="r-bQ3TE7wEd79o4w3r_l-1" value="Viewport" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
-          <mxGeometry x="-1070" y="610" width="540" height="290.0000000000002" as="geometry">
+          <mxGeometry x="1510" y="979" width="540" height="290.0000000000002" as="geometry">
             <mxRectangle x="20" y="120" width="140" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -135,7 +135,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="r-bQ3TE7wEd79o4w3r_l-8" value="Stage" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
-          <mxGeometry x="-488" y="610" width="540" height="290.0000000000002" as="geometry">
+          <mxGeometry x="1490" y="625" width="540" height="290.0000000000002" as="geometry">
             <mxRectangle x="20" y="120" width="140" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -163,6 +163,40 @@
         <mxCell id="r-bQ3TE7wEd79o4w3r_l-14" value="+ Stage()&#xa;&#xa;+ add(triangle&amp;) VOID&#xa;+ add(VectorObject&amp;) VOID&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-12">
           <mxGeometry x="30" width="510" height="140" as="geometry">
             <mxRectangle width="510" height="140" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;endSize=20;" edge="1" parent="1" source="r-bQ3TE7wEd79o4w3r_l-15" target="C-vyLk0tnHw3VtMMgP7b-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-15" value="Camera" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="609" width="540" height="500" as="geometry">
+            <mxRectangle x="20" y="120" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-16" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-15">
+          <mxGeometry y="30" width="540" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-17" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-16">
+          <mxGeometry width="30" height="140" as="geometry">
+            <mxRectangle width="30" height="140" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-18" value="# placement_vector Eigan::Vector3d &lt;&lt;inherited&gt;&gt;&#xa;&#xa;- transformation_matrix Eigen::Matrix4d &lt;&lt;inherited&gt;&gt;&#xa;- angles Eigen::Vector3d &lt;&lt;inherited&gt;&gt;&#xa;- children_list std::vector&lt;Math_Position_Object*&gt; &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ defining_frame ReferenceFrame* &lt;&lt;inherited&gt;&gt;&#xa;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;verticalAlign=top;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-16">
+          <mxGeometry x="30" width="510" height="140" as="geometry">
+            <mxRectangle width="510" height="140" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-19" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-15">
+          <mxGeometry y="170" width="540" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-20" value="" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-19">
+          <mxGeometry width="30" height="320" as="geometry">
+            <mxRectangle width="30" height="320" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r-bQ3TE7wEd79o4w3r_l-21" value="+ Camera(float = 0, float = 0, float = 0, float = 0, float = 0, float = 0)&#xa;+ set_ax(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_ay(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_az(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_ox(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_oy(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;+ set_oz(float) VOID &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ get_placement_vector() const Eigan::Vector3d&amp; &lt;&lt;inherited&gt;&gt;&#xa;+ get_angles() const Eigen::Vector3d&amp; &lt;&lt;inherited&gt;&gt;&#xa;+ get_transformation_matrix() const Eigen::Matrix4d&amp; &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ add(ReferenceFrame&amp;) &lt;&lt;inherited&gt;&gt;&#xa;+ add(VectorObject&amp;) &lt;&lt;inherited&gt;&gt;&#xa;&#xa;+ get_expressed_in(ReferenceFrame&amp;) ReferenceFrame* &lt;&lt;inherited&gt;&gt;&#xa;&#xa;&#xa;+ take_picture() array&lt;vector&lt;vector&lt;int&gt;&gt;, 3&gt;" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;verticalAlign=top;" vertex="1" parent="r-bQ3TE7wEd79o4w3r_l-19">
+          <mxGeometry x="30" width="510" height="320" as="geometry">
+            <mxRectangle width="510" height="320" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
       </root>
