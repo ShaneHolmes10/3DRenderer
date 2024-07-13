@@ -125,12 +125,27 @@ tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Vector_Object.cpp -o CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 
+tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/flags.make
+tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: ../src/Viewport.cpp
+tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o -MF CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o.d -o CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp
+
+tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.i"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp > CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
+
+tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.s"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp -o CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
+
 # Object files for target Bresenham_algorithm_1_Unit_Test
 Bresenham_algorithm_1_Unit_Test_OBJECTS = \
 "CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/Bresenham_algorithm_1_Unit_Test.cpp.o" \
 "CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o" \
 "CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o" \
-"CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o"
+"CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o" \
+"CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o"
 
 # External object files for target Bresenham_algorithm_1_Unit_Test
 Bresenham_algorithm_1_Unit_Test_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bres
 bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
+bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make
 bin/unit_tests/Bresenham_algorithm_1_Unit_Test: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../bin/unit_tests/Bresenham_algorithm_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/unit_tests/Bresenham_algorithm_1_Unit_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

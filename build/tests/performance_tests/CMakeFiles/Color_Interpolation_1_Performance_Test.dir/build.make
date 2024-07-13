@@ -125,12 +125,27 @@ tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.s"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Vector_Object.cpp -o CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.s
 
+tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/flags.make
+tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o: ../src/Viewport.cpp
+tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o -MF CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o.d -o CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp
+
+tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.i"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp > CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.i
+
+tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.s"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp -o CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.s
+
 # Object files for target Color_Interpolation_1_Performance_Test
 Color_Interpolation_1_Performance_Test_OBJECTS = \
 "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/Color_Interpolation_1_Performance_Test.cpp.o" \
 "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o" \
 "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o" \
-"CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.o"
+"CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.o" \
+"CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o"
 
 # External object files for target Color_Interpolation_1_Performance_Test
 Color_Interpolation_1_Performance_Test_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.o
+bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../../bin/performance_tests/Color_Interpolation_1_Performance_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/performance_tests/Color_Interpolation_1_Performance_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Color_Interpolation_1_Performance_Test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

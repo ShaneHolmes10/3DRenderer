@@ -1,32 +1,47 @@
-#include <Eigen/Dense>
+#include <SDL2/SDL.h>
 #include <iostream>
 
-#include "Testing_Utils.h"
-#include "Testing_Methods.h"
-#include "Reference_Frame.h"
-#include "Vector_Object.h"
+// Screen dimension constants
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
 
-
-
-
-// std::array<int, 3> start_1 = {237, 28, 36};
-// std::array<int, 3> end_1 = {0, 162, 232};
-// std::array<int, 3> start_1 = {34, 177, 76};
-
-
-int main() {
-    
-    int N = 14;
-    std::array<int, 3> start_1 = {0, 162, 232};
-    std::array<int, 3> end_1 = {34, 177, 76};
-
-    
-    std::vector<std::array<int, 3>> values = TestMeth::color_interpolation(start_1, end_1, N);
-
-    for(int x = 0; x < N-2; x++) {
-        std::cout << values[0][x] << ", " << values[1][x] << ", " << values[2][x] << "\n";
+int main(int argc, char* args[]) {
+    // Initialize SDL
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
+        return 1;
     }
+
+    // Create window
+    SDL_Window* window = SDL_CreateWindow("SDL Tutorial",
+                                          SDL_WINDOWPOS_UNDEFINED,
+                                          SDL_WINDOWPOS_UNDEFINED,
+                                          SCREEN_WIDTH,
+                                          SCREEN_HEIGHT,
+                                          SDL_WINDOW_SHOWN);
+    if (window == NULL) {
+        std::cerr << "Window could not be created! SDL_Error: " << SDL_GetError() << std::endl;
+        SDL_Quit();
+        return 1;
+    }
+
+    // Get window surface
+    SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
+
+    // Fill the surface white
+    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+
+    // Update the surface
+    SDL_UpdateWindowSurface(window);
+
+    // Wait for 5 seconds
+    SDL_Delay(5000);
+
+    // Destroy window
+    SDL_DestroyWindow(window);
+
+    // Quit SDL subsystems
+    SDL_Quit();
 
     return 0;
 }
-

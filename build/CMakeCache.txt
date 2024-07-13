@@ -245,6 +245,9 @@ PerformanceTests_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 PerformanceTests_SOURCE_DIR:STATIC=/home/shane/3DRenderer/3DRenderer/tests/performance_tests
 
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
+
 //Value Computed by CMake
 UnitTests_BINARY_DIR:STATIC=/home/shane/3DRenderer/3DRenderer/build/tests/unit_tests
 

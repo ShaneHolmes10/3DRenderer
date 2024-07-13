@@ -17,6 +17,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../tests/integration_tests/CMakeLists.txt"
   "../tests/performance_tests/CMakeLists.txt"
   "../tests/unit_tests/CMakeLists.txt"
+  "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"

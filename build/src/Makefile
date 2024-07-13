@@ -202,6 +202,30 @@ Vector_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Vector_Object.cpp.s
 .PHONY : Vector_Object.cpp.s
 
+Viewport.o: Viewport.cpp.o
+.PHONY : Viewport.o
+
+# target to build an object file
+Viewport.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Viewport.cpp.o
+.PHONY : Viewport.cpp.o
+
+Viewport.i: Viewport.cpp.i
+.PHONY : Viewport.i
+
+# target to preprocess a source file
+Viewport.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Viewport.cpp.i
+.PHONY : Viewport.cpp.i
+
+Viewport.s: Viewport.cpp.s
+.PHONY : Viewport.s
+
+# target to generate assembly for a file
+Viewport.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/Viewport.cpp.s
+.PHONY : Viewport.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -244,6 +268,9 @@ help:
 	@echo "... Vector_Object.o"
 	@echo "... Vector_Object.i"
 	@echo "... Vector_Object.s"
+	@echo "... Viewport.o"
+	@echo "... Viewport.i"
+	@echo "... Viewport.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o.d"
   "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o"
   "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o.d"
+  "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o"
+  "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.
