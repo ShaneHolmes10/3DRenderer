@@ -32,16 +32,54 @@ Viewport::Viewport(int w, int h)
 
 void Viewport::set_frame(std::array<std::vector<std::vector<int>>, 3> frame) {
 
+    
 
 }
 
 void Viewport::thread_action() {
     
-    int count = 10;
-    while(thread_life) {
-        std::cout << "Thread" << std::endl;
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    } 
+    // Create window
+    window = SDL_CreateWindow("SDL Tutorial",
+                                          SDL_WINDOWPOS_UNDEFINED,
+                                          SDL_WINDOWPOS_UNDEFINED,
+                                          width,
+                                          height,
+                                          SDL_WINDOW_SHOWN);
+    if (window == NULL) {
+        std::cerr << "Window could not be created! SDL_Error: " << SDL_GetError() << std::endl;
+        SDL_Quit();
+    }
+
+    // Get window surface
+    SDL_Surface* screenSurface = SDL_GetWindowSurface(window);
+
+    // Fill the surface white
+    SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+
+    // Update the surface
+    SDL_UpdateWindowSurface(window);
+
+
+    // Event handler
+    SDL_Event e;
+
+    // Main loop
+    while (thread_life) {
+        // Handle events on the queue
+        while (SDL_PollEvent(&e) != 0) {
+            // User requests quit
+            if (e.type == SDL_QUIT) {
+                thread_life = false;
+            }
+        }
+
+        std::cout << "In main thread" << std::endl;
+        // Fill the surface white again in case it's needed
+        SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+
+        // Update the surface
+        SDL_UpdateWindowSurface(window);
+    }
 
 }
 
@@ -54,6 +92,12 @@ bool Viewport::start() {
 
 bool Viewport::kill() {
     thread_life = false;
+    
+    // Destroy window
+    SDL_DestroyWindow(window);
+
+    // Quit SDL subsystems
+    SDL_Quit();
 
     return true;
 }

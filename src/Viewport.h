@@ -7,6 +7,7 @@
 #include <array>
 #include <thread>
 #include <chrono>
+#include <SDL2/SDL.h>
 
 class Viewport {
 private:
@@ -14,6 +15,8 @@ private:
     int height;
 
     std::thread handler_thread;
+
+    SDL_Window* window;
 
     std::array<std::vector<std::vector<int>>, 3> frame_current;
     std::array<std::vector<std::vector<int>>, 3> frame_buffer;

@@ -1,6 +1,22 @@
 #include <SDL2/SDL.h>
 #include <iostream>
+#include "Viewport.h"
 
+
+
+int main() {
+
+    std::cout << "Entering Main code \n";
+    Viewport v1;
+
+    v1.start();
+
+
+    return 0;
+}
+
+
+/*
 // Screen dimension constants
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
@@ -65,3 +81,5 @@ int main(int argc, char* args[]) {
 
     return 0;
 }
+
+*/
