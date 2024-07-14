@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/shane/3DRenderer/3DRenderer/tests/../libraries/eigen -I/home/shane/3DRenderer/3DRenderer/tests/integration_tests/../../libraries -I/home/shane/3DRenderer/3DRenderer/tests/integration_tests/../../src
+CXX_INCLUDES = -I/home/shane/3DRenderer/3DRenderer/tests/../libraries/eigen -I/home/shane/3DRenderer/3DRenderer/tests/integration_tests/../../libraries -I/home/shane/3DRenderer/3DRenderer/tests/integration_tests/../../src -I/usr/include/SDL2
 
 CXX_FLAGS = -std=gnu++14
 

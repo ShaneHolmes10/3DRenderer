@@ -34,8 +34,28 @@ int main(int argc, char* args[]) {
     // Update the surface
     SDL_UpdateWindowSurface(window);
 
-    // Wait for 5 seconds
-    SDL_Delay(5000);
+    // Event loop flag
+    bool quit = false;
+
+    // Event handler
+    SDL_Event e;
+
+    // Main loop
+    while (!quit) {
+        // Handle events on the queue
+        while (SDL_PollEvent(&e) != 0) {
+            // User requests quit
+            if (e.type == SDL_QUIT) {
+                quit = true;
+            }
+        }
+
+        // Fill the surface white again in case it's needed
+        SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0xFF, 0xFF, 0xFF));
+
+        // Update the surface
+        SDL_UpdateWindowSurface(window);
+    }
 
     // Destroy window
     SDL_DestroyWindow(window);
