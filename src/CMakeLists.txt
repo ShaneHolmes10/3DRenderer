@@ -16,3 +16,12 @@ foreach(LIBRARY_SRC ${LIBRARY_SOURCES})
     target_link_libraries(exec ${LIB_NAME})
 endforeach()
 
+# Find SDL2 package
+find_package(SDL2 REQUIRED)
+
+# Include SDL2 headers
+target_include_directories(exec PUBLIC ${SDL2_INCLUDE_DIRS})
+
+# Link SDL2 libraries
+target_link_libraries(exec ${SDL2_LIBRARIES})
+

@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/exec.dir/Math_Position_Object.cpp.o CMakeFiles/exec.dir/Reference_Frame.cpp.o CMakeFiles/exec.dir/Vector_Object.cpp.o CMakeFiles/exec.dir/Viewport.cpp.o CMakeFiles/exec.dir/main.cpp.o -o ../bin/exec 
+/usr/bin/c++ CMakeFiles/exec.dir/Math_Position_Object.cpp.o CMakeFiles/exec.dir/Reference_Frame.cpp.o CMakeFiles/exec.dir/Vector_Object.cpp.o CMakeFiles/exec.dir/Viewport.cpp.o CMakeFiles/exec.dir/main.cpp.o -o ../bin/exec  -L/usr/lib/x86_64-linux-gnu  -lSDL2 
