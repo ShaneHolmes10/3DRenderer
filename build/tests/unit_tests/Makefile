@@ -186,6 +186,20 @@ Vector_Object_1_Unit_Test/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build
 .PHONY : Vector_Object_1_Unit_Test/fast
 
+# Convenience name for target.
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule
+.PHONY : tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule
+
+# Convenience name for target.
+Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule
+.PHONY : Viewport_1_Unit_Test
+
+# fast build rule for target.
+Viewport_1_Unit_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build
+.PHONY : Viewport_1_Unit_Test/fast
+
 Bresenham_algorithm_1_Unit_Test.o: Bresenham_algorithm_1_Unit_Test.cpp.o
 .PHONY : Bresenham_algorithm_1_Unit_Test.o
 
@@ -306,6 +320,30 @@ Vector_Object_1_Unit_Test.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/Vector_Object_1_Unit_Test.cpp.s
 .PHONY : Vector_Object_1_Unit_Test.cpp.s
 
+Viewport_1_Unit_Test.o: Viewport_1_Unit_Test.cpp.o
+.PHONY : Viewport_1_Unit_Test.o
+
+# target to build an object file
+Viewport_1_Unit_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.o
+.PHONY : Viewport_1_Unit_Test.cpp.o
+
+Viewport_1_Unit_Test.i: Viewport_1_Unit_Test.cpp.i
+.PHONY : Viewport_1_Unit_Test.i
+
+# target to preprocess a source file
+Viewport_1_Unit_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.i
+.PHONY : Viewport_1_Unit_Test.cpp.i
+
+Viewport_1_Unit_Test.s: Viewport_1_Unit_Test.cpp.s
+.PHONY : Viewport_1_Unit_Test.s
+
+# target to generate assembly for a file
+Viewport_1_Unit_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.s
+.PHONY : Viewport_1_Unit_Test.cpp.s
+
 __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.o
 
@@ -316,6 +354,7 @@ __/__/src/Math_Position_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.cpp.o
 
 __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
@@ -328,6 +367,7 @@ __/__/src/Math_Position_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 .PHONY : __/__/src/Math_Position_Object.cpp.i
 
 __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
@@ -340,6 +380,7 @@ __/__/src/Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 .PHONY : __/__/src/Math_Position_Object.cpp.s
 
 __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
@@ -352,6 +393,7 @@ __/__/src/Reference_Frame.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 .PHONY : __/__/src/Reference_Frame.cpp.o
 
 __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
@@ -364,6 +406,7 @@ __/__/src/Reference_Frame.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 .PHONY : __/__/src/Reference_Frame.cpp.i
 
 __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
@@ -376,6 +419,7 @@ __/__/src/Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 .PHONY : __/__/src/Reference_Frame.cpp.s
 
 __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
@@ -388,6 +432,7 @@ __/__/src/Vector_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 .PHONY : __/__/src/Vector_Object.cpp.o
 
 __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
@@ -400,6 +445,7 @@ __/__/src/Vector_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 .PHONY : __/__/src/Vector_Object.cpp.i
 
 __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
@@ -412,6 +458,7 @@ __/__/src/Vector_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 .PHONY : __/__/src/Vector_Object.cpp.s
 
 __/__/src/Viewport.o: __/__/src/Viewport.cpp.o
@@ -424,6 +471,7 @@ __/__/src/Viewport.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 .PHONY : __/__/src/Viewport.cpp.o
 
 __/__/src/Viewport.i: __/__/src/Viewport.cpp.i
@@ -436,6 +484,7 @@ __/__/src/Viewport.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
 .PHONY : __/__/src/Viewport.cpp.i
 
 __/__/src/Viewport.s: __/__/src/Viewport.cpp.s
@@ -448,6 +497,7 @@ __/__/src/Viewport.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
 .PHONY : __/__/src/Viewport.cpp.s
 
 # Help Target
@@ -463,6 +513,7 @@ help:
 	@echo "... Eigen_Lib_Unit_Test"
 	@echo "... Reference_Frame_1_Unit_Test"
 	@echo "... Vector_Object_1_Unit_Test"
+	@echo "... Viewport_1_Unit_Test"
 	@echo "... Bresenham_algorithm_1_Unit_Test.o"
 	@echo "... Bresenham_algorithm_1_Unit_Test.i"
 	@echo "... Bresenham_algorithm_1_Unit_Test.s"
@@ -478,6 +529,9 @@ help:
 	@echo "... Vector_Object_1_Unit_Test.o"
 	@echo "... Vector_Object_1_Unit_Test.i"
 	@echo "... Vector_Object_1_Unit_Test.s"
+	@echo "... Viewport_1_Unit_Test.o"
+	@echo "... Viewport_1_Unit_Test.i"
+	@echo "... Viewport_1_Unit_Test.s"
 	@echo "... __/__/src/Math_Position_Object.o"
 	@echo "... __/__/src/Math_Position_Object.i"
 	@echo "... __/__/src/Math_Position_Object.s"

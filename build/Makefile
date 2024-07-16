@@ -195,6 +195,19 @@ Vector_Object_1_Unit_Test/fast:
 .PHONY : Vector_Object_1_Unit_Test/fast
 
 #=============================================================================
+# Target rules for targets named Viewport_1_Unit_Test
+
+# Build rule for target.
+Viewport_1_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Viewport_1_Unit_Test
+.PHONY : Viewport_1_Unit_Test
+
+# fast build rule for target.
+Viewport_1_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build
+.PHONY : Viewport_1_Unit_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Inte_Test
 
 # Build rule for target.
@@ -291,6 +304,7 @@ help:
 	@echo "... Reference_Frame_1_Unit_Test"
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test"
 	@echo "... Vector_Object_1_Unit_Test"
+	@echo "... Viewport_1_Unit_Test"
 	@echo "... exec"
 .PHONY : help
 

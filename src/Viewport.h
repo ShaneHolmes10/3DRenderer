@@ -8,27 +8,36 @@
 #include <thread>
 #include <chrono>
 #include <SDL2/SDL.h>
+#include <mutex> 
 
 class Viewport {
 private:
     int width;
     int height;
 
+    int x_loc;
+    int y_loc;
+
     std::thread handler_thread;
 
     SDL_Window* window;
+    SDL_Surface* screenSurface;
 
     std::array<std::vector<std::vector<int>>, 3> frame_current;
     std::array<std::vector<std::vector<int>>, 3> frame_buffer;
 
     bool thread_life;
 
+    // Mutexes for thread safety
+    std::mutex mutex_main_loop;
+    std::mutex mutex_thread_life;
+
     void thread_action();
 
 public:
-    Viewport(int w = 500, int h = 200);
+    Viewport(int w = 500, int h = 200, int x = SDL_WINDOWPOS_UNDEFINED, int y = SDL_WINDOWPOS_UNDEFINED);
 
-    void set_frame(std::array<std::vector<std::vector<int>>, 3> frame);
+    void set_frame_buffer(std::array<std::vector<std::vector<int>>, 3> frame);
     bool start();
     bool kill();
     bool alive();

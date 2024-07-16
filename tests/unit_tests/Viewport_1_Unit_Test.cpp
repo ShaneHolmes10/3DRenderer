@@ -20,13 +20,19 @@ We want to be able to update the current frame from the buffer to the current fr
 
 
 /*
-    
+    Test to see if the window was created
 */
 void test_1() {
 
-    Viewport v1();
+    Viewport v1;
+    v1.start();
 
+    std::string answer;
 
+    std::cout << "Did the window appear: ";
+    std::cin >> answer;
+
+    TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
 
 }
 

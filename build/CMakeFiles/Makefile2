@@ -178,6 +178,7 @@ tests/unit_tests/all: tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Tes
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/all
+tests/unit_tests/all: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all
 .PHONY : tests/unit_tests/all
 
 # Recursive "preinstall" directory target.
@@ -190,6 +191,7 @@ tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_T
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/clean
+tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/clean
 .PHONY : tests/unit_tests/clean
 
 #=============================================================================
@@ -199,7 +201,7 @@ tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.di
 src/CMakeFiles/exec.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=67,68,69,70,71,72 "Built target exec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=73,74,75,76,77,78 "Built target exec"
 .PHONY : src/CMakeFiles/exec.dir/all
 
 # Build rule for subdir invocation for target.
@@ -347,6 +349,32 @@ Vector_Object_1_Unit_Test: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test
 tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/clean
 .PHONY : tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/clean
+
+#=============================================================================
+# Target rules for target tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir
+
+# All Build rule for target.
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=67,68,69,70,71,72 "Built target Viewport_1_Unit_Test"
+.PHONY : tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
+.PHONY : tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule
+
+# Convenience name for target.
+Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/rule
+.PHONY : Viewport_1_Unit_Test
+
+# clean rule for target.
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/clean
+.PHONY : tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/clean
 
 #=============================================================================
 # Target rules for target tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir
