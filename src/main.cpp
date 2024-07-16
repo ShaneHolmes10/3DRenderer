@@ -121,11 +121,11 @@ int main() {
 
 int main() {
 
-    std::cout << "Entering Main code \n";
     Viewport v1;
-
     v1.start();
-    std::cout << "Exiting Main Code \n";
+
+    Viewport v2(600, 400, 0, 0);
+    v2.start();
 
 
     return 0;

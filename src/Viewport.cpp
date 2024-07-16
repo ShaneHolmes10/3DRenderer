@@ -6,10 +6,12 @@
 #include <SDL2/SDL.h>
 
 
-Viewport::Viewport(int w, int h) 
+Viewport::Viewport(int w, int h, int x, int y) 
     : thread_life(false),
     width(w),
     height(h),
+    x_loc(x),
+    y_loc(y),
     window(nullptr),
     screenSurface(nullptr) {
 
@@ -43,8 +45,8 @@ void Viewport::thread_action() {
     
     // Create window
     window = SDL_CreateWindow("SDL Tutorial",
-                                          SDL_WINDOWPOS_UNDEFINED,
-                                          SDL_WINDOWPOS_UNDEFINED,
+                                          x_loc,
+                                          y_loc,
                                           width,
                                           height,
                                           SDL_WINDOW_SHOWN);
