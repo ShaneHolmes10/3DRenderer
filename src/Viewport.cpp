@@ -1,6 +1,8 @@
 
 
 
+
+
 #include "Viewport.h"
 #include <iostream>
 #include <SDL2/SDL.h>
@@ -14,6 +16,7 @@ Viewport::Viewport(int w, int h, int x, int y)
     y_loc(y),
     window(nullptr),
     screenSurface(nullptr) {
+
 
     // Initialize frame_current and frame_buffer with zeros
     for (auto& channel : frame_current) {
@@ -93,9 +96,6 @@ void Viewport::thread_action() {
 
 
     }
-
-    
-
 }
 
 bool Viewport::start() {

@@ -519,4 +519,6 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.o:
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
  /usr/include/c++/11/mutex /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h
+ /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/atomic \
+ /usr/include/c++/11/bits/atomic_base.h \
+ /usr/include/c++/11/bits/atomic_lockfree_defines.h

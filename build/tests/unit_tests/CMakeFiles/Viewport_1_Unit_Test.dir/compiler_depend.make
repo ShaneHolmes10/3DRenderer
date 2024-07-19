@@ -599,7 +599,10 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.o:
   /usr/include/SDL2/SDL_misc.h \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/bits/std_mutex.h \
-  /usr/include/c++/11/bits/unique_lock.h
+  /usr/include/c++/11/bits/unique_lock.h \
+  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h
 
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o: ../src/Math_Position_Object.cpp \
   /usr/include/stdc-predef.h \
@@ -2278,6 +2281,9 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: .
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
+  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
   /usr/include/c++/11/ios \
@@ -2308,6 +2314,8 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: .
 ../src/Math_Position_Object.h:
 
 ../src/Math_Position_Object.cpp:
+
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
 /usr/include/c++/11/bits/unique_lock.h:
 
@@ -2565,6 +2573,8 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: .
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmavlintrin.h:
 
+/usr/include/c++/11/bits/atomic_base.h:
+
 /usr/include/c++/11/bits/random.tcc:
 
 /usr/include/c++/11/iostream:
@@ -2586,6 +2596,8 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: .
 /usr/include/c++/11/bits/ptr_traits.h:
 
 /usr/include/stdint.h:
+
+/usr/include/c++/11/atomic:
 
 ../libraries/eigen/Eigen/src/Core/Transpositions.h:
 

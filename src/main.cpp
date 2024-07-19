@@ -116,17 +116,37 @@ int main() {
 #include <SDL2/SDL.h>
 #include <iostream>
 #include "Viewport.h"
-
+#include <chrono>
 
 
 int main() {
 
-    Viewport v1;
-    v1.start();
+    int width = 600;
+    int height = 400;
 
-    Viewport v2(600, 400, 0, 0);
-    v2.start();
+    // Initialize the frame buffer with proper dimensions
+    std::array<std::vector<std::vector<int>>, 3> frame;
+    for (auto& channel : frame) {
+        channel.resize(width);
+        for (auto& row : channel) {
+            row.resize(height, 0); // Initialize all values to 0
+        }
+    }
 
+    // Set the image to red
+    for (int x = 0; x < width; ++x) {
+        for (int y = 0; y < height; ++y) {
+            frame[0][x][y] = 255; // Red channel
+            frame[1][x][y] = 0;   // Green channel
+            frame[2][x][y] = 0;   // Blue channel
+        }
+    }
+
+    //Viewport v1;
+    //v1.start();
+
+    //Viewport v2;
+    //v2.start();
 
     return 0;
 }

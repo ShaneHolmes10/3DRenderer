@@ -9,6 +9,7 @@
 #include <chrono>
 #include <SDL2/SDL.h>
 #include <mutex> 
+#include <atomic>
 
 class Viewport {
 private:
@@ -26,10 +27,8 @@ private:
     std::array<std::vector<std::vector<int>>, 3> frame_current;
     std::array<std::vector<std::vector<int>>, 3> frame_buffer;
 
-    bool thread_life;
+    std::atomic<bool> thread_life;
 
-    // Mutexes for thread safety
-    std::mutex mutex_main_loop;
     std::mutex mutex_thread_life;
 
     void thread_action();

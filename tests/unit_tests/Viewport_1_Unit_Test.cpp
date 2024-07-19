@@ -71,23 +71,27 @@ void test_3() {
 }
 
 /*
-    Verify that the alive method workd
+    Verify that the alive method worked, Because they're on different threads when we check alive, it may not actually be alive yet; so we must delay
 */
 void test_4() {
 
     Viewport v1(800, 600, 0, 0);
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     
     TestUtils::pass_or_fail_printout(!v1.alive());
 
 }
 
 /*
-    Verify that the alive method workd
+    Verify that the alive method worked, Because they're on different threads when we check alive, it may not actually be alive yet; so we must delay
 */
 void test_5() {
 
     Viewport v1(800, 600, 0, 0);
     v1.start();
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     
     TestUtils::pass_or_fail_printout(v1.alive());
 
