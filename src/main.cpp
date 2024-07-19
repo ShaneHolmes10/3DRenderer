@@ -1,47 +1,65 @@
 #include <SFML/Graphics.hpp>
-#include <vector>
-#include <memory>
-#include <iostream>
+#include <string>
 
-void runMultipleWindows() {
-    std::vector<std::unique_ptr<sf::RenderWindow>> windows;
+class WindowManager {
+public:
+    WindowManager(int width, int height, const std::string& title)
+        : m_window(sf::VideoMode(width, height), title), m_title(title) {
+        // Initialize the window or other settings if needed
+        m_window.setVerticalSyncEnabled(true);
+    }
 
-    // Create two windows
-    windows.emplace_back(std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "Window 1"));
-    windows.emplace_back(std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "Window 2"));
+    void setTitle(const std::string& title) {
+        m_window.setTitle(title);
+    }
 
-    while (!windows.empty()) {
-        for (auto it = windows.begin(); it != windows.end();) {
-            sf::RenderWindow& window = **it;
+    void setSize(int width, int height) {
+        m_window.setSize(sf::Vector2u(width, height));
+    }
 
-            if (!window.isOpen()) {
-                it = windows.erase(it); // Remove closed window
-                continue;
+    void draw(const sf::Drawable& drawable) {
+        m_window.clear(sf::Color::Black);
+        m_window.draw(drawable);
+        m_window.display();
+    }
+
+    void handleEvents() {
+        sf::Event event;
+        while (m_window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                m_window.close();
             }
-
-            sf::Event event;
-            while (window.pollEvent(event)) {
-                if (event.type == sf::Event::Closed) {
-                    window.close();
-                }
-            }
-
-            window.clear(sf::Color::Black);
-
-            // Draw a circle
-            sf::CircleShape shape(50);
-            shape.setFillColor(sf::Color::Green);
-            shape.setPosition(375, 275);
-            window.draw(shape);
-
-            window.display();
-            ++it;
+            // Handle other events if needed
         }
     }
-}
+
+    bool isOpen() const {
+        return m_window.isOpen();
+    }
+
+private:
+    sf::RenderWindow m_window;
+    std::string m_title;
+};
 
 int main() {
-    runMultipleWindows();
+    WindowManager window1(800, 600, "Window 1");
+    WindowManager window2(1024, 768, "Window 2");
+
+    sf::CircleShape shape(50);
+    shape.setFillColor(sf::Color::Green);
+
+    while (window1.isOpen() || window2.isOpen()) {
+        if (window1.isOpen()) {
+            window1.handleEvents();
+            window1.draw(shape);
+        }
+
+        if (window2.isOpen()) {
+            window2.handleEvents();
+            window2.draw(shape);
+        }
+    }
 
     return 0;
 }
