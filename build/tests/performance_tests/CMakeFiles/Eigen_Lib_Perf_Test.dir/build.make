@@ -156,6 +156,9 @@ bin/performance_tests/Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Ei
 bin/performance_tests/Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.o
 bin/performance_tests/Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Viewport.cpp.o
 bin/performance_tests/Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make
+bin/performance_tests/Eigen_Lib_Perf_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/performance_tests/Eigen_Lib_Perf_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+bin/performance_tests/Eigen_Lib_Perf_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/performance_tests/Eigen_Lib_Perf_Test: tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/performance_tests/Eigen_Lib_Perf_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Eigen_Lib_Perf_Test.dir/link.txt --verbose=$(VERBOSE)

@@ -18,10 +18,18 @@ endforeach()
 
 # Find SDL2 package
 find_package(SDL2 REQUIRED)
-
 # Include SDL2 headers
 target_include_directories(exec PUBLIC ${SDL2_INCLUDE_DIRS})
-
 # Link SDL2 libraries
 target_link_libraries(exec ${SDL2_LIBRARIES})
+
+
+# Find SFML package
+find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
+# Include SFML headers
+target_include_directories(exec PUBLIC ${SFML_INCLUDE_DIR})
+# Link SFML libraries
+target_link_libraries(exec sfml-system sfml-window sfml-graphics)
+
+
 

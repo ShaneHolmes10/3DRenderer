@@ -156,6 +156,9 @@ bin/unit_tests/Viewport_2_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_2_Unit
 bin/unit_tests/Viewport_2_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 bin/unit_tests/Viewport_2_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Viewport.cpp.o
 bin/unit_tests/Viewport_2_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/build.make
+bin/unit_tests/Viewport_2_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/unit_tests/Viewport_2_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+bin/unit_tests/Viewport_2_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/unit_tests/Viewport_2_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/unit_tests/Viewport_2_Unit_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Viewport_2_Unit_Test.dir/link.txt --verbose=$(VERBOSE)

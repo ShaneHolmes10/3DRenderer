@@ -156,6 +156,9 @@ bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: test
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make
+bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/link.txt --verbose=$(VERBOSE)

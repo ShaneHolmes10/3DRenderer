@@ -1,3 +1,56 @@
+#include <SFML/Graphics.hpp>
+#include <vector>
+#include <memory>
+#include <iostream>
+
+void runMultipleWindows() {
+    std::vector<std::unique_ptr<sf::RenderWindow>> windows;
+
+    // Create two windows
+    windows.emplace_back(std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "Window 1"));
+    windows.emplace_back(std::make_unique<sf::RenderWindow>(sf::VideoMode(800, 600), "Window 2"));
+
+    while (!windows.empty()) {
+        for (auto it = windows.begin(); it != windows.end();) {
+            sf::RenderWindow& window = **it;
+
+            if (!window.isOpen()) {
+                it = windows.erase(it); // Remove closed window
+                continue;
+            }
+
+            sf::Event event;
+            while (window.pollEvent(event)) {
+                if (event.type == sf::Event::Closed) {
+                    window.close();
+                }
+            }
+
+            window.clear(sf::Color::Black);
+
+            // Draw a circle
+            sf::CircleShape shape(50);
+            shape.setFillColor(sf::Color::Green);
+            shape.setPosition(375, 275);
+            window.draw(shape);
+
+            window.display();
+            ++it;
+        }
+    }
+}
+
+int main() {
+    runMultipleWindows();
+
+    return 0;
+}
+
+
+
+
+
+
 
 /*
 
@@ -112,7 +165,7 @@ int main() {
 
 
 
-/**/
+/*
 #include <SDL2/SDL.h>
 #include <iostream>
 #include "Viewport.h"
@@ -150,3 +203,6 @@ int main() {
 
     return 0;
 }
+*/
+
+

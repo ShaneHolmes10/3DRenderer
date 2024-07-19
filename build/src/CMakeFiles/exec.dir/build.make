@@ -156,6 +156,9 @@ bin/exec: src/CMakeFiles/exec.dir/Vector_Object.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/Viewport.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/main.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/build.make
+bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/exec: src/CMakeFiles/exec.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../bin/exec"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/exec.dir/link.txt --verbose=$(VERBOSE)

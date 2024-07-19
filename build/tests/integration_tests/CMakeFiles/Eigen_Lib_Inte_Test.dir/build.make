@@ -156,6 +156,9 @@ bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Ei
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Vector_Object.cpp.o
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Viewport.cpp.o
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/integration_tests/Eigen_Lib_Inte_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Eigen_Lib_Inte_Test.dir/link.txt --verbose=$(VERBOSE)

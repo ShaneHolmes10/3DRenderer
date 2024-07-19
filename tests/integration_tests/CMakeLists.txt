@@ -6,6 +6,9 @@ project(IntegrationTests)
 
 find_package(SDL2 REQUIRED)
 
+# Find SFML package
+find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
+
 # Glob all integration test source files in this directory
 file(GLOB_RECURSE TEST_SOURCES "*.cpp")
 
@@ -13,7 +16,7 @@ file(GLOB_RECURSE TEST_SOURCES "*.cpp")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../libraries)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../src)
 include_directories(${SDL2_INCLUDE_DIRS})
-
+include_directories(${SFML_INCLUDE_DIR})
 
 # Optionally, link libraries from libraries directory
 file(GLOB LIBRARY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/*.cpp")
@@ -34,7 +37,7 @@ foreach(test_source ${TEST_SOURCES})
     add_executable(${test_name} ${test_source} ${SRC_SOURCES})
 
     # Link the executable with the necessary libraries
-    target_link_libraries(${test_name} ${LIBRARY_SOURCES} ${SDL2_LIBRARIES})
+    target_link_libraries(${test_name} ${LIBRARY_SOURCES} ${SDL2_LIBRARIES} sfml-system sfml-window sfml-graphics)
 
     # Set the output directory for the executable
     set_target_properties(${test_name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TEST_OUTPUT_DIR})
