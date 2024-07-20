@@ -1986,35 +1986,18 @@ src/CMakeFiles/exec.dir/main.cpp.o: ../src/main.cpp \
   /usr/include/SFML/Graphics/Sprite.hpp \
   /usr/include/SFML/Graphics/Text.hpp \
   /usr/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/include/c++/11/memory \
-  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/11/bits/align.h \
-  /usr/include/c++/11/bit \
-  /usr/include/c++/11/bits/shared_ptr.h \
-  /usr/include/c++/11/bits/shared_ptr_base.h \
-  /usr/include/c++/11/bits/allocated_ptr.h \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/bits/std_thread.h \
   /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/ext/concurrence.h \
-  /usr/include/c++/11/bits/shared_ptr_atomic.h \
-  /usr/include/c++/11/bits/atomic_base.h \
-  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/11/backward/auto_ptr.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc
 
-
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/11/ext/concurrence.h:
-
-/usr/include/c++/11/bits/shared_ptr.h:
-
-/usr/include/c++/11/bits/align.h:
-
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/11/memory:
 
 /usr/include/SFML/Graphics/VertexBuffer.hpp:
 
@@ -2128,8 +2111,6 @@ src/CMakeFiles/exec.dir/main.cpp.o: ../src/main.cpp \
 
 /usr/include/SFML/System/InputStream.hpp:
 
-/usr/include/c++/11/bit:
-
 /usr/include/SFML/System/FileInputStream.hpp:
 
 /usr/include/SFML/System/Time.hpp:
@@ -2198,8 +2179,6 @@ src/CMakeFiles/exec.dir/main.cpp.o: ../src/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/prfchwintrin.h:
 
-/usr/include/c++/11/bits/shared_ptr_base.h:
-
 /usr/include/SFML/Graphics/PrimitiveType.hpp:
 
 /usr/include/SFML/System/Err.hpp:
@@ -2251,8 +2230,6 @@ src/CMakeFiles/exec.dir/main.cpp.o: ../src/main.cpp \
 /usr/include/string.h:
 
 /usr/include/c++/11/cstring:
-
-/usr/include/c++/11/backward/auto_ptr.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
@@ -3325,8 +3302,6 @@ src/CMakeFiles/exec.dir/main.cpp.o: ../src/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512erintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
-
-/usr/include/c++/11/bits/allocated_ptr.h:
 
 /usr/include/assert.h:
 

@@ -1,68 +1,66 @@
 #include <SFML/Graphics.hpp>
-#include <string>
+#include <thread>
+#include <iostream>
 
-class WindowManager {
+class Window {
 public:
-    WindowManager(int width, int height, const std::string& title)
-        : m_window(sf::VideoMode(width, height), title), m_title(title) {
-        // Initialize the window or other settings if needed
-        m_window.setVerticalSyncEnabled(true);
+    Window(int width, int height, const std::string& title, int x = 0, int y = 0)
+        : window(sf::VideoMode(width, height), title, sf::Style::Default)
+        , thread(&Window::run, this) {
+        window.setPosition(sf::Vector2i(x, y));
     }
 
-    void setTitle(const std::string& title) {
-        m_window.setTitle(title);
-    }
-
-    void setSize(int width, int height) {
-        m_window.setSize(sf::Vector2u(width, height));
-    }
-
-    void draw(const sf::Drawable& drawable) {
-        m_window.clear(sf::Color::Black);
-        m_window.draw(drawable);
-        m_window.display();
-    }
-
-    void handleEvents() {
-        sf::Event event;
-        while (m_window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                m_window.close();
-            }
-            // Handle other events if needed
+    ~Window() {
+        if (thread.joinable()) {
+            window.close();
+            thread.join();
         }
-    }
-
-    bool isOpen() const {
-        return m_window.isOpen();
     }
 
 private:
-    sf::RenderWindow m_window;
-    std::string m_title;
+    void run() {
+        window.setActive(true); // Ensure context is active for this thread
+
+        while (window.isOpen()) {
+            sf::Event event;
+            while (window.pollEvent(event)) {
+                if (event.type == sf::Event::Closed) {
+                    window.close();
+                }
+            }
+
+            window.clear(sf::Color::Black);
+
+            // Example drawing
+            sf::CircleShape shape(50);
+            shape.setFillColor(sf::Color::Green);
+            shape.setPosition(375, 275);
+            window.draw(shape);
+
+            window.display();
+        }
+    }
+
+    sf::RenderWindow window;
+    std::thread thread;
 };
 
 int main() {
-    WindowManager window1(800, 600, "Window 1");
-    WindowManager window2(1024, 768, "Window 2");
+    try {
+        Window window1(800, 600, "Window 1", 100, 100);
+        Window window2(800, 600, "Window 2", 950, 100);
 
-    sf::CircleShape shape(50);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window1.isOpen() || window2.isOpen()) {
-        if (window1.isOpen()) {
-            window1.handleEvents();
-            window1.draw(shape);
-        }
-
-        if (window2.isOpen()) {
-            window2.handleEvents();
-            window2.draw(shape);
-        }
+        // Let windows run for some time
+        std::this_thread::sleep_for(std::chrono::seconds(10));
+    } catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     return 0;
 }
+
+
+
 
 
 
