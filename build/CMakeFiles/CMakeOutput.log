@@ -447,3 +447,99 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_45485/fast && gmake[1]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_45485.dir/build.make CMakeFiles/cmTC_45485.dir/build
+gmake[2]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_45485.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -o CMakeFiles/cmTC_45485.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_45485
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45485.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_45485.dir/CheckFunctionExists.c.o -o cmTC_45485  /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+gmake[2]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e7537/fast && gmake[1]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_e7537.dir/build.make CMakeFiles/cmTC_e7537.dir/build
+gmake[2]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7537.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -o CMakeFiles/cmTC_e7537.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e7537
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7537.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_e7537.dir/CheckFunctionExists.c.o -o cmTC_e7537 
+gmake[2]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8a599/fast && gmake[1]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_8a599.dir/build.make CMakeFiles/cmTC_8a599.dir/build
+gmake[2]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8a599.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect -o CMakeFiles/cmTC_8a599.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8a599
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8a599.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_8a599.dir/CheckFunctionExists.c.o -o cmTC_8a599 
+gmake[2]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fe454/fast && gmake[1]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_fe454.dir/build.make CMakeFiles/cmTC_fe454.dir/build
+gmake[2]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe454.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove -o CMakeFiles/cmTC_fe454.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fe454
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe454.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_fe454.dir/CheckFunctionExists.c.o -o cmTC_fe454 
+gmake[2]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9a752/fast && gmake[1]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_9a752.dir/build.make CMakeFiles/cmTC_9a752.dir/build
+gmake[2]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a752.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat -o CMakeFiles/cmTC_9a752.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9a752
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a752.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_9a752.dir/CheckFunctionExists.c.o -o cmTC_9a752 
+gmake[2]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_60284/fast && gmake[1]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+/usr/bin/gmake  -f CMakeFiles/cmTC_60284.dir/build.make CMakeFiles/cmTC_60284.dir/build
+gmake[2]: Entering directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_60284.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber -o CMakeFiles/cmTC_60284.dir/CheckFunctionExists.c.o -c /usr/share/cmake-3.22/Modules/CheckFunctionExists.c
+Linking C executable cmTC_60284
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_60284.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber CMakeFiles/cmTC_60284.dir/CheckFunctionExists.c.o -o cmTC_60284  -lICE 
+gmake[2]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+gmake[1]: Leaving directory '/home/shane/3DRenderer/3DRenderer/build/CMakeFiles/CMakeTmp'
+
+
+

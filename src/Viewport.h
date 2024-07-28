@@ -7,9 +7,9 @@
 #include <array>
 #include <thread>
 #include <chrono>
-#include <SDL2/SDL.h>
 #include <mutex> 
 #include <atomic>
+#include <SDL2/SDL.h>
 
 class Viewport {
 private:

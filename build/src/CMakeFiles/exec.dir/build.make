@@ -157,6 +157,10 @@ bin/exec: src/CMakeFiles/exec.dir/Viewport.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/main.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/build.make
 bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/exec: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/exec: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/exec: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/exec: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/exec: src/CMakeFiles/exec.dir/link.txt

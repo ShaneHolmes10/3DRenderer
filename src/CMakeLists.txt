@@ -31,5 +31,10 @@ target_include_directories(exec PUBLIC ${SFML_INCLUDE_DIR})
 # Link SFML libraries
 target_link_libraries(exec sfml-system sfml-window sfml-graphics)
 
-
+# Find X11 package
+find_package(X11 REQUIRED)
+# Include X11 headers
+target_include_directories(exec PUBLIC ${X11_INCLUDE_DIR})
+# Link X11 libraries
+target_link_libraries(exec ${X11_LIBRARIES})
 

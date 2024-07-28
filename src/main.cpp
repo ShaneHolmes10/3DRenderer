@@ -1,3 +1,281 @@
+
+
+
+#include <SFML/Graphics.hpp>
+#include <thread>
+#include <iostream>
+#include <X11/Xlib.h> // Include X11 header
+
+class WindowManager { 
+private:
+
+    int width;
+    int height;
+    int x_pos;
+    int y_pos;
+
+    std::thread windowThread;
+
+    void runWindow() {
+        // Create a window with a size of 800x600 pixels
+        sf::RenderWindow window(sf::VideoMode(width, height), "SFML Window");
+
+        window.setPosition(sf::Vector2i(x_pos, y_pos));
+
+        // Create a circle shape with a radius of 50 pixels
+        sf::CircleShape circle(50);
+
+        // Set the fill color to green
+        circle.setFillColor(sf::Color::Green);
+
+        // Set the position of the circle in the window
+        circle.setPosition(375, 275); // Centered in the window
+
+        // Main loop
+        while (window.isOpen()) {
+            sf::Event event;
+            while (window.pollEvent(event)) {
+                // Close the window if the user closes it
+                if (event.type == sf::Event::Closed) {
+                    window.close();
+                }
+            }
+
+            // Clear the window with a black color
+            window.clear(sf::Color::Black);
+
+            // Draw the circle
+            window.draw(circle);
+
+            // Display the contents of the window
+            window.display();
+        }
+    }
+
+public:
+    WindowManager(int w, int h, int x, int y) 
+        : width(w),
+          height(h),
+          x_pos(x),
+          y_pos(y) {
+
+    };
+
+    void start() {
+        // Start the thread with the member function
+        windowThread = std::thread(&WindowManager::runWindow, this);
+    }
+
+    void join() {
+        if (windowThread.joinable()) {
+            windowThread.join();
+        }
+    }
+};
+
+int main() {
+    // Initialize X11 threading system
+    XInitThreads();
+
+    WindowManager w1(800, 600, 0, 0);
+    WindowManager w2(600, 400, 800, 0);
+
+    w1.start();
+    w2.start();
+
+    w1.join();
+    w2.join();
+
+    return 0;
+}
+
+
+
+/*
+#include <SFML/Graphics.hpp>
+#include <thread>
+#include <iostream>
+#include <X11/Xlib.h> // Include X11 headers for XInitThreads
+
+// Function to initialize X11 threading
+void initializeX11() {
+    // Call XInitThreads() to initialize X11 threading support
+    XInitThreads();
+}
+
+// Function to create and manage a single window
+void runWindow(const std::string& title, int x, int y) {
+    // Initialize X11 threading
+    initializeX11();
+
+    // Create a window with a size of 800x600 pixels
+    sf::RenderWindow window(sf::VideoMode(800, 600), title);
+
+    // Set the position of the window
+    window.setPosition(sf::Vector2i(x, y));
+
+    // Create a circle shape with a radius of 50 pixels
+    sf::CircleShape circle(50);
+
+    // Set the fill color to green
+    circle.setFillColor(sf::Color::Green);
+
+    // Set the position of the circle in the window
+    circle.setPosition(375, 275); // Centered in the window
+
+    // Main loop
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            // Close the window if the user closes it
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+        }
+
+        // Clear the window with a black color
+        window.clear(sf::Color::Black);
+
+        // Draw the circle
+        window.draw(circle);
+
+        // Display the contents of the window
+        window.display();
+    }
+}
+
+int main() {
+    // Start two threads for two windows
+    std::thread windowThread1(runWindow, "SFML Window 1", 100, 100);
+    std::thread windowThread2(runWindow, "SFML Window 2", 950, 100);
+
+    // Wait for both threads to finish
+    windowThread1.join();
+    windowThread2.join();
+
+    return 0;
+}
+*/
+
+
+
+/*
+#include <SFML/Graphics.hpp>
+#include <thread>
+#include <iostream>
+
+class WindowManager { 
+private:
+    std::thread windowThread;
+
+    void runWindow() {
+        // Create a window with a size of 800x600 pixels
+        sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
+
+        // Create a circle shape with a radius of 50 pixels
+        sf::CircleShape circle(50);
+
+        // Set the fill color to green
+        circle.setFillColor(sf::Color::Green);
+
+        // Set the position of the circle in the window
+        circle.setPosition(375, 275); // Centered in the window
+
+        // Main loop
+        while (window.isOpen()) {
+            sf::Event event;
+            while (window.pollEvent(event)) {
+                // Close the window if the user closes it
+                if (event.type == sf::Event::Closed) {
+                    window.close();
+                }
+            }
+
+            // Clear the window with a black color
+            window.clear(sf::Color::Black);
+
+            // Draw the circle
+            window.draw(circle);
+
+            // Display the contents of the window
+            window.display();
+        }
+    }
+
+public:
+    WindowManager() = default;
+
+    void start() {
+        // Start the thread with the member function
+        windowThread = std::thread(&WindowManager::runWindow, this);
+    }
+
+    void join() {
+        if (windowThread.joinable()) {
+            windowThread.join();
+        }
+    }
+};
+
+int main() {
+    WindowManager w1;
+    WindowManager w2;
+
+    w1.start();
+    w2.start();
+
+
+    w1.join();
+    w2.join();
+
+    return 0;
+}
+*/
+
+
+
+/*
+#include <SFML/Graphics.hpp>
+
+int main() {
+    // Create a window with a size of 800x600 pixels
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
+
+    // Create a circle shape with a radius of 50 pixels
+    sf::CircleShape circle(50);
+    
+    // Set the fill color to green
+    circle.setFillColor(sf::Color::Green);
+    
+    // Set the position of the circle in the window
+    circle.setPosition(375, 275); // Centered in the window
+
+    // Main loop
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            // Close the window if the user closes it
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+        }
+
+        // Clear the window with a black color
+        window.clear(sf::Color::Black);
+
+        // Draw the circle
+        window.draw(circle);
+
+        // Display the contents of the window
+        window.display();
+    }
+
+    return 0;
+}
+*/
+
+
+/*
 #include <SFML/Graphics.hpp>
 #include <thread>
 #include <iostream>
@@ -48,7 +326,7 @@ private:
 int main() {
     try {
         Window window1(800, 600, "Window 1", 100, 100);
-        Window window2(800, 600, "Window 2", 950, 100);
+        //Window window2(800, 600, "Window 2", 950, 100);
 
         // Let windows run for some time
         std::this_thread::sleep_for(std::chrono::seconds(10));
@@ -59,166 +337,5 @@ int main() {
     return 0;
 }
 
-
-
-
-
-
-
-
-
-
-/*
-
-#include <iostream>
-#include <thread>
-#include <atomic>
-#include <mutex>
-#include <condition_variable>
-#include <SDL2/SDL.h>
-
-std::atomic<bool> gRunning(true); // Global atomic variable to control the main loop
-std::mutex gMutex; // Mutex for synchronization
-std::condition_variable gCV; // Condition variable for synchronization
-
-// Function to handle the SDL window and rendering
-void sdlThreadFunc() {
-    // Initialize SDL
-    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        std::cerr << "SDL could not initialize! SDL_Error: " << SDL_GetError() << std::endl;
-        gRunning = false;
-        return;
-    }
-
-    // Create a window
-    SDL_Window* window = SDL_CreateWindow("SDL White Screen",
-                                          SDL_WINDOWPOS_UNDEFINED,
-                                          SDL_WINDOWPOS_UNDEFINED,
-                                          640, 480,
-                                          SDL_WINDOW_SHOWN);
-    if (window == nullptr) {
-        std::cerr << "Window could not be created! SDL_Error: " << SDL_GetError() << std::endl;
-        gRunning = false;
-        SDL_Quit();
-        return;
-    }
-
-    // Create a renderer for the window
-    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    if (renderer == nullptr) {
-        std::cerr << "Renderer could not be created! SDL_Error: " << SDL_GetError() << std::endl;
-        gRunning = false;
-        SDL_DestroyWindow(window);
-        SDL_Quit();
-        return;
-    }
-
-    // Main rendering loop
-    while (gRunning) {
-        // Handle events
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                gRunning = false; // Exit the main loop when the window is closed
-                break;
-            }
-        }
-
-        // Set render draw color to white (255, 255, 255)
-        SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-        SDL_RenderClear(renderer);
-        SDL_RenderPresent(renderer);
-
-        // Delay to manage CPU usage
-        SDL_Delay(10);
-    }
-
-    // Cleanup
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-}
-
-int main() {
-    // Create a thread for SDL operations
-    std::thread sdlThreadObj(sdlThreadFunc);
-
-    // Main application loop (not blocking SDL operations)
-    for(int x = 0; x < 100; x++) {
-        // Example of work done in the main thread
-        std::cout << "Hello from the main thread!" << std::endl;
-        
-        // Delay to simulate other tasks
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-
-        // Example of doing other tasks in the main thread
-        // This loop can be used for any non-SDL-related work
-    }
-
-    // Signal SDL thread to exit
-    {
-        std::lock_guard<std::mutex> lock(gMutex);
-        gRunning = false;
-    }
-    gCV.notify_one();
-
-    // Join the SDL thread
-    if (sdlThreadObj.joinable()) {
-        sdlThreadObj.join();
-    }
-
-    return 0;
-}
 */
-
-
-
-
-
-
-
-
-
-
-
-/*
-#include <SDL2/SDL.h>
-#include <iostream>
-#include "Viewport.h"
-#include <chrono>
-
-
-int main() {
-
-    int width = 600;
-    int height = 400;
-
-    // Initialize the frame buffer with proper dimensions
-    std::array<std::vector<std::vector<int>>, 3> frame;
-    for (auto& channel : frame) {
-        channel.resize(width);
-        for (auto& row : channel) {
-            row.resize(height, 0); // Initialize all values to 0
-        }
-    }
-
-    // Set the image to red
-    for (int x = 0; x < width; ++x) {
-        for (int y = 0; y < height; ++y) {
-            frame[0][x][y] = 255; // Red channel
-            frame[1][x][y] = 0;   // Green channel
-            frame[2][x][y] = 0;   // Blue channel
-        }
-    }
-
-    //Viewport v1;
-    //v1.start();
-
-    //Viewport v2;
-    //v2.start();
-
-    return 0;
-}
-*/
-
 
