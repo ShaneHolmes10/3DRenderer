@@ -3,47 +3,41 @@
 #define VIEWPORT_H
 
 
-#include <vector>
-#include <array>
+#include <SFML/Graphics.hpp>
 #include <thread>
-#include <chrono>
-#include <mutex> 
-#include <atomic>
-#include <SDL2/SDL.h>
+#include <iostream>
+#include <mutex>
+#include <X11/Xlib.h> // Include X11 header
 
-class Viewport {
+
+class Viewport { 
 private:
+
     int width;
     int height;
+    int x_pos;
+    int y_pos;
 
-    int x_loc;
-    int y_loc;
+    sf::Texture frame;
+    sf::Texture frame_buffer;
+    std::mutex frame_mutex;
 
-    std::thread handler_thread;
+    std::thread windowThread;
 
-    SDL_Window* window;
-    SDL_Surface* screenSurface;
-
-    std::array<std::vector<std::vector<int>>, 3> frame_current;
-    std::array<std::vector<std::vector<int>>, 3> frame_buffer;
-
-    std::atomic<bool> thread_life;
-
-    std::mutex mutex_thread_life;
-
-    void thread_action();
+    void runWindow();
 
 public:
-    Viewport(int w = 500, int h = 200, int x = SDL_WINDOWPOS_UNDEFINED, int y = SDL_WINDOWPOS_UNDEFINED);
+    Viewport(int w = 800, int h = 600, int x = 500, int y = 500);
+    
+    static void init();
 
-    void set_frame_buffer(std::array<std::vector<std::vector<int>>, 3> frame);
-    bool start();
-    bool kill();
-    bool alive();
-    bool update(); 
+    void start();
 
-    ~Viewport();
+    int update();
 
+    int set_frame(sf::Image frame_buff);
+
+    void join();
 };
 
 #endif

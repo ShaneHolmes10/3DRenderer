@@ -15,6 +15,34 @@ We want that image to be set to the window
 */
 
 
+
+
+sf::Image create_circle_image(int x, int y, int r) {
+
+    // Create an off-screen render target
+    sf::RenderTexture renderTexture;
+    renderTexture.create(800, 600); // Size of the render texture
+
+    // Create shapes
+    sf::CircleShape circle(r); // Circle with radius of 100
+    circle.setFillColor(sf::Color::Green);
+    circle.setPosition(x, y); // Position of the circle
+
+    // Draw shapes to the render texture
+    renderTexture.clear(sf::Color::White); // Clear with white background
+    renderTexture.draw(circle);
+    renderTexture.display(); // Display the result
+
+    // Create a texture from the render texture
+    sf::Texture texture = renderTexture.getTexture();
+
+    // Create an image from the texture
+    sf::Image image_1 = texture.copyToImage();
+
+    return image_1;
+}
+
+
 /*
     Test to see if the window was created
 */
@@ -23,41 +51,26 @@ void test_1() {
     int width = 600;
     int height = 400;
 
-    // Initialize the frame buffer with proper dimensions
-    std::array<std::vector<std::vector<int>>, 3> frame;
-    for (auto& channel : frame) {
-        channel.resize(width);
-        for (auto& row : channel) {
-            row.resize(height, 0); // Initialize all values to 0
-        }
-    }
 
-    // Set the image to red
-    for (int x = 0; x < width; ++x) {
-        for (int y = 0; y < height; ++y) {
-            frame[0][x][y] = 255; // Red channel
-            frame[1][x][y] = 0;   // Green channel
-            frame[2][x][y] = 0;   // Blue channel
-        }
-    }
-
+    Viewport::init();
 
 
     Viewport v1(width, height);
     v1.start();
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
-    v1.set_frame_buffer(frame);
+    v1.set_frame(create_circle_image(width / 2, height / 2, 100));
 
     v1.update();
 
 
     std::string answer;
-    std::cout << "Did the screen change to red: ";
+    std::cout << "Did the screen show a green circle: ";
     std::cin >> answer;
 
     TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
+
+    v1.join();
 
 }
 

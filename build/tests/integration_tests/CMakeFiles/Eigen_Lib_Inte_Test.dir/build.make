@@ -157,6 +157,10 @@ bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Ei
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Viewport.cpp.o
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make
 bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/integration_tests/Eigen_Lib_Inte_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/integration_tests/Eigen_Lib_Inte_Test: tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/link.txt

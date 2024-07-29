@@ -157,6 +157,10 @@ bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make
 bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/performance_tests/Color_Interpolation_1_Performance_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/performance_tests/Color_Interpolation_1_Performance_Test: tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/link.txt

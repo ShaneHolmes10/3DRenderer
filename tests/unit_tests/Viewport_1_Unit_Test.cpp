@@ -12,8 +12,6 @@ This test will confirm some basic functionality of the Viewport object class/
 We want to be able to create a window with the default dimensions
 We want to be able to create a window with parameter dimensions
 We want to be able to create a window with parameter dimensions and a specific location
-We want to be able to check if the object is still alive
-We want to be able to kill the object
 We want to be able to have two windows at the same time
 
 */
@@ -23,6 +21,8 @@ We want to be able to have two windows at the same time
     Test to see if the window was created
 */
 void test_1() {
+
+    Viewport::init();
 
     Viewport v1;
     v1.start();
@@ -34,6 +34,8 @@ void test_1() {
 
     TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
 
+    v1.join();
+
 }
 
 /*
@@ -41,7 +43,9 @@ void test_1() {
 */
 void test_2() {
 
-    Viewport v1(800, 600);
+    Viewport::init();
+
+    Viewport v1(1000, 800);
     v1.start();
 
     std::string answer;
@@ -51,12 +55,16 @@ void test_2() {
 
     TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
 
+    v1.join();
+
 }
 
 /*
     Test to see if the window was created with proper dimensions and in the right location
 */
 void test_3() {
+
+    Viewport::init();
 
     Viewport v1(800, 600, 0, 0);
     v1.start();
@@ -68,62 +76,17 @@ void test_3() {
 
     TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
 
-}
-
-/*
-    Verify that the alive method worked, Because they're on different threads when we check alive, it may not actually be alive yet; so we must delay
-*/
-void test_4() {
-
-    Viewport v1(800, 600, 0, 0);
-
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    
-    TestUtils::pass_or_fail_printout(!v1.alive());
+    v1.join();
 
 }
 
-/*
-    Verify that the alive method worked, Because they're on different threads when we check alive, it may not actually be alive yet; so we must delay
-*/
-void test_5() {
-
-    Viewport v1(800, 600, 0, 0);
-    v1.start();
-
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
-    
-    TestUtils::pass_or_fail_printout(v1.alive());
-
-}
-
-
-
-/*
-    Verify that the kill method worked
-*/
-void test_6() {
-
-    Viewport v1(800, 600, 0, 0);
-    v1.start();
-
-    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-
-    v1.kill();
-
-    std::string answer;
-
-    std::cout << "Did the window terminate: ";
-    std::cin >> answer;
-    
-    TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
-
-}
 
 /*
     Verify that can have more than one window at a time
 */
-void test_7() {
+void test_4() {
+
+    Viewport::init();
 
     Viewport v1(600, 400, 0, 0);
     v1.start();
@@ -139,6 +102,9 @@ void test_7() {
     
     TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
 
+    v1.join();
+    v2.join();
+
 }
 
 
@@ -151,9 +117,6 @@ int main() {
     TestUtils::perform_test(test_2);
     TestUtils::perform_test(test_3);
     TestUtils::perform_test(test_4);
-    TestUtils::perform_test(test_5);
-    TestUtils::perform_test(test_6);
-    TestUtils::perform_test(test_7);
 
     TestUtils::end_testing();
 

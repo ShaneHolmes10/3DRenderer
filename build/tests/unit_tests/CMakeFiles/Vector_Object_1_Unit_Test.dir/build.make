@@ -157,6 +157,10 @@ bin/unit_tests/Vector_Object_1_Unit_Test: tests/unit_tests/CMakeFiles/Vector_Obj
 bin/unit_tests/Vector_Object_1_Unit_Test: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 bin/unit_tests/Vector_Object_1_Unit_Test: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make
 bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/unit_tests/Vector_Object_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/unit_tests/Vector_Object_1_Unit_Test: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/link.txt

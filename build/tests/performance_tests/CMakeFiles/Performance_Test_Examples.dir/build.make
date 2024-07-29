@@ -157,6 +157,10 @@ bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFi
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make
 bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
+bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libSM.so
+bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libICE.so
+bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libX11.so
+bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/link.txt

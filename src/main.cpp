@@ -1,6 +1,73 @@
 
 
 
+
+
+#include <iostream>
+#include "Viewport.h"
+
+
+
+
+sf::Image create_circle_image(int x, int y, int r) {
+
+    // Create an off-screen render target
+    sf::RenderTexture renderTexture;
+    renderTexture.create(800, 600); // Size of the render texture
+
+    // Create shapes
+    sf::CircleShape circle(r); // Circle with radius of 100
+    circle.setFillColor(sf::Color::Green);
+    circle.setPosition(x, y); // Position of the circle
+
+    // Draw shapes to the render texture
+    renderTexture.clear(sf::Color::White); // Clear with white background
+    renderTexture.draw(circle);
+    renderTexture.display(); // Display the result
+
+    // Create a texture from the render texture
+    sf::Texture texture = renderTexture.getTexture();
+
+    // Create an image from the texture
+    sf::Image image_1 = texture.copyToImage();
+
+    return image_1;
+}
+
+
+int main() {
+    // Initialize X11 threading system
+    //XInitThreads();
+
+    Viewport::init();
+
+    Viewport v1(800, 600, 0, 0);
+    Viewport v2(600, 400, 800, 0);
+
+    
+    v1.start();
+    v2.start();
+
+    //std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+    v1.set_frame(create_circle_image(400, 300, 100));
+    v1.update();
+
+    for(int n = 0; n < 200; n++) {
+        v1.set_frame(create_circle_image(400, 100 + 5*n, 100));
+        v1.update();
+        std::cout << "This is in the main thread\n";
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+
+    v1.join();
+    v2.join();
+
+    return 0;
+}
+
+
+
+/*
 #include <SFML/Graphics.hpp>
 #include <thread>
 #include <iostream>
@@ -152,7 +219,7 @@ int main() {
 
     return 0;
 }
-
+*/
 
 
 
