@@ -24,17 +24,15 @@ private:
 
     void runWindow() {
         // Create a window with a size of 800x600 pixels
-        sf::RenderWindow window(sf::VideoMode(width, height), "Test Window");
+        sf::RenderWindow window(sf::VideoMode(width, height), "Window");
 
         window.setPosition(sf::Vector2i(x_pos, y_pos));
         window.clear(sf::Color::White);
 
 
         // Main loop
-        while (window.isOpen()) {
+        while(window.isOpen()) {
             
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-
             sf::Event event;
             while (window.pollEvent(event)) {
                 // Close the window if the user closes it
@@ -44,9 +42,7 @@ private:
             }
 
 
-
             {
-                std::cout << "In Loop lock\n";
                 std::lock_guard<std::mutex> lock(frame_mutex);
                 sf::Sprite sprite(frame);
                 window.draw(sprite);
@@ -72,18 +68,7 @@ public:
     }
 
     int update() {
-        
-        /*
-        sf::Texture texture;
-        if (!texture.loadFromImage(frame_buffer)) {
-            return -1;
-        } 
-
-        sf::Sprite sprite(texture);
-        */
-
         {
-            std::cout << "In update lock\n";
             std::lock_guard<std::mutex> lock(frame_mutex);
             frame = frame_buffer;
         }
@@ -113,32 +98,21 @@ public:
     }
 };
 
-int main() {
-    // Initialize X11 threading system
-    XInitThreads();
 
-    WindowManager w1(800, 600, 0, 0);
-    //WindowManager w2(600, 400, 800, 0);
-
-
+sf::Image create_circle_image(int x, int y, int r) {
 
     // Create an off-screen render target
     sf::RenderTexture renderTexture;
     renderTexture.create(800, 600); // Size of the render texture
 
     // Create shapes
-    sf::CircleShape circle(100); // Circle with radius of 100
+    sf::CircleShape circle(r); // Circle with radius of 100
     circle.setFillColor(sf::Color::Green);
-    circle.setPosition(200, 150); // Position of the circle
-
-    sf::RectangleShape rectangle(sf::Vector2f(300, 200)); // Rectangle with width 300 and height 200
-    rectangle.setFillColor(sf::Color::Red);
-    rectangle.setPosition(400, 300); // Position of the rectangle
+    circle.setPosition(x, y); // Position of the circle
 
     // Draw shapes to the render texture
     renderTexture.clear(sf::Color::White); // Clear with white background
     renderTexture.draw(circle);
-    renderTexture.draw(rectangle);
     renderTexture.display(); // Display the result
 
     // Create a texture from the render texture
@@ -147,19 +121,30 @@ int main() {
     // Create an image from the texture
     sf::Image image_1 = texture.copyToImage();
 
-    
-    
+    return image_1;
+}
 
+
+int main() {
+    // Initialize X11 threading system
+    XInitThreads();
+
+    WindowManager w1(800, 600, 0, 0);
+    //WindowManager w2(600, 400, 800, 0);
+
+    
     w1.start();
     //w2.start();
 
     //std::this_thread::sleep_for(std::chrono::milliseconds(5000));
-    w1.set_frame(image_1);
+    w1.set_frame(create_circle_image(400, 300, 100));
     w1.update();
 
-    for(int n = 0; n < 100; n++) {
+    for(int n = 0; n < 200; n++) {
+        w1.set_frame(create_circle_image(400, 100 + 5*n, 100));
+        w1.update();
         std::cout << "This is in the main thread\n";
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        //std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
     w1.join();
