@@ -44,7 +44,7 @@ sf::Image create_circle_image(int x, int y, int r) {
 
 
 /*
-    Test to see if the window was created
+    Test to see if the window was created and the frame was set properly
 */
 void test_1() {
 
@@ -75,6 +75,37 @@ void test_1() {
 }
 
 
+/*
+    Test to see if the window was created
+*/
+void test_2() {
+
+    int width = 600;
+    int height = 400;
+
+
+    Viewport::init();
+
+
+    Viewport v1(width, height);
+    v1.start();
+
+
+    for(int n = 0; n < 50; n++) {
+        v1.set_frame(create_circle_image(width / 2, height / 2 + n*4, 100));
+        v1.update();
+    }
+
+    std::string answer;
+    std::cout << "Did the screen show a green circle animation: ";
+    std::cin >> answer;
+
+    TestUtils::pass_or_fail_printout((answer == "y") ? (true) : (false));
+
+    v1.join();
+
+}
+
 
 
 int main() {
@@ -82,6 +113,7 @@ int main() {
     TestUtils::start_testing();
 
     TestUtils::perform_test(test_1);
+    TestUtils::perform_test(test_2);
 
     TestUtils::end_testing();
 
