@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/exec.dir/Math_Position_Object.cpp.o.d"
   "CMakeFiles/exec.dir/Reference_Frame.cpp.o"
   "CMakeFiles/exec.dir/Reference_Frame.cpp.o.d"
+  "CMakeFiles/exec.dir/Stage.cpp.o"
+  "CMakeFiles/exec.dir/Stage.cpp.o.d"
   "CMakeFiles/exec.dir/Vector_Object.cpp.o"
   "CMakeFiles/exec.dir/Vector_Object.cpp.o.d"
   "CMakeFiles/exec.dir/Viewport.cpp.o"

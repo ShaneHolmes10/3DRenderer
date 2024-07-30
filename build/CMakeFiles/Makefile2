@@ -177,6 +177,7 @@ tests/unit_tests/all: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Tes
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
+tests/unit_tests/all: tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all
 tests/unit_tests/all: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/all
@@ -191,6 +192,7 @@ tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_T
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean
+tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/clean
 tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/clean
@@ -203,12 +205,12 @@ tests/unit_tests/clean: tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/cle
 src/CMakeFiles/exec.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/exec.dir/build.make src/CMakeFiles/exec.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=79,80,81,82,83,84 "Built target exec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=94,95,96,97,98,99,100 "Built target exec"
 .PHONY : src/CMakeFiles/exec.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/exec.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/exec.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/exec.dir/rule
@@ -229,12 +231,12 @@ src/CMakeFiles/exec.dir/clean:
 tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target Bresenham_algorithm_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=7,8,9,10,11,12,13 "Built target Bresenham_algorithm_1_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/rule
@@ -255,7 +257,7 @@ tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/clean:
 tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=19,20,21,22,23,24 "Built target Color_Interpolation_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=21,22,23,24,25,26 "Built target Color_Interpolation_1_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -281,7 +283,7 @@ tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/clean:
 tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=37,38,39,40,41,42 "Built target Eigen_Lib_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=41,42,43,44,45,46 "Built target Eigen_Lib_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -307,12 +309,12 @@ tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/clean:
 tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=49,50,51,52,53,54 "Built target Reference_Frame_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=54,55,56,57,58,59,60 "Built target Reference_Frame_1_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/rule
@@ -327,18 +329,44 @@ tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean:
 .PHONY : tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/clean
 
 #=============================================================================
+# Target rules for target tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir
+
+# All Build rule for target.
+tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=67,68,69,70,71,72,73 "Built target Stage_1_Unit_Test"
+.PHONY : tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
+.PHONY : tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/rule
+
+# Convenience name for target.
+Stage_1_Unit_Test: tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/rule
+.PHONY : Stage_1_Unit_Test
+
+# clean rule for target.
+tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/clean
+.PHONY : tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/clean
+
+#=============================================================================
 # Target rules for target tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir
 
 # All Build rule for target.
 tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=61,62,63,64,65,66 "Built target Vector_Object_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=74,75,76,77,78,79,80 "Built target Vector_Object_1_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/rule
@@ -359,7 +387,7 @@ tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/clean:
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=67,68,69,70,71,72 "Built target Viewport_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=81,82,83,84,85,86 "Built target Viewport_1_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -385,12 +413,12 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/clean:
 tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=73,74,75,76,77,78 "Built target Viewport_2_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=87,88,89,90,91,92,93 "Built target Viewport_2_Unit_Test"
 .PHONY : tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/rule
@@ -411,12 +439,12 @@ tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/clean:
 tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=25,26,27,28,29,30 "Built target Eigen_Lib_Inte_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=27,28,29,30,31,32,33 "Built target Eigen_Lib_Inte_Test"
 .PHONY : tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/rule
@@ -437,7 +465,7 @@ tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/clean:
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=55,56,57,58,59,60 "Built target Reference_Frame_and_Vector_Object_1_Integration_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=61,62,63,64,65,66 "Built target Reference_Frame_and_Vector_Object_1_Integration_Test"
 .PHONY : tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -489,12 +517,12 @@ tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/cl
 tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=13,14,15,16,17,18 "Built target Color_Interpolation_1_Performance_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=14,15,16,17,18,19,20 "Built target Color_Interpolation_1_Performance_Test"
 .PHONY : tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/rule
@@ -515,12 +543,12 @@ tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/cl
 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=31,32,33,34,35,36 "Built target Eigen_Lib_Perf_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=34,35,36,37,38,39,40 "Built target Eigen_Lib_Perf_Test"
 .PHONY : tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/all
 
 # Build rule for subdir invocation for target.
 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/rule
@@ -541,12 +569,12 @@ tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/clean:
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/all:
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=43,44,45,46,47,48 "Built target Performance_Test_Examples"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=47,48,49,50,51,52,53 "Built target Performance_Test_Examples"
 .PHONY : tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/all
 
 # Build rule for subdir invocation for target.
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/shane/3DRenderer/3DRenderer/build/CMakeFiles 0
 .PHONY : tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/rule

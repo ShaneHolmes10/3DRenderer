@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o.d"
+  "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o"
+  "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o.d"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o.d"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o"

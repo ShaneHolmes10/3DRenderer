@@ -111,10 +111,24 @@ tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Refer
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.s"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp -o CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.s
 
+tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/flags.make
+tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o: ../src/Stage.cpp
+tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o -MF CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o.d -o CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Stage.cpp
+
+tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.i"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/3DRenderer/3DRenderer/src/Stage.cpp > CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.i
+
+tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.s"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Stage.cpp -o CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.s
+
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/flags.make
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o: ../src/Vector_Object.cpp
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o -MF CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o.d -o CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Vector_Object.cpp
 
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.i: cmake_force
@@ -128,7 +142,7 @@ tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vecto
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/flags.make
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o: ../src/Viewport.cpp
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o -MF CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o.d -o CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp
 
 tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.i: cmake_force
@@ -144,6 +158,7 @@ Performance_Test_Examples_OBJECTS = \
 "CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o" \
 "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o" \
 "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o" \
+"CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o" \
 "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o" \
 "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o"
 
@@ -153,6 +168,7 @@ Performance_Test_Examples_EXTERNAL_OBJECTS =
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o
+bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make
@@ -164,7 +180,7 @@ bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libXe
 bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/performance_tests/Performance_Test_Examples: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/performance_tests/Performance_Test_Examples: tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/performance_tests/Performance_Test_Examples"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/performance_tests/Performance_Test_Examples"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Performance_Test_Examples.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

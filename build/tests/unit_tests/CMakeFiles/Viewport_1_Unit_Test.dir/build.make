@@ -111,10 +111,24 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp -o CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/flags.make
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o: ../src/Stage.cpp
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o -MF CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o.d -o CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Stage.cpp
+
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.i"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/3DRenderer/3DRenderer/src/Stage.cpp > CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.i
+
+tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.s"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Stage.cpp -o CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.s
+
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/flags.make
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o: ../src/Vector_Object.cpp
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o -MF CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o.d -o CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Vector_Object.cpp
 
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i: cmake_force
@@ -128,7 +142,7 @@ tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/flags.make
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: ../src/Viewport.cpp
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o -MF CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o.d -o CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp
 
 tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.i: cmake_force
@@ -144,6 +158,7 @@ Viewport_1_Unit_Test_OBJECTS = \
 "CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.o" \
 "CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o" \
 "CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o" \
+"CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o" \
 "CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o" \
 "CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o"
 
@@ -153,6 +168,7 @@ Viewport_1_Unit_Test_EXTERNAL_OBJECTS =
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/Viewport_1_Unit_Test.cpp.o
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
+bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Stage.cpp.o
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/build.make
@@ -164,7 +180,7 @@ bin/unit_tests/Viewport_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/unit_tests/Viewport_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/unit_tests/Viewport_1_Unit_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/unit_tests/Viewport_1_Unit_Test: tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ../../bin/unit_tests/Viewport_1_Unit_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/unit_tests/Viewport_1_Unit_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Viewport_1_Unit_Test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

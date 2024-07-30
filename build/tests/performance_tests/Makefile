@@ -334,6 +334,39 @@ __/__/src/Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.s
 .PHONY : __/__/src/Reference_Frame.cpp.s
 
+__/__/src/Stage.o: __/__/src/Stage.cpp.o
+.PHONY : __/__/src/Stage.o
+
+# target to build an object file
+__/__/src/Stage.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Stage.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Stage.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Stage.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o
+.PHONY : __/__/src/Stage.cpp.o
+
+__/__/src/Stage.i: __/__/src/Stage.cpp.i
+.PHONY : __/__/src/Stage.i
+
+# target to preprocess a source file
+__/__/src/Stage.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Stage.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Stage.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Stage.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.i
+.PHONY : __/__/src/Stage.cpp.i
+
+__/__/src/Stage.s: __/__/src/Stage.cpp.s
+.PHONY : __/__/src/Stage.s
+
+# target to generate assembly for a file
+__/__/src/Stage.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Stage.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Stage.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Stage.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.s
+.PHONY : __/__/src/Stage.cpp.s
+
 __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
 .PHONY : __/__/src/Vector_Object.o
 
@@ -430,6 +463,9 @@ help:
 	@echo "... __/__/src/Reference_Frame.o"
 	@echo "... __/__/src/Reference_Frame.i"
 	@echo "... __/__/src/Reference_Frame.s"
+	@echo "... __/__/src/Stage.o"
+	@echo "... __/__/src/Stage.i"
+	@echo "... __/__/src/Stage.s"
 	@echo "... __/__/src/Vector_Object.o"
 	@echo "... __/__/src/Vector_Object.i"
 	@echo "... __/__/src/Vector_Object.s"

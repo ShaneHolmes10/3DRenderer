@@ -182,6 +182,19 @@ Reference_Frame_1_Unit_Test/fast:
 .PHONY : Reference_Frame_1_Unit_Test/fast
 
 #=============================================================================
+# Target rules for targets named Stage_1_Unit_Test
+
+# Build rule for target.
+Stage_1_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage_1_Unit_Test
+.PHONY : Stage_1_Unit_Test
+
+# fast build rule for target.
+Stage_1_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/build
+.PHONY : Stage_1_Unit_Test/fast
+
+#=============================================================================
 # Target rules for targets named Vector_Object_1_Unit_Test
 
 # Build rule for target.
@@ -316,6 +329,7 @@ help:
 	@echo "... Performance_Test_Examples"
 	@echo "... Reference_Frame_1_Unit_Test"
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test"
+	@echo "... Stage_1_Unit_Test"
 	@echo "... Vector_Object_1_Unit_Test"
 	@echo "... Viewport_1_Unit_Test"
 	@echo "... Viewport_2_Unit_Test"
