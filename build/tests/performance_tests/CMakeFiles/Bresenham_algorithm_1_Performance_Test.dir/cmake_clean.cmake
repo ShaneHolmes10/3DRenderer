@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/performance_tests/Bresenham_algorithm_1_Performance_Test.pdb"
   "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/Bresenham_algorithm_1_Performance_Test.cpp.o"
   "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/Bresenham_algorithm_1_Performance_Test.cpp.o.d"
+  "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o"

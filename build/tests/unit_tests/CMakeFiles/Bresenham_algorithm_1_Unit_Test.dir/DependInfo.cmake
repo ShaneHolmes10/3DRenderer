@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/shane/3DRenderer/3DRenderer/tests/unit_tests/Bresenham_algorithm_1_Unit_Test.cpp" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/Bresenham_algorithm_1_Unit_Test.cpp.o" "gcc" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/Bresenham_algorithm_1_Unit_Test.cpp.o.d"
+  "/home/shane/3DRenderer/3DRenderer/src/Camera.cpp" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Camera.cpp.o" "gcc" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Camera.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.cpp" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o" "gcc" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o" "gcc" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Stage.cpp" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Stage.cpp.o" "gcc" "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Stage.cpp.o.d"

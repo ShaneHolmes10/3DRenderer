@@ -192,6 +192,33 @@ Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s
 .PHONY : Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s
 
+__/__/src/Camera.o: __/__/src/Camera.cpp.o
+.PHONY : __/__/src/Camera.o
+
+# target to build an object file
+__/__/src/Camera.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Camera.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o
+.PHONY : __/__/src/Camera.cpp.o
+
+__/__/src/Camera.i: __/__/src/Camera.cpp.i
+.PHONY : __/__/src/Camera.i
+
+# target to preprocess a source file
+__/__/src/Camera.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Camera.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.i
+.PHONY : __/__/src/Camera.cpp.i
+
+__/__/src/Camera.s: __/__/src/Camera.cpp.s
+.PHONY : __/__/src/Camera.s
+
+# target to generate assembly for a file
+__/__/src/Camera.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/build.make tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Camera.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.s
+.PHONY : __/__/src/Camera.cpp.s
+
 __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.o
 
@@ -343,6 +370,9 @@ help:
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test.o"
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test.i"
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test.s"
+	@echo "... __/__/src/Camera.o"
+	@echo "... __/__/src/Camera.i"
+	@echo "... __/__/src/Camera.s"
 	@echo "... __/__/src/Math_Position_Object.o"
 	@echo "... __/__/src/Math_Position_Object.i"
 	@echo "... __/__/src/Math_Position_Object.s"

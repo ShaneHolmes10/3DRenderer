@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/unit_tests/Viewport_2_Unit_Test.pdb"
   "CMakeFiles/Viewport_2_Unit_Test.dir/Viewport_2_Unit_Test.cpp.o"
   "CMakeFiles/Viewport_2_Unit_Test.dir/Viewport_2_Unit_Test.cpp.o.d"
+  "CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Viewport_2_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o"

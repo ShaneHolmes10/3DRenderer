@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "../bin/exec"
   "../bin/exec.pdb"
+  "CMakeFiles/exec.dir/Camera.cpp.o"
+  "CMakeFiles/exec.dir/Camera.cpp.o.d"
   "CMakeFiles/exec.dir/Math_Position_Object.cpp.o"
   "CMakeFiles/exec.dir/Math_Position_Object.cpp.o.d"
   "CMakeFiles/exec.dir/Reference_Frame.cpp.o"

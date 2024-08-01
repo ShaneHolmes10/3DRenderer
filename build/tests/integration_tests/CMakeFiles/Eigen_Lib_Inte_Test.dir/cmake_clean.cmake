@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/integration_tests/Eigen_Lib_Inte_Test.pdb"
   "CMakeFiles/Eigen_Lib_Inte_Test.dir/Eigen_Lib_Inte_Test.cpp.o"
   "CMakeFiles/Eigen_Lib_Inte_Test.dir/Eigen_Lib_Inte_Test.cpp.o.d"
+  "CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Eigen_Lib_Inte_Test.dir/__/__/src/Reference_Frame.cpp.o"

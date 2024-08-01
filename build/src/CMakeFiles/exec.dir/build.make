@@ -69,10 +69,24 @@ include src/CMakeFiles/exec.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/exec.dir/flags.make
 
+src/CMakeFiles/exec.dir/Camera.cpp.o: src/CMakeFiles/exec.dir/flags.make
+src/CMakeFiles/exec.dir/Camera.cpp.o: ../src/Camera.cpp
+src/CMakeFiles/exec.dir/Camera.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/exec.dir/Camera.cpp.o"
+	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/Camera.cpp.o -MF CMakeFiles/exec.dir/Camera.cpp.o.d -o CMakeFiles/exec.dir/Camera.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Camera.cpp
+
+src/CMakeFiles/exec.dir/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/exec.dir/Camera.cpp.i"
+	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/3DRenderer/3DRenderer/src/Camera.cpp > CMakeFiles/exec.dir/Camera.cpp.i
+
+src/CMakeFiles/exec.dir/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/exec.dir/Camera.cpp.s"
+	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Camera.cpp -o CMakeFiles/exec.dir/Camera.cpp.s
+
 src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o: src/CMakeFiles/exec.dir/flags.make
 src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o: ../src/Math_Position_Object.cpp
 src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o -MF CMakeFiles/exec.dir/Math_Position_Object.cpp.o.d -o CMakeFiles/exec.dir/Math_Position_Object.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.cpp
 
 src/CMakeFiles/exec.dir/Math_Position_Object.cpp.i: cmake_force
@@ -86,7 +100,7 @@ src/CMakeFiles/exec.dir/Math_Position_Object.cpp.s: cmake_force
 src/CMakeFiles/exec.dir/Reference_Frame.cpp.o: src/CMakeFiles/exec.dir/flags.make
 src/CMakeFiles/exec.dir/Reference_Frame.cpp.o: ../src/Reference_Frame.cpp
 src/CMakeFiles/exec.dir/Reference_Frame.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/exec.dir/Reference_Frame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/exec.dir/Reference_Frame.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/Reference_Frame.cpp.o -MF CMakeFiles/exec.dir/Reference_Frame.cpp.o.d -o CMakeFiles/exec.dir/Reference_Frame.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp
 
 src/CMakeFiles/exec.dir/Reference_Frame.cpp.i: cmake_force
@@ -100,7 +114,7 @@ src/CMakeFiles/exec.dir/Reference_Frame.cpp.s: cmake_force
 src/CMakeFiles/exec.dir/Stage.cpp.o: src/CMakeFiles/exec.dir/flags.make
 src/CMakeFiles/exec.dir/Stage.cpp.o: ../src/Stage.cpp
 src/CMakeFiles/exec.dir/Stage.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/exec.dir/Stage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/exec.dir/Stage.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/Stage.cpp.o -MF CMakeFiles/exec.dir/Stage.cpp.o.d -o CMakeFiles/exec.dir/Stage.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Stage.cpp
 
 src/CMakeFiles/exec.dir/Stage.cpp.i: cmake_force
@@ -114,7 +128,7 @@ src/CMakeFiles/exec.dir/Stage.cpp.s: cmake_force
 src/CMakeFiles/exec.dir/Vector_Object.cpp.o: src/CMakeFiles/exec.dir/flags.make
 src/CMakeFiles/exec.dir/Vector_Object.cpp.o: ../src/Vector_Object.cpp
 src/CMakeFiles/exec.dir/Vector_Object.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/exec.dir/Vector_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/exec.dir/Vector_Object.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/Vector_Object.cpp.o -MF CMakeFiles/exec.dir/Vector_Object.cpp.o.d -o CMakeFiles/exec.dir/Vector_Object.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Vector_Object.cpp
 
 src/CMakeFiles/exec.dir/Vector_Object.cpp.i: cmake_force
@@ -128,7 +142,7 @@ src/CMakeFiles/exec.dir/Vector_Object.cpp.s: cmake_force
 src/CMakeFiles/exec.dir/Viewport.cpp.o: src/CMakeFiles/exec.dir/flags.make
 src/CMakeFiles/exec.dir/Viewport.cpp.o: ../src/Viewport.cpp
 src/CMakeFiles/exec.dir/Viewport.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/exec.dir/Viewport.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/exec.dir/Viewport.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/Viewport.cpp.o -MF CMakeFiles/exec.dir/Viewport.cpp.o.d -o CMakeFiles/exec.dir/Viewport.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp
 
 src/CMakeFiles/exec.dir/Viewport.cpp.i: cmake_force
@@ -142,7 +156,7 @@ src/CMakeFiles/exec.dir/Viewport.cpp.s: cmake_force
 src/CMakeFiles/exec.dir/main.cpp.o: src/CMakeFiles/exec.dir/flags.make
 src/CMakeFiles/exec.dir/main.cpp.o: ../src/main.cpp
 src/CMakeFiles/exec.dir/main.cpp.o: src/CMakeFiles/exec.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/exec.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/exec.dir/main.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/exec.dir/main.cpp.o -MF CMakeFiles/exec.dir/main.cpp.o.d -o CMakeFiles/exec.dir/main.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/main.cpp
 
 src/CMakeFiles/exec.dir/main.cpp.i: cmake_force
@@ -155,6 +169,7 @@ src/CMakeFiles/exec.dir/main.cpp.s: cmake_force
 
 # Object files for target exec
 exec_OBJECTS = \
+"CMakeFiles/exec.dir/Camera.cpp.o" \
 "CMakeFiles/exec.dir/Math_Position_Object.cpp.o" \
 "CMakeFiles/exec.dir/Reference_Frame.cpp.o" \
 "CMakeFiles/exec.dir/Stage.cpp.o" \
@@ -165,6 +180,7 @@ exec_OBJECTS = \
 # External object files for target exec
 exec_EXTERNAL_OBJECTS =
 
+bin/exec: src/CMakeFiles/exec.dir/Camera.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/Reference_Frame.cpp.o
 bin/exec: src/CMakeFiles/exec.dir/Stage.cpp.o
@@ -180,7 +196,7 @@ bin/exec: /usr/lib/x86_64-linux-gnu/libXext.so
 bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/exec: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/exec: src/CMakeFiles/exec.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../bin/exec"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../bin/exec"
 	cd /home/shane/3DRenderer/3DRenderer/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/exec.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

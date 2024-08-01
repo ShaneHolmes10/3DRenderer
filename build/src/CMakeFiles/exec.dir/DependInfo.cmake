@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/shane/3DRenderer/3DRenderer/src/Camera.cpp" "src/CMakeFiles/exec.dir/Camera.cpp.o" "gcc" "src/CMakeFiles/exec.dir/Camera.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.cpp" "src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o" "gcc" "src/CMakeFiles/exec.dir/Math_Position_Object.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp" "src/CMakeFiles/exec.dir/Reference_Frame.cpp.o" "gcc" "src/CMakeFiles/exec.dir/Reference_Frame.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Stage.cpp" "src/CMakeFiles/exec.dir/Stage.cpp.o" "gcc" "src/CMakeFiles/exec.dir/Stage.cpp.o.d"

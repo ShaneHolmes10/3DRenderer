@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/performance_tests/Color_Interpolation_1_Performance_Test.pdb"
   "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/Color_Interpolation_1_Performance_Test.cpp.o"
   "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/Color_Interpolation_1_Performance_Test.cpp.o.d"
+  "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o"

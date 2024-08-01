@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/shane/3DRenderer/3DRenderer/tests/performance_tests/Performance_Test_Examples.cpp" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o" "gcc" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o.d"
+  "/home/shane/3DRenderer/3DRenderer/src/Camera.cpp" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.o" "gcc" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.cpp" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o" "gcc" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o" "gcc" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o.d"
   "/home/shane/3DRenderer/3DRenderer/src/Stage.cpp" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o" "gcc" "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o.d"

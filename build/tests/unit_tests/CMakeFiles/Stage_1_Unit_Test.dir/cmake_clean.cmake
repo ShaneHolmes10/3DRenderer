@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/unit_tests/Stage_1_Unit_Test.pdb"
   "CMakeFiles/Stage_1_Unit_Test.dir/Stage_1_Unit_Test.cpp.o"
   "CMakeFiles/Stage_1_Unit_Test.dir/Stage_1_Unit_Test.cpp.o.d"
+  "CMakeFiles/Stage_1_Unit_Test.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Stage_1_Unit_Test.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Stage_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Stage_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Stage_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o"

@@ -83,10 +83,24 @@ tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integrati
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/tests/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.s
 
+tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/flags.make
+tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o: ../src/Camera.cpp
+tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o -MF CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o.d -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Camera.cpp
+
+tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.i"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shane/3DRenderer/3DRenderer/src/Camera.cpp > CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.i
+
+tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.s"
+	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shane/3DRenderer/3DRenderer/src/Camera.cpp -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.s
+
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/flags.make
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o: ../src/Math_Position_Object.cpp
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o -MF CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o.d -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Math_Position_Object.cpp
 
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.i: cmake_force
@@ -100,7 +114,7 @@ tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integrati
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/flags.make
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o: ../src/Reference_Frame.cpp
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o -MF CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o.d -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Reference_Frame.cpp
 
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.i: cmake_force
@@ -114,7 +128,7 @@ tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integrati
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/flags.make
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o: ../src/Stage.cpp
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o -MF CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o.d -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Stage.cpp
 
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.i: cmake_force
@@ -128,7 +142,7 @@ tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integrati
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/flags.make
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o: ../src/Vector_Object.cpp
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o -MF CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o.d -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Vector_Object.cpp
 
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Vector_Object.cpp.i: cmake_force
@@ -142,7 +156,7 @@ tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integrati
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/flags.make
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o: ../src/Viewport.cpp
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o -MF CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o.d -o CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.o -c /home/shane/3DRenderer/3DRenderer/src/Viewport.cpp
 
 tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Viewport.cpp.i: cmake_force
@@ -156,6 +170,7 @@ tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integrati
 # Object files for target Reference_Frame_and_Vector_Object_1_Integration_Test
 Reference_Frame_and_Vector_Object_1_Integration_Test_OBJECTS = \
 "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o" \
+"CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o" \
 "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o" \
 "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o" \
 "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o" \
@@ -166,6 +181,7 @@ Reference_Frame_and_Vector_Object_1_Integration_Test_OBJECTS = \
 Reference_Frame_and_Vector_Object_1_Integration_Test_EXTERNAL_OBJECTS =
 
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o
+bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Stage.cpp.o
@@ -180,7 +196,7 @@ bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: /usr
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test: tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shane/3DRenderer/3DRenderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../../bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test"
 	cd /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

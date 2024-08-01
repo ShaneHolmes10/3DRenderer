@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/performance_tests/Performance_Test_Examples.pdb"
   "CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o"
   "CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.o.d"
+  "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o"

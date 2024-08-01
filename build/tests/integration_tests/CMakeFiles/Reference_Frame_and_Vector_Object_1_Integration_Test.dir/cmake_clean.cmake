@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../../bin/integration_tests/Reference_Frame_and_Vector_Object_1_Integration_Test.pdb"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/Reference_Frame_and_Vector_Object_1_Integration_Test.cpp.o.d"
+  "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o"
+  "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Camera.cpp.o.d"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Math_Position_Object.cpp.o.d"
   "CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/__/__/src/Reference_Frame.cpp.o"
