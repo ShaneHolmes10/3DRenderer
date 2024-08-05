@@ -145,6 +145,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/exec.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/DependInfo.cmake"
+  "tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/DependInfo.cmake"
@@ -155,6 +156,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/DependInfo.cmake"
   "tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/DependInfo.cmake"
+  "tests/performance_tests/CMakeFiles/Camera_1_Performance_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/DependInfo.cmake"

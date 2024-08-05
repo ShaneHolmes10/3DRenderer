@@ -50,6 +50,7 @@ void Camera::generate_FOV_normals() {
     bottom_FOV_plane_normal.set_oy(-std::cos(std::atan((height / 2) / (FOV_length))));
     bottom_FOV_plane_normal.set_oz(-std::sin(std::atan((height / 2) / (FOV_length))));
 
+
 }
 
 
@@ -93,7 +94,6 @@ void Camera::set_picture_width_height(int w, int h) {
 */
 sf::Image Camera::take_picture() {
 
-    std::cout << "Taking a picture\n";
     
     std::vector<VectorObject*> vec_list = main_stage->get_vector_list();
 
@@ -109,22 +109,27 @@ sf::Image Camera::take_picture() {
     for(int n = 0; n < vec_list.size(); n++) {
         
 
+        
+        // Express this vector in terms of the cameras reference frame
+        VectorObject* vec_expressed = vec_list[n]->get_expressed_in(*this);
 
+        
         // See if it's out of the right FOV bounds
         if(
-            (right_FOV_plane_normal.get_placement_vector()[0]*(vec_list[n]->get_transformed_vector()[0] - this->get_placement_vector()[0]) +
-            right_FOV_plane_normal.get_placement_vector()[1]*(vec_list[n]->get_transformed_vector()[1] - this->get_placement_vector()[1]) +
-            right_FOV_plane_normal.get_placement_vector()[2]*(vec_list[n]->get_transformed_vector()[2] - this->get_placement_vector()[2])) > 0
+            (right_FOV_plane_normal.get_placement_vector()[0]*(vec_expressed->get_transformed_vector()[0]) +
+            right_FOV_plane_normal.get_placement_vector()[1]*(vec_expressed->get_transformed_vector()[1]) +
+            right_FOV_plane_normal.get_placement_vector()[2]*(vec_expressed->get_transformed_vector()[2])) > 0
         ) {
             continue;
 
         }
 
+        
         // See if it's out of the left FOV bounds
         if(
-            (left_FOV_plane_normal.get_placement_vector()[0]*(vec_list[n]->get_transformed_vector()[0] - this->get_placement_vector()[0]) +
-            left_FOV_plane_normal.get_placement_vector()[1]*(vec_list[n]->get_transformed_vector()[1] - this->get_placement_vector()[1]) +
-            left_FOV_plane_normal.get_placement_vector()[2]*(vec_list[n]->get_transformed_vector()[2] - this->get_placement_vector()[2])) > 0
+            (left_FOV_plane_normal.get_placement_vector()[0]*(vec_expressed->get_transformed_vector()[0]) +
+            left_FOV_plane_normal.get_placement_vector()[1]*(vec_expressed->get_transformed_vector()[1]) +
+            left_FOV_plane_normal.get_placement_vector()[2]*(vec_expressed->get_transformed_vector()[2])) > 0
         ) {
             continue;
 
@@ -132,9 +137,9 @@ sf::Image Camera::take_picture() {
 
         // See if it's out of the top FOV bounds
         if(
-            (top_FOV_plane_normal.get_placement_vector()[0]*(vec_list[n]->get_transformed_vector()[0] - this->get_placement_vector()[0]) +
-            top_FOV_plane_normal.get_placement_vector()[1]*(vec_list[n]->get_transformed_vector()[1] - this->get_placement_vector()[1]) +
-            top_FOV_plane_normal.get_placement_vector()[2]*(vec_list[n]->get_transformed_vector()[2] - this->get_placement_vector()[2])) > 0
+            (top_FOV_plane_normal.get_placement_vector()[0]*(vec_expressed->get_transformed_vector()[0]) +
+            top_FOV_plane_normal.get_placement_vector()[1]*(vec_expressed->get_transformed_vector()[1]) +
+            top_FOV_plane_normal.get_placement_vector()[2]*(vec_expressed->get_transformed_vector()[2])) > 0
         ) {
             continue;
 
@@ -142,17 +147,15 @@ sf::Image Camera::take_picture() {
 
         // See if it's out of the bottom FOV bounds
         if(
-            (bottom_FOV_plane_normal.get_placement_vector()[0]*(vec_list[n]->get_transformed_vector()[0] - this->get_placement_vector()[0]) +
-            bottom_FOV_plane_normal.get_placement_vector()[1]*(vec_list[n]->get_transformed_vector()[1] - this->get_placement_vector()[1]) +
-            bottom_FOV_plane_normal.get_placement_vector()[2]*(vec_list[n]->get_transformed_vector()[2] - this->get_placement_vector()[2])) > 0
+            (bottom_FOV_plane_normal.get_placement_vector()[0]*(vec_expressed->get_transformed_vector()[0]) +
+            bottom_FOV_plane_normal.get_placement_vector()[1]*(vec_expressed->get_transformed_vector()[1]) +
+            bottom_FOV_plane_normal.get_placement_vector()[2]*(vec_expressed->get_transformed_vector()[2])) > 0
         ) {
             continue;
 
         }
+        
 
-
-        // Express this vector in terms of the cameras reference frame
-        VectorObject* vec_expressed = vec_list[n]->get_expressed_in(*this);
 
         
         // See if it's behind the photo plane
@@ -175,7 +178,7 @@ sf::Image Camera::take_picture() {
         renderTexture.display();
 
     
-        std::cout << vec_expressed->get_placement_vector()[0] << ", " << vec_expressed->get_placement_vector()[1] << ", " << vec_expressed->get_placement_vector()[2] << "\n";
+        //std::cout << vec_expressed->get_placement_vector()[0] << ", " << vec_expressed->get_placement_vector()[1] << ", " << vec_expressed->get_placement_vector()[2] << "\n";
         
     }
 

@@ -143,6 +143,19 @@ Bresenham_algorithm_1_Unit_Test/fast:
 .PHONY : Bresenham_algorithm_1_Unit_Test/fast
 
 #=============================================================================
+# Target rules for targets named Camera_1_Unit_Test
+
+# Build rule for target.
+Camera_1_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_1_Unit_Test
+.PHONY : Camera_1_Unit_Test
+
+# fast build rule for target.
+Camera_1_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build
+.PHONY : Camera_1_Unit_Test/fast
+
+#=============================================================================
 # Target rules for targets named Color_Interpolation_1_Unit_Test
 
 # Build rule for target.
@@ -273,6 +286,19 @@ Bresenham_algorithm_1_Performance_Test/fast:
 .PHONY : Bresenham_algorithm_1_Performance_Test/fast
 
 #=============================================================================
+# Target rules for targets named Camera_1_Performance_Test
+
+# Build rule for target.
+Camera_1_Performance_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_1_Performance_Test
+.PHONY : Camera_1_Performance_Test
+
+# fast build rule for target.
+Camera_1_Performance_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Camera_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Camera_1_Performance_Test.dir/build
+.PHONY : Camera_1_Performance_Test/fast
+
+#=============================================================================
 # Target rules for targets named Color_Interpolation_1_Performance_Test
 
 # Build rule for target.
@@ -321,6 +347,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Bresenham_algorithm_1_Performance_Test"
 	@echo "... Bresenham_algorithm_1_Unit_Test"
+	@echo "... Camera_1_Performance_Test"
+	@echo "... Camera_1_Unit_Test"
 	@echo "... Color_Interpolation_1_Performance_Test"
 	@echo "... Color_Interpolation_1_Unit_Test"
 	@echo "... Eigen_Lib_Inte_Test"
