@@ -92,7 +92,7 @@ void test_1() {
 
 
 /*
-    Rotate the camera around a cube find the average amount of time per frame
+    Rotate the camera around a cube find the average amount of to take a picture*
 */
 void test_2() {
 
@@ -172,7 +172,7 @@ int main() {
 
     TestUtils::start_testing();
 
-    //TestUtils::perform_test(test_1);
+    TestUtils::perform_test(test_1);
     TestUtils::perform_test(test_2);
     
     TestUtils::end_testing();

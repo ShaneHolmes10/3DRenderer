@@ -22,7 +22,7 @@ Eigen::Vector3d VectorObject::get_transformed_vector() {
 
 VectorObject* VectorObject::get_expressed_in(ReferenceFrame& expressing_frame) {
     Eigen::Vector4d extended_vector;
-    extended_vector << placement_vector, 1.0;
+    extended_vector << this->get_transformed_vector(), 1.0;
 
     Eigen::Vector4d result_vector;
     result_vector = expressing_frame.get_transformation_matrix().inverse()*extended_vector;
