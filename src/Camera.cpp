@@ -4,6 +4,10 @@
 #include <iostream>
 #include <cmath>
 
+// Temporary delete when done
+#include <chrono>
+
+
 Camera::Camera(float ox, float oy, float oz, float ax, float ay, float az) 
     : ReferenceFrame(ox, oy, oz, ax, ay, az),
       main_stage(nullptr),
@@ -94,22 +98,19 @@ void Camera::set_picture_width_height(int w, int h) {
 */
 sf::Image Camera::take_picture() {
 
-    
+    // Temporary delete when done
+    //auto start_total = std::chrono::high_resolution_clock::now();
+
     std::vector<VectorObject*> vec_list = main_stage->get_vector_list();
 
-    //std::cout << right_FOV_plane_normal.get_placement_vector()[0] << ", "<< right_FOV_plane_normal.get_placement_vector()[1] << ", " << right_FOV_plane_normal.get_placement_vector()[2] << "\n";
 
-    sf::RenderTexture renderTexture;
-    renderTexture.create(width, height);
-
-    // Clear the RenderTexture with a white color
-    renderTexture.clear(sf::Color::White);
+    sf::Image ret_image;
+    ret_image.create(width, height, sf::Color::White); // Create an image object to color
 
 
     for(int n = 0; n < vec_list.size(); n++) {
-        
+                
 
-        
         // Express this vector in terms of the cameras reference frame
         VectorObject* vec_expressed = vec_list[n]->get_expressed_in(*this);
 
@@ -157,7 +158,6 @@ sf::Image Camera::take_picture() {
         
 
 
-        
         // See if it's behind the photo plane
         if(vec_expressed->get_placement_vector()[2] < FOV_length) {
             continue;
@@ -165,30 +165,49 @@ sf::Image Camera::take_picture() {
 
         float z = vec_expressed->get_placement_vector()[2];
 
+        unsigned int v_x = (vec_expressed->get_placement_vector()[0] * (FOV_length/z)) + (width / 2);
+        unsigned int v_y = (vec_expressed->get_placement_vector()[1] * (FOV_length/z)) + (height / 2);
 
-        // Draw a circle shape on the RenderTexture
-        sf::CircleShape circle(4); // Radius of 100
-        circle.setFillColor(sf::Color::Red);
-        circle.setPosition(
-            (vec_expressed->get_placement_vector()[0] * (FOV_length/z)) + (width / 2), 
-            (vec_expressed->get_placement_vector()[1] * (FOV_length/z)) + (height / 2)
-        ); // Position the circle at (300, 200)
+        // Draw 4 pixels for the projection so it's easier to see. 
+        // This is mostly for debugging at this stage in the final iteration of the 
+        // Camera we will only draw the one pixel.
+        {
+            ret_image.setPixel(
+                v_x,
+                v_y, 
+                sf::Color::Red
+            );
 
-        renderTexture.draw(circle);
-        renderTexture.display();
+            ret_image.setPixel(
+                v_x+1,
+                v_y, 
+                sf::Color::Red
+            );
 
+            ret_image.setPixel(
+                v_x,
+                v_y+1, 
+                sf::Color::Red
+            );
+
+            ret_image.setPixel(
+                v_x+1,
+                v_y+1, 
+                sf::Color::Red
+            );
+        }
     
-        //std::cout << vec_expressed->get_placement_vector()[0] << ", " << vec_expressed->get_placement_vector()[1] << ", " << vec_expressed->get_placement_vector()[2] << "\n";
         
     }
 
-    // Get the texture from the RenderTexture
-    sf::Texture texture = renderTexture.getTexture();
+    // Temporary delete when done
+    //auto end_total = std::chrono::high_resolution_clock::now();
+    
 
-    // Convert the texture to an image
-    sf::Image image = texture.copyToImage();
+    //std::chrono::duration<double> total_duration = end_total - start_total;
+    //std::cout << total_duration.count() * 1000 << ", ";
 
-    return image;
+    return ret_image;
 
 };
 

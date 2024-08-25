@@ -247,6 +247,19 @@ Viewport_2_Unit_Test/fast:
 .PHONY : Viewport_2_Unit_Test/fast
 
 #=============================================================================
+# Target rules for targets named Camera_Reference_Frame_1_Integration_Test
+
+# Build rule for target.
+Camera_Reference_Frame_1_Integration_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_Reference_Frame_1_Integration_Test
+.PHONY : Camera_Reference_Frame_1_Integration_Test
+
+# fast build rule for target.
+Camera_Reference_Frame_1_Integration_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Camera_Reference_Frame_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Camera_Reference_Frame_1_Integration_Test.dir/build
+.PHONY : Camera_Reference_Frame_1_Integration_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Inte_Test
 
 # Build rule for target.
@@ -349,6 +362,7 @@ help:
 	@echo "... Bresenham_algorithm_1_Unit_Test"
 	@echo "... Camera_1_Performance_Test"
 	@echo "... Camera_1_Unit_Test"
+	@echo "... Camera_Reference_Frame_1_Integration_Test"
 	@echo "... Color_Interpolation_1_Performance_Test"
 	@echo "... Color_Interpolation_1_Unit_Test"
 	@echo "... Eigen_Lib_Inte_Test"

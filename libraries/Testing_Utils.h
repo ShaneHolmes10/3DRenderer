@@ -108,25 +108,32 @@ inline void end_stop_watch() {
 }
 
 inline void time_result(float maximum_allowable_time_ms) {
-    if(total_time_testUtils <= maximum_allowable_time_ms) {
-        std::cout << GREEN << "[TEST SUCCESSFUL]" << RESET << std::endl;
-        correct_counter_testUtils++;
-    } else {
-        std::cout << RED << "[TEST FAILED]" << RESET << std::endl;
-    }
     
-    std::cout << "Time taken: " << total_time_testUtils << " ms" << std::endl;
-    std::cout << "Allowed time: " << maximum_allowable_time_ms << " ms" << std::endl;
-    
+    float sum = 0;
+
     if(is_track_time_testUtils) {
         for (size_t i = 0; i < time_tracker_testUtils.size(); ++i) {
             std::cout << time_tracker_testUtils[i];
+            sum += time_tracker_testUtils[i];
             if (i != time_tracker_testUtils.size() - 1) {
                 std::cout << ", ";
             }
         }
         std::cout << "\n";
     }
+
+    float result = (sum) / (time_tracker_testUtils.size());
+
+    std::cout << "Time taken (Avg): " << result << " ms" << std::endl;
+    std::cout << "Allowed time: " << maximum_allowable_time_ms << " ms" << std::endl;
+
+    if(result <= maximum_allowable_time_ms) {
+        std::cout << GREEN << "[TEST SUCCESSFUL]" << RESET << std::endl;
+        correct_counter_testUtils++;
+    } else {
+        std::cout << RED << "[TEST FAILED]" << RESET << std::endl;
+    }
+
 }
 
 

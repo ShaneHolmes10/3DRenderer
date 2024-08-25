@@ -153,6 +153,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/DependInfo.cmake"
+  "tests/integration_tests/CMakeFiles/Camera_Reference_Frame_1_Integration_Test.dir/DependInfo.cmake"
   "tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir/DependInfo.cmake"
   "tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Bresenham_algorithm_1_Performance_Test.dir/DependInfo.cmake"
