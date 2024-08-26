@@ -156,6 +156,19 @@ Camera_1_Unit_Test/fast:
 .PHONY : Camera_1_Unit_Test/fast
 
 #=============================================================================
+# Target rules for targets named Camera_2_Unit_Test
+
+# Build rule for target.
+Camera_2_Unit_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_2_Unit_Test
+.PHONY : Camera_2_Unit_Test
+
+# fast build rule for target.
+Camera_2_Unit_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build
+.PHONY : Camera_2_Unit_Test/fast
+
+#=============================================================================
 # Target rules for targets named Color_Interpolation_1_Unit_Test
 
 # Build rule for target.
@@ -260,6 +273,19 @@ Camera_Reference_Frame_1_Integration_Test/fast:
 .PHONY : Camera_Reference_Frame_1_Integration_Test/fast
 
 #=============================================================================
+# Target rules for targets named Camera_and_Reference_Frame_1_Integration_Test
+
+# Build rule for target.
+Camera_and_Reference_Frame_1_Integration_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_and_Reference_Frame_1_Integration_Test
+.PHONY : Camera_and_Reference_Frame_1_Integration_Test
+
+# fast build rule for target.
+Camera_and_Reference_Frame_1_Integration_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_1_Integration_Test.dir/build
+.PHONY : Camera_and_Reference_Frame_1_Integration_Test/fast
+
+#=============================================================================
 # Target rules for targets named Eigen_Lib_Inte_Test
 
 # Build rule for target.
@@ -312,6 +338,19 @@ Camera_1_Performance_Test/fast:
 .PHONY : Camera_1_Performance_Test/fast
 
 #=============================================================================
+# Target rules for targets named Camera_2_Performance_Test
+
+# Build rule for target.
+Camera_2_Performance_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_2_Performance_Test
+.PHONY : Camera_2_Performance_Test
+
+# fast build rule for target.
+Camera_2_Performance_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Camera_2_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Camera_2_Performance_Test.dir/build
+.PHONY : Camera_2_Performance_Test/fast
+
+#=============================================================================
 # Target rules for targets named Color_Interpolation_1_Performance_Test
 
 # Build rule for target.
@@ -362,7 +401,10 @@ help:
 	@echo "... Bresenham_algorithm_1_Unit_Test"
 	@echo "... Camera_1_Performance_Test"
 	@echo "... Camera_1_Unit_Test"
+	@echo "... Camera_2_Performance_Test"
+	@echo "... Camera_2_Unit_Test"
 	@echo "... Camera_Reference_Frame_1_Integration_Test"
+	@echo "... Camera_and_Reference_Frame_1_Integration_Test"
 	@echo "... Color_Interpolation_1_Performance_Test"
 	@echo "... Color_Interpolation_1_Unit_Test"
 	@echo "... Eigen_Lib_Inte_Test"

@@ -145,6 +145,20 @@ Camera_1_Unit_Test/fast:
 .PHONY : Camera_1_Unit_Test/fast
 
 # Convenience name for target.
+tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/rule
+.PHONY : tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/rule
+
+# Convenience name for target.
+Camera_2_Unit_Test: tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/rule
+.PHONY : Camera_2_Unit_Test
+
+# fast build rule for target.
+Camera_2_Unit_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build
+.PHONY : Camera_2_Unit_Test/fast
+
+# Convenience name for target.
 tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/rule:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/rule
 .PHONY : tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/rule
@@ -289,6 +303,30 @@ Camera_1_Unit_Test.s: Camera_1_Unit_Test.cpp.s
 Camera_1_Unit_Test.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/Camera_1_Unit_Test.cpp.s
 .PHONY : Camera_1_Unit_Test.cpp.s
+
+Camera_2_Unit_Test.o: Camera_2_Unit_Test.cpp.o
+.PHONY : Camera_2_Unit_Test.o
+
+# target to build an object file
+Camera_2_Unit_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/Camera_2_Unit_Test.cpp.o
+.PHONY : Camera_2_Unit_Test.cpp.o
+
+Camera_2_Unit_Test.i: Camera_2_Unit_Test.cpp.i
+.PHONY : Camera_2_Unit_Test.i
+
+# target to preprocess a source file
+Camera_2_Unit_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/Camera_2_Unit_Test.cpp.i
+.PHONY : Camera_2_Unit_Test.cpp.i
+
+Camera_2_Unit_Test.s: Camera_2_Unit_Test.cpp.s
+.PHONY : Camera_2_Unit_Test.s
+
+# target to generate assembly for a file
+Camera_2_Unit_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/Camera_2_Unit_Test.cpp.s
+.PHONY : Camera_2_Unit_Test.cpp.s
 
 Color_Interpolation_1_Unit_Test.o: Color_Interpolation_1_Unit_Test.cpp.o
 .PHONY : Color_Interpolation_1_Unit_Test.o
@@ -465,6 +503,7 @@ __/__/src/Camera.o: __/__/src/Camera.cpp.o
 __/__/src/Camera.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Camera.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Camera.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Camera.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Camera.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Camera.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Camera.cpp.o
@@ -481,6 +520,7 @@ __/__/src/Camera.i: __/__/src/Camera.cpp.i
 __/__/src/Camera.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Camera.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Camera.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Camera.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Camera.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Camera.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Camera.cpp.i
@@ -497,6 +537,7 @@ __/__/src/Camera.s: __/__/src/Camera.cpp.s
 __/__/src/Camera.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Camera.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Camera.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Camera.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Camera.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Camera.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Camera.cpp.s
@@ -513,6 +554,7 @@ __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
 __/__/src/Math_Position_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.o
@@ -529,6 +571,7 @@ __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
 __/__/src/Math_Position_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.i
@@ -545,6 +588,7 @@ __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
 __/__/src/Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Math_Position_Object.cpp.s
@@ -561,6 +605,7 @@ __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
 __/__/src/Reference_Frame.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.o
@@ -577,6 +622,7 @@ __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
 __/__/src/Reference_Frame.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.i
@@ -593,6 +639,7 @@ __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
 __/__/src/Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Reference_Frame.cpp.s
@@ -609,6 +656,7 @@ __/__/src/Stage.o: __/__/src/Stage.cpp.o
 __/__/src/Stage.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Stage.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Stage.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Stage.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Stage.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Stage.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Stage.cpp.o
@@ -625,6 +673,7 @@ __/__/src/Stage.i: __/__/src/Stage.cpp.i
 __/__/src/Stage.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Stage.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Stage.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Stage.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Stage.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Stage.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Stage.cpp.i
@@ -641,6 +690,7 @@ __/__/src/Stage.s: __/__/src/Stage.cpp.s
 __/__/src/Stage.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Stage.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Stage.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Stage.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Stage.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Stage.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Stage.cpp.s
@@ -657,6 +707,7 @@ __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
 __/__/src/Vector_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.o
@@ -673,6 +724,7 @@ __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
 __/__/src/Vector_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.i
@@ -689,6 +741,7 @@ __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
 __/__/src/Vector_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Vector_Object.cpp.s
@@ -705,6 +758,7 @@ __/__/src/Viewport.o: __/__/src/Viewport.cpp.o
 __/__/src/Viewport.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Viewport.cpp.o
@@ -721,6 +775,7 @@ __/__/src/Viewport.i: __/__/src/Viewport.cpp.i
 __/__/src/Viewport.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Viewport.cpp.i
@@ -737,6 +792,7 @@ __/__/src/Viewport.s: __/__/src/Viewport.cpp.s
 __/__/src/Viewport.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Bresenham_algorithm_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Camera_2_Unit_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Color_Interpolation_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/build.make tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/__/__/src/Viewport.cpp.s
@@ -756,6 +812,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Bresenham_algorithm_1_Unit_Test"
 	@echo "... Camera_1_Unit_Test"
+	@echo "... Camera_2_Unit_Test"
 	@echo "... Color_Interpolation_1_Unit_Test"
 	@echo "... Eigen_Lib_Unit_Test"
 	@echo "... Reference_Frame_1_Unit_Test"
@@ -769,6 +826,9 @@ help:
 	@echo "... Camera_1_Unit_Test.o"
 	@echo "... Camera_1_Unit_Test.i"
 	@echo "... Camera_1_Unit_Test.s"
+	@echo "... Camera_2_Unit_Test.o"
+	@echo "... Camera_2_Unit_Test.i"
+	@echo "... Camera_2_Unit_Test.s"
 	@echo "... Color_Interpolation_1_Unit_Test.o"
 	@echo "... Color_Interpolation_1_Unit_Test.i"
 	@echo "... Color_Interpolation_1_Unit_Test.s"

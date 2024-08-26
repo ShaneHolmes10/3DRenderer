@@ -39,6 +39,12 @@ public:
     void set_FOV_length(float num);
     void set_picture_width_height(int w, int h);
 
+    bool check_vector_outside_FOV_plane_right(VectorObject* environment_vector);
+    bool check_vector_outside_FOV_plane_left(VectorObject* environment_vector);
+    bool check_vector_outside_FOV_plane_top(VectorObject* environment_vector);
+    bool check_vector_outside_FOV_plane_bottom(VectorObject* environment_vector);
+    bool check_vector_outside_photo_plane(VectorObject* environment_vector);
+
     sf::Image take_picture();
 
 

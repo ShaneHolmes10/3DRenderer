@@ -420,10 +420,10 @@ int main() {
 
     TestUtils::start_testing();
 
-    //TestUtils::perform_test(test_1);
-    //TestUtils::perform_test(test_2);
-    //TestUtils::perform_test(test_3);
-    //TestUtils::perform_test(test_4);
+    TestUtils::perform_test(test_1);
+    TestUtils::perform_test(test_2);
+    TestUtils::perform_test(test_3);
+    TestUtils::perform_test(test_4);
     TestUtils::perform_test(test_5);
     
     TestUtils::end_testing();
