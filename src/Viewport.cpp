@@ -6,6 +6,7 @@
 #include <iostream>
 #include <mutex>
 #include <X11/Xlib.h> // Include X11 header
+#include <chrono>
 
 
 
@@ -71,6 +72,12 @@ int Viewport::set_frame(sf::Image frame_buff) {
     }
     
     return 0;
+}
+
+void Viewport::delay_ms(int delay_time) {
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(delay_time));
+
 }
 
 void Viewport::join() {

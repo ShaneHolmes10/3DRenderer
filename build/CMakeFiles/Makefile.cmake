@@ -151,6 +151,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/unit_tests/CMakeFiles/Eigen_Lib_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Reference_Frame_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Stage_1_Unit_Test.dir/DependInfo.cmake"
+  "tests/unit_tests/CMakeFiles/Triangle_Rasterization_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Vector_Object_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Viewport_1_Unit_Test.dir/DependInfo.cmake"
   "tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir/DependInfo.cmake"

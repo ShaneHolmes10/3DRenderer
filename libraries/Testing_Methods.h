@@ -7,6 +7,7 @@
 #include <Eigen/Dense>
 #include <iostream>
 #include <vector>
+#include <SFML/Graphics.hpp>
 
 namespace TestMeth {
 
@@ -93,6 +94,62 @@ inline std::vector<std::array<int, 3>> color_interpolation(const std::array<int,
 }
 
 
+
+
+
+inline int triangle_edge_function(std::array<float, 2> A, std::array<float, 2> B, std::array<float, 2> C) {
+    return ((B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0])) / 2;
+}
+
+inline sf::Image create_triangle(int width, int height, 
+                                std::array<float, 2> A, std::array<float, 2> B, std::array<float, 2> C, 
+                                std::array<float, 3> A_color, std::array<float, 3> B_color, std::array<float, 3> C_color) {
+    
+    // Create an image
+    sf::Image ret_image;
+    ret_image.create(width, height, sf::Color::White); // Create an image object to color
+
+
+    // First get the bounding box of the triangle
+    float left_side = std::min({A[0], B[0], C[0]});
+    float right_side = std::max({A[0], B[0], C[0]});
+    float bottom_side = std::min({A[1], B[1], C[1]});
+    float top_side = std::max({A[1], B[1], C[1]});
+
+
+    int ABC_edge_area = triangle_edge_function(A, B, C);
+
+    // Scan through all the pixels in the bounding box
+    for(int x_pixel_ind = left_side; x_pixel_ind < right_side; x_pixel_ind++) {
+        for(int y_pixel_ind = bottom_side; y_pixel_ind < top_side; y_pixel_ind++) {
+
+            int AB_edge_area = triangle_edge_function(A, B, {(float)x_pixel_ind, (float)y_pixel_ind});
+            int CA_edge_area = triangle_edge_function(C, A, {(float)x_pixel_ind, (float)y_pixel_ind});
+            int BC_edge_area = triangle_edge_function(B, C, {(float)x_pixel_ind, (float)y_pixel_ind});
+
+            float weight_A = ((float)BC_edge_area / (float)ABC_edge_area);
+            float weight_B = ((float)CA_edge_area / (float)ABC_edge_area);
+            float weight_C = ((float)AB_edge_area / (float)ABC_edge_area);
+
+            // Determine if the pixel we're looking at is inside the triangle
+            if(AB_edge_area >= 0 &&
+               CA_edge_area >= 0 &&
+               BC_edge_area >= 0) {
+
+                int pixel_r = (int)(A_color[0]*weight_A + B_color[0]*weight_B + C_color[0]*weight_C); 
+                int pixel_g = (int)(A_color[1]*weight_A + B_color[1]*weight_B + C_color[1]*weight_C); 
+                int pixel_b = (int)(A_color[2]*weight_A + B_color[2]*weight_B + C_color[2]*weight_C); 
+                
+                sf::Color pixel_color(pixel_r, pixel_g, pixel_b, 255);
+
+                ret_image.setPixel(x_pixel_ind, y_pixel_ind, pixel_color);
+            }
+        }
+    }
+
+    return ret_image;
+
+}
 
 
 } 

@@ -37,6 +37,8 @@ public:
 
     int set_frame(sf::Image frame_buff);
 
+    void delay_ms(int delay_time);
+
     void join();
 };
 
