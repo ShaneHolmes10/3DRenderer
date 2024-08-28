@@ -165,4 +165,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/DependInfo.cmake"
   "tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/DependInfo.cmake"
+  "tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/DependInfo.cmake"
   )

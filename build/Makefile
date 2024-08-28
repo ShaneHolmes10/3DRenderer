@@ -402,6 +402,19 @@ Performance_Test_Examples/fast:
 	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build
 .PHONY : Performance_Test_Examples/fast
 
+#=============================================================================
+# Target rules for targets named Triangle_Rasterization_1_Performance_Test
+
+# Build rule for target.
+Triangle_Rasterization_1_Performance_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Triangle_Rasterization_1_Performance_Test
+.PHONY : Triangle_Rasterization_1_Performance_Test
+
+# fast build rule for target.
+Triangle_Rasterization_1_Performance_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build
+.PHONY : Triangle_Rasterization_1_Performance_Test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -427,6 +440,7 @@ help:
 	@echo "... Reference_Frame_1_Unit_Test"
 	@echo "... Reference_Frame_and_Vector_Object_1_Integration_Test"
 	@echo "... Stage_1_Unit_Test"
+	@echo "... Triangle_Rasterization_1_Performance_Test"
 	@echo "... Triangle_Rasterization_1_Unit_Test"
 	@echo "... Vector_Object_1_Unit_Test"
 	@echo "... Viewport_1_Unit_Test"

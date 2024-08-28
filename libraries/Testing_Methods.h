@@ -101,13 +101,11 @@ inline int triangle_edge_function(std::array<float, 2> A, std::array<float, 2> B
     return ((B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0])) / 2;
 }
 
-inline sf::Image create_triangle(int width, int height, 
+inline void create_triangle(sf::Image& ret_image, 
                                 std::array<float, 2> A, std::array<float, 2> B, std::array<float, 2> C, 
                                 std::array<float, 3> A_color, std::array<float, 3> B_color, std::array<float, 3> C_color) {
     
-    // Create an image
-    sf::Image ret_image;
-    ret_image.create(width, height, sf::Color::White); // Create an image object to color
+    
 
 
     // First get the bounding box of the triangle
@@ -146,9 +144,7 @@ inline sf::Image create_triangle(int width, int height,
             }
         }
     }
-
-    return ret_image;
-
+    
 }
 
 

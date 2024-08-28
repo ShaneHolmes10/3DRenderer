@@ -32,5 +32,6 @@
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/performance_tests/CMakeFiles/rebuild_cache.dir

@@ -80,6 +80,7 @@ void Viewport::delay_ms(int delay_time) {
 
 }
 
+
 void Viewport::join() {
     if (windowThread.joinable()) {
         windowThread.join();

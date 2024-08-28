@@ -111,6 +111,8 @@ inline void time_result(float maximum_allowable_time_ms) {
     
     float sum = 0;
 
+    float result = 0;
+
     if(is_track_time_testUtils) {
         for (size_t i = 0; i < time_tracker_testUtils.size(); ++i) {
             std::cout << time_tracker_testUtils[i];
@@ -120,12 +122,20 @@ inline void time_result(float maximum_allowable_time_ms) {
             }
         }
         std::cout << "\n";
+
+        result = (sum) / (time_tracker_testUtils.size());
+
+        std::cout << "Time taken (Avg): " << result << " ms" << std::endl;
+        std::cout << "Allowed time: " << maximum_allowable_time_ms << " ms" << std::endl;
+
+    } else {
+        result = total_time_testUtils;
+
+        std::cout << "Time taken: " << result << " ms" << std::endl;
+        std::cout << "Allowed time: " << maximum_allowable_time_ms << " ms" << std::endl;
     }
 
-    float result = (sum) / (time_tracker_testUtils.size());
-
-    std::cout << "Time taken (Avg): " << result << " ms" << std::endl;
-    std::cout << "Allowed time: " << maximum_allowable_time_ms << " ms" << std::endl;
+    
 
     if(result <= maximum_allowable_time_ms) {
         std::cout << GREEN << "[TEST SUCCESSFUL]" << RESET << std::endl;

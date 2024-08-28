@@ -200,6 +200,20 @@ Performance_Test_Examples/fast:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build
 .PHONY : Performance_Test_Examples/fast
 
+# Convenience name for target.
+tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/rule:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/rule
+.PHONY : tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/rule
+
+# Convenience name for target.
+Triangle_Rasterization_1_Performance_Test: tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/rule
+.PHONY : Triangle_Rasterization_1_Performance_Test
+
+# fast build rule for target.
+Triangle_Rasterization_1_Performance_Test/fast:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build
+.PHONY : Triangle_Rasterization_1_Performance_Test/fast
+
 Bresenham_algorithm_1_Performance_Test.o: Bresenham_algorithm_1_Performance_Test.cpp.o
 .PHONY : Bresenham_algorithm_1_Performance_Test.o
 
@@ -344,6 +358,30 @@ Performance_Test_Examples.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/Performance_Test_Examples.cpp.s
 .PHONY : Performance_Test_Examples.cpp.s
 
+Triangle_Rasterization_1_Performance_Test.o: Triangle_Rasterization_1_Performance_Test.cpp.o
+.PHONY : Triangle_Rasterization_1_Performance_Test.o
+
+# target to build an object file
+Triangle_Rasterization_1_Performance_Test.cpp.o:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/Triangle_Rasterization_1_Performance_Test.cpp.o
+.PHONY : Triangle_Rasterization_1_Performance_Test.cpp.o
+
+Triangle_Rasterization_1_Performance_Test.i: Triangle_Rasterization_1_Performance_Test.cpp.i
+.PHONY : Triangle_Rasterization_1_Performance_Test.i
+
+# target to preprocess a source file
+Triangle_Rasterization_1_Performance_Test.cpp.i:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/Triangle_Rasterization_1_Performance_Test.cpp.i
+.PHONY : Triangle_Rasterization_1_Performance_Test.cpp.i
+
+Triangle_Rasterization_1_Performance_Test.s: Triangle_Rasterization_1_Performance_Test.cpp.s
+.PHONY : Triangle_Rasterization_1_Performance_Test.s
+
+# target to generate assembly for a file
+Triangle_Rasterization_1_Performance_Test.cpp.s:
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/Triangle_Rasterization_1_Performance_Test.cpp.s
+.PHONY : Triangle_Rasterization_1_Performance_Test.cpp.s
+
 __/__/src/Camera.o: __/__/src/Camera.cpp.o
 .PHONY : __/__/src/Camera.o
 
@@ -355,6 +393,7 @@ __/__/src/Camera.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Camera.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Camera.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Camera.cpp.o
 .PHONY : __/__/src/Camera.cpp.o
 
 __/__/src/Camera.i: __/__/src/Camera.cpp.i
@@ -368,6 +407,7 @@ __/__/src/Camera.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Camera.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Camera.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Camera.cpp.i
 .PHONY : __/__/src/Camera.cpp.i
 
 __/__/src/Camera.s: __/__/src/Camera.cpp.s
@@ -381,6 +421,7 @@ __/__/src/Camera.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Camera.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Camera.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Camera.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Camera.cpp.s
 .PHONY : __/__/src/Camera.cpp.s
 
 __/__/src/Math_Position_Object.o: __/__/src/Math_Position_Object.cpp.o
@@ -394,6 +435,7 @@ __/__/src/Math_Position_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.o
 .PHONY : __/__/src/Math_Position_Object.cpp.o
 
 __/__/src/Math_Position_Object.i: __/__/src/Math_Position_Object.cpp.i
@@ -407,6 +449,7 @@ __/__/src/Math_Position_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.i
 .PHONY : __/__/src/Math_Position_Object.cpp.i
 
 __/__/src/Math_Position_Object.s: __/__/src/Math_Position_Object.cpp.s
@@ -420,6 +463,7 @@ __/__/src/Math_Position_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Math_Position_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Math_Position_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Math_Position_Object.cpp.s
 .PHONY : __/__/src/Math_Position_Object.cpp.s
 
 __/__/src/Reference_Frame.o: __/__/src/Reference_Frame.cpp.o
@@ -433,6 +477,7 @@ __/__/src/Reference_Frame.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.o
 .PHONY : __/__/src/Reference_Frame.cpp.o
 
 __/__/src/Reference_Frame.i: __/__/src/Reference_Frame.cpp.i
@@ -446,6 +491,7 @@ __/__/src/Reference_Frame.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.i
 .PHONY : __/__/src/Reference_Frame.cpp.i
 
 __/__/src/Reference_Frame.s: __/__/src/Reference_Frame.cpp.s
@@ -459,6 +505,7 @@ __/__/src/Reference_Frame.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Reference_Frame.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Reference_Frame.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Reference_Frame.cpp.s
 .PHONY : __/__/src/Reference_Frame.cpp.s
 
 __/__/src/Stage.o: __/__/src/Stage.cpp.o
@@ -472,6 +519,7 @@ __/__/src/Stage.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Stage.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Stage.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Stage.cpp.o
 .PHONY : __/__/src/Stage.cpp.o
 
 __/__/src/Stage.i: __/__/src/Stage.cpp.i
@@ -485,6 +533,7 @@ __/__/src/Stage.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Stage.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Stage.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Stage.cpp.i
 .PHONY : __/__/src/Stage.cpp.i
 
 __/__/src/Stage.s: __/__/src/Stage.cpp.s
@@ -498,6 +547,7 @@ __/__/src/Stage.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Stage.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Stage.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Stage.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Stage.cpp.s
 .PHONY : __/__/src/Stage.cpp.s
 
 __/__/src/Vector_Object.o: __/__/src/Vector_Object.cpp.o
@@ -511,6 +561,7 @@ __/__/src/Vector_Object.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.o
 .PHONY : __/__/src/Vector_Object.cpp.o
 
 __/__/src/Vector_Object.i: __/__/src/Vector_Object.cpp.i
@@ -524,6 +575,7 @@ __/__/src/Vector_Object.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.i
 .PHONY : __/__/src/Vector_Object.cpp.i
 
 __/__/src/Vector_Object.s: __/__/src/Vector_Object.cpp.s
@@ -537,6 +589,7 @@ __/__/src/Vector_Object.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Vector_Object.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Vector_Object.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Vector_Object.cpp.s
 .PHONY : __/__/src/Vector_Object.cpp.s
 
 __/__/src/Viewport.o: __/__/src/Viewport.cpp.o
@@ -550,6 +603,7 @@ __/__/src/Viewport.cpp.o:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Viewport.cpp.o
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.o
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Viewport.cpp.o
 .PHONY : __/__/src/Viewport.cpp.o
 
 __/__/src/Viewport.i: __/__/src/Viewport.cpp.i
@@ -563,6 +617,7 @@ __/__/src/Viewport.cpp.i:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Viewport.cpp.i
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.i
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Viewport.cpp.i
 .PHONY : __/__/src/Viewport.cpp.i
 
 __/__/src/Viewport.s: __/__/src/Viewport.cpp.s
@@ -576,6 +631,7 @@ __/__/src/Viewport.cpp.s:
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Color_Interpolation_1_Performance_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/build.make tests/performance_tests/CMakeFiles/Eigen_Lib_Perf_Test.dir/__/__/src/Viewport.cpp.s
 	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/build.make tests/performance_tests/CMakeFiles/Performance_Test_Examples.dir/__/__/src/Viewport.cpp.s
+	cd /home/shane/3DRenderer/3DRenderer/build && $(MAKE) $(MAKESILENT) -f tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/build.make tests/performance_tests/CMakeFiles/Triangle_Rasterization_1_Performance_Test.dir/__/__/src/Viewport.cpp.s
 .PHONY : __/__/src/Viewport.cpp.s
 
 # Help Target
@@ -592,6 +648,7 @@ help:
 	@echo "... Color_Interpolation_1_Performance_Test"
 	@echo "... Eigen_Lib_Perf_Test"
 	@echo "... Performance_Test_Examples"
+	@echo "... Triangle_Rasterization_1_Performance_Test"
 	@echo "... Bresenham_algorithm_1_Performance_Test.o"
 	@echo "... Bresenham_algorithm_1_Performance_Test.i"
 	@echo "... Bresenham_algorithm_1_Performance_Test.s"
@@ -610,6 +667,9 @@ help:
 	@echo "... Performance_Test_Examples.o"
 	@echo "... Performance_Test_Examples.i"
 	@echo "... Performance_Test_Examples.s"
+	@echo "... Triangle_Rasterization_1_Performance_Test.o"
+	@echo "... Triangle_Rasterization_1_Performance_Test.i"
+	@echo "... Triangle_Rasterization_1_Performance_Test.s"
 	@echo "... __/__/src/Camera.o"
 	@echo "... __/__/src/Camera.i"
 	@echo "... __/__/src/Camera.s"
