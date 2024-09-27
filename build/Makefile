@@ -273,19 +273,6 @@ Viewport_2_Unit_Test/fast:
 .PHONY : Viewport_2_Unit_Test/fast
 
 #=============================================================================
-# Target rules for targets named Camera_Reference_Frame_1_Integration_Test
-
-# Build rule for target.
-Camera_Reference_Frame_1_Integration_Test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_Reference_Frame_1_Integration_Test
-.PHONY : Camera_Reference_Frame_1_Integration_Test
-
-# fast build rule for target.
-Camera_Reference_Frame_1_Integration_Test/fast:
-	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Camera_Reference_Frame_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Camera_Reference_Frame_1_Integration_Test.dir/build
-.PHONY : Camera_Reference_Frame_1_Integration_Test/fast
-
-#=============================================================================
 # Target rules for targets named Camera_and_Reference_Frame_1_Integration_Test
 
 # Build rule for target.
@@ -297,6 +284,32 @@ Camera_and_Reference_Frame_1_Integration_Test: cmake_check_build_system
 Camera_and_Reference_Frame_1_Integration_Test/fast:
 	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_1_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_1_Integration_Test.dir/build
 .PHONY : Camera_and_Reference_Frame_1_Integration_Test/fast
+
+#=============================================================================
+# Target rules for targets named Camera_and_Reference_Frame_2_Integration_Test
+
+# Build rule for target.
+Camera_and_Reference_Frame_2_Integration_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_and_Reference_Frame_2_Integration_Test
+.PHONY : Camera_and_Reference_Frame_2_Integration_Test
+
+# fast build rule for target.
+Camera_and_Reference_Frame_2_Integration_Test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_2_Integration_Test.dir/build.make tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_2_Integration_Test.dir/build
+.PHONY : Camera_and_Reference_Frame_2_Integration_Test/fast
+
+#=============================================================================
+# Target rules for targets named Demo_File
+
+# Build rule for target.
+Demo_File: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Demo_File
+.PHONY : Demo_File
+
+# fast build rule for target.
+Demo_File/fast:
+	$(MAKE) $(MAKESILENT) -f tests/integration_tests/CMakeFiles/Demo_File.dir/build.make tests/integration_tests/CMakeFiles/Demo_File.dir/build
+.PHONY : Demo_File/fast
 
 #=============================================================================
 # Target rules for targets named Eigen_Lib_Inte_Test
@@ -429,10 +442,11 @@ help:
 	@echo "... Camera_1_Unit_Test"
 	@echo "... Camera_2_Performance_Test"
 	@echo "... Camera_2_Unit_Test"
-	@echo "... Camera_Reference_Frame_1_Integration_Test"
 	@echo "... Camera_and_Reference_Frame_1_Integration_Test"
+	@echo "... Camera_and_Reference_Frame_2_Integration_Test"
 	@echo "... Color_Interpolation_1_Performance_Test"
 	@echo "... Color_Interpolation_1_Unit_Test"
+	@echo "... Demo_File"
 	@echo "... Eigen_Lib_Inte_Test"
 	@echo "... Eigen_Lib_Perf_Test"
 	@echo "... Eigen_Lib_Unit_Test"

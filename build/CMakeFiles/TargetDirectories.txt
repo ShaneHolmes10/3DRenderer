@@ -20,8 +20,9 @@
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/Viewport_2_Unit_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/edit_cache.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/unit_tests/CMakeFiles/rebuild_cache.dir
-/home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/Camera_Reference_Frame_1_Integration_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_1_Integration_Test.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/Camera_and_Reference_Frame_2_Integration_Test.dir
+/home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/Demo_File.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/Eigen_Lib_Inte_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/Reference_Frame_and_Vector_Object_1_Integration_Test.dir
 /home/shane/3DRenderer/3DRenderer/build/tests/integration_tests/CMakeFiles/edit_cache.dir
