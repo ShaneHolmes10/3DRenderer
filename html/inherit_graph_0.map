@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classMathPositionObject.html" title="This class is a representation of a mathematical object that contains positional information." alt="" coords="5,31,155,57"/>
+<area shape="rect" id="node2" href="$classReferenceFrame.html" title="This class represents a mathematical reference frame." alt="" coords="203,5,332,32"/>
+<area shape="rect" id="node4" href="$classVectorObject.html" title="This class represents a vector but in the context of it&#39;s relationship to a referenceframe...." alt="" coords="215,56,320,83"/>
+<area shape="rect" id="node3" href="$classCamera.html" title="This class represents a camera object that will take a picture of the 3d environment and represent th..." alt="" coords="380,5,453,32"/>
+</map>

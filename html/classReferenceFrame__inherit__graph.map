@@ -1,0 +1,5 @@
+<map id="ReferenceFrame" name="ReferenceFrame">
+<area shape="rect" id="node1" title="This class represents a mathematical reference frame." alt="" coords="15,80,145,107"/>
+<area shape="rect" id="node3" href="$classCamera.html" title="This class represents a camera object that will take a picture of the 3d environment and represent th..." alt="" coords="43,155,117,181"/>
+<area shape="rect" id="node2" href="$classMathPositionObject.html" title="This class is a representation of a mathematical object that contains positional information." alt="" coords="5,5,155,32"/>
+</map>

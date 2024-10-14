@@ -1,0 +1,5 @@
+<map id="VectorObject" name="VectorObject">
+<area shape="rect" id="node1" title="This class represents a vector but in the context of it&#39;s relationship to a referenceframe...." alt="" coords="33,171,138,197"/>
+<area shape="rect" id="node2" href="$classMathPositionObject.html" title="This class is a representation of a mathematical object that contains positional information." alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node3" href="$classReferenceFrame.html" title="This class represents a mathematical reference frame." alt="" coords="102,81,231,108"/>
+</map>
