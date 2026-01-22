@@ -1,14 +1,12 @@
-# Set the minimum required version of CMake
-cmake_minimum_required(VERSION 3.10)
+# Tests
 
-# Project name for tests
-project(3DRendererTests)
+# Excluded tests (if any)
+set(excluded_tests "")
 
-# Include Eigen directory
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../libraries/eigen)
-
-# Add each type of tests
-add_subdirectory(unit_tests)
-add_subdirectory(integration_tests)
-add_subdirectory(performance_tests)
-
+# Add all tests matching test*.cpp pattern
+projectAddTestsGlob(
+    tests 
+    "test*.cpp" 
+    "${excluded_tests}" 
+    "3drenderer_lib"
+)

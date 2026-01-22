@@ -13,6 +13,8 @@ project(3DRenderer
 ###############################################################################
 # Gather information, perform checks, set defaults
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -26,17 +28,22 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build (Debug or Release)" FORCE)
 endif()
 
+
+include(ProjectTesting)
+
+# Add examples target
+add_custom_target(examples)
+
 # Build options
-option(BUILD_TESTS "Build tests" ON)
 option(BUILD_EXAMPLES "Build examples" ON)
 
 ###############################################################################
 # Handle dependencies
 
-include(cmake/HandleEigen.cmake)
-include(cmake/HandleSFML.cmake)
-include(cmake/HandleX11.cmake)
-include(cmake/HandleThreads.cmake)
+include(HandleEigen)
+include(HandleSFML)
+include(HandleX11)
+include(HandleThreads)
 
 ###############################################################################
 # Add components
@@ -56,4 +63,4 @@ endif()
 
 ###############################################################################
 # Print configuration variables
-include(cmake/HandlePrintConfiguration.cmake)
+include(HandlePrintConfiguration)
