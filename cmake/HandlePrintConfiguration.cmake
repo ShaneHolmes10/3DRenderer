@@ -1,0 +1,20 @@
+###############################################################################
+# Print configuration summary
+
+message(STATUS "")
+message(STATUS "================ 3D Renderer Configuration ================")
+message(STATUS "Version:           ${RENDERER_VERSION_STRING}")
+message(STATUS "Build type:        ${CMAKE_BUILD_TYPE}")
+message(STATUS "C++ standard:      ${CMAKE_CXX_STANDARD}")
+message(STATUS "Build tests:       ${BUILD_TESTS}")
+message(STATUS "Build examples:    ${BUILD_EXAMPLES}")
+message(STATUS "")
+message(STATUS "Dependencies:")
+message(STATUS "  Eigen3:          ${RENDERER_EIGEN_VERSION}")
+message(STATUS "  SFML:            ${RENDERER_SFML_VERSION}")
+message(STATUS "  X11:             Found")
+message(STATUS "  Threads:         Found")
+message(STATUS "")
+message(STATUS "Install prefix:    ${CMAKE_INSTALL_PREFIX}")
+message(STATUS "===========================================================")
+message(STATUS "")
