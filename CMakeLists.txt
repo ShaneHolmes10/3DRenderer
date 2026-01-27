@@ -48,6 +48,8 @@ include(HandleThreads)
 ###############################################################################
 # Add components
 
+add_subdirectory(CppUnitLite)
+
 # Build main library
 add_subdirectory(3DRenderer)
 

@@ -1,5 +1,8 @@
 # This file defines macros for easily adding groups of tests for the project.
 
+# Define test data directory for all tests
+add_compile_definitions(SRC_DIR="${CMAKE_SOURCE_DIR}")
+
 ###############################################################################
 # Macro: projectAddTestsGlob
 #
