@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../representations/mesh.h"
+#include "representations/mesh.h"
 #include <string>
 
 class LoadDataFile {

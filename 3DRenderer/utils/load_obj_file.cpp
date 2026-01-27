@@ -1,5 +1,5 @@
 
-#include "loadobjfile.h"
+#include "load_obj_file.h"
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
