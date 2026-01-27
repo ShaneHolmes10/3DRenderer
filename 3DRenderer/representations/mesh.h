@@ -19,14 +19,14 @@ class Mesh {
 
 private:
     std::vector<Vertex> vertices;
-    std::vector<Face> indicies;
+    std::vector<Face> faces;
 
 
 public:
 
     Mesh(
         std::vector<Vertex> vertices,
-        std::vector<Face> indicies
+        std::vector<Face> faces
         // vector<Texture> textures
     );
 

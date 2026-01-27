@@ -2,8 +2,8 @@
 #ifndef Camera_H
 #define Camera_H
 
-#include "Reference_Frame.h"
-#include "Stage.h"
+#include "math/Reference_Frame.h"
+#include "math/Stage.h"
 #include <SFML/Graphics.hpp>
 #include <Eigen/Dense>
 #include <vector>

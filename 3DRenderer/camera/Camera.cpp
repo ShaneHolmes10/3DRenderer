@@ -1,6 +1,6 @@
 
-#include "Camera.h"
-#include "Vector_Object.h"
+#include "camera/Camera.h"
+#include "math/Vector_Object.h"
 #include <iostream>
 #include <cmath>
 

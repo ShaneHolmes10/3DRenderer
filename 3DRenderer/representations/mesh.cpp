@@ -1,4 +1,5 @@
-#include "mesh.h"
+
+#include "representations/mesh.h"
 
 Mesh::Mesh(
     std::vector<Vertex> vertices, 
@@ -13,7 +14,7 @@ const std::vector<Vertex>& Mesh::getVertices() const {
 
 
 const std::vector<Face>& Mesh::getFaces() const {
-    return indicies;
+    return faces;
 }
 
 size_t Mesh::getVertexCount() const {
@@ -21,5 +22,5 @@ size_t Mesh::getVertexCount() const {
 }
 
 size_t Mesh::getFaceCount() const {
-    return indicies.size()
+    return faces.size();
 }
