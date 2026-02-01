@@ -7,8 +7,19 @@ The objective of this project is to explore building a 3D rendering system, spec
 To interact with the building system simply navigate to the build directory and call 
 ```sh
 cmake ..
-cmake --build .
 ```
+
+Then to make a specific file just call. The thing we're making has to have a main in it. 
+```sh
+make [filename]
+```
+
+To run tests just make the test file and then run the following (with or without the filename)
+
+```sh
+ctest [filename]
+```
+
 
 To clean the build folder, stay in the build folder and call
 ```sh
@@ -17,7 +28,7 @@ rm -rf *
 
 to run the main file call (while still in the build directory)
 ```sh
-./bin/exec
+./bi
 ```
 
 to run any of the test files run this (while still in the build directory)
