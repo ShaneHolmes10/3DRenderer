@@ -7,6 +7,7 @@ set(3drenderer_subdirs
     math
     camera
     utils
+    representations
 )
 
 set(3drenderer_srcs)
