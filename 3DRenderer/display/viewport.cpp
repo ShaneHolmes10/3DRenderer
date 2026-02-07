@@ -3,11 +3,8 @@
 #include "display/viewport.h"
 #include <SFML/Graphics.hpp>
 #include <thread>
-#include <iostream>
 #include <mutex>
-#include <X11/Xlib.h> // Include X11 header
-#include <chrono>
-
+#include <X11/Xlib.h> // Include X11 header for threads
 
 
 void Viewport::runWindow() {
@@ -54,29 +51,27 @@ void Viewport::start() {
 }
 
 void Viewport::update() {
-    {
         std::lock_guard<std::mutex> lock(frame_mutex);
         frame = frame_buffer;
-    }
 }
 
 void Viewport::setFrame(const FrameBuffer& frame_buff) {
-    {
-        std::lock_guard<std::mutex> lock(frame_mutex);
+    
+    std::lock_guard<std::mutex> lock(frame_mutex);
 
-        sf::Image sfImage;
-        sfImage.create(
-            frame_buff.width, 
-            frame_buff.height, 
-            frame_buff.pixels.data()  // Direct pointer to pixel data
-        );
-
-        sf::Texture texture;
-        if (!texture.loadFromImage(sfImage)) {
-            throw std::runtime_error("Failed to load texture from image");
-        } 
-        frame_buffer = texture;
-    }
+    sf::Image sfImage;
+    sfImage.create(
+        frame_buff.width, 
+        frame_buff.height, 
+        frame_buff.pixels.data()  // Direct pointer to pixel data
+    );
+    
+    sf::Texture texture;
+    if (!texture.loadFromImage(sfImage)) {
+        throw std::runtime_error("Failed to load texture from image");
+    } 
+    frame_buffer = texture;
+    
 }
 
 void Viewport::join() {
@@ -85,5 +80,8 @@ void Viewport::join() {
     }
 }
 
+Viewport::~Viewport() {
+    join(); 
+}
 
 

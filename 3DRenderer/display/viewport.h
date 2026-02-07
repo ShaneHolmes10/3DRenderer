@@ -6,9 +6,7 @@
 #include "display/frame_buffer.h"
 #include <SFML/Graphics.hpp>
 #include <thread>
-#include <iostream>
 #include <mutex>
-#include <X11/Xlib.h> // Include X11 header for threads
 
 /**
  * @brief This class is responsible for facilitating the display of the pixels to 
@@ -92,6 +90,8 @@ public:
      */
     Viewport(int w = 800, int h = 600, int x = 500, int y = 500);
     
+    ~Viewport();
+
     /**
      * @brief This method needs to be called before hand to initialize the 
      * view object instance.
@@ -110,7 +110,6 @@ public:
      * @brief This updates the view with the image stored in the 
      * frame buffer.
      * 
-     * @return int status code
      */
     void update();
 
