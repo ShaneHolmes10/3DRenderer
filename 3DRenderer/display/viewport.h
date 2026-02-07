@@ -3,11 +3,12 @@
 #define VIEWPORT_H
 
 
-#include "framebuffer.h"
+#include "display/frame_buffer.h"
+#include <SFML/Graphics.hpp>
 #include <thread>
 #include <iostream>
 #include <mutex>
-#include <X11/Xlib.h> // Include X11 header
+#include <X11/Xlib.h> // Include X11 header for threads
 
 /**
  * @brief This class is responsible for facilitating the display of the pixels to 

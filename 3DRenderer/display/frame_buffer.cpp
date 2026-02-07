@@ -1,5 +1,5 @@
 // FrameBuffer.cpp
-#include "display/FrameBuffer.h"
+#include "display/frame_buffer.h"
 
 FrameBuffer::FrameBuffer(size_t w, size_t h) 
     : width(w), height(h), pixels(w * h * 3, 0) {}

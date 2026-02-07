@@ -1,6 +1,6 @@
 
 #include <stdexcept>
-#include "Viewport.h"
+#include "display/viewport.h"
 #include <SFML/Graphics.hpp>
 #include <thread>
 #include <iostream>
@@ -25,7 +25,7 @@ void Viewport::runWindow() {
                 window.close();
             }
         }
-        window.clear(sf::Color::Black); // wipe the screen
+        window.clear(sf::Color::White); // wipe the screen
         {
             std::lock_guard<std::mutex> lock(frame_mutex);
             sf::Sprite sprite(frame);
