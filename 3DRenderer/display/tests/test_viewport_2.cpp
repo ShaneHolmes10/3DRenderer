@@ -1,26 +1,33 @@
 #include "CppUnitLite/TestHarness.h"
-#include "display/Viewport.h"
-#include <SFML/Graphics.hpp>
+#include "display/viewport.h"
+#include "display/frame_buffer.h"
 #include <iostream>
 #include <string>
+#include <cmath>
 
 
-sf::Image create_circle_image(int x, int y, int r) {
-    sf::RenderTexture renderTexture;
-    renderTexture.create(800, 600);
-
-    sf::CircleShape circle(r);
-    circle.setFillColor(sf::Color::Green);
-    circle.setPosition(x, y);
-
-    renderTexture.clear(sf::Color::White);
-    renderTexture.draw(circle);
-    renderTexture.display();
-
-    sf::Texture texture = renderTexture.getTexture();
-    sf::Image image_1 = texture.copyToImage();
-
-    return image_1;
+FrameBuffer create_circle_framebuffer(int width, int height, int cx, int cy, int radius) {
+    FrameBuffer fb(width, height);
+    
+    // Fill with white background
+    for (size_t y = 0; y < height; y++) {
+        for (size_t x = 0; x < width; x++) {
+            fb.setPixel(x, y, 255, 255, 255);
+        }
+    }
+    
+    // Draw green circle
+    for (size_t y = 0; y < height; y++) {
+        for (size_t x = 0; x < width; x++) {
+            int dx = x - cx;
+            int dy = y - cy;
+            if (dx*dx + dy*dy <= radius*radius) {
+                fb.setPixel(x, y, 0, 255, 0);  // Green
+            }
+        }
+    }
+    
+    return fb;
 }
 
 
@@ -34,7 +41,7 @@ TEST(Viewport, SetFrameDisplaysGreenCircle)
     Viewport v1(width, height);
     v1.start();
 
-    v1.set_frame(create_circle_image(width / 2, height / 2, 100));
+    v1.setFrame(create_circle_framebuffer(width, height, width / 2, height / 2, 100));
     v1.update();
 
     std::string answer;
@@ -58,7 +65,7 @@ TEST(Viewport, AnimatedCircleMovesDownward)
     v1.start();
 
     for(int n = 0; n < 50; n++) {
-        v1.set_frame(create_circle_image(width / 2, height / 2 + n*4, 100));
+        v1.setFrame(create_circle_framebuffer(width, height, width / 2, height / 2 + n*4, 100));
         v1.update();
     }
 
