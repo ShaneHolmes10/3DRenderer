@@ -6,6 +6,7 @@ project(3drenderer LANGUAGES CXX)
 set(3drenderer_subdirs
     math
     display
+    renderer
     utils
     representations
 )
