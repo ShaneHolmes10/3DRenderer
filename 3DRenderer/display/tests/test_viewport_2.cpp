@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <chrono>
 
 
 FrameBuffer create_circle_framebuffer(int width, int height, int cx, int cy, int radius) {
@@ -67,6 +68,7 @@ TEST(Viewport, AnimatedCircleMovesDownward)
     for(int n = 0; n < 50; n++) {
         v1.setFrame(create_circle_framebuffer(width, height, width / 2, height / 2 + n*4, 100));
         v1.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
 
     std::string answer;
