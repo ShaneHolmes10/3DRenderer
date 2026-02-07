@@ -5,7 +5,7 @@ project(3drenderer LANGUAGES CXX)
 # The following variable is the master list of subdirs to add
 set(3drenderer_subdirs
     math
-    camera
+    display
     utils
     representations
 )

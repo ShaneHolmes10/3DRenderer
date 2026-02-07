@@ -1,5 +1,5 @@
 
-#include "camera/Camera.h"
+#include "display/Camera.h"
 #include "math/Vector_Object.h"
 #include <iostream>
 #include <cmath>
