@@ -3,7 +3,7 @@
 #define VIEWPORT_H
 
 
-#include <SFML/Graphics.hpp>
+#include "framebuffer.h"
 #include <thread>
 #include <iostream>
 #include <mutex>
@@ -48,14 +48,14 @@ private:
      * @brief This is the frame that we are displaying to the window.
      * 
      */
-    sf::Texture frame;
+    FrameBuffer frame;
 
     /**
      * @brief This is the frame buffer that holds the next frame until 
      * we're ready.
      * 
      */
-    sf::Texture frame_buffer;
+    FrameBuffer frame_buffer;
 
     /**
      * @brief This is the frame mutex lock to prevent thread objects from 
@@ -120,7 +120,7 @@ public:
      * @param frame_buff Image to place in the frame buffer
      * @return int status code
      */
-    int set_frame(sf::Image frame_buff);
+    int set_frame(FrameBuffer frame_buff);
 
     /**
      * @brief This method incorporates a simple delay that can be placed anywhere.

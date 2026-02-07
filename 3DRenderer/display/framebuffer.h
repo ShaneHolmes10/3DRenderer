@@ -1,0 +1,14 @@
+// FrameBuffer.h
+#pragma once
+
+#include <vector>
+#include <cstdint>
+
+struct FrameBuffer {
+    std::vector<uint8_t> pixels;
+    size_t width;
+    size_t height;
+    
+    FrameBuffer(size_t w, size_t h);
+    void setPixel(size_t x, size_t y, uint8_t r, uint8_t g, uint8_t b);
+};
