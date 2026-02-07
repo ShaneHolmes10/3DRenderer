@@ -48,14 +48,14 @@ private:
      * @brief This is the frame that we are displaying to the window.
      * 
      */
-    FrameBuffer frame;
+    sf::Texture frame;
 
     /**
      * @brief This is the frame buffer that holds the next frame until 
      * we're ready.
      * 
      */
-    FrameBuffer frame_buffer;
+    sf::Texture frame_buffer;
 
     /**
      * @brief This is the frame mutex lock to prevent thread objects from 
@@ -111,23 +111,22 @@ public:
      * 
      * @return int status code
      */
-    int update();
+    void update();
 
     /**
      * @brief This method sets the frame buffer of the view to be what ever the input
      * image is. 
      * 
      * @param frame_buff Image to place in the frame buffer
-     * @return int status code
      */
-    int set_frame(FrameBuffer frame_buff);
+    void setFrame(const FrameBuffer& frame_buff);
 
     /**
      * @brief This method incorporates a simple delay that can be placed anywhere.
      * 
      * @param delay_time time to delay in ms
      */
-    void delay_ms(int delay_time);
+    void delayMs(int delay_time);
 
     /**
      * @brief When done with the view we will need to join it back to the main thread.
