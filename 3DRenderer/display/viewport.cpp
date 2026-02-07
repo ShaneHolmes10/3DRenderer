@@ -79,13 +79,6 @@ void Viewport::setFrame(const FrameBuffer& frame_buff) {
     }
 }
 
-void Viewport::delayMs(int delay_time) {
-
-    std::this_thread::sleep_for(std::chrono::milliseconds(delay_time));
-
-}
-
-
 void Viewport::join() {
     if (windowThread.joinable()) {
         windowThread.join();

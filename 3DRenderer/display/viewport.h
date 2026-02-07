@@ -123,13 +123,6 @@ public:
     void setFrame(const FrameBuffer& frame_buff);
 
     /**
-     * @brief This method incorporates a simple delay that can be placed anywhere.
-     * 
-     * @param delay_time time to delay in ms
-     */
-    void delayMs(int delay_time);
-
-    /**
      * @brief When done with the view we will need to join it back to the main thread.
      * 
      */
