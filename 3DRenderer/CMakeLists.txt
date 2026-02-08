@@ -8,7 +8,7 @@ set(3drenderer_subdirs
     display
     renderer
     utils
-    representations
+    forms
 )
 
 set(3drenderer_srcs)
