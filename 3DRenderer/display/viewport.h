@@ -3,11 +3,10 @@
 #define VIEWPORT_H
 
 
+#include "display/frame_buffer.h"
 #include <SFML/Graphics.hpp>
 #include <thread>
-#include <iostream>
 #include <mutex>
-#include <X11/Xlib.h> // Include X11 header
 
 /**
  * @brief This class is responsible for facilitating the display of the pixels to 
@@ -91,6 +90,8 @@ public:
      */
     Viewport(int w = 800, int h = 600, int x = 500, int y = 500);
     
+    ~Viewport();
+
     /**
      * @brief This method needs to be called before hand to initialize the 
      * view object instance.
@@ -109,25 +110,16 @@ public:
      * @brief This updates the view with the image stored in the 
      * frame buffer.
      * 
-     * @return int status code
      */
-    int update();
+    void update();
 
     /**
      * @brief This method sets the frame buffer of the view to be what ever the input
      * image is. 
      * 
      * @param frame_buff Image to place in the frame buffer
-     * @return int status code
      */
-    int set_frame(sf::Image frame_buff);
-
-    /**
-     * @brief This method incorporates a simple delay that can be placed anywhere.
-     * 
-     * @param delay_time time to delay in ms
-     */
-    void delay_ms(int delay_time);
+    void setFrame(const FrameBuffer& frame_buff);
 
     /**
      * @brief When done with the view we will need to join it back to the main thread.

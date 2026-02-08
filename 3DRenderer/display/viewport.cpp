@@ -1,13 +1,10 @@
 
-
-#include "Viewport.h"
+#include <stdexcept>
+#include "display/viewport.h"
 #include <SFML/Graphics.hpp>
 #include <thread>
-#include <iostream>
 #include <mutex>
-#include <X11/Xlib.h> // Include X11 header
-#include <chrono>
-
+#include <X11/Xlib.h> // Include X11 header for threads
 
 
 void Viewport::runWindow() {
@@ -25,6 +22,7 @@ void Viewport::runWindow() {
                 window.close();
             }
         }
+        window.clear(sf::Color::White); // wipe the screen
         {
             std::lock_guard<std::mutex> lock(frame_mutex);
             sf::Sprite sprite(frame);
@@ -52,34 +50,29 @@ void Viewport::start() {
     windowThread = std::thread(&Viewport::runWindow, this);
 }
 
-int Viewport::update() {
-    {
+void Viewport::update() {
         std::lock_guard<std::mutex> lock(frame_mutex);
         frame = frame_buffer;
-    }
-    return 0;
 }
 
-int Viewport::set_frame(sf::Image frame_buff) {
-    {
-        std::lock_guard<std::mutex> lock(frame_mutex);
-        
-        sf::Texture texture;
-        if (!texture.loadFromImage(frame_buff)) {
-            return -1;
-        } 
-        frame_buffer = texture;
-    }
+void Viewport::setFrame(const FrameBuffer& frame_buff) {
     
-    return 0;
+    std::lock_guard<std::mutex> lock(frame_mutex);
+
+    sf::Image sfImage;
+    sfImage.create(
+        frame_buff.width, 
+        frame_buff.height, 
+        frame_buff.pixels.data()  // Direct pointer to pixel data
+    );
+    
+    sf::Texture texture;
+    if (!texture.loadFromImage(sfImage)) {
+        throw std::runtime_error("Failed to load texture from image");
+    } 
+    frame_buffer = texture;
+    
 }
-
-void Viewport::delay_ms(int delay_time) {
-
-    std::this_thread::sleep_for(std::chrono::milliseconds(delay_time));
-
-}
-
 
 void Viewport::join() {
     if (windowThread.joinable()) {
@@ -87,5 +80,8 @@ void Viewport::join() {
     }
 }
 
+Viewport::~Viewport() {
+    join(); 
+}
 
 
