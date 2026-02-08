@@ -1,5 +1,5 @@
 #include "CppUnitLite/TestHarness.h"
-#include "display/Viewport.h"
+#include "display/viewport.h"
 #include <iostream>
 #include <string>
 
