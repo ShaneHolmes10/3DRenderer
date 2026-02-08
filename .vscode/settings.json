@@ -64,5 +64,8 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp",
         "dense": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "Eigen"
+    ]
 }
