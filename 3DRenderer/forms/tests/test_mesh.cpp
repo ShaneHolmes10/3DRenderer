@@ -1,5 +1,5 @@
 #include "CppUnitLite/TestHarness.h"
-#include "representations/mesh.h"
+#include "forms/mesh.h"
 #include <Eigen/Dense>
 
 
