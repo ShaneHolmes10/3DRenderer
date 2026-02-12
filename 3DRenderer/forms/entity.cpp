@@ -5,9 +5,9 @@
 void Entity::updateSelfAndChild() {
 
     if(parent) {
-        world_matrix = parent->world_matrix * local_transform.getMatrix();
+        world_matrix = parent->world_matrix * local_matrix;
     } else {
-        world_matrix = local_transform.get_matrix();
+        world_matrix = local_matrix;
     }
 
     for (auto&& child : children) {
@@ -16,25 +16,16 @@ void Entity::updateSelfAndChild() {
 
 }
 
-void Entity::addChild(const const TArgs&... args) {
-
-    children.push_back(std::make_unique<Entity>(args...));
-    children.back()->parent = this;
-
-    children.back()->updateSelfAndChild();
-
-}
-
 void Entity::setTransform(Transform trans) {
 
-    transform = trans;
+    local_matrix = trans.getMatrix();
     updateSelfAndChild();
 
 }
 
 void Entity::applyTransform(Transform trans) {
    
-    transform = transform * trans;
+    local_matrix = local_matrix * trans.getMatrix();
     updateSelfAndChild();
     
 }

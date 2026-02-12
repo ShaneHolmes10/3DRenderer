@@ -155,6 +155,6 @@ public:
      * 
      * @return const Eigen::Matrix4f& Reference to 4x4 transformation matrix
      */
-    const Eigen::Matrix4f& getTransformationMatrix() const;
+    const Eigen::Matrix4f& getMatrix() const;
 
 };

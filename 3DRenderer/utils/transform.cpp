@@ -101,6 +101,6 @@ const Eigen::Vector3f& Transform::getScale() const {
     return scale;
 }
 
-const Eigen::Matrix4f& Transform::getTransformationMatrix() const {
+const Eigen::Matrix4f& Transform::getMatrix() const {
     return matrix;
 }
