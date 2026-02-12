@@ -1,5 +1,5 @@
 
-#include "representations/model.h"
+#include "forms/model.h"
 #include "utils/load_obj_file.h" // Should really use a generic loader in the future
 
 Model::Model(

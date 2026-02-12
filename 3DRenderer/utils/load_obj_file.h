@@ -1,6 +1,6 @@
 
 #include "load_data_file.h"
-#include "representations/mesh.h"
+#include "forms/mesh.h"
 
 /**
  * @brief Loads mesh data from Wavefront OBJ files.
