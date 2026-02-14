@@ -3,7 +3,7 @@
 #include <stdexcept>
 
 FrameBuffer::FrameBuffer(size_t w, size_t h) 
-    : width(w), height(h), pixels(w * h * 4, 0) {}
+    : width(w), height(h), pixels(w * h * 4, 255) {}
 
 void FrameBuffer::setPixel(size_t x, size_t y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
     
