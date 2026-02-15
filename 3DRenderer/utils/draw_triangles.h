@@ -3,7 +3,7 @@
 #include "display/frame_buffer.h"
 #include <Eigen/Dense>
 
-struct Triangle {
+struct Triangle2 {
 
     Eigen::Vector2f vertex_A;
     Eigen::Vector2f vertex_B;
@@ -15,6 +15,6 @@ struct Triangle {
 
 };
 
-void drawTriangle(FrameBuffer& frame_buffer, const Triangle& triangle);
+void drawTriangle(FrameBuffer& frame_buffer, const Triangle2& triangle);
 
 float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, const Eigen::Vector2f& C);

@@ -34,7 +34,7 @@ int main() {
         // Clockwise rotation (negate angle)
         float theta = -angle * 0.05f;  // Negative for clockwise
         
-        Triangle tri;
+        Triangle2 tri;
         
         // Vertex A (top)
         tri.vertex_A = Eigen::Vector2f(
