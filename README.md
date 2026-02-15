@@ -1,10 +1,15 @@
 # 3DRenderer
-The objective of this project is to explore building a 3D rendering system, specifically using rasterization. <br> <br>
+The objective of this project is to explore building a 3D CPU software rasterizer from scratch. <br> <br>
 ![RotSph_2_1](https://github.com/user-attachments/assets/68725838-f044-49b1-a266-e1800a013f41)
 
 
 # Building 
-To interact with the building system simply navigate to the build directory and call 
+Create build directory.
+```sh
+mkdir build && cd build
+```
+
+Then in the build directory call the following.
 ```sh
 cmake ..
 ```
@@ -14,29 +19,18 @@ Then to make a specific file just call. The thing we're making has to have a mai
 make [filename]
 ```
 
-To run tests just make the test file and then run the following (with or without the filename)
+To run tests just make the test file and then run the following (with or without the filename).
 
 ```sh
 ctest [filename]
 ```
 
 
-To clean the build folder, stay in the build folder and call
+To clean the build folder, stay in the build folder and call the following.
 ```sh
 rm -rf *
 ```
 
-to run the main file call (while still in the build directory)
-```sh
-./bi
-```
-
-to run any of the test files run this (while still in the build directory)
-```sh
-./bin/unit_tests/[name of test]
-./bin/integration_tests/[name of test]
-./bin/performance_tests/[name of test]
-```
 
 
 
