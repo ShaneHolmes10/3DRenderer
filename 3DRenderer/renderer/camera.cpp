@@ -41,14 +41,14 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             float z2 = v2_expressed.z();
             float z3 = v3_expressed.z();
 
-            float x1_screen = (v1_expressed.x() * (fov_length / z1)) + (width / 2);
-            float y1_screen = (v1_expressed.y() * (fov_length / z1)) + (height / 2);
+            float x1_screen = (v1_expressed.x() * (focal_length / z1)) + (width / 2);
+            float y1_screen = (v1_expressed.y() * (focal_length / z1)) + (height / 2);
 
-            float x2_screen = (v2_expressed.x() * (fov_length / z2)) + (width / 2);
-            float y2_screen = (v2_expressed.y() * (fov_length / z2)) + (height / 2);
+            float x2_screen = (v2_expressed.x() * (focal_length / z2)) + (width / 2);
+            float y2_screen = (v2_expressed.y() * (focal_length / z2)) + (height / 2);
 
-            float x3_screen = (v3_expressed.x() * (fov_length / z3)) + (width / 2);
-            float y3_screen = (v3_expressed.y() * (fov_length / z3)) + (height / 2);
+            float x3_screen = (v3_expressed.x() * (focal_length / z3)) + (width / 2);
+            float y3_screen = (v3_expressed.y() * (focal_length / z3)) + (height / 2);
 
             // Create 2D triangle for rasterization
             Triangle2 tri_2d;

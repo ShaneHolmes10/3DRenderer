@@ -23,7 +23,7 @@ private:
 
     Entity* mount;
 
-    float fov_length;
+    float focal_length;
     int width;
     int height;
 
@@ -37,7 +37,7 @@ public:
 
     Entity* getMount() const { return mount; }
 
-    void setFovLength(float length) { fov_length = length; }
+    void setFovLength(float length) { focal_length = length; }
 
     void setPictureWidthHeight(int w, int h) { width = w; height = h; }
 
