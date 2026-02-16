@@ -1,10 +1,10 @@
-# This file represents a tetrahedron
+# This file represents a centered tetrahedron
 
-g 
-v 0.0 0.0 0.0
-v 1.0 0.0 0.0
-v 0.5 1.0 0.0
-v 0.5 0.5 1.0
+g
+v -0.5 -0.375 -0.25
+v 0.5 -0.375 -0.25
+v 0.0 0.625 -0.25
+v 0.0 0.125 0.75
 
 g shroud
 f 1 2 3
