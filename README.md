@@ -1,6 +1,8 @@
 # 3DRenderer
-The objective of this project is to explore building a 3D CPU software rasterizer from scratch. <br> <br>
-![RotSph_2_1](https://github.com/user-attachments/assets/68725838-f044-49b1-a266-e1800a013f41)
+The objective of this project is to explore building a 3D CPU software rasterizer from scratch.
+
+![ezgif-23b9d6c5b2bee0d4](https://github.com/user-attachments/assets/c52a00a0-5276-4a7f-aec9-f0bad245920b)
+
 
 
 # Building 
