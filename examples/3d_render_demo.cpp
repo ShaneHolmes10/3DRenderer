@@ -5,6 +5,7 @@
 #include "forms/model.h"
 #include "forms/mesh.h"
 #include "utils/transform.h"
+#include "utils/load_cobj_file.h"
 #include <Eigen/Dense>
 #include <iostream>
 #include <cmath>
@@ -23,11 +24,12 @@ int main() {
     
     Entity tetrahedron_entity;
     Model tetrahedron_model;
-    std::string filename = std::string(SRC_DIR) + "/data/tetrahedron.obj";
-    tetrahedron_model.loadMesh(filename);
+    LoadCobjFile loader;
+    std::string filename = std::string(SRC_DIR) + "/data/icosahedron.cobj";
+    tetrahedron_model.addMesh(loader.load(filename));
     tetrahedron_entity.model = &tetrahedron_model;
     
-    Transform t_tetra(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero(), Eigen::Vector3f(150, 150, 150));
+    Transform t_tetra(Eigen::Vector3f(0, 30, 0), Eigen::Vector3f::Zero(), Eigen::Vector3f(150, 150, 150));
     tetrahedron_entity.setTransform(t_tetra);
     
     world.addChild(tetrahedron_entity);
@@ -37,7 +39,7 @@ int main() {
     
     Camera camera;
     camera.attachTo(camera_mount);
-    camera.setFovLength(150);
+    camera.setFovLength(250);
     camera.setPictureWidthHeight(width, height);
     
     view.start();
