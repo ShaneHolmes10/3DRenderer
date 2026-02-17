@@ -93,6 +93,19 @@ public:
     Model* model;
 
     /**
+     * @brief Construct a new Entity with identity transformation.
+     * 
+     * Initializes the entity with no parent, no model and both local and world 
+     * transformation matrices set to identity (positioned at origin with no
+     * rotation or scaling).
+     */
+    Entity() 
+        : parent(nullptr),
+          model(nullptr),
+          local_matrix(Eigen::Matrix4f::Identity()),
+          world_matrix(Eigen::Matrix4f::Identity()) {}
+
+    /**
      * @brief Update world matrices for this entity and all descendants.
      * 
      * Recursively computes world matrices by combining this entity's local

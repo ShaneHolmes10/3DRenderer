@@ -4,7 +4,6 @@ project(3drenderer LANGUAGES CXX)
 # tests and an optional convenience library.
 # The following variable is the master list of subdirs to add
 set(3drenderer_subdirs
-    math
     display
     renderer
     utils

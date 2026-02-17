@@ -10,8 +10,8 @@
  * Contains position and color information for a vertex.
  */
 struct Vertex {
-    Eigen::Vector3f position;
-    Eigen::Vector3d color;
+    Eigen::Vector3f position = Eigen::Vector3f(0.0f, 0.0f, 0.0f);
+    Eigen::Vector3i color = Eigen::Vector3i(0, 0, 0);
     // Eigen::Vector3f normal;
     // Eigen::Vector2f TexCoords;
 };

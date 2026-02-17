@@ -19,3 +19,7 @@ void Model::loadMesh(const std::string& filepath) {
 const std::vector<Mesh>& Model::getMeshes() const {
     return meshes;
 }
+
+void Model::addMesh(const Mesh& mesh) {
+    meshes.push_back(mesh);
+}

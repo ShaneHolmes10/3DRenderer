@@ -165,7 +165,7 @@ TEST(Transform, TransformationMatrixIsIdentityForDefaults)
     
     Eigen::Matrix4f identity = Eigen::Matrix4f::Identity();
     
-    CHECK((t.getTransformationMatrix() - identity).norm() < 0.01f);
+    CHECK((t.getMatrix() - identity).norm() < 0.01f);
 }
 
 
@@ -176,11 +176,11 @@ TEST(Transform, TransformationMatrixUpdatesOnPositionChange)
     
     Transform t(pos, rot);
     
-    Eigen::Matrix4f matrix_before = t.getTransformationMatrix();
+    Eigen::Matrix4f matrix_before = t.getMatrix();
     
     t.setPositionX(5.0f);
     
-    Eigen::Matrix4f matrix_after = t.getTransformationMatrix();
+    Eigen::Matrix4f matrix_after = t.getMatrix();
     
     CHECK((matrix_before - matrix_after).norm() > 0.01f);
 }
@@ -193,11 +193,11 @@ TEST(Transform, TransformationMatrixUpdatesOnRotationChange)
     
     Transform t(pos, rot);
     
-    Eigen::Matrix4f matrix_before = t.getTransformationMatrix();
+    Eigen::Matrix4f matrix_before = t.getMatrix();
     
     t.setAngleY(1.57f);
     
-    Eigen::Matrix4f matrix_after = t.getTransformationMatrix();
+    Eigen::Matrix4f matrix_after = t.getMatrix();
     
     CHECK((matrix_before - matrix_after).norm() > 0.01f);
 }
@@ -210,11 +210,11 @@ TEST(Transform, TransformationMatrixUpdatesOnScaleChange)
     
     Transform t(pos, rot);
     
-    Eigen::Matrix4f matrix_before = t.getTransformationMatrix();
+    Eigen::Matrix4f matrix_before = t.getMatrix();
     
     t.setScaleX(2.0f);
     
-    Eigen::Matrix4f matrix_after = t.getTransformationMatrix();
+    Eigen::Matrix4f matrix_after = t.getMatrix();
     
     CHECK((matrix_before - matrix_after).norm() > 0.01f);
 }

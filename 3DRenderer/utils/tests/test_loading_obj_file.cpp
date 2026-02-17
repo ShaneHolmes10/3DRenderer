@@ -1,7 +1,7 @@
 #include <CppUnitLite/TestHarness.h>
 #include <fstream>
 #include "load_obj_file.h"
-#include "representations/mesh.h"
+#include "forms/mesh.h"
 
 
 void create_test_obj_file(const std::string& filename, const std::string& content) {

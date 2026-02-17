@@ -50,5 +50,12 @@ public:
      */
     const std::vector<Mesh>& getMeshes() const;
 
+    /**
+    * @brief Add a mesh to the model.
+    * 
+    * @param mesh Mesh to add
+    */
+    void addMesh(const Mesh& mesh);
+
 };
 

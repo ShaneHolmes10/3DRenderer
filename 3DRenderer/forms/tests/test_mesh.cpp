@@ -6,9 +6,9 @@
 TEST(Mesh, ConstructWithVerticesAndFaces)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
     
     std::vector<Face> faces;
     faces.push_back(Face{0, 1, 2});
@@ -35,8 +35,8 @@ TEST(Mesh, ConstructEmptyMesh)
 TEST(Mesh, GetVerticesReturnsCorrectData)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(4.0f, 5.0f, 6.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(4.0f, 5.0f, 6.0f), Eigen::Vector3i(0, 255, 0)});
     
     std::vector<Face> faces;
     
@@ -53,9 +53,9 @@ TEST(Mesh, GetVerticesReturnsCorrectData)
 TEST(Mesh, GetFacesReturnsCorrectData)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
     
     std::vector<Face> faces;
     faces.push_back(Face{0, 1, 2});
@@ -82,7 +82,7 @@ TEST(Mesh, AddVertexIncreasesCount)
     
     Mesh mesh(verts, faces);
     
-    Vertex v{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3d(1.0, 0.0, 0.0)};
+    Vertex v{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3i(255, 0, 0)};
     mesh.addVertex(v);
     
     CHECK(mesh.getVertexCount() == 1);
@@ -96,9 +96,9 @@ TEST(Mesh, AddMultipleVertices)
     
     Mesh mesh(verts, faces);
     
-    mesh.addVertex(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    mesh.addVertex(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    mesh.addVertex(Vertex{Eigen::Vector3f(0.0f, 0.0f, 1.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    mesh.addVertex(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    mesh.addVertex(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    mesh.addVertex(Vertex{Eigen::Vector3f(0.0f, 0.0f, 1.0f), Eigen::Vector3i(0, 0, 255)});
     
     CHECK(mesh.getVertexCount() == 3);
 }
@@ -111,22 +111,22 @@ TEST(Mesh, AddedVertexIsRetrievable)
     
     Mesh mesh(verts, faces);
     
-    Vertex v{Eigen::Vector3f(7.0f, 8.0f, 9.0f), Eigen::Vector3d(0.5, 0.5, 0.5)};
+    Vertex v{Eigen::Vector3f(7.0f, 8.0f, 9.0f), Eigen::Vector3i(128, 128, 128)};
     mesh.addVertex(v);
     
     const std::vector<Vertex>& retrievedVerts = mesh.getVertices();
     
     CHECK((retrievedVerts[0].position - Eigen::Vector3f(7.0f, 8.0f, 9.0f)).norm() < 0.01);
-    CHECK((retrievedVerts[0].color - Eigen::Vector3d(0.5, 0.5, 0.5)).norm() < 0.01);
+    CHECK(retrievedVerts[0].color == Eigen::Vector3i(128, 128, 128));
 }
 
 
 TEST(Mesh, AddFaceWithValidIndices)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
     
     std::vector<Face> faces;
     
@@ -141,10 +141,10 @@ TEST(Mesh, AddFaceWithValidIndices)
 TEST(Mesh, AddMultipleFaces)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 1.0f, 0.0f), Eigen::Vector3d(1.0, 1.0, 0.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 1.0f, 0.0f), Eigen::Vector3i(255, 255, 0)});
     
     std::vector<Face> faces;
     
@@ -160,9 +160,9 @@ TEST(Mesh, AddMultipleFaces)
 TEST(Mesh, AddedFaceIsRetrievable)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
     
     std::vector<Face> faces;
     
@@ -181,7 +181,7 @@ TEST(Mesh, AddedFaceIsRetrievable)
 TEST(Mesh, AddFaceWithNegativeIndexThrows)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
     
     std::vector<Face> faces;
     
@@ -201,8 +201,8 @@ TEST(Mesh, AddFaceWithNegativeIndexThrows)
 TEST(Mesh, AddFaceWithOutOfBoundsIndexThrows)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
     
     std::vector<Face> faces;
     
@@ -222,9 +222,9 @@ TEST(Mesh, AddFaceWithOutOfBoundsIndexThrows)
 TEST(Mesh, VertexColorPersistence)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
     
     std::vector<Face> faces;
     
@@ -232,23 +232,23 @@ TEST(Mesh, VertexColorPersistence)
     
     const std::vector<Vertex>& retrievedVerts = mesh.getVertices();
     
-    CHECK((retrievedVerts[0].color - Eigen::Vector3d(1.0, 0.0, 0.0)).norm() < 0.01);
-    CHECK((retrievedVerts[1].color - Eigen::Vector3d(0.0, 1.0, 0.0)).norm() < 0.01);
-    CHECK((retrievedVerts[2].color - Eigen::Vector3d(0.0, 0.0, 1.0)).norm() < 0.01);
+    CHECK(retrievedVerts[0].color == Eigen::Vector3i(255, 0, 0));
+    CHECK(retrievedVerts[1].color == Eigen::Vector3i(0, 255, 0));
+    CHECK(retrievedVerts[2].color == Eigen::Vector3i(0, 0, 255));
 }
 
 
 TEST(Mesh, CreateCubeMesh)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(-1.0f, -1.0f, -1.0f), Eigen::Vector3d(0.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f( 1.0f, -1.0f, -1.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f( 1.0f,  1.0f, -1.0f), Eigen::Vector3d(1.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(-1.0f,  1.0f, -1.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(-1.0f, -1.0f,  1.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
-    verts.push_back(Vertex{Eigen::Vector3f( 1.0f, -1.0f,  1.0f), Eigen::Vector3d(1.0, 0.0, 1.0)});
-    verts.push_back(Vertex{Eigen::Vector3f( 1.0f,  1.0f,  1.0f), Eigen::Vector3d(1.0, 1.0, 1.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(-1.0f,  1.0f,  1.0f), Eigen::Vector3d(0.0, 1.0, 1.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(-1.0f, -1.0f, -1.0f), Eigen::Vector3i(0, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f( 1.0f, -1.0f, -1.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f( 1.0f,  1.0f, -1.0f), Eigen::Vector3i(255, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(-1.0f,  1.0f, -1.0f), Eigen::Vector3i(0, 255, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(-1.0f, -1.0f,  1.0f), Eigen::Vector3i(0, 0, 255)});
+    verts.push_back(Vertex{Eigen::Vector3f( 1.0f, -1.0f,  1.0f), Eigen::Vector3i(255, 0, 255)});
+    verts.push_back(Vertex{Eigen::Vector3f( 1.0f,  1.0f,  1.0f), Eigen::Vector3i(255, 255, 255)});
+    verts.push_back(Vertex{Eigen::Vector3f(-1.0f,  1.0f,  1.0f), Eigen::Vector3i(0, 255, 255)});
     
     std::vector<Face> faces;
     faces.push_back(Face{0, 1, 2});
@@ -274,14 +274,14 @@ TEST(Mesh, CreateCubeMesh)
 TEST(Mesh, MixConstructionAndAdding)
 {
     std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3d(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3d(0.0, 1.0, 0.0)});
+    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(255, 0, 0)});
+    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0, 255, 0)});
     
     std::vector<Face> faces;
     
     Mesh mesh(verts, faces);
     
-    mesh.addVertex(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3d(0.0, 0.0, 1.0)});
+    mesh.addVertex(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0, 0, 255)});
     mesh.addFace(Face{0, 1, 2});
     
     CHECK(mesh.getVertexCount() == 3);

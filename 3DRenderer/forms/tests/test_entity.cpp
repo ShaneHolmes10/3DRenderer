@@ -202,7 +202,7 @@ TEST(Entity, ApplyTransformWithRotation)
     e.applyTransform(t2);
     
     Eigen::Vector3f pos = e.getWorldMatrix().block<3,1>(0,3);
-    Eigen::Vector3f expected(0, 0, -10);
+    Eigen::Vector3f expected(10, 0, 0);
     
     CHECK((pos - expected).norm() < 0.5f);
 }
