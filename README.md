@@ -42,6 +42,11 @@ To run tests:
 ctest
 ```
 
+To build all tests and run them:
+```sh
+make check
+```
+
 ## Project Structure
 ```sh
 3DRenderer/
