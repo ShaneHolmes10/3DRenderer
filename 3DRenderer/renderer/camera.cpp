@@ -41,6 +41,10 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             float z2 = v2_expressed.z();
             float z3 = v3_expressed.z();
 
+            if (z1 <= 0 || z2 <= 0 || z3 <= 0) {
+                continue;
+            }
+
             float x1_screen = (v1_expressed.x() * (focal_length / z1)) + (width / 2);
             float y1_screen = (v1_expressed.y() * (focal_length / z1)) + (height / 2);
 
