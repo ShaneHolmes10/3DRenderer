@@ -3,7 +3,7 @@ set(excluded_tests "")
 
 # Add all tests from this directory
 projectAddTestsGlob(
-    representations_tests 
+    forms_tests 
     "test*.cpp" 
     "${excluded_tests}" 
     "3drenderer_lib;CppUnitLite"
