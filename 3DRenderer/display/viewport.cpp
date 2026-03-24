@@ -25,7 +25,7 @@ void Viewport::runWindow() {
             }
 
             if (event.type == sf::Event::KeyPressed && key_callback) {
-                KeyCode key = static_cast<KeyCode>(event.key.code);
+                Key key = static_cast<Key>(event.key.code);
                 key_callback(key); 
             }
         }
@@ -93,7 +93,7 @@ Viewport::~Viewport() {
 }
 
 
-void Viewport::setKeyCallback(std::function<void(KeyCode)> callback) {
+void Viewport::setKeyCallback(std::function<void(Key)> callback) {
     key_callback = callback;
 }
 

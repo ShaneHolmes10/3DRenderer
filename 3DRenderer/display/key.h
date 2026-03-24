@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-enum KeyCode {
+enum Key {
     A = sf::Keyboard::A,
     B = sf::Keyboard::B,
     C = sf::Keyboard::C,
