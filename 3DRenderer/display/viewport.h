@@ -2,8 +2,9 @@
 #ifndef VIEWPORT_H
 #define VIEWPORT_H
 
-
+#include <functional>
 #include "display/frame_buffer.h"
+#include "display/key.h"
 #include <SFML/Graphics.hpp>
 #include <thread>
 #include <mutex>
@@ -78,6 +79,12 @@ private:
      */
     void runWindow();
 
+    /**
+     * @brief This is the callback to call when events occur.
+     * 
+     */
+    std::function<void(Key)> key_callback;
+
 public:
 
     /**
@@ -126,6 +133,11 @@ public:
      * 
      */
     void join();
+
+    /**
+     * @brief Set a callback function to handle window events
+     */
+    void setKeyCallback(std::function<void(Key)> callback);
 };
 
 #endif

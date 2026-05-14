@@ -2,9 +2,11 @@
 #include <stdexcept>
 #include "display/viewport.h"
 #include <SFML/Graphics.hpp>
+#include "display/key.h"
 #include <thread>
 #include <mutex>
 #include <X11/Xlib.h> // Include X11 header for threads
+#include <functional>
 
 
 void Viewport::runWindow() {
@@ -20,6 +22,11 @@ void Viewport::runWindow() {
             // Close the window if the user closes it
             if (event.type == sf::Event::Closed) {
                 window.close();
+            }
+
+            if (event.type == sf::Event::KeyPressed && key_callback) {
+                Key key = static_cast<Key>(event.key.code);
+                key_callback(key); 
             }
         }
         window.clear(sf::Color::White); // wipe the screen
@@ -37,7 +44,8 @@ Viewport::Viewport(int w, int h, int x, int y)
     : width(w),
       height(h),
       x_pos(x),
-      y_pos(y) {
+      y_pos(y),
+      key_callback(nullptr) {
 }
 
 void Viewport::init() {
@@ -84,4 +92,8 @@ Viewport::~Viewport() {
     join(); 
 }
 
+
+void Viewport::setKeyCallback(std::function<void(Key)> callback) {
+    key_callback = callback;
+}
 
