@@ -31,10 +31,17 @@ cmake ..
 make [filename]
 ```
 
+To run any code must be in build folder.
+
 To run 3D render demo:
 ```sh
 make 3d_render_demo
 ./bin/examples/3d_render_demo
+```
+
+To run the keyboard control demo:
+```sh
+./bin/examples/main
 ```
 
 To run tests:
