@@ -4,7 +4,7 @@
 #include <stdexcept>
 
 Mesh LoadCobjFile::load(const std::string& filepath) {
-    std::vector<Vertex> vertices;
+    std::vector<Vertex3> vertices;
     std::vector<Face> faces;
     
     std::ifstream file(filepath);
@@ -19,7 +19,7 @@ Mesh LoadCobjFile::load(const std::string& filepath) {
         iss >> prefix;
         
         if (prefix == "v") {
-            Vertex vertex;
+            Vertex3 vertex;
             iss >> vertex.position.x() >> vertex.position.y() >> vertex.position.z();
             
             float r, g, b;

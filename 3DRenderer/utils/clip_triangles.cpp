@@ -9,19 +9,19 @@ struct Plane {
     float d;
 };
 
-static Vertex interpolate(const Vertex& a, const Vertex& b, float t) {
-    Vertex result;
+static Vertex3 interpolate(const Vertex3& a, const Vertex3& b, float t) {
+    Vertex3 result;
     result.position = a.position + t * (b.position - a.position);
     result.color    = (a.color.cast<float>() + t * (b.color - a.color).cast<float>()).cast<int>();
     return result;
 }
 
-static std::vector<Vertex> clipAgainstPlane(const std::vector<Vertex>& polygon, const Plane& plane) {
-    std::vector<Vertex> output;
+static std::vector<Vertex3> clipAgainstPlane(const std::vector<Vertex3>& polygon, const Plane& plane) {
+    std::vector<Vertex3> output;
 
     for (size_t i = 0; i < polygon.size(); i++) {
-        const Vertex& current = polygon[i];
-        const Vertex& next    = polygon[(i + 1) % polygon.size()];
+        const Vertex3& current = polygon[i];
+        const Vertex3& next    = polygon[(i + 1) % polygon.size()];
 
         float d_current = plane.normal.dot(current.position) + plane.d;
         float d_next    = plane.normal.dot(next.position)    + plane.d;
@@ -55,10 +55,10 @@ std::vector<Triangle2> clipAndProjectTriangle(
     float height,
     float near_z)
 {
-    std::vector<Vertex> polygon = {
-        {triangle.vertex_A, triangle.color_A},
-        {triangle.vertex_B, triangle.color_B},
-        {triangle.vertex_C, triangle.color_C}
+    std::vector<Vertex3> polygon = {
+        triangle.vertex_A,
+        triangle.vertex_B,
+        triangle.vertex_C
     };
 
     // Frustum planes in camera space — inside when plane.normal.dot(position) + d >= 0
@@ -81,12 +81,12 @@ std::vector<Triangle2> clipAndProjectTriangle(
 
     for (size_t i = 1; i + 1 < polygon.size(); i++) {
         Triangle2 tri;
-        tri.vertex_A = pos0;
-        tri.color_A  = polygon[0].color;
-        tri.vertex_B = project(polygon[i].position,     focal_length, width, height);
-        tri.color_B  = polygon[i].color;
-        tri.vertex_C = project(polygon[i + 1].position, focal_length, width, height);
-        tri.color_C  = polygon[i + 1].color;
+        tri.vertex_A.position = pos0;
+        tri.vertex_A.color    = polygon[0].color;
+        tri.vertex_B.position = project(polygon[i].position,     focal_length, width, height);
+        tri.vertex_B.color    = polygon[i].color;
+        tri.vertex_C.position = project(polygon[i + 1].position, focal_length, width, height);
+        tri.vertex_C.color    = polygon[i + 1].color;
         result.push_back(tri);
     }
 

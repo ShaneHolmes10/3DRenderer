@@ -17,7 +17,7 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
 
     for(const Mesh& mesh : target_meshes) {
 
-        const std::vector<Vertex>& vertices = mesh.getVertices();
+        const std::vector<Vertex3>& vertices = mesh.getVertices();
 
         for(const Face& face : mesh.getFaces()) {
 
@@ -41,9 +41,9 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
 
             // Build camera-space triangle, clip against frustum, and draw
             Triangle3 tri3;
-            tri3.vertex_A = v1_expressed.head<3>();  tri3.color_A = vertices[face.v1].color;
-            tri3.vertex_B = v2_expressed.head<3>();  tri3.color_B = vertices[face.v2].color;
-            tri3.vertex_C = v3_expressed.head<3>();  tri3.color_C = vertices[face.v3].color;
+            tri3.vertex_A.position = v1_expressed.head<3>();  tri3.vertex_A.color = vertices[face.v1].color;
+            tri3.vertex_B.position = v2_expressed.head<3>();  tri3.vertex_B.color = vertices[face.v2].color;
+            tri3.vertex_C.position = v3_expressed.head<3>();  tri3.vertex_C.color = vertices[face.v3].color;
 
             for (const Triangle2& tri2 : clipAndProjectTriangle(tri3, focal_length, width, height, NEAR_Z))
                 drawTriangle(frame_buffer, tri2);

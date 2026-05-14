@@ -14,10 +14,10 @@ TEST(Model, DefaultConstructor)
 
 TEST(Model, ConstructWithMeshes)
 {
-    std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0.0, 1.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0.0, 0.0, 1.0)});
+    std::vector<Vertex3> verts;
+    verts.push_back(Vertex3{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
+    verts.push_back(Vertex3{Eigen::Vector3f(1.0f, 0.0f, 0.0f), Eigen::Vector3i(0.0, 1.0, 0.0)});
+    verts.push_back(Vertex3{Eigen::Vector3f(0.0f, 1.0f, 0.0f), Eigen::Vector3i(0.0, 0.0, 1.0)});
     
     std::vector<Face> faces;
     faces.push_back(Face{0, 1, 2});
@@ -37,8 +37,8 @@ TEST(Model, ConstructWithMeshes)
 
 TEST(Model, GetMeshesReturnsCorrectData)
 {
-    std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
+    std::vector<Vertex3> verts;
+    verts.push_back(Vertex3{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
     
     std::vector<Face> faces;
     
@@ -114,8 +114,8 @@ TEST(Model, LoadMultipleMeshesEachHasCorrectData)
 
 TEST(Model, ConstructWithMeshesAndLoadMore)
 {
-    std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
+    std::vector<Vertex3> verts;
+    verts.push_back(Vertex3{Eigen::Vector3f(0.0f, 0.0f, 0.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
     
     std::vector<Face> faces;
     
@@ -145,9 +145,9 @@ TEST(Model, EmptyModelGetMeshesReturnsEmptyVector)
 
 TEST(Model, ConstructedModelPreservesOriginalMeshData)
 {
-    std::vector<Vertex> verts;
-    verts.push_back(Vertex{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
-    verts.push_back(Vertex{Eigen::Vector3f(4.0f, 5.0f, 6.0f), Eigen::Vector3i(0.0, 1.0, 0.0)});
+    std::vector<Vertex3> verts;
+    verts.push_back(Vertex3{Eigen::Vector3f(1.0f, 2.0f, 3.0f), Eigen::Vector3i(1.0, 0.0, 0.0)});
+    verts.push_back(Vertex3{Eigen::Vector3f(4.0f, 5.0f, 6.0f), Eigen::Vector3i(0.0, 1.0, 0.0)});
     
     std::vector<Face> faces;
     faces.push_back(Face{0, 1, 0});
@@ -164,7 +164,7 @@ TEST(Model, ConstructedModelPreservesOriginalMeshData)
     CHECK(retrievedMesh.getVertexCount() == 2);
     CHECK(retrievedMesh.getFaceCount() == 1);
     
-    const std::vector<Vertex>& retrievedVerts = retrievedMesh.getVertices();
+    const std::vector<Vertex3>& retrievedVerts = retrievedMesh.getVertices();
     CHECK((retrievedVerts[0].position - Eigen::Vector3f(1.0f, 2.0f, 3.0f)).norm() < 0.01);
     CHECK((retrievedVerts[1].position - Eigen::Vector3f(4.0f, 5.0f, 6.0f)).norm() < 0.01);
 }

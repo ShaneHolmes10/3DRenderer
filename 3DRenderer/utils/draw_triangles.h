@@ -1,12 +1,12 @@
 #pragma once
 
+#include "forms/mesh.h"
 #include "display/frame_buffer.h"
 #include <Eigen/Dense>
 
 template<typename PositionType>
 struct Triangle {
-    PositionType vertex_A, vertex_B, vertex_C;
-    Eigen::Vector3i color_A, color_B, color_C;
+    Vertex<PositionType> vertex_A, vertex_B, vertex_C;
 };
 
 using Triangle2 = Triangle<Eigen::Vector2f>;

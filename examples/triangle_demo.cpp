@@ -37,28 +37,28 @@ int main() {
         Triangle2 tri;
         
         // Vertex A (top)
-        tri.vertex_A = Eigen::Vector2f(
+        tri.vertex_A.position = Eigen::Vector2f(
             center_x + radius * std::cos(theta),
             center_y + radius * std::sin(theta)
         );
         
         // Vertex B (bottom right)
         float b_angle = theta + (2.0f * M_PI / 3.0f);
-        tri.vertex_B = Eigen::Vector2f(
+        tri.vertex_B.position = Eigen::Vector2f(
             center_x + radius * std::cos(theta + 2.0f * M_PI / 3.0f),
             center_y + radius * std::sin(theta + 2.0f * M_PI / 3.0f)
         );
         
         // Vertex C (bottom left)
         float c_angle = theta + (4.0f * M_PI / 3.0f);
-        tri.vertex_C = Eigen::Vector2f(
+        tri.vertex_C.position = Eigen::Vector2f(
             center_x + radius * std::cos(theta + 4.0f * M_PI / 3.0f),
             center_y + radius * std::sin(theta + 4.0f * M_PI / 3.0f)
         );
         
-        tri.color_A = Eigen::Vector3i(255, 0, 0);
-        tri.color_B = Eigen::Vector3i(0, 255, 0);
-        tri.color_C = Eigen::Vector3i(0, 0, 255);
+        tri.vertex_A.color = Eigen::Vector3i(255, 0, 0);
+        tri.vertex_B.color = Eigen::Vector3i(0, 255, 0);
+        tri.vertex_C.color = Eigen::Vector3i(0, 0, 255);
         
         drawTriangle(frame_buffer, tri);
         

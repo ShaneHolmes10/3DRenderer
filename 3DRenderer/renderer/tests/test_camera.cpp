@@ -18,19 +18,19 @@ Mesh buildTriangleMesh(
     Eigen::Vector3f c,
     Eigen::Vector3i col
 ) {
-    Vertex v0;
+    Vertex3 v0;
     v0.position = a;
     v0.color = col;
 
-    Vertex v1;
+    Vertex3 v1;
     v1.position = b;
     v1.color = col;
 
-    Vertex v2;
+    Vertex3 v2;
     v2.position = c;
     v2.color = col;
 
-    std::vector<Vertex> verts = {v0, v1, v2};
+    std::vector<Vertex3> verts = {v0, v1, v2};
     std::vector<Face> faces = {{0, 1, 2}};
     return Mesh(verts, faces);
 }

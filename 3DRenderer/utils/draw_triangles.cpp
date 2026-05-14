@@ -10,13 +10,13 @@ float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, con
 void drawTriangle(FrameBuffer& frame_buffer, const Triangle2& triangle) {
 
     // First get the bounding box of the triangle
-    Eigen::Vector2f A = triangle.vertex_A;
-    Eigen::Vector2f B = triangle.vertex_B;
-    Eigen::Vector2f C = triangle.vertex_C;
+    Eigen::Vector2f A = triangle.vertex_A.position;
+    Eigen::Vector2f B = triangle.vertex_B.position;
+    Eigen::Vector2f C = triangle.vertex_C.position;
 
-    Eigen::Vector3i color_A = triangle.color_A;
-    Eigen::Vector3i color_B = triangle.color_B;
-    Eigen::Vector3i color_C = triangle.color_C;
+    Eigen::Vector3i color_A = triangle.vertex_A.color;
+    Eigen::Vector3i color_B = triangle.vertex_B.color;
+    Eigen::Vector3i color_C = triangle.vertex_C.color;
 
     float left_side = std::min({A[0], B[0], C[0]});
     float right_side = std::max({A[0], B[0], C[0]});
