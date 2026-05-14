@@ -4,8 +4,11 @@
 #include "display/frame_buffer.h"
 #include "renderer/camera.h"
 #include "utils/draw_triangles.h"
+#include "utils/clip_triangles.h"
 
 #include <vector>
+
+static constexpr float NEAR_Z = 0.1f;
 
 void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
 
@@ -28,43 +31,22 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             Eigen::Vector4f v2_homo(v2.x(), v2.y(), v2.z(), 1.0f);
             Eigen::Vector4f v3_homo(v3.x(), v3.y(), v3.z(), 1.0f);
 
-            // Get expressed in cameras reference frame 
-            Eigen::Vector4f v1_expressed = this->mount->getWorldMatrix().inverse() * (target_entity->getWorldMatrix() * v1_homo);
-            Eigen::Vector4f v2_expressed = this->mount->getWorldMatrix().inverse() * (target_entity->getWorldMatrix() * v2_homo);
-            Eigen::Vector4f v3_expressed = this->mount->getWorldMatrix().inverse() * (target_entity->getWorldMatrix() * v3_homo);
+            // Transform to camera space
+            Eigen::Matrix4f view  = this->mount->getWorldMatrix().inverse();
+            Eigen::Matrix4f model = target_entity->getWorldMatrix();
 
-            // Future frustum check when we get to that point
+            Eigen::Vector4f v1_expressed = view * (model * v1_homo);
+            Eigen::Vector4f v2_expressed = view * (model * v2_homo);
+            Eigen::Vector4f v3_expressed = view * (model * v3_homo);
 
+            // Build camera-space triangle, clip against frustum, and draw
+            Triangle3 tri3;
+            tri3.vertex_A = v1_expressed.head<3>();  tri3.color_A = vertices[face.v1].color;
+            tri3.vertex_B = v2_expressed.head<3>();  tri3.color_B = vertices[face.v2].color;
+            tri3.vertex_C = v3_expressed.head<3>();  tri3.color_C = vertices[face.v3].color;
 
-            // Perspective projection
-            float z1 = v1_expressed.z();
-            float z2 = v2_expressed.z();
-            float z3 = v3_expressed.z();
-
-            if (z1 <= 0 || z2 <= 0 || z3 <= 0) {
-                continue;
-            }
-
-            float x1_screen = (v1_expressed.x() * (focal_length / z1)) + (width / 2);
-            float y1_screen = (v1_expressed.y() * (focal_length / z1)) + (height / 2);
-
-            float x2_screen = (v2_expressed.x() * (focal_length / z2)) + (width / 2);
-            float y2_screen = (v2_expressed.y() * (focal_length / z2)) + (height / 2);
-
-            float x3_screen = (v3_expressed.x() * (focal_length / z3)) + (width / 2);
-            float y3_screen = (v3_expressed.y() * (focal_length / z3)) + (height / 2);
-
-            // Create 2D triangle for rasterization
-            Triangle2 tri_2d;
-            tri_2d.vertex_A = Eigen::Vector2f(x1_screen, y1_screen);
-            tri_2d.vertex_B = Eigen::Vector2f(x2_screen, y2_screen);
-            tri_2d.vertex_C = Eigen::Vector2f(x3_screen, y3_screen);
-
-            tri_2d.color_A = vertices[face.v1].color;
-            tri_2d.color_B = vertices[face.v2].color;
-            tri_2d.color_C = vertices[face.v3].color;
-
-            drawTriangle(frame_buffer, tri_2d);
+            for (const Triangle2& tri2 : clipAndProjectTriangle(tri3, focal_length, width, height, NEAR_Z))
+                drawTriangle(frame_buffer, tri2);
 
         }
     }
