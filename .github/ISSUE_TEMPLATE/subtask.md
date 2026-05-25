@@ -8,7 +8,6 @@ labels: subtask
 As a ___ I want ___
 
 *Acceptance Criteria*
-
 - [ ] 
 - [ ] 
 - [ ]
