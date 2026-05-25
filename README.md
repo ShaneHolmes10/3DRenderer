@@ -44,15 +44,28 @@ To run the keyboard control demo:
 ./bin/examples/main
 ```
 
-To run tests:
-```sh
-ctest
-```
+### Testing
 
-To build all tests and run them:
+Run all tests:
 ```sh
+cd build
 make check
 ```
+
+Run a specific group only (faster feedback during development):
+```sh
+make check.utils_tests      # utils tests
+make check.renderer_tests   # renderer tests
+make check.forms_tests      # forms tests
+make check.display_tests    # display tests
+```
+
+After **adding a new test file**, re-run cmake first so it picks up the new file, then run as normal:
+```sh
+cmake ..
+make check.utils_tests
+```
+
 
 ## Project Structure
 ```sh

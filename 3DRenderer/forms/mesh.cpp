@@ -3,13 +3,13 @@
 #include <stdexcept>
 
 Mesh::Mesh(
-    const std::vector<Vertex>& vertices, 
+    const std::vector<Vertex3>& vertices, 
     const std::vector<Face>& indicies
     ) : vertices(vertices), faces(indicies) {
 
 }
 
-const std::vector<Vertex>& Mesh::getVertices() const {
+const std::vector<Vertex3>& Mesh::getVertices() const {
     return vertices;
 }
 
@@ -25,7 +25,7 @@ size_t Mesh::getFaceCount() const {
     return faces.size();
 }
 
-void Mesh::addVertex(const Vertex& vert) {
+void Mesh::addVertex(const Vertex3& vert) {
     vertices.push_back(vert);
 }
 
@@ -42,7 +42,7 @@ void Mesh::addFace(const Face& face) {
         face.v2 >= vertCount ||
         face.v3 >= vertCount 
     ) {
-        throw std::out_of_range("Vertex referenced by face does not exist");
+        throw std::out_of_range("Vertex3 referenced by face does not exist");
     }
 
     faces.push_back(face);

@@ -1,19 +1,16 @@
 #pragma once
 
+#include "forms/mesh.h"
 #include "display/frame_buffer.h"
 #include <Eigen/Dense>
 
-struct Triangle2 {
-
-    Eigen::Vector2f vertex_A;
-    Eigen::Vector2f vertex_B;
-    Eigen::Vector2f vertex_C;
-
-    Eigen::Vector3i color_A;
-    Eigen::Vector3i color_B;
-    Eigen::Vector3i color_C;
-
+template<typename PositionType>
+struct Triangle {
+    Vertex<PositionType> vertex_A, vertex_B, vertex_C;
 };
+
+using Triangle2 = Triangle<Eigen::Vector2f>;
+using Triangle3 = Triangle<Eigen::Vector3f>;
 
 void drawTriangle(FrameBuffer& frame_buffer, const Triangle2& triangle);
 

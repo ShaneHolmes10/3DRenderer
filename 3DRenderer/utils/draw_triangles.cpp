@@ -10,24 +10,30 @@ float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, con
 void drawTriangle(FrameBuffer& frame_buffer, const Triangle2& triangle) {
 
     // First get the bounding box of the triangle
-    Eigen::Vector2f A = triangle.vertex_A;
-    Eigen::Vector2f B = triangle.vertex_B;
-    Eigen::Vector2f C = triangle.vertex_C;
+    Eigen::Vector2f A = triangle.vertex_A.position;
+    Eigen::Vector2f B = triangle.vertex_B.position;
+    Eigen::Vector2f C = triangle.vertex_C.position;
 
-    Eigen::Vector3i color_A = triangle.color_A;
-    Eigen::Vector3i color_B = triangle.color_B;
-    Eigen::Vector3i color_C = triangle.color_C;
+    Eigen::Vector3i color_A = triangle.vertex_A.color;
+    Eigen::Vector3i color_B = triangle.vertex_B.color;
+    Eigen::Vector3i color_C = triangle.vertex_C.color;
 
     float left_side = std::min({A[0], B[0], C[0]});
     float right_side = std::max({A[0], B[0], C[0]});
     float bottom_side = std::min({A[1], B[1], C[1]});
     float top_side = std::max({A[1], B[1], C[1]});
 
+    // Clamp bounding box to framebuffer dimensions to handle off-screen geometry
+    int x_start = std::max((int)left_side,             0);
+    int x_end   = std::min((int)std::ceil(right_side), (int)frame_buffer.width);
+    int y_start = std::max((int)bottom_side,            0);
+    int y_end   = std::min((int)std::ceil(top_side),   (int)frame_buffer.height);
+
     float ABC_edge_area = signedTriangleArea(A, B, C);
 
     // Scan through all the pixels in the bounding box
-    for(int x_pixel_ind = left_side; x_pixel_ind < right_side; x_pixel_ind++) {
-        for(int y_pixel_ind = bottom_side; y_pixel_ind < top_side; y_pixel_ind++) {
+    for(int x_pixel_ind = x_start; x_pixel_ind < x_end; x_pixel_ind++) {
+        for(int y_pixel_ind = y_start; y_pixel_ind < y_end; y_pixel_ind++) {
 
             float AB_edge_area = signedTriangleArea(A, B, {(float)x_pixel_ind, (float)y_pixel_ind});
             float CA_edge_area = signedTriangleArea(C, A, {(float)x_pixel_ind, (float)y_pixel_ind});
