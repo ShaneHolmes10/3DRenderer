@@ -48,6 +48,7 @@ To run the keyboard control demo:
 
 Run all tests:
 ```sh
+cd build
 make check
 ```
 
