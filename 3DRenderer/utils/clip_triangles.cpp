@@ -1,6 +1,5 @@
 
 #include "clip_triangles.h"
-#include "forms/mesh.h"
 
 namespace {
 

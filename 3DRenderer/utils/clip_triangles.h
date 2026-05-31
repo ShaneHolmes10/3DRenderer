@@ -1,6 +1,6 @@
 #pragma once
 
-#include "draw_triangles_to_screen.h"
+#include "geometry_types.h"
 #include <vector>
 
 /**

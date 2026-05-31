@@ -1,17 +1,7 @@
 #pragma once
 
-#include "forms/mesh.h"
+#include "geometry_types.h"
 #include "display/frame_buffer.h"
-#include <Eigen/Dense>
-
-
-template<typename PositionType>
-struct Triangle {
-    Vertex<PositionType> vertex_A, vertex_B, vertex_C;
-};
-
-using Triangle2 = Triangle<Eigen::Vector2f>;
-using Triangle3 = Triangle<Eigen::Vector3f>;
 
 /**
  * @brief Rasterizes a screen-space triangle into the framebuffer using

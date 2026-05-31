@@ -1,34 +1,8 @@
 
 #pragma once
 
-#include <Eigen/Dense>
+#include "utils/geometry_types.h"
 #include <vector>
-
-/**
- * @brief Represents a single vertex with a position and color.
- *
- * Templated on PositionType so the same struct covers both 2D screen-space
- * vertices (Vertex2 = Vertex<Eigen::Vector2f>) and 3D world/camera-space
- * vertices (Vertex3 = Vertex<Eigen::Vector3f>).
- */
-template<typename PositionType>
-struct Vertex {
-    PositionType    position = PositionType::Zero();
-    Eigen::Vector3i color    = Eigen::Vector3i(0, 0, 0);
-};
-
-using Vertex2 = Vertex<Eigen::Vector2f>;
-using Vertex3 = Vertex<Eigen::Vector3f>;
-
-/**
- * @brief Represents a triangular face using vertex indices.
- *
- * A face references three vertices by their indices in the mesh's
- * vertex array.
- */
-struct Face {
-    int v1, v2, v3;
-};
 
 
 /**
