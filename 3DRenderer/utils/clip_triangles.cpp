@@ -48,7 +48,7 @@ static Eigen::Vector2f project(const Eigen::Vector3f& pos, float focal_length, f
 
 } // namespace
 
-std::vector<Triangle2> clipAndProjectTriangle(
+std::vector<Triangle3> clipTriangle(
     const Triangle3& triangle,
     float focal_length,
     float width,
@@ -75,20 +75,31 @@ std::vector<Triangle2> clipAndProjectTriangle(
         if (polygon.empty()) return {};
     }
 
-    // Fan triangulate and project to screen space
-    std::vector<Triangle2> result;
-    Eigen::Vector2f pos0 = project(polygon[0].position, focal_length, width, height);
-
+    // Fan triangulate — produces n-2 triangles for an n-vertex polygon
+    std::vector<Triangle3> result;
     for (size_t i = 1; i + 1 < polygon.size(); i++) {
-        Triangle2 tri;
-        tri.vertex_A.position = pos0;
-        tri.vertex_A.color    = polygon[0].color;
-        tri.vertex_B.position = project(polygon[i].position,     focal_length, width, height);
-        tri.vertex_B.color    = polygon[i].color;
-        tri.vertex_C.position = project(polygon[i + 1].position, focal_length, width, height);
-        tri.vertex_C.color    = polygon[i + 1].color;
+        Triangle3 tri;
+        tri.vertex_A = polygon[0];
+        tri.vertex_B = polygon[i];
+        tri.vertex_C = polygon[i + 1];
         result.push_back(tri);
     }
 
     return result;
+}
+
+Triangle2 projectTriangle(
+    const Triangle3& triangle,
+    float focal_length,
+    float width,
+    float height)
+{
+    Triangle2 tri;
+    tri.vertex_A.position = project(triangle.vertex_A.position, focal_length, width, height);
+    tri.vertex_A.color    = triangle.vertex_A.color;
+    tri.vertex_B.position = project(triangle.vertex_B.position, focal_length, width, height);
+    tri.vertex_B.color    = triangle.vertex_B.color;
+    tri.vertex_C.position = project(triangle.vertex_C.position, focal_length, width, height);
+    tri.vertex_C.color    = triangle.vertex_C.color;
+    return tri;
 }

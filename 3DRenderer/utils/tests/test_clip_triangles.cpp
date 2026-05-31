@@ -34,14 +34,14 @@ static constexpr float NEAR_Z = 0.1f;
 // ── fully inside ──────────────────────────────────────────────────────────────
 
 // A triangle well inside all frustum planes should pass through unmodified
-// and produce exactly one Triangle2.
+// and produce exactly one Triangle3.
 TEST(ClipTriangles, FullyInsideFrustum_ReturnsOneTriangle) {
     Triangle3 tri = makeTri(
         makeVertex(-0.5f, -0.5f, 5.0f),
         makeVertex( 0.5f, -0.5f, 5.0f),
         makeVertex( 0.0f,  0.5f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 1);
 }
 
@@ -54,7 +54,7 @@ TEST(ClipTriangles, AllVerticesBehindNearPlane_ReturnsEmpty) {
         makeVertex(1.0f, 0.0f, 0.05f),
         makeVertex(0.0f, 1.0f, 0.05f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -65,7 +65,7 @@ TEST(ClipTriangles, AllVerticesBehindCamera_ReturnsEmpty) {
         makeVertex(1.0f, 0.0f, -5.0f),
         makeVertex(0.0f, 1.0f, -5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -77,7 +77,7 @@ TEST(ClipTriangles, AllVerticesOutsideLeftFrustum_ReturnsEmpty) {
         makeVertex(-7.0f, 0.0f, 5.0f),
         makeVertex(-7.0f, 1.0f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -89,7 +89,7 @@ TEST(ClipTriangles, AllVerticesOutsideRightFrustum_ReturnsEmpty) {
         makeVertex(7.0f, 0.0f, 5.0f),
         makeVertex(7.0f, 1.0f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -101,7 +101,7 @@ TEST(ClipTriangles, AllVerticesOutsideBottomFrustum_ReturnsEmpty) {
         makeVertex(1.0f, -8.0f, 5.0f),
         makeVertex(0.0f, -7.0f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -113,7 +113,7 @@ TEST(ClipTriangles, AllVerticesOutsideTopFrustum_ReturnsEmpty) {
         makeVertex(1.0f, 8.0f, 5.0f),
         makeVertex(0.0f, 7.0f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -131,7 +131,7 @@ TEST(ClipTriangles, OneVertexBehindNearPlane_ReturnsTwoTriangles) {
         makeVertex( 0.1f, -0.1f, 1.0f),
         makeVertex( 0.0f,  0.0f, 0.05f)   // behind: d = 0.05 − 0.1 = −0.05
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 2);
 }
 
@@ -143,7 +143,7 @@ TEST(ClipTriangles, TwoVerticesBehindNearPlane_ReturnsOneTriangle) {
         makeVertex( 0.1f, 0.0f,  0.05f),  // behind
         makeVertex(-0.1f, 0.0f,  0.05f)   // behind
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 1);
 }
 
@@ -155,7 +155,7 @@ TEST(ClipTriangles, VertexExactlyOnNearPlane_IsRetained) {
         makeVertex( 1.0f, 0.0f,  5.0f),
         makeVertex(-1.0f, 0.0f,  5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(!result.empty());
 }
 
@@ -168,18 +168,18 @@ TEST(ClipTriangles, VertexAtOriginXY_ProjectsToScreenCentre) {
         makeVertex( 0.5f, -0.5f, 5.0f),
         makeVertex(-0.5f, -0.5f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
-    CHECK(result.size() == 1);
+    auto clipped = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
+    CHECK(clipped.size() == 1);
+
+    Triangle2 projected = projectTriangle(clipped[0], FOCAL, W, H);
 
     bool found = false;
-    for (const auto& t : result) {
-        for (const Eigen::Vector2f p : { t.vertex_A.position,
-                                         t.vertex_B.position,
-                                         t.vertex_C.position }) {
-            if (std::abs(p[0] - W / 2.0f) < 0.01f &&
-                std::abs(p[1] - H / 2.0f) < 0.01f)
-                found = true;
-        }
+    for (const Eigen::Vector2f p : { projected.vertex_A.position,
+                                     projected.vertex_B.position,
+                                     projected.vertex_C.position }) {
+        if (std::abs(p[0] - W / 2.0f) < 0.01f &&
+            std::abs(p[1] - H / 2.0f) < 0.01f)
+            found = true;
     }
     CHECK(found);
 }
@@ -192,19 +192,19 @@ TEST(ClipTriangles, ProjectionScalesWithFocalLength) {
         makeVertex(1.0f, 0.0f, 1.0f),  // projects to (200, 100) — right edge
         makeVertex(0.0f, 1.0f, 1.0f)   // projects to (100, 200) — bottom edge
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
-    CHECK(result.size() == 1);
+    auto clipped = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
+    CHECK(clipped.size() == 1);
+
+    Triangle2 projected = projectTriangle(clipped[0], FOCAL, W, H);
 
     // Vertex (1,0,1) → screen x = W, y = H/2
     bool found_right_edge = false;
-    for (const auto& t : result) {
-        for (const Eigen::Vector2f p : { t.vertex_A.position,
-                                         t.vertex_B.position,
-                                         t.vertex_C.position }) {
-            if (std::abs(p[0] - W)       < 0.01f &&
-                std::abs(p[1] - H / 2.0f) < 0.01f)
-                found_right_edge = true;
-        }
+    for (const Eigen::Vector2f p : { projected.vertex_A.position,
+                                     projected.vertex_B.position,
+                                     projected.vertex_C.position }) {
+        if (std::abs(p[0] - W)        < 0.01f &&
+            std::abs(p[1] - H / 2.0f) < 0.01f)
+            found_right_edge = true;
     }
     CHECK(found_right_edge);
 }
@@ -227,14 +227,14 @@ TEST(ClipTriangles, NearPlaneClip_InterpolatesColourAtIntersection) {
         makeVertex( 0.1f, 0.0f,  0.5f,   0,   0,   0),  // inside,  black
         makeVertex( 0.0f, 0.0f, -0.5f, 200, 200, 200)   // outside, bright
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 2);
 
     // At least one vertex across the two fan triangles should carry the
     // interpolated colour (80, 80, 80).
     bool found_interpolated = false;
     for (const auto& t : result) {
-        for (const Vertex2 v : { t.vertex_A, t.vertex_B, t.vertex_C }) {
+        for (const Vertex3 v : { t.vertex_A, t.vertex_B, t.vertex_C }) {
             if (v.color[0] == 80 && v.color[1] == 80 && v.color[2] == 80)
                 found_interpolated = true;
         }
@@ -250,10 +250,10 @@ TEST(ClipTriangles, ClippedColours_StayWithinInputRange) {
         makeVertex( 0.1f, 0.0f,  0.5f,   0,   0,   0),
         makeVertex( 0.0f, 0.0f, -0.5f, 200, 200, 200)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
 
     for (const auto& t : result) {
-        for (const Vertex2 v : { t.vertex_A, t.vertex_B, t.vertex_C }) {
+        for (const Vertex3 v : { t.vertex_A, t.vertex_B, t.vertex_C }) {
             CHECK(v.color[0] >= 0   && v.color[0] <= 200);
             CHECK(v.color[1] >= 0   && v.color[1] <= 200);
             CHECK(v.color[2] >= 0   && v.color[2] <= 200);
@@ -272,7 +272,7 @@ TEST(ClipTriangles, StraddlingNearAndLeftFrustum_IsNonEmpty) {
         makeVertex( 1.0f, 0.0f,  5.0f),  // inside all planes
         makeVertex(-1.0f, 0.0f, -5.0f)   // behind near plane
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(!result.empty());
 }
 
@@ -286,7 +286,7 @@ TEST(ClipTriangles, TriangleOutsideTwoFrustumPlanes_ReturnsEmpty) {
         makeVertex(-7.0f, -8.0f, 5.0f),
         makeVertex(-8.0f, -7.0f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
@@ -298,7 +298,7 @@ TEST(ClipTriangles, HugeTriangleCoveringEntireFrustum_IsNonEmpty) {
         makeVertex( 50.0f, -50.0f, 5.0f),
         makeVertex(  0.0f,  50.0f, 5.0f)
     );
-    auto result = clipAndProjectTriangle(tri, FOCAL, W, H, NEAR_Z);
+    auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(!result.empty());
 }
 

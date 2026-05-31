@@ -45,8 +45,8 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             tri3.vertex_B.position = v2_expressed.head<3>();  tri3.vertex_B.color = vertices[face.v2].color;
             tri3.vertex_C.position = v3_expressed.head<3>();  tri3.vertex_C.color = vertices[face.v3].color;
 
-            for (const Triangle2& tri2 : clipAndProjectTriangle(tri3, focal_length, width, height, NEAR_Z))
-                drawTriangle(frame_buffer, tri2);
+            for (const Triangle3& clipped : clipTriangle(tri3, focal_length, width, height, NEAR_Z))
+                drawTriangle(frame_buffer, projectTriangle(clipped, focal_length, width, height));
 
         }
     }
