@@ -5,6 +5,7 @@
 #include "renderer/camera.h"
 #include "utils/draw_triangles_to_screen.h"
 #include "utils/clip_triangles.h"
+#include "utils/project_triangles.h"
 
 #include <vector>
 

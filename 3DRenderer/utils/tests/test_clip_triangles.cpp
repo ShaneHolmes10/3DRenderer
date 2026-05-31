@@ -1,6 +1,7 @@
 
 #include "CppUnitLite/TestHarness.h"
 #include "utils/clip_triangles.h"
+#include "utils/project_triangles.h"
 #include "forms/mesh.h"
 #include <Eigen/Dense>
 #include <cmath>
