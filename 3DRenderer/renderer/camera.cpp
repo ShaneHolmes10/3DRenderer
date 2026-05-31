@@ -3,7 +3,7 @@
 #include "forms/mesh.h"
 #include "display/frame_buffer.h"
 #include "renderer/camera.h"
-#include "utils/draw_triangles.h"
+#include "utils/draw_triangles_to_screen.h"
 #include "utils/clip_triangles.h"
 
 #include <vector>
@@ -46,7 +46,7 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             tri3.vertex_C.position = v3_expressed.head<3>();  tri3.vertex_C.color = vertices[face.v3].color;
 
             for (const Triangle3& clipped : clipTriangle(tri3, focal_length, width, height, NEAR_Z))
-                drawTriangle(frame_buffer, projectTriangle(clipped, focal_length, width, height));
+                drawTriangleToScreen(frame_buffer, projectTriangle(clipped, focal_length, width, height));
 
         }
     }

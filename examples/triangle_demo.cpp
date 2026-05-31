@@ -1,6 +1,6 @@
 #include "display/viewport.h"
 #include "display/frame_buffer.h"
-#include "utils/draw_triangles.h"
+#include "utils/draw_triangles_to_screen.h"
 #include <Eigen/Dense>
 #include <iostream>
 #include <cmath>
@@ -60,7 +60,7 @@ int main() {
         tri.vertex_B.color = Eigen::Vector3i(0, 255, 0);
         tri.vertex_C.color = Eigen::Vector3i(0, 0, 255);
         
-        drawTriangle(frame_buffer, tri);
+        drawTriangleToScreen(frame_buffer, tri);
         
         view.setFrame(frame_buffer);
         view.update();

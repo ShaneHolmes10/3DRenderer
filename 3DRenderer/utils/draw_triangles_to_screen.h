@@ -4,6 +4,7 @@
 #include "display/frame_buffer.h"
 #include <Eigen/Dense>
 
+
 template<typename PositionType>
 struct Triangle {
     Vertex<PositionType> vertex_A, vertex_B, vertex_C;
@@ -19,7 +20,7 @@ using Triangle3 = Triangle<Eigen::Vector3f>;
  * @param frame_buffer  The pixel buffer to write into.
  * @param triangle      A screen-space triangle with 2D vertex positions and colours.
  */
-void drawTriangle(FrameBuffer& frame_buffer, const Triangle2& triangle);
+void drawTriangleToScreen(FrameBuffer& frame_buffer, const Triangle2& triangle);
 
 /**
  * @brief Computes the signed area of a triangle defined by three 2D points.

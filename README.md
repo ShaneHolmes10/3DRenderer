@@ -105,4 +105,4 @@ make check.utils_tests
 - **load_data_file.h** - Abstract base class defining the file loader interface (strategy pattern).
 - **load_obj_file.h / load_obj_file.cpp** - Loads standard Wavefront OBJ files (vertices and faces).
 - **load_cobj_file.h / load_cobj_file.cpp** - Loads extended OBJ files with per-vertex color data.
-- **draw_triangles.h / draw_triangles.cpp** - Triangle rasterization using edge functions and barycentric coordinate color interpolation.
+- **draw_triangles_to_screen.h / draw_triangles_to_screen.cpp** - Triangle rasterization using edge functions and barycentric coordinate color interpolation.

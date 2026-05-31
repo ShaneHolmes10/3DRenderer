@@ -1,5 +1,5 @@
 
-#include "draw_triangles.h"
+#include "draw_triangles_to_screen.h"
 #include <algorithm>
 
 float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, const Eigen::Vector2f& C) {
@@ -7,7 +7,7 @@ float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, con
     return ((B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0]));
 }
 
-void drawTriangle(FrameBuffer& frame_buffer, const Triangle2& triangle) {
+void drawTriangleToScreen(FrameBuffer& frame_buffer, const Triangle2& triangle) {
 
     // First get the bounding box of the triangle
     Eigen::Vector2f A = triangle.vertex_A.position;
