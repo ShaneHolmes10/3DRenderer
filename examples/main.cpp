@@ -1,5 +1,6 @@
 #include "display/viewport.h"
 #include "display/frame_buffer.h"
+#include "display/depth_buffer.h"
 #include "renderer/camera.h"
 #include "forms/entity.h"
 #include "forms/model.h"
@@ -110,20 +111,24 @@ int main() {
     // Start the view port
     view.start();
 
+    FrameBuffer frame_buffer(width, height);
+    DepthBuffer depth_buffer(width, height);
+
     while(true) {
-                
-        Transform t_cam(Eigen::Vector3f(cam_x, cam_y, cam_z), 
+
+        Transform t_cam(Eigen::Vector3f(cam_x, cam_y, cam_z),
                         Eigen::Vector3f(rotation_x, rotation_y, rotation_z));
 
         camera_mount.setTransform(t_cam);
-        
-        FrameBuffer frame_buffer(width, height);
-        
+
+        frame_buffer.clear();
+        depth_buffer.clear();
+
         DrawCommand cmd;
         cmd.entity = &tetrahedron_entity;
         cmd.cull_mode = CullMode::None;
-        
-        camera.draw(frame_buffer, cmd);
+
+        camera.draw(frame_buffer, depth_buffer, cmd);
         
         view.setFrame(frame_buffer);
         view.update();
