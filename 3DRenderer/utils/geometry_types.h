@@ -40,5 +40,16 @@ struct Triangle {
     Vertex<PositionType> vertex_A, vertex_B, vertex_C;
 };
 
-using Triangle2 = Triangle<Eigen::Vector2f>;
+/**
+ * @brief A triangle defined by three vertices with additional fields for depth information.
+ *
+ * This struct inherits from the Triangle struct so it contains the same 
+ * fields as that but with the addition of the depth information per vertex.  
+ */
+template<typename PositionType>
+struct DepthTriangle : Triangle<PositionType> {
+    float vertex_a_inverse_z, vertex_b_inverse_z, vertex_c_inverse_z;
+};
+
+using Triangle2 = DepthTriangle<Eigen::Vector2f>;
 using Triangle3 = Triangle<Eigen::Vector3f>;

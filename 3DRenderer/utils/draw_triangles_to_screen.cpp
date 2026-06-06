@@ -1,5 +1,6 @@
 
 #include "draw_triangles_to_screen.h"
+#include "display/depth_buffer.h"
 #include <algorithm>
 
 float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, const Eigen::Vector2f& C) {
@@ -7,7 +8,7 @@ float signedTriangleArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B, con
     return ((B[0] - A[0]) * (C[1] - A[1]) - (B[1] - A[1]) * (C[0] - A[0]));
 }
 
-void drawTriangleToScreen(FrameBuffer& frame_buffer, const Triangle2& triangle) {
+void drawTriangleToScreen(FrameBuffer& frame_buffer, DepthBuffer& depth_buffer, const Triangle2& triangle) {
 
     // First get the bounding box of the triangle
     Eigen::Vector2f A = triangle.vertex_A.position;
@@ -48,10 +49,22 @@ void drawTriangleToScreen(FrameBuffer& frame_buffer, const Triangle2& triangle) 
                CA_edge_area >= 0 &&
                BC_edge_area >= 0) {
 
-                int pixel_r = (int)(color_A[0]*weight_A + color_B[0]*weight_B + color_C[0]*weight_C); 
-                int pixel_g = (int)(color_A[1]*weight_A + color_B[1]*weight_B + color_C[1]*weight_C); 
-                int pixel_b = (int)(color_A[2]*weight_A + color_B[2]*weight_B + color_C[2]*weight_C); 
-            
+                // Depth test: interpolate inverse-z and reject fragments behind what's already drawn
+                float pixel_inv_depth = weight_A * triangle.vertex_a_inverse_z
+                                      + weight_B * triangle.vertex_b_inverse_z
+                                      + weight_C * triangle.vertex_c_inverse_z;
+
+                size_t depth_idx = y_pixel_ind * depth_buffer.width + x_pixel_ind;
+
+                if(pixel_inv_depth <= depth_buffer.values[depth_idx])
+                    continue;
+
+                depth_buffer.values[depth_idx] = pixel_inv_depth;
+
+                int pixel_r = (int)(color_A[0]*weight_A + color_B[0]*weight_B + color_C[0]*weight_C);
+                int pixel_g = (int)(color_A[1]*weight_A + color_B[1]*weight_B + color_C[1]*weight_C);
+                int pixel_b = (int)(color_A[2]*weight_A + color_B[2]*weight_B + color_C[2]*weight_C);
+
                 frame_buffer.setPixel(x_pixel_ind, y_pixel_ind, pixel_r, pixel_g, pixel_b);
             }
         }

@@ -19,11 +19,14 @@ Triangle2 projectTriangle(
     float height)
 {
     Triangle2 tri;
-    tri.vertex_A.position = project(triangle.vertex_A.position, focal_length, width, height);
-    tri.vertex_A.color    = triangle.vertex_A.color;
-    tri.vertex_B.position = project(triangle.vertex_B.position, focal_length, width, height);
-    tri.vertex_B.color    = triangle.vertex_B.color;
-    tri.vertex_C.position = project(triangle.vertex_C.position, focal_length, width, height);
-    tri.vertex_C.color    = triangle.vertex_C.color;
+    tri.vertex_A.position  = project(triangle.vertex_A.position, focal_length, width, height);
+    tri.vertex_A.color     = triangle.vertex_A.color;
+    tri.vertex_a_inverse_z = 1.0f / triangle.vertex_A.position.z();
+    tri.vertex_B.position  = project(triangle.vertex_B.position, focal_length, width, height);
+    tri.vertex_B.color     = triangle.vertex_B.color;
+    tri.vertex_b_inverse_z = 1.0f / triangle.vertex_B.position.z();
+    tri.vertex_C.position  = project(triangle.vertex_C.position, focal_length, width, height);
+    tri.vertex_C.color     = triangle.vertex_C.color;
+    tri.vertex_c_inverse_z = 1.0f / triangle.vertex_C.position.z();
     return tri;
 }

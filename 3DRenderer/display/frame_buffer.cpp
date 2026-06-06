@@ -5,6 +5,10 @@
 FrameBuffer::FrameBuffer(size_t w, size_t h) 
     : width(w), height(h), pixels(w * h * 4, 255) {}
 
+void FrameBuffer::clear() {
+    std::fill(pixels.begin(), pixels.end(), 255);
+}
+
 void FrameBuffer::setPixel(size_t x, size_t y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
     
     if (x >= width || y >= height) {

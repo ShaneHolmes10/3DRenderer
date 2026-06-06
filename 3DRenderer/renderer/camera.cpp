@@ -11,7 +11,7 @@
 
 static constexpr float NEAR_Z = 0.1f;
 
-void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
+void Camera::draw(FrameBuffer& frame_buffer, DepthBuffer& depth_buffer, const DrawCommand& draw_command) {
 
     const Entity* target_entity = draw_command.entity;
     const std::vector<Mesh>& target_meshes = target_entity->model->getMeshes();
@@ -47,7 +47,7 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             tri3.vertex_C.position = v3_expressed.head<3>();  tri3.vertex_C.color = vertices[face.v3].color;
 
             for (const Triangle3& clipped : clipTriangle(tri3, focal_length, width, height, NEAR_Z))
-                drawTriangleToScreen(frame_buffer, projectTriangle(clipped, focal_length, width, height));
+                drawTriangleToScreen(frame_buffer, depth_buffer, projectTriangle(clipped, focal_length, width, height));
 
         }
     }

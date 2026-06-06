@@ -2,6 +2,7 @@
 
 #include "forms/entity.h"
 #include "display/frame_buffer.h"
+#include "display/depth_buffer.h"
 
 
 /**
@@ -122,6 +123,6 @@ public:
      * @param frame_buffer The pixel buffer to render into
      * @param draw_command The entity and rendering settings to use
      */
-    void draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command);
+    void draw(FrameBuffer& frame_buffer, DepthBuffer& depth_buffer, const DrawCommand& draw_command);
 
 };
