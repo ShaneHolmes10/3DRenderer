@@ -1,24 +1,21 @@
-#include "CppUnitLite/TestHarness.h"
-#include "renderer/camera.h"
-#include "forms/entity.h"
-#include "forms/model.h"
-#include "forms/mesh.h"
-#include "display/frame_buffer.h"
-#include "display/depth_buffer.h"
-#include "utils/transform.h"
 #include <Eigen/Dense>
 #include <cmath>
+
+#include "CppUnitLite/TestHarness.h"
+#include "display/depth_buffer.h"
+#include "display/frame_buffer.h"
+#include "forms/entity.h"
+#include "forms/mesh.h"
+#include "forms/model.h"
+#include "renderer/camera.h"
+#include "utils/transform.h"
 
 // ============================================================
 // Helper Functions
 // ============================================================
 
-Mesh buildTriangleMesh(
-    Eigen::Vector3f a,
-    Eigen::Vector3f b,
-    Eigen::Vector3f c,
-    Eigen::Vector3i col
-) {
+Mesh buildTriangleMesh(Eigen::Vector3f a, Eigen::Vector3f b,
+                       Eigen::Vector3f c, Eigen::Vector3i col) {
     Vertex3 v0;
     v0.position = a;
     v0.color = col;
@@ -38,7 +35,8 @@ Mesh buildTriangleMesh(
 
 bool hasDrawnPixels(const FrameBuffer& fb) {
     for (size_t i = 0; i < fb.pixels.size(); i += 4) {
-        if (fb.pixels[i] != 255 || fb.pixels[i+1] != 255 || fb.pixels[i+2] != 255) {
+        if (fb.pixels[i] != 255 || fb.pixels[i + 1] != 255 ||
+            fb.pixels[i + 2] != 255) {
             return true;
         }
     }
@@ -48,7 +46,8 @@ bool hasDrawnPixels(const FrameBuffer& fb) {
 int countDrawnPixels(const FrameBuffer& fb) {
     int count = 0;
     for (size_t i = 0; i < fb.pixels.size(); i += 4) {
-        if (fb.pixels[i] != 255 || fb.pixels[i+1] != 255 || fb.pixels[i+2] != 255) {
+        if (fb.pixels[i] != 255 || fb.pixels[i + 1] != 255 ||
+            fb.pixels[i + 2] != 255) {
             count++;
         }
     }
@@ -84,18 +83,17 @@ TEST(Camera, DrawRendersTriangleInFrontOfCamera) {
     int w = 200;
     int h = 200;
 
-    Mesh mesh = buildTriangleMesh(
-        Eigen::Vector3f(-0.5f, -0.5f, 5.0f),
-        Eigen::Vector3f( 0.5f, -0.5f, 5.0f),
-        Eigen::Vector3f( 0.0f,  0.5f, 5.0f),
-        Eigen::Vector3i(255, 0, 0)
-    );
+    Mesh mesh = buildTriangleMesh(Eigen::Vector3f(-0.5f, -0.5f, 5.0f),
+                                  Eigen::Vector3f(0.5f, -0.5f, 5.0f),
+                                  Eigen::Vector3f(0.0f, 0.5f, 5.0f),
+                                  Eigen::Vector3i(255, 0, 0));
     Model model;
     model.addMesh(mesh);
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
+    Transform t_entity(Eigen::Vector3f(0, 0, 0),
+                       Eigen::Vector3f::Zero());
     entity.setTransform(t_entity);
 
     Entity cam_mount;
@@ -121,18 +119,17 @@ TEST(Camera, DrawDoesNotRenderTriangleBehindCamera) {
     int w = 200;
     int h = 200;
 
-    Mesh mesh = buildTriangleMesh(
-        Eigen::Vector3f(-0.5f, -0.5f, -5.0f),
-        Eigen::Vector3f( 0.5f, -0.5f, -5.0f),
-        Eigen::Vector3f( 0.0f,  0.5f, -5.0f),
-        Eigen::Vector3i(255, 0, 0)
-    );
+    Mesh mesh = buildTriangleMesh(Eigen::Vector3f(-0.5f, -0.5f, -5.0f),
+                                  Eigen::Vector3f(0.5f, -0.5f, -5.0f),
+                                  Eigen::Vector3f(0.0f, 0.5f, -5.0f),
+                                  Eigen::Vector3i(255, 0, 0));
     Model model;
     model.addMesh(mesh);
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
+    Transform t_entity(Eigen::Vector3f(0, 0, 0),
+                       Eigen::Vector3f::Zero());
     entity.setTransform(t_entity);
 
     Entity cam_mount;
@@ -158,18 +155,17 @@ TEST(Camera, DrawRespectsEntityTransform) {
     int w = 200;
     int h = 200;
 
-    Mesh mesh = buildTriangleMesh(
-        Eigen::Vector3f(-0.5f, -0.5f, 0.0f),
-        Eigen::Vector3f( 0.5f, -0.5f, 0.0f),
-        Eigen::Vector3f( 0.0f,  0.5f, 0.0f),
-        Eigen::Vector3i(0, 255, 0)
-    );
+    Mesh mesh = buildTriangleMesh(Eigen::Vector3f(-0.5f, -0.5f, 0.0f),
+                                  Eigen::Vector3f(0.5f, -0.5f, 0.0f),
+                                  Eigen::Vector3f(0.0f, 0.5f, 0.0f),
+                                  Eigen::Vector3i(0, 255, 0));
     Model model;
     model.addMesh(mesh);
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero());
+    Transform t_entity(Eigen::Vector3f(0, 0, 5),
+                       Eigen::Vector3f::Zero());
     entity.setTransform(t_entity);
 
     Entity cam_mount;
@@ -195,18 +191,17 @@ TEST(Camera, DrawRespectsCameraTransform) {
     int w = 200;
     int h = 200;
 
-    Mesh mesh = buildTriangleMesh(
-        Eigen::Vector3f(-0.5f, -0.5f, 10.0f),
-        Eigen::Vector3f( 0.5f, -0.5f, 10.0f),
-        Eigen::Vector3f( 0.0f,  0.5f, 10.0f),
-        Eigen::Vector3i(255, 0, 0)
-    );
+    Mesh mesh = buildTriangleMesh(Eigen::Vector3f(-0.5f, -0.5f, 10.0f),
+                                  Eigen::Vector3f(0.5f, -0.5f, 10.0f),
+                                  Eigen::Vector3f(0.0f, 0.5f, 10.0f),
+                                  Eigen::Vector3i(255, 0, 0));
     Model model;
     model.addMesh(mesh);
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
+    Transform t_entity(Eigen::Vector3f(0, 0, 0),
+                       Eigen::Vector3f::Zero());
     entity.setTransform(t_entity);
 
     Entity cam_mount;
@@ -234,16 +229,12 @@ TEST(Camera, CloserObjectAppearsLarger) {
 
     Mesh mesh_close = buildTriangleMesh(
         Eigen::Vector3f(-1.0f, -1.0f, 3.0f),
-        Eigen::Vector3f( 1.0f, -1.0f, 3.0f),
-        Eigen::Vector3f( 0.0f,  1.0f, 3.0f),
-        Eigen::Vector3i(255, 0, 0)
-    );
+        Eigen::Vector3f(1.0f, -1.0f, 3.0f),
+        Eigen::Vector3f(0.0f, 1.0f, 3.0f), Eigen::Vector3i(255, 0, 0));
     Mesh mesh_far = buildTriangleMesh(
         Eigen::Vector3f(-1.0f, -1.0f, 10.0f),
-        Eigen::Vector3f( 1.0f, -1.0f, 10.0f),
-        Eigen::Vector3f( 0.0f,  1.0f, 10.0f),
-        Eigen::Vector3i(255, 0, 0)
-    );
+        Eigen::Vector3f(1.0f, -1.0f, 10.0f),
+        Eigen::Vector3f(0.0f, 1.0f, 10.0f), Eigen::Vector3i(255, 0, 0));
 
     Model model_close;
     model_close.addMesh(mesh_close);
@@ -252,7 +243,8 @@ TEST(Camera, CloserObjectAppearsLarger) {
 
     Entity entity_close;
     entity_close.model = &model_close;
-    Transform t_close(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
+    Transform t_close(Eigen::Vector3f(0, 0, 0),
+                      Eigen::Vector3f::Zero());
     entity_close.setTransform(t_close);
 
     Entity entity_far;
@@ -290,18 +282,17 @@ TEST(Camera, DrawRendersCorrectColor) {
     int w = 200;
     int h = 200;
 
-    Mesh mesh = buildTriangleMesh(
-        Eigen::Vector3f(-1.0f, -1.0f, 5.0f),
-        Eigen::Vector3f( 1.0f, -1.0f, 5.0f),
-        Eigen::Vector3f( 0.0f,  1.0f, 5.0f),
-        Eigen::Vector3i(255, 0, 0)
-    );
+    Mesh mesh = buildTriangleMesh(Eigen::Vector3f(-1.0f, -1.0f, 5.0f),
+                                  Eigen::Vector3f(1.0f, -1.0f, 5.0f),
+                                  Eigen::Vector3f(0.0f, 1.0f, 5.0f),
+                                  Eigen::Vector3i(255, 0, 0));
     Model model;
     model.addMesh(mesh);
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
+    Transform t_entity(Eigen::Vector3f(0, 0, 0),
+                       Eigen::Vector3f::Zero());
     entity.setTransform(t_entity);
 
     Entity cam_mount;
@@ -332,22 +323,22 @@ TEST(Camera, SceneGraphHierarchyAffectsRendering) {
     int w = 200;
     int h = 200;
 
-    Mesh mesh = buildTriangleMesh(
-        Eigen::Vector3f(-0.5f, -0.5f, 0.0f),
-        Eigen::Vector3f( 0.5f, -0.5f, 0.0f),
-        Eigen::Vector3f( 0.0f,  0.5f, 0.0f),
-        Eigen::Vector3i(0, 0, 255)
-    );
+    Mesh mesh = buildTriangleMesh(Eigen::Vector3f(-0.5f, -0.5f, 0.0f),
+                                  Eigen::Vector3f(0.5f, -0.5f, 0.0f),
+                                  Eigen::Vector3f(0.0f, 0.5f, 0.0f),
+                                  Eigen::Vector3i(0, 0, 255));
     Model model;
     model.addMesh(mesh);
 
     Entity parent;
-    Transform t_parent(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero());
+    Transform t_parent(Eigen::Vector3f(0, 0, 5),
+                       Eigen::Vector3f::Zero());
     parent.setTransform(t_parent);
 
     Entity child;
     child.model = &model;
-    Transform t_child(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
+    Transform t_child(Eigen::Vector3f(0, 0, 0),
+                      Eigen::Vector3f::Zero());
     child.setTransform(t_child);
     parent.addChild(child);
 

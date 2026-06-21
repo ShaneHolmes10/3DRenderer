@@ -1,9 +1,9 @@
 
 #pragma once
 
-#include "utils/geometry_types.h"
 #include <vector>
 
+#include "utils/geometry_types.h"
 
 /**
  * @brief Represents a 3D mesh composed of vertices and faces.
@@ -13,13 +13,11 @@
  * indices when faces are added.
  */
 class Mesh {
-
-private:
+   private:
     std::vector<Vertex3> vertices;
     std::vector<Face> faces;
 
-public:
-
+   public:
     /**
      * @brief Construct an empty Mesh.
      */
@@ -31,10 +29,8 @@ public:
      * @param vertices Vector of vertices
      * @param faces Vector of faces (triangles)
      */
-    Mesh(
-        const std::vector<Vertex3>& vertices,
-        const std::vector<Face>& faces
-    );
+    Mesh(const std::vector<Vertex3>& vertices,
+         const std::vector<Face>& faces);
 
     /**
      * @brief Get all vertices in the mesh.
@@ -80,5 +76,4 @@ public:
      * @throws std::out_of_range if any vertex index is invalid
      */
     void addFace(const Face& face);
-
 };

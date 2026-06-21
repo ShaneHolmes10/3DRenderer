@@ -1,11 +1,10 @@
-#include "CppUnitLite/TestHarness.h"
-#include "display/viewport.h"
 #include <iostream>
 #include <string>
 
+#include "CppUnitLite/TestHarness.h"
+#include "display/viewport.h"
 
-TEST(Viewport, CreateWindowWithDefaultDimensions)
-{
+TEST(Viewport, CreateWindowWithDefaultDimensions) {
     Viewport::init();
 
     Viewport v1;
@@ -20,9 +19,7 @@ TEST(Viewport, CreateWindowWithDefaultDimensions)
     v1.join();
 }
 
-
-TEST(Viewport, CreateWindowWithCustomDimensions)
-{
+TEST(Viewport, CreateWindowWithCustomDimensions) {
     Viewport::init();
 
     Viewport v1(1000, 800);
@@ -37,16 +34,15 @@ TEST(Viewport, CreateWindowWithCustomDimensions)
     v1.join();
 }
 
-
-TEST(Viewport, CreateWindowWithDimensionsAndLocation)
-{
+TEST(Viewport, CreateWindowWithDimensionsAndLocation) {
     Viewport::init();
 
     Viewport v1(800, 600, 0, 0);
     v1.start();
 
     std::string answer;
-    std::cout << "Did the window appear with larger dimensions and in the right location: ";
+    std::cout << "Did the window appear with larger dimensions and in "
+                 "the right location: ";
     std::cin >> answer;
 
     CHECK(answer == "y");
@@ -54,9 +50,7 @@ TEST(Viewport, CreateWindowWithDimensionsAndLocation)
     v1.join();
 }
 
-
-TEST(Viewport, CreateTwoWindowsSimultaneously)
-{
+TEST(Viewport, CreateTwoWindowsSimultaneously) {
     Viewport::init();
 
     Viewport v1(600, 400, 0, 0);
@@ -68,13 +62,12 @@ TEST(Viewport, CreateTwoWindowsSimultaneously)
     std::string answer;
     std::cout << "Did both windows show up: ";
     std::cin >> answer;
-    
+
     CHECK(answer == "y");
 
     v1.join();
     v2.join();
 }
-
 
 int main() {
     TestResult tr;
