@@ -85,10 +85,10 @@ int main() {
                 cam_y -= move_speed;
                 break;
             case Left:  // Rotate left
-                rotation_y += rotate_speed;
+                rotation_y -= rotate_speed;
                 break;
             case Right:  // Rotate right
-                rotation_y -= rotate_speed;
+                rotation_y += rotate_speed;
                 break;
             case Up:  // Look up
                 rotation_x += rotate_speed;
