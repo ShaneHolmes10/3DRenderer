@@ -1,0 +1,12 @@
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  modernize-*,
+  readability-*,
+  -readability-magic-numbers,
+  -readability-uppercase-literal-suffix,
+  -readability-identifier-length,
+  performance-*,
+  bugprone-*
+WarningsAsErrors: ""
+HeaderFilterRegex: ".*"
