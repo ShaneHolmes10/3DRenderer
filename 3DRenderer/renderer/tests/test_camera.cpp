@@ -4,6 +4,7 @@
 #include "forms/model.h"
 #include "forms/mesh.h"
 #include "display/frame_buffer.h"
+#include "display/depth_buffer.h"
 #include "utils/transform.h"
 #include <Eigen/Dense>
 #include <cmath>
@@ -110,7 +111,8 @@ TEST(Camera, DrawRendersTriangleInFrontOfCamera) {
     DrawCommand cmd;
     cmd.entity = &entity;
     cmd.cull_mode = CullMode::None;
-    camera.draw(fb, cmd);
+    DepthBuffer db(w, h);
+    camera.draw(fb, db, cmd);
 
     CHECK(hasDrawnPixels(fb));
 }
@@ -146,7 +148,8 @@ TEST(Camera, DrawDoesNotRenderTriangleBehindCamera) {
     DrawCommand cmd;
     cmd.entity = &entity;
     cmd.cull_mode = CullMode::None;
-    camera.draw(fb, cmd);
+    DepthBuffer db(w, h);
+    camera.draw(fb, db, cmd);
 
     CHECK(!hasDrawnPixels(fb));
 }
@@ -182,7 +185,8 @@ TEST(Camera, DrawRespectsEntityTransform) {
     DrawCommand cmd;
     cmd.entity = &entity;
     cmd.cull_mode = CullMode::None;
-    camera.draw(fb, cmd);
+    DepthBuffer db(w, h);
+    camera.draw(fb, db, cmd);
 
     CHECK(hasDrawnPixels(fb));
 }
@@ -218,7 +222,8 @@ TEST(Camera, DrawRespectsCameraTransform) {
     DrawCommand cmd;
     cmd.entity = &entity;
     cmd.cull_mode = CullMode::None;
-    camera.draw(fb, cmd);
+    DepthBuffer db(w, h);
+    camera.draw(fb, db, cmd);
 
     CHECK(!hasDrawnPixels(fb));
 }
@@ -265,16 +270,18 @@ TEST(Camera, CloserObjectAppearsLarger) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb_close(w, h);
+    DepthBuffer db_close(w, h);
     DrawCommand cmd_close;
     cmd_close.entity = &entity_close;
     cmd_close.cull_mode = CullMode::None;
-    camera.draw(fb_close, cmd_close);
+    camera.draw(fb_close, db_close, cmd_close);
 
     FrameBuffer fb_far(w, h);
+    DepthBuffer db_far(w, h);
     DrawCommand cmd_far;
     cmd_far.entity = &entity_far;
     cmd_far.cull_mode = CullMode::None;
-    camera.draw(fb_far, cmd_far);
+    camera.draw(fb_far, db_far, cmd_far);
 
     CHECK(countDrawnPixels(fb_close) > countDrawnPixels(fb_far));
 }
@@ -310,7 +317,8 @@ TEST(Camera, DrawRendersCorrectColor) {
     DrawCommand cmd;
     cmd.entity = &entity;
     cmd.cull_mode = CullMode::None;
-    camera.draw(fb, cmd);
+    DepthBuffer db(w, h);
+    camera.draw(fb, db, cmd);
 
     size_t cx = w / 2;
     size_t cy = h / 2;
@@ -356,7 +364,8 @@ TEST(Camera, SceneGraphHierarchyAffectsRendering) {
     DrawCommand cmd;
     cmd.entity = &child;
     cmd.cull_mode = CullMode::None;
-    camera.draw(fb, cmd);
+    DepthBuffer db(w, h);
+    camera.draw(fb, db, cmd);
 
     CHECK(hasDrawnPixels(fb));
 }

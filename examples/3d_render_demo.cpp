@@ -1,5 +1,6 @@
 #include "display/viewport.h"
 #include "display/frame_buffer.h"
+#include "display/depth_buffer.h"
 #include "renderer/camera.h"
 #include "forms/entity.h"
 #include "forms/model.h"
@@ -43,34 +44,38 @@ int main() {
     camera.setPictureWidthHeight(width, height);
     
     view.start();
-    
+
+    FrameBuffer frame_buffer(width, height);
+    DepthBuffer depth_buffer(width, height);
+
     // Animation loop - orbit camera around tetrahedron
     float angle = 0;
     while(true) {
-        
+
         float orbit_radius = 300.0f;
         float theta = angle * 0.05f;
-        
+
         // Camera position (orbit in circle)
         float cam_x = orbit_radius * std::sin(theta);
         float cam_y = 50.0f;
         float cam_z = orbit_radius * std::cos(theta);
-        
+
         // Camera rotation (look at origin where tetrahedron is)
         // Rotate around Y axis to face the center
         float rotation_y = theta + M_PI;  // Face inward toward origin
-        
-        Transform t_cam(Eigen::Vector3f(cam_x, cam_y, cam_z), 
+
+        Transform t_cam(Eigen::Vector3f(cam_x, cam_y, cam_z),
                         Eigen::Vector3f(0, rotation_y, 0));
         camera_mount.setTransform(t_cam);
-        
-        FrameBuffer frame_buffer(width, height);
-        
+
+        frame_buffer.clear();
+        depth_buffer.clear();
+
         DrawCommand cmd;
         cmd.entity = &tetrahedron_entity;
         cmd.cull_mode = CullMode::None;
-        
-        camera.draw(frame_buffer, cmd);
+
+        camera.draw(frame_buffer, depth_buffer, cmd);
         
         view.setFrame(frame_buffer);
         view.update();

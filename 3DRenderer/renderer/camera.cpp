@@ -3,14 +3,15 @@
 #include "forms/mesh.h"
 #include "display/frame_buffer.h"
 #include "renderer/camera.h"
-#include "utils/draw_triangles.h"
+#include "utils/draw_triangles_to_screen.h"
 #include "utils/clip_triangles.h"
+#include "utils/project_triangles.h"
 
 #include <vector>
 
 static constexpr float NEAR_Z = 0.1f;
 
-void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
+void Camera::draw(FrameBuffer& frame_buffer, DepthBuffer& depth_buffer, const DrawCommand& draw_command) {
 
     const Entity* target_entity = draw_command.entity;
     const std::vector<Mesh>& target_meshes = target_entity->model->getMeshes();
@@ -45,8 +46,8 @@ void Camera::draw(FrameBuffer& frame_buffer, const DrawCommand& draw_command) {
             tri3.vertex_B.position = v2_expressed.head<3>();  tri3.vertex_B.color = vertices[face.v2].color;
             tri3.vertex_C.position = v3_expressed.head<3>();  tri3.vertex_C.color = vertices[face.v3].color;
 
-            for (const Triangle2& tri2 : clipAndProjectTriangle(tri3, focal_length, width, height, NEAR_Z))
-                drawTriangle(frame_buffer, tri2);
+            for (const Triangle3& clipped : clipTriangle(tri3, focal_length, width, height, NEAR_Z))
+                drawTriangleToScreen(frame_buffer, depth_buffer, projectTriangle(clipped, focal_length, width, height));
 
         }
     }
