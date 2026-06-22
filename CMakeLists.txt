@@ -64,6 +64,11 @@ if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
+# Build documentation
+if(BUILD_DOCS)
+    add_subdirectory(doc)
+endif()
+
 ###############################################################################
 # Print configuration variables
 include(HandlePrintConfiguration)

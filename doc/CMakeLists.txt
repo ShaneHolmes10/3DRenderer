@@ -1,6 +1,8 @@
 ###############################################################################
 # Doxygen documentation
 
+find_package(Doxygen REQUIRED)
+
 # Configure Doxygen file
 set(DOXYGEN_INPUT_DIR "${CMAKE_SOURCE_DIR}/3DRenderer")
 set(DOXYGEN_OUTPUT_DIR "${CMAKE_BINARY_DIR}/docs")
