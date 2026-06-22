@@ -44,7 +44,7 @@ To run the keyboard control demo:
 ./bin/examples/main
 ```
 
-### Testing
+## Testing
 
 Run all tests:
 ```sh
@@ -65,6 +65,33 @@ After **adding a new test file**, re-run cmake first so it picks up the new file
 cmake ..
 make check.utils_tests
 ```
+
+## Formatting and Linting
+
+First make sure that the clang tools are installed properly. 
+
+```
+sudo apt install clang-format clang-tidy
+```
+
+To run clang-format, which purely adjusts the cosmetics of the files. Run this from root.
+
+```
+find 3DRenderer -name "*.cpp" -o -name "*.h" | xargs clang-format -i
+```
+
+To run clang-tidy, which does semantic analysis and tries to flag bad code practices.
+
+```
+find 3DRenderer -name "*.cpp" | xargs clang-tidy -p build/
+```
+
+If you want clang-tidy to actually fix the things that it flags you need to run the following.
+
+```
+find 3DRenderer -name "*.cpp" | xargs clang-tidy -p build/ --fix
+```
+
 
 
 ## Project Structure

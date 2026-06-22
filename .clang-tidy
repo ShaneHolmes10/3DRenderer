@@ -2,11 +2,16 @@ Checks: >
   clang-diagnostic-*,
   clang-analyzer-*,
   modernize-*,
+  -modernize-use-trailing-return-type,
+  -modernize-use-nodiscard,
+  -modernize-pass-by-value,
   readability-*,
   -readability-magic-numbers,
   -readability-uppercase-literal-suffix,
   -readability-identifier-length,
+  -readability-simplify-boolean-expr,
   performance-*,
-  bugprone-*
+  bugprone-*,
+  -bugprone-easily-swappable-parameters
 WarningsAsErrors: ""
-HeaderFilterRegex: ".*"
+HeaderFilterRegex: "^(?!.*CppUnitLite).*"
