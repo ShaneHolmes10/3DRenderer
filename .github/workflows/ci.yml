@@ -107,7 +107,12 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y doxygen graphviz
+          sudo apt-get install -y \
+            doxygen \
+            graphviz \
+            libeigen3-dev \
+            libsfml-dev \
+            libx11-dev
 
       - name: Configure
         run: cmake -B build
