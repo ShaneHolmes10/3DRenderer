@@ -7,8 +7,8 @@ on:
     branches: ["**"]
 
 jobs:
-  build-and-test:
-    name: Build and Test
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,13 +24,41 @@ jobs:
             graphviz
 
       - name: Configure
-        run: cmake -B build
+        run: cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
       - name: Build
         run: cmake --build build -j$(nproc)
 
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          retention-days: 1
+          path: |
+            build/bin/
+            build/compile_commands.json
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: build/
+
+      - name: Make executables runnable
+        run: chmod -R +x build/bin/
+
       - name: Run tests
-        run: cmake --build build --target check
+        run: |
+          failed=0
+          while IFS= read -r exe; do
+            echo "--- $exe ---"
+            "$exe" || failed=1
+          done < <(find build/bin -type f -executable -name "test_*" | sort)
+          exit $failed
 
   format:
     name: Formatting (clang-format)
@@ -48,11 +76,12 @@ jobs:
 
   lint:
     name: Lint (clang-tidy)
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Install clang-tidy and headers
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -62,8 +91,11 @@ jobs:
             libx11-dev \
             doxygen
 
-      - name: Configure
-        run: cmake -B build
+      - name: Download compilation database
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: build/
 
       - name: Run clang-tidy
         run: |
