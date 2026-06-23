@@ -8,7 +8,7 @@ struct Plane {
     float d;
 };
 
-static Vertex3 interpolate(const Vertex3& a, const Vertex3& b,
+Vertex3 interpolate(const Vertex3& a, const Vertex3& b,
                            float t) {
     Vertex3 result;
     result.position = a.position + t * (b.position - a.position);
@@ -18,7 +18,7 @@ static Vertex3 interpolate(const Vertex3& a, const Vertex3& b,
     return result;
 }
 
-static std::vector<Vertex3> clipAgainstPlane(
+std::vector<Vertex3> clipAgainstPlane(
     const std::vector<Vertex3>& polygon, const Plane& plane) {
     std::vector<Vertex3> output;
 
@@ -30,14 +30,16 @@ static std::vector<Vertex3> clipAgainstPlane(
         float d_next = plane.normal.dot(next.position) + plane.d;
 
         if (d_next >= 0.0f) {
-            if (d_current < 0.0f)
+            if (d_current < 0.0f) {
                 output.push_back(interpolate(
                     current, next, d_current / (d_current - d_next)));
+}
             output.push_back(next);
         } else {
-            if (d_current >= 0.0f)
+            if (d_current >= 0.0f) {
                 output.push_back(interpolate(
                     current, next, d_current / (d_current - d_next)));
+}
         }
     }
 
@@ -54,6 +56,7 @@ std::vector<Triangle3> clipTriangle(const Triangle3& triangle,
 
     // Frustum planes in camera space — inside when
     // plane.normal.dot(position) + d >= 0
+    // NOLINTNEXTLINE(modernize-avoid-c-arrays)
     const Plane planes[] = {
         {{0.0f, 0.0f, 1.0f}, -near_z},                 // near
         {{focal_length, 0.0f, width / 2.0f}, 0.0f},    // left
@@ -64,7 +67,8 @@ std::vector<Triangle3> clipTriangle(const Triangle3& triangle,
 
     for (const auto& plane : planes) {
         polygon = clipAgainstPlane(polygon, plane);
-        if (polygon.empty()) return {};
+        if (polygon.empty()) { return {};
+}
     }
 
     // Fan triangulate — produces n-2 triangles for an n-vertex polygon

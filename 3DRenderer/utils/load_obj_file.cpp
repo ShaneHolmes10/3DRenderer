@@ -36,5 +36,5 @@ Mesh LoadObjFile::load(const std::string& filepath) {
         }
     }
 
-    return Mesh(vertices, faces);
+    return {vertices, faces};
 }

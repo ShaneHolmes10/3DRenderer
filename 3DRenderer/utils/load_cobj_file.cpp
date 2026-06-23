@@ -24,10 +24,14 @@ Mesh LoadCobjFile::load(const std::string& filepath) {
             iss >> vertex.position.x() >> vertex.position.y() >>
                 vertex.position.z();
 
-            float r, g, b;
+            float r;
+            float g;
+            float b;
             if (iss >> r >> g >> b) {
-                vertex.color =
-                    Eigen::Vector3i(r * 255, g * 255, b * 255);
+                vertex.color = Eigen::Vector3i(
+                    static_cast<int>(r * 255),
+                    static_cast<int>(g * 255),
+                    static_cast<int>(b * 255));
             }
 
             vertices.push_back(vertex);
@@ -41,5 +45,5 @@ Mesh LoadCobjFile::load(const std::string& filepath) {
         }
     }
 
-    return Mesh(vertices, faces);
+    return {vertices, faces};
 }

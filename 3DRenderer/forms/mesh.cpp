@@ -4,8 +4,8 @@
 #include <stdexcept>
 
 Mesh::Mesh(const std::vector<Vertex3>& vertices,
-           const std::vector<Face>& indicies)
-    : vertices(vertices), faces(indicies) {}
+           const std::vector<Face>& faces)
+    : vertices(vertices), faces(faces) {}
 
 const std::vector<Vertex3>& Mesh::getVertices() const {
     return vertices;

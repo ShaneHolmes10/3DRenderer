@@ -70,20 +70,24 @@ void drawTriangleToScreen(FrameBuffer& frame_buffer,
                 size_t depth_idx =
                     y_pixel_ind * depth_buffer.width + x_pixel_ind;
 
-                if (pixel_inv_depth <= depth_buffer.values[depth_idx])
+                if (pixel_inv_depth <= depth_buffer.values[depth_idx]) {
                     continue;
+}
 
                 depth_buffer.values[depth_idx] = pixel_inv_depth;
 
-                int pixel_r = (int)(color_A[0] * weight_A +
-                                    color_B[0] * weight_B +
-                                    color_C[0] * weight_C);
-                int pixel_g = (int)(color_A[1] * weight_A +
-                                    color_B[1] * weight_B +
-                                    color_C[1] * weight_C);
-                int pixel_b = (int)(color_A[2] * weight_A +
-                                    color_B[2] * weight_B +
-                                    color_C[2] * weight_C);
+                int pixel_r = static_cast<int>(
+                    static_cast<float>(color_A[0]) * weight_A +
+                    static_cast<float>(color_B[0]) * weight_B +
+                    static_cast<float>(color_C[0]) * weight_C);
+                int pixel_g = static_cast<int>(
+                    static_cast<float>(color_A[1]) * weight_A +
+                    static_cast<float>(color_B[1]) * weight_B +
+                    static_cast<float>(color_C[1]) * weight_C);
+                int pixel_b = static_cast<int>(
+                    static_cast<float>(color_A[2]) * weight_A +
+                    static_cast<float>(color_B[2]) * weight_B +
+                    static_cast<float>(color_C[2]) * weight_C);
 
                 frame_buffer.setPixel(x_pixel_ind, y_pixel_ind, pixel_r,
                                       pixel_g, pixel_b);

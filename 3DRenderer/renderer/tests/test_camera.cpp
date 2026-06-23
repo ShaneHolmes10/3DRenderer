@@ -1,5 +1,6 @@
 #include <Eigen/Dense>
 #include <cmath>
+#include <utility>
 
 #include "CppUnitLite/TestHarness.h"
 #include "display/depth_buffer.h"
@@ -15,22 +16,22 @@
 // ============================================================
 
 Mesh buildTriangleMesh(Eigen::Vector3f a, Eigen::Vector3f b,
-                       Eigen::Vector3f c, Eigen::Vector3i col) {
+                       Eigen::Vector3f c, const Eigen::Vector3i& col) {
     Vertex3 v0;
-    v0.position = a;
+    v0.position = std::move(a);
     v0.color = col;
 
     Vertex3 v1;
-    v1.position = b;
+    v1.position = std::move(b);
     v1.color = col;
 
     Vertex3 v2;
-    v2.position = c;
+    v2.position = std::move(c);
     v2.color = col;
 
     std::vector<Vertex3> verts = {v0, v1, v2};
     std::vector<Face> faces = {{0, 1, 2}};
-    return Mesh(verts, faces);
+    return {verts, faces};
 }
 
 bool hasDrawnPixels(const FrameBuffer& fb) {

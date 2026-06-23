@@ -21,8 +21,8 @@ FrameBuffer create_circle_framebuffer(int width, int height, int cx,
     // Draw green circle
     for (size_t y = 0; y < height; y++) {
         for (size_t x = 0; x < width; x++) {
-            int dx = x - cx;
-            int dy = y - cy;
+            int dx = static_cast<int>(x) - cx;
+            int dy = static_cast<int>(y) - cy;
             if (dx * dx + dy * dy <= radius * radius) {
                 fb.setPixel(x, y, 0, 255, 0);  // Green
             }

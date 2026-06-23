@@ -1,6 +1,7 @@
 
 #include <Eigen/Dense>
 #include <cmath>
+#include <utility>
 
 #include "CppUnitLite/TestHarness.h"
 #include "forms/mesh.h"
@@ -20,9 +21,9 @@ static Vertex3 makeVertex(float x, float y, float z, int r = 255,
 
 static Triangle3 makeTri(Vertex3 a, Vertex3 b, Vertex3 c) {
     Triangle3 t;
-    t.vertex_A = a;
-    t.vertex_B = b;
-    t.vertex_C = c;
+    t.vertex_A = std::move(a);
+    t.vertex_B = std::move(b);
+    t.vertex_C = std::move(c);
     return t;
 }
 
@@ -165,12 +166,13 @@ TEST(ClipTriangles, VertexAtOriginXY_ProjectsToScreenCentre) {
     Triangle2 projected = projectTriangle(clipped[0], FOCAL, W, H);
 
     bool found = false;
-    for (const Eigen::Vector2f p :
+    for (const Eigen::Vector2f& p :
          {projected.vertex_A.position, projected.vertex_B.position,
           projected.vertex_C.position}) {
         if (std::abs(p[0] - W / 2.0f) < 0.01f &&
-            std::abs(p[1] - H / 2.0f) < 0.01f)
+            std::abs(p[1] - H / 2.0f) < 0.01f) {
             found = true;
+}
     }
     CHECK(found);
 }
@@ -193,12 +195,13 @@ TEST(ClipTriangles, ProjectionScalesWithFocalLength) {
 
     // Vertex (1,0,1) → screen x = W, y = H/2
     bool found_right_edge = false;
-    for (const Eigen::Vector2f p :
+    for (const Eigen::Vector2f& p :
          {projected.vertex_A.position, projected.vertex_B.position,
           projected.vertex_C.position}) {
         if (std::abs(p[0] - W) < 0.01f &&
-            std::abs(p[1] - H / 2.0f) < 0.01f)
+            std::abs(p[1] - H / 2.0f) < 0.01f) {
             found_right_edge = true;
+}
     }
     CHECK(found_right_edge);
 }
@@ -229,10 +232,11 @@ TEST(ClipTriangles, NearPlaneClip_InterpolatesColourAtIntersection) {
     // interpolated colour (80, 80, 80).
     bool found_interpolated = false;
     for (const auto& t : result) {
-        for (const Vertex3 v : {t.vertex_A, t.vertex_B, t.vertex_C}) {
+        for (const Vertex3& v : {t.vertex_A, t.vertex_B, t.vertex_C}) {
             if (v.color[0] == 80 && v.color[1] == 80 &&
-                v.color[2] == 80)
+                v.color[2] == 80) {
                 found_interpolated = true;
+}
         }
     }
     CHECK(found_interpolated);
@@ -248,7 +252,7 @@ TEST(ClipTriangles, ClippedColours_StayWithinInputRange) {
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
 
     for (const auto& t : result) {
-        for (const Vertex3 v : {t.vertex_A, t.vertex_B, t.vertex_C}) {
+        for (const Vertex3& v : {t.vertex_A, t.vertex_B, t.vertex_C}) {
             CHECK(v.color[0] >= 0 && v.color[0] <= 200);
             CHECK(v.color[1] >= 0 && v.color[1] <= 200);
             CHECK(v.color[2] >= 0 && v.color[2] <= 200);

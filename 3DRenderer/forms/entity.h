@@ -155,7 +155,7 @@ class Entity {
      * parent
      * @endcode
      */
-    void setTransform(Transform trans);
+    void setTransform(const Transform& trans);
 
     /**
      * @brief Apply an additional transformation to the current
@@ -175,7 +175,7 @@ class Entity {
      * entity.applyTransform(t2);  // Now at (15, 0, 0)
      * @endcode
      */
-    void applyTransform(Transform trans);
+    void applyTransform(const Transform& trans);
 
     /**
      * @brief Get the world transformation matrix.

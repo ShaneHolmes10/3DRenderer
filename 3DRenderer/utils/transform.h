@@ -53,11 +53,11 @@ class Transform {
      * @brief Construct a Transform with position, rotation, and scale.
      *
      * @param position Position vector (x, y, z)
-     * @param euler_rot Euler rotation angles in radians (rx, ry, rz)
+     * @param angles Euler rotation angles in radians (rx, ry, rz)
      * @param scale Scale factors (sx, sy, sz)
      */
     Transform(const Eigen::Vector3f& position,
-              const Eigen::Vector3f& euler_rot,
+              const Eigen::Vector3f& angles,
               const Eigen::Vector3f& scale);
 
     /**
@@ -65,10 +65,10 @@ class Transform {
      * scale of 1,1,1).
      *
      * @param position Position vector (x, y, z)
-     * @param euler_rot Euler rotation angles in radians (rx, ry, rz)
+     * @param angles Euler rotation angles in radians (rx, ry, rz)
      */
     Transform(const Eigen::Vector3f& position,
-              const Eigen::Vector3f& euler_rot);
+              const Eigen::Vector3f& angles);
 
     /**
      * @brief Set the rotation angle about the X axis.

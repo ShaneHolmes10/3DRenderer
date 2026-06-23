@@ -1,5 +1,6 @@
-#include "display/viewport.h"
+#include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
+#include "display/viewport.h"
 #include "utils/draw_triangles_to_screen.h"
 #include <Eigen/Dense>
 #include <iostream>
@@ -22,6 +23,7 @@ int main() {
     while(true) {
         
         FrameBuffer frame_buffer(width, height);
+        DepthBuffer depth_buffer(width, height);
         
         // Center of rotation
         float center_x = width / 2.0f;
@@ -60,7 +62,7 @@ int main() {
         tri.vertex_B.color = Eigen::Vector3i(0, 255, 0);
         tri.vertex_C.color = Eigen::Vector3i(0, 0, 255);
         
-        drawTriangleToScreen(frame_buffer, tri);
+        drawTriangleToScreen(frame_buffer, depth_buffer, tri);
         
         view.setFrame(frame_buffer);
         view.update();

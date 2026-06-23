@@ -3,12 +3,11 @@
 
 namespace {
 
-static Eigen::Vector2f project(const Eigen::Vector3f& pos,
+Eigen::Vector2f project(const Eigen::Vector3f& pos,
                                float focal_length, float width,
                                float height) {
-    return Eigen::Vector2f(
-        (pos.x() * focal_length / pos.z()) + width / 2.0f,
-        (pos.y() * focal_length / pos.z()) + height / 2.0f);
+    return {(pos.x() * focal_length / pos.z()) + width / 2.0f,
+            (pos.y() * focal_length / pos.z()) + height / 2.0f};
 }
 
 }  // namespace

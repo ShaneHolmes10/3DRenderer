@@ -7,7 +7,7 @@
 TEST(Model, DefaultConstructor) {
     Model model;
 
-    CHECK(model.getMeshes().size() == 0);
+    CHECK(model.getMeshes().empty());
 }
 
 TEST(Model, ConstructWithMeshes) {
@@ -132,7 +132,7 @@ TEST(Model, EmptyModelGetMeshesReturnsEmptyVector) {
 
     const std::vector<Mesh>& meshes = model.getMeshes();
 
-    CHECK(meshes.size() == 0);
+    CHECK(meshes.empty());
 }
 
 TEST(Model, ConstructedModelPreservesOriginalMeshData) {

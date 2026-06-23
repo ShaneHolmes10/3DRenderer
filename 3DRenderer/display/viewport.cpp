@@ -8,6 +8,7 @@
 #include <mutex>
 #include <stdexcept>
 #include <thread>
+#include <utility>
 
 #include "display/key.h"
 
@@ -81,5 +82,5 @@ void Viewport::join() {
 Viewport::~Viewport() { join(); }
 
 void Viewport::setKeyCallback(std::function<void(Key)> callback) {
-    key_callback = callback;
+    key_callback = std::move(callback);
 }
