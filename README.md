@@ -16,54 +16,67 @@ A software-based 3D rendering engine built from scratch in C++. No GPU accelerat
 
 ## Dependencies
 
+### Runtime / Build
 - **Eigen**: Linear algebra (matrix operations, vector math)
 - **SFML**: Windowing and display only (not used for rendering)
 - **CMake**: Build system
 - **X11**: Thread initialization for SFML on Linux
 - **CppUnitLite**: Unit testing framework
 
+### Development Tools
+- **clang-format**: Code formatter (`sudo apt install clang-format`)
+- **clang-tidy**: Static analysis linter (`sudo apt install clang-tidy`)
+- **Doxygen**: API documentation generation (`sudo apt install doxygen`)
+- **Graphviz**: Class diagram generation for Doxygen (`sudo apt install graphviz`)
 
-## Building 
-Create build directory and make a file:
+
+## Building
+
+Configure the build system (only needed once, or after changing CMakeLists.txt):
 ```sh
-mkdir build && cd build
-cmake ..
-make [filename]
+cmake -B build
 ```
 
-To run any code must be in build folder.
+**Build the project**:
+```sh
+cmake --build build
+```
+
+To speed up compilation with parallel jobs:
+```sh
+cmake --build build -j$(nproc)
+```
 
 To run 3D render demo:
 ```sh
-make 3d_render_demo
-./bin/examples/3d_render_demo
+cmake --build build --target 3d_render_demo
+./build/bin/examples/3d_render_demo
 ```
 
 To run the keyboard control demo:
 ```sh
-./bin/examples/main
+./build/bin/examples/main
 ```
 
 ## Testing
 
-Run all tests:
+**Run all tests**:
 ```sh
-cd build
-make check
+cmake --build build --target check
 ```
 
 Run a specific group only (faster feedback during development):
 ```sh
-make check.utils_tests      # utils tests
-make check.renderer_tests   # renderer tests
-make check.forms_tests      # forms tests
-make check.display_tests    # display tests
+cmake --build build --target check.utils_tests      # utils tests
+cmake --build build --target check.renderer_tests   # renderer tests
+cmake --build build --target check.forms_tests      # forms tests
+cmake --build build --target check.display_tests    # display tests
 ```
 
 After **adding a new test file**, re-run cmake first so it picks up the new file, then run as normal:
 ```sh
-cmake ..
-make check.utils_tests
+cmake -B build
+cmake --build build --target check.utils_tests
 ```
 
 ## Formatting and Linting
@@ -74,13 +87,13 @@ First make sure that the clang tools are installed properly.
 sudo apt install clang-format clang-tidy
 ```
 
-To run clang-format, which purely adjusts the cosmetics of the files. Run this from root.
+To run **clang-format**, which purely adjusts the cosmetics of the files. Run this from root.
 
 ```
 find 3DRenderer -name "*.cpp" -o -name "*.h" | xargs clang-format -i
 ```
 
-To run clang-tidy, which does semantic analysis and tries to flag bad code practices.
+To run **clang-tidy**, which does semantic analysis and tries to flag bad code practices.
 
 ```
 find 3DRenderer -name "*.cpp" | xargs clang-tidy -p build/
@@ -91,6 +104,35 @@ If you want clang-tidy to actually fix the things that it flags you need to run 
 ```
 find 3DRenderer -name "*.cpp" | xargs clang-tidy -p build/ --fix
 ```
+
+## Documentation Generation
+
+First ensure that doxygen is installed
+
+```
+sudo apt install -y doxygen
+```
+
+Make sure you have Graphviz installed
+
+```
+sudo apt install -y graphviz
+```
+
+To build JUST the **documentation** you just need to run this from root
+
+```
+cmake --build build --target docs
+```
+
+
+The documentation will generate at `/build/docs/html/index.html`. If working in wsl it can be opened using the following calling from root.
+
+```
+explorer.exe $(wslpath -w $(pwd)/build/docs/html/index.html)
+```
+
+Doxygen will also automatically update docs when building the code by default. 
 
 
 

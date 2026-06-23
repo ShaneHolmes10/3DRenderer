@@ -65,9 +65,7 @@ if(BUILD_TESTS)
 endif()
 
 # Build documentation
-if(BUILD_DOCS)
-    add_subdirectory(doc)
-endif()
+add_subdirectory(doc)
 
 ###############################################################################
 # Print configuration variables
