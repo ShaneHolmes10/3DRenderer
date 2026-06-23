@@ -66,6 +66,7 @@
         "dense": "cpp"
     },
     "cSpell.words": [
-        "Eigen"
+        "Eigen",
+        "renderable"
     ]
 }

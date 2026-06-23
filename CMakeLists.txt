@@ -16,6 +16,7 @@ project(3DRenderer
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 # Guard against in-source builds
@@ -62,6 +63,9 @@ endif()
 if(BUILD_TESTS)
     add_subdirectory(tests)
 endif()
+
+# Build documentation
+add_subdirectory(doc)
 
 ###############################################################################
 # Print configuration variables

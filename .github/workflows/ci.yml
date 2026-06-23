@@ -1,0 +1,121 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libeigen3-dev \
+            libsfml-dev \
+            libx11-dev \
+            doxygen \
+            graphviz
+
+      - name: Configure
+        run: cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+      - name: Build
+        run: cmake --build build -j$(nproc)
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          retention-days: 1
+          path: |
+            build/bin/
+            build/compile_commands.json
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
+          path: build/
+
+      - name: Make executables runnable
+        run: chmod -R +x build/bin/
+
+      - name: Run tests
+        run: |
+          failed=0
+          while IFS= read -r exe; do
+            echo "--- $exe ---"
+            "$exe" || failed=1
+          done < <(find build/bin -type f -executable -name "test_*" | sort)
+          exit $failed
+
+  format:
+    name: Formatting (clang-format)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install clang-format
+        run: sudo apt-get install -y clang-format
+
+      - name: Check formatting
+        run: |
+          find 3DRenderer -name "*.cpp" -o -name "*.h" | \
+          xargs clang-format --dry-run --Werror
+
+  lint:
+    name: Lint (clang-tidy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            clang-tidy \
+            libeigen3-dev \
+            libsfml-dev \
+            libx11-dev \
+            doxygen
+
+      - name: Configure
+        run: cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+      - name: Run clang-tidy
+        run: |
+          find 3DRenderer -name "*.cpp" ! -name "_*.cpp" | \
+          xargs clang-tidy -p build/ --warnings-as-errors='*'
+
+  docs:
+    name: Documentation (Doxygen)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            doxygen \
+            graphviz \
+            libeigen3-dev \
+            libsfml-dev \
+            libx11-dev
+
+      - name: Configure
+        run: cmake -B build
+
+      - name: Build documentation
+        run: cmake --build build --target docs

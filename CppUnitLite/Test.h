@@ -65,7 +65,7 @@ protected:
   { public: testGroup##testName##Test () : Test (#testName "Test", __FILE__, __LINE__, true) {} \
             void run (TestResult& result_) override;} \
     testGroup##testName##Instance; \
-  void testGroup##testName##Test::run (TestResult& result_)
+  void testGroup##testName##Test::run (TestResult& result_) // NOLINT(performance-unnecessary-value-param,readability-named-parameter)
 
 /**
  * Declare friend in a class to test its private methods
@@ -83,13 +83,13 @@ protected:
             virtual ~testGroup##testName##Test () {} \
             void run (TestResult& result_) override;} \
     testGroup##testName##Instance; \
-  void testGroup##testName##Test::run (TestResult& result_)
+  void testGroup##testName##Test::run (TestResult& result_) // NOLINT(performance-unnecessary-value-param,readability-named-parameter)
 
 /**
  * Use this to disable unwanted tests without commenting them out.
  */
 #define TEST_DISABLED(testGroup, testName)\
-    void testGroup##testName##Test(TestResult& result_, const std::string& name_)
+    void testGroup##testName##Test(TestResult& result_, const std::string& name_) // NOLINT(performance-unnecessary-value-param,readability-named-parameter)
 
 /*
  * Convention for tests:

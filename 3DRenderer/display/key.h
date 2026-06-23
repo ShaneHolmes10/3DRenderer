@@ -29,7 +29,7 @@ enum Key {
     X = sf::Keyboard::X,
     Y = sf::Keyboard::Y,
     Z = sf::Keyboard::Z,
-    
+
     Num0 = sf::Keyboard::Num0,
     Num1 = sf::Keyboard::Num1,
     Num2 = sf::Keyboard::Num2,
@@ -40,17 +40,17 @@ enum Key {
     Num7 = sf::Keyboard::Num7,
     Num8 = sf::Keyboard::Num8,
     Num9 = sf::Keyboard::Num9,
-    
+
     Escape = sf::Keyboard::Escape,
     Space = sf::Keyboard::Space,
     Enter = sf::Keyboard::Enter,
     Tab = sf::Keyboard::Tab,
-    
+
     Up = sf::Keyboard::Up,
     Down = sf::Keyboard::Down,
     Left = sf::Keyboard::Left,
     Right = sf::Keyboard::Right,
-    
+
     F1 = sf::Keyboard::F1,
     F2 = sf::Keyboard::F2,
     F3 = sf::Keyboard::F3,
@@ -63,6 +63,6 @@ enum Key {
     F10 = sf::Keyboard::F10,
     F11 = sf::Keyboard::F11,
     F12 = sf::Keyboard::F12,
-    
+
     Unknown = sf::Keyboard::Unknown
 };
