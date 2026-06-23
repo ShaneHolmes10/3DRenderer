@@ -76,12 +76,11 @@ jobs:
 
   lint:
     name: Lint (clang-tidy)
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install clang-tidy and headers
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -91,11 +90,8 @@ jobs:
             libx11-dev \
             doxygen
 
-      - name: Download compilation database
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifacts
-          path: build/
+      - name: Configure
+        run: cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
       - name: Run clang-tidy
         run: |
