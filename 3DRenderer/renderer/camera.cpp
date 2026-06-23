@@ -51,10 +51,9 @@ void Camera::draw(FrameBuffer& frame_buffer, DepthBuffer& depth_buffer,
             tri3.vertex_C.position = v3_expressed.head<3>();
             tri3.vertex_C.color = vertices[face.v3].color;
 
-            for (const Triangle3& clipped :
-                 clipTriangle(tri3, focal_length,
-                              static_cast<float>(width),
-                              static_cast<float>(height), NEAR_Z)) {
+            for (const Triangle3& clipped : clipTriangle(
+                     tri3, focal_length, static_cast<float>(width),
+                     static_cast<float>(height), NEAR_Z)) {
                 drawTriangleToScreen(
                     frame_buffer, depth_buffer,
                     projectTriangle(clipped, focal_length,

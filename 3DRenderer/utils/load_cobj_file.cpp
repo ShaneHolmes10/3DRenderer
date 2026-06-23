@@ -28,10 +28,10 @@ Mesh LoadCobjFile::load(const std::string& filepath) {
             float g;
             float b;
             if (iss >> r >> g >> b) {
-                vertex.color = Eigen::Vector3i(
-                    static_cast<int>(r * 255),
-                    static_cast<int>(g * 255),
-                    static_cast<int>(b * 255));
+                vertex.color =
+                    Eigen::Vector3i(static_cast<int>(r * 255),
+                                    static_cast<int>(g * 255),
+                                    static_cast<int>(b * 255));
             }
 
             vertices.push_back(vertex);

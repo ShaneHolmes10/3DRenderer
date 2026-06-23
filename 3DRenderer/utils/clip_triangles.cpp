@@ -8,8 +8,7 @@ struct Plane {
     float d;
 };
 
-Vertex3 interpolate(const Vertex3& a, const Vertex3& b,
-                           float t) {
+Vertex3 interpolate(const Vertex3& a, const Vertex3& b, float t) {
     Vertex3 result;
     result.position = a.position + t * (b.position - a.position);
     result.color =
@@ -33,13 +32,13 @@ std::vector<Vertex3> clipAgainstPlane(
             if (d_current < 0.0f) {
                 output.push_back(interpolate(
                     current, next, d_current / (d_current - d_next)));
-}
+            }
             output.push_back(next);
         } else {
             if (d_current >= 0.0f) {
                 output.push_back(interpolate(
                     current, next, d_current / (d_current - d_next)));
-}
+            }
         }
     }
 
@@ -67,8 +66,9 @@ std::vector<Triangle3> clipTriangle(const Triangle3& triangle,
 
     for (const auto& plane : planes) {
         polygon = clipAgainstPlane(polygon, plane);
-        if (polygon.empty()) { return {};
-}
+        if (polygon.empty()) {
+            return {};
+        }
     }
 
     // Fan triangulate — produces n-2 triangles for an n-vertex polygon

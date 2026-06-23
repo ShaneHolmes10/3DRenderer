@@ -172,7 +172,7 @@ TEST(ClipTriangles, VertexAtOriginXY_ProjectsToScreenCentre) {
         if (std::abs(p[0] - W / 2.0f) < 0.01f &&
             std::abs(p[1] - H / 2.0f) < 0.01f) {
             found = true;
-}
+        }
     }
     CHECK(found);
 }
@@ -201,7 +201,7 @@ TEST(ClipTriangles, ProjectionScalesWithFocalLength) {
         if (std::abs(p[0] - W) < 0.01f &&
             std::abs(p[1] - H / 2.0f) < 0.01f) {
             found_right_edge = true;
-}
+        }
     }
     CHECK(found_right_edge);
 }
@@ -236,7 +236,7 @@ TEST(ClipTriangles, NearPlaneClip_InterpolatesColourAtIntersection) {
             if (v.color[0] == 80 && v.color[1] == 80 &&
                 v.color[2] == 80) {
                 found_interpolated = true;
-}
+            }
         }
     }
     CHECK(found_interpolated);

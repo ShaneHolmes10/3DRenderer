@@ -72,7 +72,7 @@ void drawTriangleToScreen(FrameBuffer& frame_buffer,
 
                 if (pixel_inv_depth <= depth_buffer.values[depth_idx]) {
                     continue;
-}
+                }
 
                 depth_buffer.values[depth_idx] = pixel_inv_depth;
 

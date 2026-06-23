@@ -3,9 +3,8 @@
 
 namespace {
 
-Eigen::Vector2f project(const Eigen::Vector3f& pos,
-                               float focal_length, float width,
-                               float height) {
+Eigen::Vector2f project(const Eigen::Vector3f& pos, float focal_length,
+                        float width, float height) {
     return {(pos.x() * focal_length / pos.z()) + width / 2.0f,
             (pos.y() * focal_length / pos.z()) + height / 2.0f};
 }
