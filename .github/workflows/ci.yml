@@ -94,7 +94,7 @@ jobs:
       - name: Run clang-tidy
         run: |
           find 3DRenderer -name "*.cpp" ! -name "_*.cpp" | \
-          xargs clang-tidy -p build/ --warnings-as-errors='*'
+          xargs -P$(nproc) -I{} clang-tidy -p build/ --warnings-as-errors='*' {}
 
   docs:
     name: Documentation (Doxygen)
