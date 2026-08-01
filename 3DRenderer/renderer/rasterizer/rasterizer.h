@@ -3,7 +3,8 @@
 #include "renderer/rasterizer/types.h"
 
 /**
- * @brief Three per-vertex Varyings defining the triangle fed to rasterize().
+ * @brief Three per-vertex Varyings defining the triangle fed to
+ * rasterize().
  */
 struct RasterTriangle {
     Varying v0, v1, v2;
@@ -21,8 +22,10 @@ struct RasterTriangle {
  * triangle.
  *
  * @param triangle  Three per-vertex Varyings in screen space.
- * @param uniform   Data constant across every fragment of this triangle.
- * @param shader    Computes a fragment's color from uniform and varying data.
+ * @param uniform   Data constant across every fragment of this
+ * triangle.
+ * @param shader    Computes a fragment's color from uniform and varying
+ * data.
  * @param buffers   The frame and depth buffers to test and write into.
  */
 void rasterize(const RasterTriangle& triangle, const Uniform& uniform,

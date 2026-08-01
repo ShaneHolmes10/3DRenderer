@@ -24,18 +24,20 @@ struct Uniform {
  *   x, y  = screen-space pixel coordinates
  *   z     = normalized depth, used for the depth-buffer test
  *   w     = reciprocal of clip-space w (1/w_clip), kept so that color,
- *           UVs, and any other varying fields can be perspective-correctly
- *           interpolated across the triangle instead of linearly in 2D
+ *           UVs, and any other varying fields can be
+ * perspective-correctly interpolated across the triangle instead of
+ * linearly in 2D
  */
 struct Varying {
     Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
+    Eigen::Vector3i color = Eigen::Vector3i::Zero();
 };
 
 /**
  * @brief Computes a fragment's color from Uniform and Varying data.
  */
-using Shader = std::function<Eigen::Vector3i(const Uniform&, const Varying&)>;
+using Shader =
+    std::function<Eigen::Vector3i(const Uniform&, const Varying&)>;
 
 /**
  * @brief Non-owning bundle of the buffers a rasterizer draw call
