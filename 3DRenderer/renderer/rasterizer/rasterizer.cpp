@@ -14,7 +14,7 @@ float signedArea(const Eigen::Vector2f& A, const Eigen::Vector2f& B,
 }  // namespace
 
 void rasterize(const RasterTriangle& triangle, const Uniform& uniform,
-               const Shader& shader, Buffers& buffers) {
+               const FragmentShader& shader, Buffers& buffers) {
     Eigen::Vector2f A = triangle.v0.position.head<2>();
     Eigen::Vector2f B = triangle.v1.position.head<2>();
     Eigen::Vector2f C = triangle.v2.position.head<2>();

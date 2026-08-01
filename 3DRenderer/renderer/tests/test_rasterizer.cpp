@@ -3,7 +3,7 @@
 
 #include "CppUnitLite/TestHarness.h"
 #include "renderer/rasterizer/rasterizer.h"
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 Eigen::Vector3i getPixel(const FrameBuffer& fb, size_t x, size_t y) {
     size_t idx = (y * fb.width + x) * 4;
@@ -33,7 +33,7 @@ TEST(Rasterizer, InterpolatesVertexColors) {
     RasterTriangle triangle{v0, v1, v2};
 
     Uniform uniform;
-    Shader vertex_color_shader = [](const Uniform&,
+    FragmentShader vertex_color_shader = [](const Uniform&,
                                     const Varying& varying) {
         return varying.color;
     };
@@ -80,7 +80,7 @@ TEST(Rasterizer, DrawsCircleWithProceduralShader) {
     RasterTriangle lower{v3, v4, v5};
 
     Uniform uniform;
-    Shader circle_shader = [&](const Uniform&, const Varying& varying) {
+    FragmentShader circle_shader = [&](const Uniform&, const Varying& varying) {
         float x = varying.position.x();
         float y = varying.position.y();
         float dist =

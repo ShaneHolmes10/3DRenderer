@@ -6,7 +6,7 @@
 #include "display/frame_buffer.h"
 #include "display/viewport.h"
 #include "renderer/rasterizer/rasterizer.h"
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 int main() {
     Viewport::init();
@@ -33,7 +33,7 @@ int main() {
     RasterTriangle lower{v3, v4, v5};
 
     Uniform uniform;
-    Shader circle_shader = [&](const Uniform&, const Varying& varying) {
+    FragmentShader circle_shader = [&](const Uniform&, const Varying& varying) {
         // Normalize to [-0.5, 0.5] centered UV coordinates
         float u =  varying.position.x() / width  - 0.5f;
         float v = -varying.position.y() / height + 0.5f;

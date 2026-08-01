@@ -34,9 +34,23 @@ struct Varying {
 };
 
 /**
+ * @brief Per-vertex input to the vertex shader.
+ */
+struct Vertex {
+    Eigen::Vector3f position = Eigen::Vector3f::Zero();
+    Eigen::Vector3i color = Eigen::Vector3i::Zero();
+};
+
+/**
+ * @brief Computes a vertex's Varying from Uniform and Vertex data.
+ */
+using VertexShader =
+    std::function<Varying(const Uniform&, const Vertex&)>;
+
+/**
  * @brief Computes a fragment's color from Uniform and Varying data.
  */
-using Shader =
+using FragmentShader =
     std::function<Eigen::Vector3i(const Uniform&, const Varying&)>;
 
 /**

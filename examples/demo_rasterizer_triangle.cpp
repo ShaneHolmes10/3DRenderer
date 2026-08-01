@@ -4,7 +4,7 @@
 #include "display/frame_buffer.h"
 #include "display/viewport.h"
 #include "renderer/rasterizer/rasterizer.h"
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 int main() {
     Viewport::init();
@@ -33,7 +33,7 @@ int main() {
     RasterTriangle triangle{v0, v1, v2};
 
     Uniform uniform;
-    Shader vertex_color_shader = [](const Uniform&, const Varying& varying) {
+    FragmentShader vertex_color_shader = [](const Uniform&, const Varying& varying) {
         return varying.color;
     };
 

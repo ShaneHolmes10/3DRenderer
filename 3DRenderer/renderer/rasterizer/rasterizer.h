@@ -1,6 +1,6 @@
 #pragma once
 
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 /**
  * @brief Three per-vertex Varyings defining the triangle fed to
@@ -29,4 +29,4 @@ struct RasterTriangle {
  * @param buffers   The frame and depth buffers to test and write into.
  */
 void rasterize(const RasterTriangle& triangle, const Uniform& uniform,
-               const Shader& shader, Buffers& buffers);
+               const FragmentShader& shader, Buffers& buffers);
