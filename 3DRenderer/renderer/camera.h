@@ -3,27 +3,7 @@
 #include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
 #include "forms/entity.h"
-
-/**
- * @brief Specifies which triangle faces to skip during rasterization.
- *
- * Backface culling is determined by the winding order of the triangle's
- * projected vertices in screen space.
- */
-enum class CullMode { None, Clockwise, CounterClockwise };
-
-/**
- * @brief Encapsulates rendering settings for a single draw call.
- *
- * A DrawCommand pairs an entity to render with rendering configuration
- * such as cull mode. This separates rendering settings from the scene
- * graph, allowing the same entity to be drawn with different settings.
- */
-struct DrawCommand {
-    Entity* entity;
-    CullMode cull_mode = CullMode::None;
-    ;
-};
+#include "renderer/types.h"
 
 /**
  * @brief Handles the rendering pipeline from world space to screen

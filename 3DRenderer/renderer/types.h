@@ -36,16 +36,17 @@ struct Varying {
 /**
  * @brief Per-vertex input to the vertex shader.
  */
-struct Vertex {
+struct VertexAttributes {
     Eigen::Vector3f position = Eigen::Vector3f::Zero();
     Eigen::Vector3i color = Eigen::Vector3i::Zero();
 };
 
 /**
- * @brief Computes a vertex's Varying from Uniform and Vertex data.
+ * @brief Computes a vertex's Varying from Uniform and VertexAttributes
+ * data.
  */
 using VertexShader =
-    std::function<Varying(const Uniform&, const Vertex&)>;
+    std::function<Varying(const Uniform&, const VertexAttributes&)>;
 
 /**
  * @brief Computes a fragment's color from Uniform and Varying data.
@@ -60,4 +61,28 @@ using FragmentShader =
 struct Buffers {
     FrameBuffer& frame;
     DepthBuffer& depth;
+};
+
+/**
+ * @brief Specifies which triangle faces to skip during rasterization.
+ *
+ * Backface culling is determined by the winding order of the triangle's
+ * projected vertices in screen space.
+ */
+enum class CullMode { None, Clockwise, CounterClockwise };
+
+/**
+ * @brief Rendering settings for a single draw call.
+ */
+struct Options {
+    CullMode cull_mode = CullMode::None;
+};
+
+/**
+ * @brief Pairs a vertex/fragment shader with the Uniform data they read.
+ */
+struct Program {
+    VertexShader vertex_shader;
+    FragmentShader fragment_shader;
+    Uniform uniform;
 };
