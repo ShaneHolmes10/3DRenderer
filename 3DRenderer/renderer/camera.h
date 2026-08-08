@@ -1,8 +1,11 @@
 #pragma once
 
+#include <vector>
+
 #include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
 #include "forms/entity.h"
+#include "renderer/rasterizer/rasterizer.h"
 #include "renderer/types.h"
 
 /**
@@ -50,6 +53,22 @@ class Camera {
      */
     int height;
 
+    /**
+     * @brief Runs the vertex shader over every vertex, producing the
+     * Varyings the rest of the pipeline works with.
+     */
+    std::vector<Varying> process_vertices(
+        const std::vector<VertexAttributes>& vertices,
+        const Program& program, const Options& options) const;
+
+    /**
+     * @brief Rasterizes each triangle with the program's fragment
+     * shader.
+     */
+    void process_triangles(const std::vector<RasterTriangle>& triangles,
+                            const Program& program, const Options& options,
+                            Buffers& buffers) const;
+
    public:
     /**
      * @brief Construct a default Camera.
@@ -93,12 +112,14 @@ class Camera {
      *
      * Transforms all vertices of the entity's model through the full
      * rendering pipeline (model to world to camera to screen space),
-     * then rasterizes each triangle with per vertex color
-     * interpolation.
+     * then rasterizes each triangle with the program's shaders.
      *
-     * @param frame_buffer The pixel buffer to render into
-     * @param draw_command The entity and rendering settings to use
+     * @param entity The entity to render
+     * @param program The vertex/fragment shaders and uniform to render
+     * with
+     * @param options Rendering settings for this draw call
+     * @param buffers The frame and depth buffers to test and write into
      */
-    void draw(FrameBuffer& frame_buffer, DepthBuffer& depth_buffer,
-              const DrawCommand& draw_command);
+    void draw(Entity* entity, const Program& program,
+              const Options& options, Buffers& buffers);
 };
