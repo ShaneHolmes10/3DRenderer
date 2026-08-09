@@ -5,16 +5,6 @@
 
 #include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
-#include "forms/types.h"
-
-/**
- * @brief Data that is constant across every fragment of a draw call.
- */
-struct Uniform {
-    struct {
-        Texture* texture = nullptr;
-    } material;
-};
 
 /**
  * @brief Per-vertex data passed into the rasterizer and interpolated
@@ -25,34 +15,13 @@ struct Uniform {
  *   z     = normalized depth, used for the depth-buffer test
  *   w     = reciprocal of clip-space w (1/w_clip), kept so that color,
  *           UVs, and any other varying fields can be
- * perspective-correctly interpolated across the triangle instead of
- * linearly in 2D
+ *           perspective-correctly interpolated across the triangle instead of
+ *           linearly in 2D
  */
 struct Varying {
     Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3i color = Eigen::Vector3i::Zero();
+    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
 };
-
-/**
- * @brief Per-vertex input to the vertex shader.
- */
-struct VertexAttributes {
-    Eigen::Vector3f position = Eigen::Vector3f::Zero();
-    Eigen::Vector3i color = Eigen::Vector3i::Zero();
-};
-
-/**
- * @brief Computes a vertex's Varying from Uniform and VertexAttributes
- * data.
- */
-using VertexShader =
-    std::function<Varying(const Uniform&, const VertexAttributes&)>;
-
-/**
- * @brief Computes a fragment's color from Uniform and Varying data.
- */
-using FragmentShader =
-    std::function<Eigen::Vector3i(const Uniform&, const Varying&)>;
 
 /**
  * @brief Non-owning bundle of the buffers a rasterizer draw call
@@ -62,6 +31,30 @@ struct Buffers {
     FrameBuffer& frame;
     DepthBuffer& depth;
 };
+
+/**
+ * @brief Per-vertex input to the vertex shader.
+ */
+struct VertexAttributes {
+    Eigen::Vector3f position = Eigen::Vector3f::Zero();
+    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
+};
+
+/**
+ * @brief Transforms a vertex's attributes into a Varying for the rest
+ * of the pipeline.
+ */
+template <typename TUniform>
+using VertexShader =
+    std::function<Varying(const TUniform&, const VertexAttributes&)>;
+
+/**
+ * @brief Computes a fragment's color from uniform and interpolated
+ * Varying data.
+ */
+template <typename TUniform>
+using FragmentShader =
+    std::function<Eigen::Vector3i(const TUniform&, const Varying&)>;
 
 /**
  * @brief Specifies which triangle faces to skip during rasterization.
@@ -79,10 +72,12 @@ struct Options {
 };
 
 /**
- * @brief Pairs a vertex/fragment shader with the Uniform data they read.
+ * @brief Pairs a vertex/fragment shader with the caller-defined uniform
+ * data they read.
  */
+template <typename TUniform>
 struct Program {
-    VertexShader vertex_shader;
-    FragmentShader fragment_shader;
-    Uniform uniform;
+    VertexShader<TUniform>   vertex_shader;
+    FragmentShader<TUniform> fragment_shader;
+    TUniform                 uniform;
 };
