@@ -32,8 +32,10 @@ int main() {
 
     RasterTriangle triangle{v0, v1, v2};
 
-    Uniform uniform;
-    FragmentShader vertex_color_shader = [](const Uniform&, const Varying& varying) {
+    struct TriangleUniform {};
+    TriangleUniform uniform;
+    FragmentShader<TriangleUniform> vertex_color_shader = [](const TriangleUniform&,
+                                                      const Varying& varying) {
         return varying.color;
     };
 
