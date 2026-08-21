@@ -1,13 +1,14 @@
 #pragma once
 
+#include <array>
 #include <vector>
 
 #include "forms/entity.h"
 #include "forms/mesh.h"
+#include "renderer/clip_triangles.h"
+#include "renderer/project_triangles.h"
 #include "renderer/rasterizer/rasterizer.h"
 #include "renderer/types.h"
-#include "utils/clip_triangles.h"
-#include "utils/project_triangles.h"
 
 /**
  * @brief Handles the rendering pipeline from world space to screen
@@ -80,15 +81,13 @@ class Camera {
      */
     template <typename TUniform>
     void process_triangles(
-        const std::vector<RasterTriangle>& triangles,
+        const std::vector<std::array<Varying, 3>>& triangles,
         const Program<TUniform>& program,
         const Options& options, Buffers& buffers
     ) const {
-
-        for (const RasterTriangle& tri : triangles) {
+        for (const std::array<Varying, 3>& tri : triangles) {
             rasterize(tri, program.uniform, program.fragment_shader, buffers);
         }
-
     }
 
    public:
@@ -173,52 +172,21 @@ class Camera {
             std::vector<Varying> processed_vertices =
                 process_vertices(vertex_attributes, program, options);
 
-            // Assemble each face, clip against the frustum, project to
-            // screen space, and collect into RasterTriangles.
-            std::vector<RasterTriangle> raster_triangles;
+            // Assemble each face, clip against the frustum, and project to
+            // screen space.
+            std::vector<std::array<Varying, 3>> raster_triangles;
 
             for (const Face& face : mesh.getFaces()) {
-                const Varying& va = processed_vertices[face.v1];
-                const Varying& vb = processed_vertices[face.v2];
-                const Varying& vc = processed_vertices[face.v3];
+                std::array<Varying, 3> cam_tri = {
+                    processed_vertices[face.v1],
+                    processed_vertices[face.v2],
+                    processed_vertices[face.v3],
+                };
 
-                // Wrap the Varyings into a Triangle3 for the clip utility.
-                Triangle3 cam_tri;
-                cam_tri.vertex_A = {va.position.head<3>(), va.color};
-                cam_tri.vertex_B = {vb.position.head<3>(), vb.color};
-                cam_tri.vertex_C = {vc.position.head<3>(), vc.color};
-
-                std::vector<Triangle3> clipped = clipTriangle(
-                    cam_tri, focal_length, width, height, NEAR_Z);
-
-                for (const Triangle3& tri : clipped) {
-                    Triangle2 screen = projectTriangle(
-                        tri, focal_length, width, height);
-
-                    // Pack screen-space data into Varyings.
-                    // position.xy = pixel coords, position.zw = 1/z
-                    // (used for both depth test and perspective-correct
-                    // interpolation).
-                    RasterTriangle raster;
-                    raster.v0.position = {screen.vertex_A.position.x(),
-                                         screen.vertex_A.position.y(),
-                                         screen.vertex_a_inverse_z,
-                                         screen.vertex_a_inverse_z};
-                    raster.v0.color = screen.vertex_A.color;
-
-                    raster.v1.position = {screen.vertex_B.position.x(),
-                                         screen.vertex_B.position.y(),
-                                         screen.vertex_b_inverse_z,
-                                         screen.vertex_b_inverse_z};
-                    raster.v1.color = screen.vertex_B.color;
-
-                    raster.v2.position = {screen.vertex_C.position.x(),
-                                         screen.vertex_C.position.y(),
-                                         screen.vertex_c_inverse_z,
-                                         screen.vertex_c_inverse_z};
-                    raster.v2.color = screen.vertex_C.color;
-
-                    raster_triangles.push_back(raster);
+                for (const std::array<Varying, 3>& clipped :
+                     clipTriangle(cam_tri, focal_length, width, height, NEAR_Z)) {
+                    raster_triangles.push_back(
+                        projectTriangle(clipped, focal_length, width, height));
                 }
             }
 

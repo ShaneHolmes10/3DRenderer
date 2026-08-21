@@ -1,5 +1,6 @@
 #include <Eigen/Dense>
 #include <algorithm>
+#include <array>
 #include <cmath>
 
 #include "display/depth_buffer.h"
@@ -29,8 +30,8 @@ int main() {
     v4.position = Eigen::Vector4f(width, height, 0.0f, 1.0f);
     v5.position = Eigen::Vector4f(0,     height, 0.0f, 1.0f);
 
-    RasterTriangle upper{v0, v1, v2};
-    RasterTriangle lower{v3, v4, v5};
+    std::array<Varying, 3> upper{v0, v1, v2};
+    std::array<Varying, 3> lower{v3, v4, v5};
 
     struct SmileyUniform {};
     SmileyUniform uniform;

@@ -1,4 +1,5 @@
 #include <Eigen/Dense>
+#include <array>
 #include <cmath>
 
 #include "CppUnitLite/TestHarness.h"
@@ -32,7 +33,7 @@ TEST(Rasterizer, InterpolatesVertexColors) {
     v2.position = Eigen::Vector4f(250.0f, 400.0f, 0.0f, 1.0f);
     v2.color    = Eigen::Vector3i(0, 0, 255);
 
-    RasterTriangle triangle{v0, v1, v2};
+    std::array<Varying, 3> triangle{v0, v1, v2};
 
     TestUniform uniform;
     FragmentShader<TestUniform> vertex_color_shader = [](const TestUniform&,
@@ -50,8 +51,8 @@ TEST(Rasterizer, InterpolatesVertexColors) {
     CHECK(getPixel(fb, 250, 400) ==
           Eigen::Vector3i(0, 0, 255));  // v2 — blue
 
-    // Outside triangle should be untouched (black)
-    CHECK(getPixel(fb, 0, 0) == Eigen::Vector3i(0, 0, 0));
+    // Outside triangle should be untouched (white — framebuffer default)
+    CHECK(getPixel(fb, 0, 0) == Eigen::Vector3i(255, 255, 255));
 }
 
 TEST(Rasterizer, DrawsCircleWithProceduralShader) {
@@ -78,8 +79,8 @@ TEST(Rasterizer, DrawsCircleWithProceduralShader) {
     v4.position = Eigen::Vector4f(size, size, 0.0f, 1.0f);
     v5.position = Eigen::Vector4f(0, size, 0.0f, 1.0f);
 
-    RasterTriangle upper{v0, v1, v2};
-    RasterTriangle lower{v3, v4, v5};
+    std::array<Varying, 3> upper{v0, v1, v2};
+    std::array<Varying, 3> lower{v3, v4, v5};
 
     TestUniform uniform;
     FragmentShader<TestUniform> circle_shader = [&](const TestUniform&,

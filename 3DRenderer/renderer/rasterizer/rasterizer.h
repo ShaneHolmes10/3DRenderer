@@ -1,17 +1,10 @@
 #pragma once
 
 #include <algorithm>
+#include <array>
 #include <cmath>
 
 #include "renderer/types.h"
-
-/**
- * @brief Three per-vertex Varyings defining the triangle fed to
- * rasterize().
- */
-struct RasterTriangle {
-    Varying v0, v1, v2;
-};
 
 /**
  * @brief Rasterizes a screen-space triangle into the framebuffer using
@@ -30,7 +23,7 @@ struct RasterTriangle {
  * @param buffers   The frame and depth buffers to test and write into.
  */
 template <typename TUniform>
-void rasterize(const RasterTriangle& triangle, const TUniform& uniform,
+void rasterize(const std::array<Varying, 3>& triangle, const TUniform& uniform,
                const FragmentShader<TUniform>& shader, Buffers& buffers) {
     // Computes the signed area of triangle ABC using the cross product.
     // Positive when vertices are counter-clockwise, negative when clockwise.
@@ -41,9 +34,9 @@ void rasterize(const RasterTriangle& triangle, const TUniform& uniform,
     };
 
     // Extract 2D screen-space positions from the Varying position.
-    Eigen::Vector2f A = triangle.v0.position.head<2>();
-    Eigen::Vector2f B = triangle.v1.position.head<2>();
-    Eigen::Vector2f C = triangle.v2.position.head<2>();
+    Eigen::Vector2f A = triangle[0].position.head<2>();
+    Eigen::Vector2f B = triangle[1].position.head<2>();
+    Eigen::Vector2f C = triangle[2].position.head<2>();
 
     // Compute the axis-aligned bounding box of the triangle.
     float left_side   = std::min({A.x(), B.x(), C.x()});
@@ -53,10 +46,10 @@ void rasterize(const RasterTriangle& triangle, const TUniform& uniform,
 
     // Clamp bounding box to framebuffer dimensions to handle off-screen geometry.
     int x_start = std::max(static_cast<int>(left_side), 0);
-    int x_end   = std::min(static_cast<int>(std::ceil(right_side)),
+    int x_end   = std::min(static_cast<int>(std::floor(right_side)) + 1,
                            static_cast<int>(buffers.frame.width));
     int y_start = std::max(static_cast<int>(bottom_side), 0);
-    int y_end   = std::min(static_cast<int>(std::ceil(top_side)),
+    int y_end   = std::min(static_cast<int>(std::floor(top_side)) + 1,
                            static_cast<int>(buffers.frame.height));
 
     float ABC_edge_area = signedArea(A, B, C);
@@ -86,9 +79,9 @@ void rasterize(const RasterTriangle& triangle, const TUniform& uniform,
             // Interpolate 1/w (stored in position.w) to get the perspective-
             // correct depth value for this pixel, then run the depth test.
             float pixel_inv_depth =
-                weight_A * triangle.v0.position.w() +
-                weight_B * triangle.v1.position.w() +
-                weight_C * triangle.v2.position.w();
+                weight_A * triangle[0].position.w() +
+                weight_B * triangle[1].position.w() +
+                weight_C * triangle[2].position.w();
 
             size_t depth_idx =
                 static_cast<size_t>(y_pixel_ind) * buffers.depth.width +
@@ -104,14 +97,14 @@ void rasterize(const RasterTriangle& triangle, const TUniform& uniform,
             Varying varying;
             varying.position = {
                 pixel.x(), pixel.y(),
-                weight_A * triangle.v0.position.z() +
-                    weight_B * triangle.v1.position.z() +
-                    weight_C * triangle.v2.position.z(),
+                weight_A * triangle[0].position.z() +
+                    weight_B * triangle[1].position.z() +
+                    weight_C * triangle[2].position.z(),
                 pixel_inv_depth};
             varying.color =
-                (weight_A * triangle.v0.color.cast<float>() +
-                 weight_B * triangle.v1.color.cast<float>() +
-                 weight_C * triangle.v2.color.cast<float>())
+                (weight_A * triangle[0].color.cast<float>() +
+                 weight_B * triangle[1].color.cast<float>() +
+                 weight_C * triangle[2].color.cast<float>())
                     .cast<int>();
 
             // Call the fragment shader and write the result to the framebuffer.
