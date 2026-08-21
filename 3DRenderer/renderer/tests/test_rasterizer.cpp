@@ -10,6 +10,8 @@ Eigen::Vector3i getPixel(const FrameBuffer& fb, size_t x, size_t y) {
     return {fb.pixels[idx], fb.pixels[idx + 1], fb.pixels[idx + 2]};
 }
 
+struct TestUniform {};
+
 TEST(Rasterizer, InterpolatesVertexColors) {
     const size_t size = 500;
 
@@ -20,21 +22,21 @@ TEST(Rasterizer, InterpolatesVertexColors) {
     // Red at top-left, green at top-right, blue at bottom
     Varying v0;
     v0.position = Eigen::Vector4f(100.0f, 100.0f, 0.0f, 1.0f);
-    v0.color = Eigen::Vector3i(255, 0, 0);
+    v0.color    = Eigen::Vector3i(255, 0, 0);
 
     Varying v1;
     v1.position = Eigen::Vector4f(350.0f, 100.0f, 0.0f, 1.0f);
-    v1.color = Eigen::Vector3i(0, 255, 0);
+    v1.color    = Eigen::Vector3i(0, 255, 0);
 
     Varying v2;
     v2.position = Eigen::Vector4f(250.0f, 400.0f, 0.0f, 1.0f);
-    v2.color = Eigen::Vector3i(0, 0, 255);
+    v2.color    = Eigen::Vector3i(0, 0, 255);
 
     RasterTriangle triangle{v0, v1, v2};
 
-    Uniform uniform;
-    FragmentShader vertex_color_shader = [](const Uniform&,
-                                    const Varying& varying) {
+    TestUniform uniform;
+    FragmentShader<TestUniform> vertex_color_shader = [](const TestUniform&,
+                                                  const Varying& varying) {
         return varying.color;
     };
 
@@ -54,8 +56,8 @@ TEST(Rasterizer, InterpolatesVertexColors) {
 
 TEST(Rasterizer, DrawsCircleWithProceduralShader) {
     const size_t size = 500;
-    const float cx = size / 2.0f;
-    const float cy = size / 2.0f;
+    const float cx    = size / 2.0f;
+    const float cy    = size / 2.0f;
     const float radius = 100.0f;
 
     FrameBuffer fb(size, size);
@@ -79,12 +81,12 @@ TEST(Rasterizer, DrawsCircleWithProceduralShader) {
     RasterTriangle upper{v0, v1, v2};
     RasterTriangle lower{v3, v4, v5};
 
-    Uniform uniform;
-    FragmentShader circle_shader = [&](const Uniform&, const Varying& varying) {
-        float x = varying.position.x();
-        float y = varying.position.y();
-        float dist =
-            std::sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
+    TestUniform uniform;
+    FragmentShader<TestUniform> circle_shader = [&](const TestUniform&,
+                                             const Varying& varying) {
+        float x    = varying.position.x();
+        float y    = varying.position.y();
+        float dist = std::sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
         return dist < radius ? Eigen::Vector3i(0, 0, 0)
                              : Eigen::Vector3i(255, 255, 255);
     };
