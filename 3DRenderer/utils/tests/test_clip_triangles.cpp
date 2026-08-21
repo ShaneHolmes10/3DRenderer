@@ -2,6 +2,7 @@
 #include <Eigen/Dense>
 #include <array>
 #include <cmath>
+#include <utility>
 
 #include "CppUnitLite/TestHarness.h"
 #include "renderer/clip_triangles.h"
@@ -14,20 +15,20 @@ static Varying makeVarying(float x, float y, float z, int r = 255,
                            int g = 255, int b = 255) {
     Varying v;
     v.position = Eigen::Vector4f(x, y, z, 1.0f);
-    v.color    = Eigen::Vector3i(r, g, b);
+    v.color = Eigen::Vector3i(r, g, b);
     return v;
 }
 
 static std::array<Varying, 3> makeTri(Varying a, Varying b, Varying c) {
-    return {a, b, c};
+    return {std::move(a), std::move(b), std::move(c)};
 }
 
 // Standard frustum used across all tests:
 //   focal=100, 200×200 screen, near_z=0.1
 //   At depth z the lateral bounds are: x ∈ [−z, z], y ∈ [−z, z]
-static constexpr float FOCAL  = 100.0f;
-static constexpr float W      = 200.0f;
-static constexpr float H      = 200.0f;
+static constexpr float FOCAL = 100.0f;
+static constexpr float W = 200.0f;
+static constexpr float H = 200.0f;
 static constexpr float NEAR_Z = 0.1f;
 
 // ── fully inside
@@ -36,9 +37,9 @@ static constexpr float NEAR_Z = 0.1f;
 // A triangle well inside all frustum planes should pass through
 // unmodified and produce exactly one triangle.
 TEST(ClipTriangles, FullyInsideFrustum_ReturnsOneTriangle) {
-    auto tri    = makeTri(makeVarying(-0.5f, -0.5f, 5.0f),
-                          makeVarying(0.5f, -0.5f, 5.0f),
-                          makeVarying(0.0f, 0.5f, 5.0f));
+    auto tri = makeTri(makeVarying(-0.5f, -0.5f, 5.0f),
+                       makeVarying(0.5f, -0.5f, 5.0f),
+                       makeVarying(0.0f, 0.5f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 1);
 }
@@ -48,28 +49,29 @@ TEST(ClipTriangles, FullyInsideFrustum_ReturnsOneTriangle) {
 
 // All three vertices behind the near plane → entire triangle discarded.
 TEST(ClipTriangles, AllVerticesBehindNearPlane_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(0.0f, 0.0f, 0.05f),
-                          makeVarying(1.0f, 0.0f, 0.05f),
-                          makeVarying(0.0f, 1.0f, 0.05f));
+    auto tri = makeTri(makeVarying(0.0f, 0.0f, 0.05f),
+                       makeVarying(1.0f, 0.0f, 0.05f),
+                       makeVarying(0.0f, 1.0f, 0.05f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
 // All vertices with negative z are also behind the near plane.
 TEST(ClipTriangles, AllVerticesBehindCamera_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(0.0f, 0.0f, -5.0f),
-                          makeVarying(1.0f, 0.0f, -5.0f),
-                          makeVarying(0.0f, 1.0f, -5.0f));
+    auto tri = makeTri(makeVarying(0.0f, 0.0f, -5.0f),
+                       makeVarying(1.0f, 0.0f, -5.0f),
+                       makeVarying(0.0f, 1.0f, -5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
 // Left frustum plane: focal*x + (W/2)*z >= 0  →  x + z >= 0 (with these
-// params). At z=5, the left boundary is x = −5. Triangle entirely to the left.
+// params). At z=5, the left boundary is x = −5. Triangle entirely to
+// the left.
 TEST(ClipTriangles, AllVerticesOutsideLeftFrustum_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(-8.0f, 0.0f, 5.0f),
-                          makeVarying(-7.0f, 0.0f, 5.0f),
-                          makeVarying(-7.0f, 1.0f, 5.0f));
+    auto tri = makeTri(makeVarying(-8.0f, 0.0f, 5.0f),
+                       makeVarying(-7.0f, 0.0f, 5.0f),
+                       makeVarying(-7.0f, 1.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
@@ -77,9 +79,9 @@ TEST(ClipTriangles, AllVerticesOutsideLeftFrustum_ReturnsEmpty) {
 // Right frustum plane: −focal*x + (W/2)*z >= 0  →  z − x >= 0.
 // At z=5, the right boundary is x = 5. Triangle entirely to the right.
 TEST(ClipTriangles, AllVerticesOutsideRightFrustum_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(8.0f, 0.0f, 5.0f),
-                          makeVarying(7.0f, 0.0f, 5.0f),
-                          makeVarying(7.0f, 1.0f, 5.0f));
+    auto tri = makeTri(makeVarying(8.0f, 0.0f, 5.0f),
+                       makeVarying(7.0f, 0.0f, 5.0f),
+                       makeVarying(7.0f, 1.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
@@ -87,9 +89,9 @@ TEST(ClipTriangles, AllVerticesOutsideRightFrustum_ReturnsEmpty) {
 // Bottom frustum plane: focal*y + (H/2)*z >= 0  →  y + z >= 0.
 // At z=5, the bottom boundary is y = −5. Triangle entirely below.
 TEST(ClipTriangles, AllVerticesOutsideBottomFrustum_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(0.0f, -8.0f, 5.0f),
-                          makeVarying(1.0f, -8.0f, 5.0f),
-                          makeVarying(0.0f, -7.0f, 5.0f));
+    auto tri = makeTri(makeVarying(0.0f, -8.0f, 5.0f),
+                       makeVarying(1.0f, -8.0f, 5.0f),
+                       makeVarying(0.0f, -7.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
@@ -97,9 +99,9 @@ TEST(ClipTriangles, AllVerticesOutsideBottomFrustum_ReturnsEmpty) {
 // Top frustum plane: −focal*y + (H/2)*z >= 0  →  z − y >= 0.
 // At z=5, the top boundary is y = 5. Triangle entirely above.
 TEST(ClipTriangles, AllVerticesOutsideTopFrustum_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(0.0f, 8.0f, 5.0f),
-                          makeVarying(1.0f, 8.0f, 5.0f),
-                          makeVarying(0.0f, 7.0f, 5.0f));
+    auto tri = makeTri(makeVarying(0.0f, 8.0f, 5.0f),
+                       makeVarying(1.0f, 8.0f, 5.0f),
+                       makeVarying(0.0f, 7.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
@@ -112,9 +114,9 @@ TEST(ClipTriangles, AllVerticesOutsideTopFrustum_ReturnsEmpty) {
 // Fan triangulation of a quad yields 2 triangles.
 TEST(ClipTriangles, OneVertexBehindNearPlane_ReturnsTwoTriangles) {
     auto tri = makeTri(
-        makeVarying(-0.1f, -0.1f, 1.0f),
-        makeVarying(0.1f, -0.1f, 1.0f),
-        makeVarying(0.0f, 0.0f, 0.05f)  // behind: d = 0.05 − 0.1 = −0.05
+        makeVarying(-0.1f, -0.1f, 1.0f), makeVarying(0.1f, -0.1f, 1.0f),
+        makeVarying(0.0f, 0.0f,
+                    0.05f)  // behind: d = 0.05 − 0.1 = −0.05
     );
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 2);
@@ -124,19 +126,20 @@ TEST(ClipTriangles, OneVertexBehindNearPlane_ReturnsTwoTriangles) {
 // S-H keeps one vertex and adds two intersection points: 3 vertices → 1
 // triangle.
 TEST(ClipTriangles, TwoVerticesBehindNearPlane_ReturnsOneTriangle) {
-    auto tri    = makeTri(makeVarying(0.0f, 0.0f, 1.0f),    // inside
-                          makeVarying(0.1f, 0.0f, 0.05f),   // behind
-                          makeVarying(-0.1f, 0.0f, 0.05f)); // behind
+    auto tri = makeTri(makeVarying(0.0f, 0.0f, 1.0f),     // inside
+                       makeVarying(0.1f, 0.0f, 0.05f),    // behind
+                       makeVarying(-0.1f, 0.0f, 0.05f));  // behind
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 1);
 }
 
 // A vertex sitting exactly on the near plane (z == near_z) has d == 0,
-// which satisfies d >= 0 and is treated as inside. The triangle should survive.
+// which satisfies d >= 0 and is treated as inside. The triangle should
+// survive.
 TEST(ClipTriangles, VertexExactlyOnNearPlane_IsRetained) {
-    auto tri    = makeTri(makeVarying(0.0f, 0.0f, NEAR_Z),  // exactly on boundary
-                          makeVarying(1.0f, 0.0f, 5.0f),
-                          makeVarying(-1.0f, 0.0f, 5.0f));
+    auto tri = makeTri(
+        makeVarying(0.0f, 0.0f, NEAR_Z),  // exactly on boundary
+        makeVarying(1.0f, 0.0f, 5.0f), makeVarying(-1.0f, 0.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(!result.empty());
 }
@@ -144,11 +147,13 @@ TEST(ClipTriangles, VertexExactlyOnNearPlane_IsRetained) {
 // ── projection accuracy
 // ───────────────────────────────────────────────────────
 
-// A vertex at camera-space (0, 0, z) must project to the screen centre (W/2, H/2).
+// A vertex at camera-space (0, 0, z) must project to the screen centre
+// (W/2, H/2).
 TEST(ClipTriangles, VertexAtOriginXY_ProjectsToScreenCentre) {
-    auto tri     = makeTri(makeVarying(0.0f, 0.0f, 5.0f),   // should hit (100, 100)
-                           makeVarying(0.5f, -0.5f, 5.0f),
-                           makeVarying(-0.5f, -0.5f, 5.0f));
+    auto tri =
+        makeTri(makeVarying(0.0f, 0.0f, 5.0f),  // should hit (100, 100)
+                makeVarying(0.5f, -0.5f, 5.0f),
+                makeVarying(-0.5f, -0.5f, 5.0f));
     auto clipped = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(clipped.size() == 1);
 
@@ -165,12 +170,13 @@ TEST(ClipTriangles, VertexAtOriginXY_ProjectsToScreenCentre) {
 }
 
 // x_screen = (x * focal / z) + W/2.  For (x=1, z=1): 1*100/1 + 100 =
-// 200 = W. Verifies that focal length and perspective division are applied
-// correctly.
+// 200 = W. Verifies that focal length and perspective division are
+// applied correctly.
 TEST(ClipTriangles, ProjectionScalesWithFocalLength) {
-    auto tri     = makeTri(makeVarying(0.0f, 0.0f, 1.0f),  // projects to (100, 100)
-                           makeVarying(1.0f, 0.0f, 1.0f),  // projects to (200, 100)
-                           makeVarying(0.0f, 1.0f, 1.0f)); // projects to (100, 200)
+    auto tri = makeTri(
+        makeVarying(0.0f, 0.0f, 1.0f),   // projects to (100, 100)
+        makeVarying(1.0f, 0.0f, 1.0f),   // projects to (200, 100)
+        makeVarying(0.0f, 1.0f, 1.0f));  // projects to (100, 200)
     auto clipped = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(clipped.size() == 1);
 
@@ -200,10 +206,11 @@ TEST(ClipTriangles, ProjectionScalesWithFocalLength) {
 //
 // Expected intersection colour: 0 + 0.4 * 200 = 80 per channel.
 TEST(ClipTriangles, NearPlaneClip_InterpolatesColourAtIntersection) {
-    auto tri    = makeTri(
-        makeVarying(-0.1f, 0.0f, 0.5f, 0, 0, 0),       // inside,  black
-        makeVarying(0.1f, 0.0f, 0.5f, 0, 0, 0),        // inside,  black
-        makeVarying(0.0f, 0.0f, -0.5f, 200, 200, 200)  // outside, bright
+    auto tri = makeTri(
+        makeVarying(-0.1f, 0.0f, 0.5f, 0, 0, 0),  // inside,  black
+        makeVarying(0.1f, 0.0f, 0.5f, 0, 0, 0),   // inside,  black
+        makeVarying(0.0f, 0.0f, -0.5f, 200, 200,
+                    200)  // outside, bright
     );
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.size() == 2);
@@ -211,7 +218,8 @@ TEST(ClipTriangles, NearPlaneClip_InterpolatesColourAtIntersection) {
     bool found_interpolated = false;
     for (const auto& t : result) {
         for (const Varying& v : t) {
-            if (v.color[0] == 80 && v.color[1] == 80 && v.color[2] == 80) {
+            if (v.color[0] == 80 && v.color[1] == 80 &&
+                v.color[2] == 80) {
                 found_interpolated = true;
             }
         }
@@ -222,9 +230,9 @@ TEST(ClipTriangles, NearPlaneClip_InterpolatesColourAtIntersection) {
 // All resulting vertex colours must remain within the range spanned by
 // the input colours — clipping must never extrapolate outside [0, 200].
 TEST(ClipTriangles, ClippedColours_StayWithinInputRange) {
-    auto tri    = makeTri(makeVarying(-0.1f, 0.0f, 0.5f, 0, 0, 0),
-                          makeVarying(0.1f, 0.0f, 0.5f, 0, 0, 0),
-                          makeVarying(0.0f, 0.0f, -0.5f, 200, 200, 200));
+    auto tri = makeTri(makeVarying(-0.1f, 0.0f, 0.5f, 0, 0, 0),
+                       makeVarying(0.1f, 0.0f, 0.5f, 0, 0, 0),
+                       makeVarying(0.0f, 0.0f, -0.5f, 200, 200, 200));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
 
     for (const auto& t : result) {
@@ -243,29 +251,31 @@ TEST(ClipTriangles, ClippedColours_StayWithinInputRange) {
 // that, after clipping, also grazes the left frustum boundary. The
 // visible portion is still non-trivial and must not be discarded.
 TEST(ClipTriangles, StraddlingNearAndLeftFrustum_IsNonEmpty) {
-    auto tri    = makeTri(makeVarying(-3.0f, 0.0f, 5.0f),   // inside all planes
-                          makeVarying(1.0f, 0.0f, 5.0f),    // inside all planes
-                          makeVarying(-1.0f, 0.0f, -5.0f)); // behind near plane
+    auto tri =
+        makeTri(makeVarying(-3.0f, 0.0f, 5.0f),    // inside all planes
+                makeVarying(1.0f, 0.0f, 5.0f),     // inside all planes
+                makeVarying(-1.0f, 0.0f, -5.0f));  // behind near plane
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(!result.empty());
 }
 
-// A triangle whose vertices are simultaneously outside two frustum planes
-// (left AND bottom here) should be completely clipped away.
+// A triangle whose vertices are simultaneously outside two frustum
+// planes (left AND bottom here) should be completely clipped away.
 TEST(ClipTriangles, TriangleOutsideTwoFrustumPlanes_ReturnsEmpty) {
-    auto tri    = makeTri(makeVarying(-8.0f, -8.0f, 5.0f),
-                          makeVarying(-7.0f, -8.0f, 5.0f),
-                          makeVarying(-8.0f, -7.0f, 5.0f));
+    auto tri = makeTri(makeVarying(-8.0f, -8.0f, 5.0f),
+                       makeVarying(-7.0f, -8.0f, 5.0f),
+                       makeVarying(-8.0f, -7.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(result.empty());
 }
 
 // A very large triangle that completely contains the frustum pyramid
-// should still clip down to a visible polygon — the output must be non-empty.
+// should still clip down to a visible polygon — the output must be
+// non-empty.
 TEST(ClipTriangles, HugeTriangleCoveringEntireFrustum_IsNonEmpty) {
-    auto tri    = makeTri(makeVarying(-50.0f, -50.0f, 5.0f),
-                          makeVarying(50.0f, -50.0f, 5.0f),
-                          makeVarying(0.0f, 50.0f, 5.0f));
+    auto tri = makeTri(makeVarying(-50.0f, -50.0f, 5.0f),
+                       makeVarying(50.0f, -50.0f, 5.0f),
+                       makeVarying(0.0f, 50.0f, 5.0f));
     auto result = clipTriangle(tri, FOCAL, W, H, NEAR_Z);
     CHECK(!result.empty());
 }

@@ -15,12 +15,12 @@
  *   z     = normalized depth, used for the depth-buffer test
  *   w     = reciprocal of clip-space w (1/w_clip), kept so that color,
  *           UVs, and any other varying fields can be
- *           perspective-correctly interpolated across the triangle instead of
- *           linearly in 2D
+ *           perspective-correctly interpolated across the triangle
+ * instead of linearly in 2D
  */
 struct Varying {
     Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
+    Eigen::Vector3i color = Eigen::Vector3i::Zero();
 };
 
 /**
@@ -37,7 +37,7 @@ struct Buffers {
  */
 struct VertexAttributes {
     Eigen::Vector3f position = Eigen::Vector3f::Zero();
-    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
+    Eigen::Vector3i color = Eigen::Vector3i::Zero();
 };
 
 /**
@@ -77,7 +77,7 @@ struct Options {
  */
 template <typename TUniform>
 struct Program {
-    VertexShader<TUniform>   vertex_shader;
+    VertexShader<TUniform> vertex_shader;
     FragmentShader<TUniform> fragment_shader;
-    TUniform                 uniform;
+    TUniform uniform;
 };

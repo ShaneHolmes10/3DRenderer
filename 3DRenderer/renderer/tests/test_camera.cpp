@@ -18,25 +18,23 @@
 
 struct CameraTestUniform {
     Eigen::Matrix4f model = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f view  = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f proj  = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f proj = Eigen::Matrix4f::Identity();
 };
 
 Program<CameraTestUniform> makeProgram() {
     Program<CameraTestUniform> program;
     program.vertex_shader = [](const CameraTestUniform& u,
-                                const VertexAttributes& v) {
+                               const VertexAttributes& v) {
         Varying out;
-        out.position =
-            u.proj * u.view * u.model *
-            Eigen::Vector4f(v.position.x(), v.position.y(), v.position.z(),
-                            1.0f);
+        out.position = u.proj * u.view * u.model *
+                       Eigen::Vector4f(v.position.x(), v.position.y(),
+                                       v.position.z(), 1.0f);
         out.color = v.color;
         return out;
     };
-    program.fragment_shader = [](const CameraTestUniform&, const Varying& v) {
-        return v.color;
-    };
+    program.fragment_shader = [](const CameraTestUniform&,
+                                 const Varying& v) { return v.color; };
     return program;
 }
 
@@ -44,18 +42,18 @@ Mesh buildTriangleMesh(Eigen::Vector3f a, Eigen::Vector3f b,
                        Eigen::Vector3f c, const Eigen::Vector3i& col) {
     Vertex3 v0;
     v0.position = std::move(a);
-    v0.color    = col;
+    v0.color = col;
 
     Vertex3 v1;
     v1.position = std::move(b);
-    v1.color    = col;
+    v1.color = col;
 
     Vertex3 v2;
     v2.position = std::move(c);
-    v2.color    = col;
+    v2.color = col;
 
     std::vector<Vertex3> verts = {v0, v1, v2};
-    std::vector<Face> faces    = {{0, 1, 2}};
+    std::vector<Face> faces = {{0, 1, 2}};
     return {verts, faces};
 }
 
@@ -118,10 +116,12 @@ TEST(Camera, DrawRendersTriangleInFrontOfCamera) {
 
     Entity entity;
     entity.model = &model;
-    entity.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -150,10 +150,12 @@ TEST(Camera, DrawDoesNotRenderTriangleBehindCamera) {
 
     Entity entity;
     entity.model = &model;
-    entity.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -182,10 +184,12 @@ TEST(Camera, DrawRespectsEntityTransform) {
 
     Entity entity;
     entity.model = &model;
-    entity.setTransform(Transform(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero()));
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -214,10 +218,12 @@ TEST(Camera, DrawRespectsCameraTransform) {
 
     Entity entity;
     entity.model = &model;
-    entity.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 10), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 10), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -253,14 +259,17 @@ TEST(Camera, CloserObjectAppearsLarger) {
 
     Entity entity_close;
     entity_close.model = &model_close;
-    entity_close.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    entity_close.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity entity_far;
     entity_far.model = &model_far;
-    entity_far.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    entity_far.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -295,10 +304,12 @@ TEST(Camera, DrawRendersCorrectColor) {
 
     Entity entity;
     entity.model = &model;
-    entity.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -311,8 +322,8 @@ TEST(Camera, DrawRendersCorrectColor) {
     Options options;
     camera.draw(&entity, makeProgram(), options, buffers);
 
-    size_t cx  = w / 2;
-    size_t cy  = h / 2;
+    size_t cx = w / 2;
+    size_t cy = h / 2;
     size_t idx = (cy * w + cx) * 4;
     CHECK(fb.pixels[idx] == 255);
     CHECK(fb.pixels[idx + 1] == 0);
@@ -331,15 +342,18 @@ TEST(Camera, SceneGraphHierarchyAffectsRendering) {
     model.addMesh(mesh);
 
     Entity parent;
-    parent.setTransform(Transform(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero()));
+    parent.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero()));
 
     Entity child;
     child.model = &model;
-    child.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    child.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
     parent.addChild(child);
 
     Entity cam_mount;
-    cam_mount.setTransform(Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
