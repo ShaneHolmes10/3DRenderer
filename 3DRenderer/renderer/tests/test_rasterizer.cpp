@@ -1,14 +1,17 @@
 #include <Eigen/Dense>
+#include <array>
 #include <cmath>
 
 #include "CppUnitLite/TestHarness.h"
 #include "renderer/rasterizer/rasterizer.h"
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 Eigen::Vector3i getPixel(const FrameBuffer& fb, size_t x, size_t y) {
     size_t idx = (y * fb.width + x) * 4;
     return {fb.pixels[idx], fb.pixels[idx + 1], fb.pixels[idx + 2]};
 }
+
+struct TestUniform {};
 
 TEST(Rasterizer, InterpolatesVertexColors) {
     const size_t size = 500;
@@ -30,13 +33,13 @@ TEST(Rasterizer, InterpolatesVertexColors) {
     v2.position = Eigen::Vector4f(250.0f, 400.0f, 0.0f, 1.0f);
     v2.color = Eigen::Vector3i(0, 0, 255);
 
-    RasterTriangle triangle{v0, v1, v2};
+    std::array<Varying, 3> triangle{v0, v1, v2};
 
-    Uniform uniform;
-    Shader vertex_color_shader = [](const Uniform&,
-                                    const Varying& varying) {
-        return varying.color;
-    };
+    TestUniform uniform;
+    FragmentShader<TestUniform> vertex_color_shader =
+        [](const TestUniform&, const Varying& varying) {
+            return varying.color;
+        };
 
     rasterize(triangle, uniform, vertex_color_shader, buffers);
 
@@ -48,8 +51,9 @@ TEST(Rasterizer, InterpolatesVertexColors) {
     CHECK(getPixel(fb, 250, 400) ==
           Eigen::Vector3i(0, 0, 255));  // v2 — blue
 
-    // Outside triangle should be untouched (black)
-    CHECK(getPixel(fb, 0, 0) == Eigen::Vector3i(0, 0, 0));
+    // Outside triangle should be untouched (white — framebuffer
+    // default)
+    CHECK(getPixel(fb, 0, 0) == Eigen::Vector3i(255, 255, 255));
 }
 
 TEST(Rasterizer, DrawsCircleWithProceduralShader) {
@@ -76,18 +80,19 @@ TEST(Rasterizer, DrawsCircleWithProceduralShader) {
     v4.position = Eigen::Vector4f(size, size, 0.0f, 1.0f);
     v5.position = Eigen::Vector4f(0, size, 0.0f, 1.0f);
 
-    RasterTriangle upper{v0, v1, v2};
-    RasterTriangle lower{v3, v4, v5};
+    std::array<Varying, 3> upper{v0, v1, v2};
+    std::array<Varying, 3> lower{v3, v4, v5};
 
-    Uniform uniform;
-    Shader circle_shader = [&](const Uniform&, const Varying& varying) {
-        float x = varying.position.x();
-        float y = varying.position.y();
-        float dist =
-            std::sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
-        return dist < radius ? Eigen::Vector3i(0, 0, 0)
-                             : Eigen::Vector3i(255, 255, 255);
-    };
+    TestUniform uniform;
+    FragmentShader<TestUniform> circle_shader =
+        [&](const TestUniform&, const Varying& varying) {
+            float x = varying.position.x();
+            float y = varying.position.y();
+            float dist =
+                std::sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
+            return dist < radius ? Eigen::Vector3i(0, 0, 0)
+                                 : Eigen::Vector3i(255, 255, 255);
+        };
 
     rasterize(upper, uniform, circle_shader, buffers);
     rasterize(lower, uniform, circle_shader, buffers);

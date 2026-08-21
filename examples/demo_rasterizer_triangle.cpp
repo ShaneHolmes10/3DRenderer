@@ -1,10 +1,11 @@
 #include <Eigen/Dense>
+#include <array>
 
 #include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
 #include "display/viewport.h"
 #include "renderer/rasterizer/rasterizer.h"
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 int main() {
     Viewport::init();
@@ -30,10 +31,12 @@ int main() {
     v2.position = Eigen::Vector4f(250.0f, 400.0f, 0.0f, 1.0f);
     v2.color    = Eigen::Vector3i(0, 0, 255);
 
-    RasterTriangle triangle{v0, v1, v2};
+    std::array<Varying, 3> triangle{v0, v1, v2};
 
-    Uniform uniform;
-    Shader vertex_color_shader = [](const Uniform&, const Varying& varying) {
+    struct TriangleUniform {};
+    TriangleUniform uniform;
+    FragmentShader<TriangleUniform> vertex_color_shader = [](const TriangleUniform&,
+                                                      const Varying& varying) {
         return varying.color;
     };
 

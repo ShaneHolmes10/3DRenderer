@@ -9,11 +9,34 @@
 #include "forms/mesh.h"
 #include "forms/model.h"
 #include "renderer/camera.h"
+#include "renderer/types.h"
 #include "utils/transform.h"
 
 // ============================================================
-// Helper Functions
+// Helper types and factories
 // ============================================================
+
+struct CameraTestUniform {
+    Eigen::Matrix4f model = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f proj = Eigen::Matrix4f::Identity();
+};
+
+Program<CameraTestUniform> makeProgram() {
+    Program<CameraTestUniform> program;
+    program.vertex_shader = [](const CameraTestUniform& u,
+                               const VertexAttributes& v) {
+        Varying out;
+        out.position = u.proj * u.view * u.model *
+                       Eigen::Vector4f(v.position.x(), v.position.y(),
+                                       v.position.z(), 1.0f);
+        out.color = v.color;
+        return out;
+    };
+    program.fragment_shader = [](const CameraTestUniform&,
+                                 const Varying& v) { return v.color; };
+    return program;
+}
 
 Mesh buildTriangleMesh(Eigen::Vector3f a, Eigen::Vector3f b,
                        Eigen::Vector3f c, const Eigen::Vector3i& col) {
@@ -93,13 +116,12 @@ TEST(Camera, DrawRendersTriangleInFrontOfCamera) {
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0),
-                       Eigen::Vector3f::Zero());
-    entity.setTransform(t_entity);
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -107,11 +129,10 @@ TEST(Camera, DrawRendersTriangleInFrontOfCamera) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb(w, h);
-    DrawCommand cmd;
-    cmd.entity = &entity;
-    cmd.cull_mode = CullMode::None;
     DepthBuffer db(w, h);
-    camera.draw(fb, db, cmd);
+    Buffers buffers{fb, db};
+    Options options;
+    camera.draw(&entity, makeProgram(), options, buffers);
 
     CHECK(hasDrawnPixels(fb));
 }
@@ -129,13 +150,12 @@ TEST(Camera, DrawDoesNotRenderTriangleBehindCamera) {
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0),
-                       Eigen::Vector3f::Zero());
-    entity.setTransform(t_entity);
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -143,11 +163,10 @@ TEST(Camera, DrawDoesNotRenderTriangleBehindCamera) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb(w, h);
-    DrawCommand cmd;
-    cmd.entity = &entity;
-    cmd.cull_mode = CullMode::None;
     DepthBuffer db(w, h);
-    camera.draw(fb, db, cmd);
+    Buffers buffers{fb, db};
+    Options options;
+    camera.draw(&entity, makeProgram(), options, buffers);
 
     CHECK(!hasDrawnPixels(fb));
 }
@@ -165,13 +184,12 @@ TEST(Camera, DrawRespectsEntityTransform) {
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 5),
-                       Eigen::Vector3f::Zero());
-    entity.setTransform(t_entity);
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -179,11 +197,10 @@ TEST(Camera, DrawRespectsEntityTransform) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb(w, h);
-    DrawCommand cmd;
-    cmd.entity = &entity;
-    cmd.cull_mode = CullMode::None;
     DepthBuffer db(w, h);
-    camera.draw(fb, db, cmd);
+    Buffers buffers{fb, db};
+    Options options;
+    camera.draw(&entity, makeProgram(), options, buffers);
 
     CHECK(hasDrawnPixels(fb));
 }
@@ -201,13 +218,12 @@ TEST(Camera, DrawRespectsCameraTransform) {
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0),
-                       Eigen::Vector3f::Zero());
-    entity.setTransform(t_entity);
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 10), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 10), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -215,11 +231,10 @@ TEST(Camera, DrawRespectsCameraTransform) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb(w, h);
-    DrawCommand cmd;
-    cmd.entity = &entity;
-    cmd.cull_mode = CullMode::None;
     DepthBuffer db(w, h);
-    camera.draw(fb, db, cmd);
+    Buffers buffers{fb, db};
+    Options options;
+    camera.draw(&entity, makeProgram(), options, buffers);
 
     CHECK(!hasDrawnPixels(fb));
 }
@@ -244,37 +259,34 @@ TEST(Camera, CloserObjectAppearsLarger) {
 
     Entity entity_close;
     entity_close.model = &model_close;
-    Transform t_close(Eigen::Vector3f(0, 0, 0),
-                      Eigen::Vector3f::Zero());
-    entity_close.setTransform(t_close);
+    entity_close.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity entity_far;
     entity_far.model = &model_far;
-    Transform t_far(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    entity_far.setTransform(t_far);
+    entity_far.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
     camera.setFovLength(100.0f);
     camera.setPictureWidthHeight(w, h);
 
+    Options options;
+
     FrameBuffer fb_close(w, h);
     DepthBuffer db_close(w, h);
-    DrawCommand cmd_close;
-    cmd_close.entity = &entity_close;
-    cmd_close.cull_mode = CullMode::None;
-    camera.draw(fb_close, db_close, cmd_close);
+    Buffers buffers_close{fb_close, db_close};
+    camera.draw(&entity_close, makeProgram(), options, buffers_close);
 
     FrameBuffer fb_far(w, h);
     DepthBuffer db_far(w, h);
-    DrawCommand cmd_far;
-    cmd_far.entity = &entity_far;
-    cmd_far.cull_mode = CullMode::None;
-    camera.draw(fb_far, db_far, cmd_far);
+    Buffers buffers_far{fb_far, db_far};
+    camera.draw(&entity_far, makeProgram(), options, buffers_far);
 
     CHECK(countDrawnPixels(fb_close) > countDrawnPixels(fb_far));
 }
@@ -292,13 +304,12 @@ TEST(Camera, DrawRendersCorrectColor) {
 
     Entity entity;
     entity.model = &model;
-    Transform t_entity(Eigen::Vector3f(0, 0, 0),
-                       Eigen::Vector3f::Zero());
-    entity.setTransform(t_entity);
+    entity.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -306,11 +317,10 @@ TEST(Camera, DrawRendersCorrectColor) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb(w, h);
-    DrawCommand cmd;
-    cmd.entity = &entity;
-    cmd.cull_mode = CullMode::None;
     DepthBuffer db(w, h);
-    camera.draw(fb, db, cmd);
+    Buffers buffers{fb, db};
+    Options options;
+    camera.draw(&entity, makeProgram(), options, buffers);
 
     size_t cx = w / 2;
     size_t cy = h / 2;
@@ -332,20 +342,18 @@ TEST(Camera, SceneGraphHierarchyAffectsRendering) {
     model.addMesh(mesh);
 
     Entity parent;
-    Transform t_parent(Eigen::Vector3f(0, 0, 5),
-                       Eigen::Vector3f::Zero());
-    parent.setTransform(t_parent);
+    parent.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 5), Eigen::Vector3f::Zero()));
 
     Entity child;
     child.model = &model;
-    Transform t_child(Eigen::Vector3f(0, 0, 0),
-                      Eigen::Vector3f::Zero());
-    child.setTransform(t_child);
+    child.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
     parent.addChild(child);
 
     Entity cam_mount;
-    Transform t_cam(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero());
-    cam_mount.setTransform(t_cam);
+    cam_mount.setTransform(
+        Transform(Eigen::Vector3f(0, 0, 0), Eigen::Vector3f::Zero()));
 
     Camera camera;
     camera.attachTo(cam_mount);
@@ -353,11 +361,10 @@ TEST(Camera, SceneGraphHierarchyAffectsRendering) {
     camera.setPictureWidthHeight(w, h);
 
     FrameBuffer fb(w, h);
-    DrawCommand cmd;
-    cmd.entity = &child;
-    cmd.cull_mode = CullMode::None;
     DepthBuffer db(w, h);
-    camera.draw(fb, db, cmd);
+    Buffers buffers{fb, db};
+    Options options;
+    camera.draw(&child, makeProgram(), options, buffers);
 
     CHECK(hasDrawnPixels(fb));
 }

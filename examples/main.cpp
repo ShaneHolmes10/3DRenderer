@@ -111,6 +111,22 @@ int main() {
     // Start the view port
     view.start();
 
+    struct SceneUniform {};
+    Program<SceneUniform> program;
+    program.vertex_shader = [](const SceneUniform&, const VertexAttributes& v) {
+        Varying out;
+        out.position = Eigen::Vector4f(v.position.x(), v.position.y(),
+                                       v.position.z(), 1.0f);
+        out.color = v.color;
+        return out;
+    };
+    program.fragment_shader = [](const SceneUniform&, const Varying& v) {
+        return v.color;
+    };
+
+    Options options;
+    options.cull_mode = CullMode::None;
+
     FrameBuffer frame_buffer(width, height);
     DepthBuffer depth_buffer(width, height);
 
@@ -124,11 +140,8 @@ int main() {
         frame_buffer.clear();
         depth_buffer.clear();
 
-        DrawCommand cmd;
-        cmd.entity = &tetrahedron_entity;
-        cmd.cull_mode = CullMode::None;
-
-        camera.draw(frame_buffer, depth_buffer, cmd);
+        Buffers buffers{frame_buffer, depth_buffer};
+        camera.draw(&tetrahedron_entity, program, options, buffers);
         
         view.setFrame(frame_buffer);
         view.update();

@@ -1,12 +1,13 @@
 #include <Eigen/Dense>
 #include <algorithm>
+#include <array>
 #include <cmath>
 
 #include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
 #include "display/viewport.h"
 #include "renderer/rasterizer/rasterizer.h"
-#include "renderer/rasterizer/types.h"
+#include "renderer/types.h"
 
 int main() {
     Viewport::init();
@@ -29,11 +30,13 @@ int main() {
     v4.position = Eigen::Vector4f(width, height, 0.0f, 1.0f);
     v5.position = Eigen::Vector4f(0,     height, 0.0f, 1.0f);
 
-    RasterTriangle upper{v0, v1, v2};
-    RasterTriangle lower{v3, v4, v5};
+    std::array<Varying, 3> upper{v0, v1, v2};
+    std::array<Varying, 3> lower{v3, v4, v5};
 
-    Uniform uniform;
-    Shader circle_shader = [&](const Uniform&, const Varying& varying) {
+    struct SmileyUniform {};
+    SmileyUniform uniform;
+    FragmentShader<SmileyUniform> circle_shader = [&](const SmileyUniform&,
+                                               const Varying& varying) {
         // Normalize to [-0.5, 0.5] centered UV coordinates
         float u =  varying.position.x() / width  - 0.5f;
         float v = -varying.position.y() / height + 0.5f;

@@ -1,5 +1,4 @@
-
-#include "clip_triangles.h"
+#include "renderer/clip_triangles.h"
 
 namespace {
 
@@ -8,8 +7,8 @@ struct Plane {
     float d;
 };
 
-Vertex3 interpolate(const Vertex3& a, const Vertex3& b, float t) {
-    Vertex3 result;
+Varying interpolate(const Varying& a, const Varying& b, float t) {
+    Varying result;
     result.position = a.position + t * (b.position - a.position);
     result.color =
         (a.color.cast<float>() + t * (b.color - a.color).cast<float>())
@@ -17,16 +16,18 @@ Vertex3 interpolate(const Vertex3& a, const Vertex3& b, float t) {
     return result;
 }
 
-std::vector<Vertex3> clipAgainstPlane(
-    const std::vector<Vertex3>& polygon, const Plane& plane) {
-    std::vector<Vertex3> output;
+std::vector<Varying> clipAgainstPlane(
+    const std::vector<Varying>& polygon, const Plane& plane) {
+    std::vector<Varying> output;
 
     for (size_t i = 0; i < polygon.size(); i++) {
-        const Vertex3& current = polygon[i];
-        const Vertex3& next = polygon[(i + 1) % polygon.size()];
+        const Varying& current = polygon[i];
+        const Varying& next = polygon[(i + 1) % polygon.size()];
 
-        float d_current = plane.normal.dot(current.position) + plane.d;
-        float d_next = plane.normal.dot(next.position) + plane.d;
+        float d_current =
+            plane.normal.dot(current.position.head<3>()) + plane.d;
+        float d_next =
+            plane.normal.dot(next.position.head<3>()) + plane.d;
 
         if (d_next >= 0.0f) {
             if (d_current < 0.0f) {
@@ -47,14 +48,14 @@ std::vector<Vertex3> clipAgainstPlane(
 
 }  // namespace
 
-std::vector<Triangle3> clipTriangle(const Triangle3& triangle,
-                                    float focal_length, float width,
-                                    float height, float near_z) {
-    std::vector<Vertex3> polygon = {
-        triangle.vertex_A, triangle.vertex_B, triangle.vertex_C};
+std::vector<std::array<Varying, 3>> clipTriangle(
+    const std::array<Varying, 3>& triangle, float focal_length,
+    float width, float height, float near_z) {
+    std::vector<Varying> polygon = {triangle[0], triangle[1],
+                                    triangle[2]};
 
     // Frustum planes in camera space — inside when
-    // plane.normal.dot(position) + d >= 0
+    // plane.normal.dot(position.xyz) + d >= 0
     // NOLINTNEXTLINE(modernize-avoid-c-arrays)
     const Plane planes[] = {
         {{0.0f, 0.0f, 1.0f}, -near_z},                 // near
@@ -72,13 +73,9 @@ std::vector<Triangle3> clipTriangle(const Triangle3& triangle,
     }
 
     // Fan triangulate — produces n-2 triangles for an n-vertex polygon
-    std::vector<Triangle3> result;
+    std::vector<std::array<Varying, 3>> result;
     for (size_t i = 1; i + 1 < polygon.size(); i++) {
-        Triangle3 tri;
-        tri.vertex_A = polygon[0];
-        tri.vertex_B = polygon[i];
-        tri.vertex_C = polygon[i + 1];
-        result.push_back(tri);
+        result.push_back({polygon[0], polygon[i], polygon[i + 1]});
     }
 
     return result;

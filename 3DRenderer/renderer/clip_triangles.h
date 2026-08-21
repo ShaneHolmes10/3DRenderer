@@ -1,8 +1,9 @@
 #pragma once
 
+#include <array>
 #include <vector>
 
-#include "geometry_types.h"
+#include "renderer/types.h"
 
 /**
  * @brief Clips a camera-space triangle against the view frustum using
@@ -11,9 +12,10 @@
  * Clips against five planes: near, left, right, bottom, and top. Any
  * portion of the triangle outside the frustum is discarded. The
  * surviving polygon is fan-triangulated from its first vertex,
- * producing one Triangle3 per fan face.
+ * producing one Varying triple per fan face.
  *
- * @param triangle      The camera-space triangle to clip.
+ * @param triangle      The camera-space triangle as three Varyings.
+ * position.xyz must hold the camera-space vertex position.
  * @param focal_length  Camera focal length, used to derive the lateral
  * frustum planes.
  * @param width         Framebuffer width in pixels.
@@ -23,6 +25,6 @@
  * @return              A list of clipped camera-space triangles, or
  * empty if the triangle is entirely outside the frustum.
  */
-std::vector<Triangle3> clipTriangle(const Triangle3& triangle,
-                                    float focal_length, float width,
-                                    float height, float near_z);
+std::vector<std::array<Varying, 3>> clipTriangle(
+    const std::array<Varying, 3>& triangle, float focal_length,
+    float width, float height, float near_z);
