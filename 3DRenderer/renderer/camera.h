@@ -72,7 +72,8 @@ class Camera {
     }
 
     /**
-     * @brief Rasterizes each triangle with the program's fragment shader.
+     * @brief Rasterizes each triangle with the program's fragment
+     * shader.
      */
     template <typename TUniform, typename TVarying>
     void process_triangles(
@@ -80,7 +81,8 @@ class Camera {
         const Program<TUniform, TVarying>& program,
         Buffers& buffers) const {
         for (const std::array<TVarying, 3>& tri : triangles) {
-            rasterize(tri, program.uniform, program.fragment_shader, buffers);
+            rasterize(tri, program.uniform, program.fragment_shader,
+                      buffers);
         }
     }
 
@@ -118,7 +120,7 @@ class Camera {
      * @param h Height in pixels
      */
     void setPictureWidthHeight(int w, int h) {
-        width  = w;
+        width = w;
         height = h;
     }
 
@@ -130,20 +132,23 @@ class Camera {
      * then rasterizes each triangle with the program's shaders.
      *
      * @param entity  The entity to render
-     * @param program The vertex/fragment shaders and uniform to render with
+     * @param program The vertex/fragment shaders and uniform to render
+     * with
      * @param options Rendering settings for this draw call
      * @param buffers The frame and depth buffers to test and write into
      */
     template <typename TUniform, typename TVarying>
-    void draw(Entity* entity, const Program<TUniform, TVarying>& program,
+    void draw(Entity* entity,
+              const Program<TUniform, TVarying>& program,
               const Options& options, Buffers& buffers) {
         static constexpr float NEAR_Z = 0.1f;
 
-        Eigen::Matrix4f view  = mount->getWorldMatrix().inverse();
+        Eigen::Matrix4f view = mount->getWorldMatrix().inverse();
         Eigen::Matrix4f model = entity->getWorldMatrix();
 
         for (const Mesh& mesh : entity->model->getMeshes()) {
-            const std::vector<Vertex3>& mesh_vertices = mesh.getVertices();
+            const std::vector<Vertex3>& mesh_vertices =
+                mesh.getVertices();
 
             std::vector<VertexAttributes> vertex_attributes;
             vertex_attributes.reserve(mesh_vertices.size());
@@ -152,7 +157,8 @@ class Camera {
                     view * model *
                     Eigen::Vector4f(v.position.x(), v.position.y(),
                                     v.position.z(), 1.0f);
-                vertex_attributes.push_back({cam_pos.head<3>(), v.color});
+                vertex_attributes.push_back(
+                    {cam_pos.head<3>(), v.color});
             }
 
             std::vector<TVarying> processed_vertices =
@@ -166,9 +172,10 @@ class Camera {
                     processed_vertices[face.v3],
                 };
                 for (const std::array<TVarying, 3>& clipped :
-                     clip_triangle(cam_tri, focal_length, width, height, NEAR_Z)) {
-                    raster_triangles.push_back(
-                        project_triangle(clipped, focal_length, width, height));
+                     clip_triangle(cam_tri, focal_length, width, height,
+                                   NEAR_Z)) {
+                    raster_triangles.push_back(project_triangle(
+                        clipped, focal_length, width, height));
                 }
             }
 

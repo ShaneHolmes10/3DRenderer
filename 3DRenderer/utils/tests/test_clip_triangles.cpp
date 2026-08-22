@@ -11,7 +11,7 @@
 
 struct Varying {
     Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    Eigen::Vector3f color = Eigen::Vector3f::Zero();
     VARYING(position, color)
 };
 
@@ -22,7 +22,7 @@ static Varying makeVarying(float x, float y, float z, int r = 255,
                            int g = 255, int b = 255) {
     Varying v;
     v.position = Eigen::Vector4f(x, y, z, 1.0f);
-    v.color    = Eigen::Vector3f(r, g, b);
+    v.color = Eigen::Vector3f(r, g, b);
     return v;
 }
 

@@ -13,7 +13,7 @@ Eigen::Vector3i getPixel(const FrameBuffer& fb, size_t x, size_t y) {
 
 struct Varying {
     Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    Eigen::Vector3f color = Eigen::Vector3f::Zero();
     VARYING(position, color)
 };
 

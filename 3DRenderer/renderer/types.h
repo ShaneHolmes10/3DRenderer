@@ -8,8 +8,8 @@
 #include "display/frame_buffer.h"
 
 /**
- * @brief Registers the fields of a user-defined Varying struct for automatic
- * per-fragment barycentric interpolation by the rasterizer.
+ * @brief Registers the fields of a user-defined Varying struct for
+ * automatic per-fragment barycentric interpolation by the rasterizer.
  *
  * Must include at minimum the position field. Example:
  *   struct MyVarying {
@@ -26,20 +26,22 @@
 // Fallback specialization — evaluates to false for any T by default.
 template <typename T, typename = void>
 struct has_position : std::false_type {};
-// Winning specialization — chosen when T().position compiles. If it doesn't,
-// SFINAE discards this silently and the fallback above is used instead.
+// Winning specialization — chosen when T().position compiles. If it
+// doesn't, SFINAE discards this silently and the fallback above is used
+// instead.
 template <typename T>
-struct has_position<T, std::void_t<decltype(std::declval<T>().position)>>
+struct has_position<T,
+                    std::void_t<decltype(std::declval<T>().position)>>
     : std::true_type {};
 
-// Checks whether type T has a ._reflect() method (i.e. used the VARYING macro).
-// Same two-specialization SFINAE pattern as has_position above.
+// Checks whether type T has a ._reflect() method (i.e. used the VARYING
+// macro). Same two-specialization SFINAE pattern as has_position above.
 template <typename T, typename = void>
 struct has_reflect : std::false_type {};
 template <typename T>
-struct has_reflect<T, std::void_t<decltype(std::declval<T>()._reflect())>>
+struct has_reflect<T,
+                   std::void_t<decltype(std::declval<T>()._reflect())>>
     : std::true_type {};
-
 
 /**
  * @brief Non-owning bundle of the buffers a rasterizer draw call
@@ -55,7 +57,7 @@ struct Buffers {
  */
 struct VertexAttributes {
     Eigen::Vector3f position = Eigen::Vector3f::Zero();
-    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
+    Eigen::Vector3i color = Eigen::Vector3i::Zero();
 };
 
 /**
@@ -78,15 +80,17 @@ using VertexShader =
     std::function<TVarying(const TUniform&, const VertexAttributes&)>;
 
 /**
- * @brief Computes a fragment's color from uniform and interpolated Varying.
+ * @brief Computes a fragment's color from uniform and interpolated
+ * Varying.
  */
 template <typename TUniform, typename TVarying>
 using FragmentShader =
     std::function<Eigen::Vector3i(const TUniform&, const TVarying&)>;
 
 /**
- * @brief Pairs vertex/fragment shaders with caller-defined uniform and Varying
- * types. TVarying must have a Vec4 position field and define VARYING(...).
+ * @brief Pairs vertex/fragment shaders with caller-defined uniform and
+ * Varying types. TVarying must have a Vec4 position field and define
+ * VARYING(...).
  */
 template <typename TUniform, typename TVarying>
 struct Program {

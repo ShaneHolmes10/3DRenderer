@@ -14,19 +14,22 @@ template <size_t I = 0, typename Fn, typename Tuple, typename... Tuples>
 void tuple_iterate(Fn&& fn, Tuple&& t0, Tuples&&... ts) {
     if constexpr (I < std::tuple_size_v<std::decay_t<Tuple>>) {
         fn(std::get<I>(t0), std::get<I>(ts)...);
-        tuple_iterate<I + 1>(std::forward<Fn>(fn), std::forward<Tuple>(t0),
-                          std::forward<Tuples>(ts)...);
+        tuple_iterate<I + 1>(std::forward<Fn>(fn),
+                             std::forward<Tuple>(t0),
+                             std::forward<Tuples>(ts)...);
     }
 }
 
 /**
- * @brief Barycentric-blends all VARYING fields of a user-defined Varying type
- * using weights wA, wB, wC. All fields must be float Eigen vectors.
+ * @brief Barycentric-blends all VARYING fields of a user-defined
+ * Varying type using weights wA, wB, wC. All fields must be float Eigen
+ * vectors.
  */
 template <typename TVarying>
-TVarying interpolate_fragment_data(const TVarying& v0, const TVarying& v1,
-                                   const TVarying& v2, float wA, float wB,
-                                   float wC) {
+TVarying interpolate_fragment_data(const TVarying& v0,
+                                   const TVarying& v1,
+                                   const TVarying& v2, float wA,
+                                   float wB, float wC) {
     static_assert(has_reflect<TVarying>::value,
                   "TVarying must define VARYING(...) macro");
     TVarying result;

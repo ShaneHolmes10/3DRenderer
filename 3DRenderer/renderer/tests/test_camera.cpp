@@ -18,14 +18,14 @@
 
 struct Varying {
     Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    Eigen::Vector3f color = Eigen::Vector3f::Zero();
     VARYING(position, color)
 };
 
 struct CameraTestUniform {
     Eigen::Matrix4f model = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f view  = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f proj  = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f proj = Eigen::Matrix4f::Identity();
 };
 
 Program<CameraTestUniform, Varying> makeProgram() {
@@ -40,7 +40,9 @@ Program<CameraTestUniform, Varying> makeProgram() {
         return out;
     };
     program.fragment_shader = [](const CameraTestUniform&,
-                                 const Varying& v) { return v.color.cast<int>(); };
+                                 const Varying& v) {
+        return v.color.cast<int>();
+    };
     return program;
 }
 
