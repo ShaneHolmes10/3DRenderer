@@ -16,25 +16,31 @@
 // Helper types and factories
 // ============================================================
 
-struct CameraTestUniform {
-    Eigen::Matrix4f model = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f view = Eigen::Matrix4f::Identity();
-    Eigen::Matrix4f proj = Eigen::Matrix4f::Identity();
+struct Varying {
+    Eigen::Vector4f position = Eigen::Vector4f::Zero();
+    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    VARYING(position, color)
 };
 
-Program<CameraTestUniform> makeProgram() {
-    Program<CameraTestUniform> program;
+struct CameraTestUniform {
+    Eigen::Matrix4f model = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f view  = Eigen::Matrix4f::Identity();
+    Eigen::Matrix4f proj  = Eigen::Matrix4f::Identity();
+};
+
+Program<CameraTestUniform, Varying> makeProgram() {
+    Program<CameraTestUniform, Varying> program;
     program.vertex_shader = [](const CameraTestUniform& u,
                                const VertexAttributes& v) {
         Varying out;
         out.position = u.proj * u.view * u.model *
                        Eigen::Vector4f(v.position.x(), v.position.y(),
                                        v.position.z(), 1.0f);
-        out.color = v.color;
+        out.color = v.color.cast<float>();
         return out;
     };
     program.fragment_shader = [](const CameraTestUniform&,
-                                 const Varying& v) { return v.color; };
+                                 const Varying& v) { return v.color.cast<int>(); };
     return program;
 }
 
