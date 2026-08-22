@@ -2,26 +2,44 @@
 
 #include <Eigen/Dense>
 #include <functional>
+#include <tuple>
 
 #include "display/depth_buffer.h"
 #include "display/frame_buffer.h"
 
 /**
- * @brief Per-vertex data passed into the rasterizer and interpolated
- * per-fragment before the shader is called.
+ * @brief Registers the fields of a user-defined Varying struct for automatic
+ * per-fragment barycentric interpolation by the rasterizer.
  *
- * position packs four values whose meaning is fixed after projection:
- *   x, y  = screen-space pixel coordinates
- *   z     = normalized depth, used for the depth-buffer test
- *   w     = reciprocal of clip-space w (1/w_clip), kept so that color,
- *           UVs, and any other varying fields can be
- *           perspective-correctly interpolated across the triangle
- * instead of linearly in 2D
+ * Must include at minimum the position field. Example:
+ *   struct MyVarying {
+ *       Eigen::Vector4f position;
+ *       Eigen::Vector3i color;
+ *       VARYING(position, color)
+ *   };
  */
-struct Varying {
-    Eigen::Vector4f position = Eigen::Vector4f::Zero();
-    Eigen::Vector3i color = Eigen::Vector3i::Zero();
-};
+#define VARYING(...)                                  \
+    auto _reflect() { return std::tie(__VA_ARGS__); } \
+    auto _reflect() const { return std::tie(__VA_ARGS__); }
+
+// Checks whether type T has a .position member.
+// Fallback specialization — evaluates to false for any T by default.
+template <typename T, typename = void>
+struct has_position : std::false_type {};
+// Winning specialization — chosen when T().position compiles. If it doesn't,
+// SFINAE discards this silently and the fallback above is used instead.
+template <typename T>
+struct has_position<T, std::void_t<decltype(std::declval<T>().position)>>
+    : std::true_type {};
+
+// Checks whether type T has a ._reflect() method (i.e. used the VARYING macro).
+// Same two-specialization SFINAE pattern as has_position above.
+template <typename T, typename = void>
+struct has_reflect : std::false_type {};
+template <typename T>
+struct has_reflect<T, std::void_t<decltype(std::declval<T>()._reflect())>>
+    : std::true_type {};
+
 
 /**
  * @brief Non-owning bundle of the buffers a rasterizer draw call
@@ -37,30 +55,11 @@ struct Buffers {
  */
 struct VertexAttributes {
     Eigen::Vector3f position = Eigen::Vector3f::Zero();
-    Eigen::Vector3i color = Eigen::Vector3i::Zero();
+    Eigen::Vector3i color    = Eigen::Vector3i::Zero();
 };
 
 /**
- * @brief Transforms a vertex's attributes into a Varying for the rest
- * of the pipeline.
- */
-template <typename TUniform>
-using VertexShader =
-    std::function<Varying(const TUniform&, const VertexAttributes&)>;
-
-/**
- * @brief Computes a fragment's color from uniform and interpolated
- * Varying data.
- */
-template <typename TUniform>
-using FragmentShader =
-    std::function<Eigen::Vector3i(const TUniform&, const Varying&)>;
-
-/**
  * @brief Specifies which triangle faces to skip during rasterization.
- *
- * Backface culling is determined by the winding order of the triangle's
- * projected vertices in screen space.
  */
 enum class CullMode { None, Clockwise, CounterClockwise };
 
@@ -72,12 +71,32 @@ struct Options {
 };
 
 /**
- * @brief Pairs a vertex/fragment shader with the caller-defined uniform
- * data they read.
+ * @brief Transforms a vertex's attributes into a user-defined Varying.
  */
-template <typename TUniform>
+template <typename TUniform, typename TVarying>
+using VertexShader =
+    std::function<TVarying(const TUniform&, const VertexAttributes&)>;
+
+/**
+ * @brief Computes a fragment's color from uniform and interpolated Varying.
+ */
+template <typename TUniform, typename TVarying>
+using FragmentShader =
+    std::function<Eigen::Vector3i(const TUniform&, const TVarying&)>;
+
+/**
+ * @brief Pairs vertex/fragment shaders with caller-defined uniform and Varying
+ * types. TVarying must have a Vec4 position field and define VARYING(...).
+ */
+template <typename TUniform, typename TVarying>
 struct Program {
-    VertexShader<TUniform> vertex_shader;
-    FragmentShader<TUniform> fragment_shader;
+    static_assert(has_position<TVarying>::value,
+                  "Output of Vertex Stage needs Vec4 position!");
+    static_assert(has_reflect<TVarying>::value,
+                  "Output of Vertex Stage needs interpolated fields. "
+                  "Did you forget the VARYING(...) macro?");
+
+    VertexShader<TUniform, TVarying> vertex_shader;
+    FragmentShader<TUniform, TVarying> fragment_shader;
     TUniform uniform;
 };
