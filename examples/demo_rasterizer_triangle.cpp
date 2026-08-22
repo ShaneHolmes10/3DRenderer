@@ -7,6 +7,12 @@
 #include "renderer/rasterizer/rasterizer.h"
 #include "renderer/types.h"
 
+struct Varying {
+    Eigen::Vector4f position = Eigen::Vector4f::Zero();
+    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    VARYING(position, color)
+};
+
 int main() {
     Viewport::init();
 
@@ -21,24 +27,24 @@ int main() {
     // Red at top-left, green at top-right, blue at bottom
     Varying v0;
     v0.position = Eigen::Vector4f(100.0f, 100.0f, 0.0f, 1.0f);
-    v0.color    = Eigen::Vector3i(255, 0, 0);
+    v0.color    = Eigen::Vector3f(255, 0, 0);
 
     Varying v1;
     v1.position = Eigen::Vector4f(350.0f, 100.0f, 0.0f, 1.0f);
-    v1.color    = Eigen::Vector3i(0, 255, 0);
+    v1.color    = Eigen::Vector3f(0, 255, 0);
 
     Varying v2;
     v2.position = Eigen::Vector4f(250.0f, 400.0f, 0.0f, 1.0f);
-    v2.color    = Eigen::Vector3i(0, 0, 255);
+    v2.color    = Eigen::Vector3f(0, 0, 255);
 
     std::array<Varying, 3> triangle{v0, v1, v2};
 
     struct TriangleUniform {};
     TriangleUniform uniform;
-    FragmentShader<TriangleUniform> vertex_color_shader = [](const TriangleUniform&,
-                                                      const Varying& varying) {
-        return varying.color;
-    };
+    FragmentShader<TriangleUniform, Varying> vertex_color_shader =
+        [](const TriangleUniform&, const Varying& varying) {
+            return varying.color.cast<int>();
+        };
 
     rasterize(triangle, uniform, vertex_color_shader, buffers);
 

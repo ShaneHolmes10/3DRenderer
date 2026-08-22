@@ -116,17 +116,23 @@ int main() {
     // Start the viewport
     view.start();
 
+    struct Varying {
+        Eigen::Vector4f position = Eigen::Vector4f::Zero();
+        Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+        VARYING(position, color)
+    };
+
     struct SceneUniform {};
-    Program<SceneUniform> program;
+    Program<SceneUniform, Varying> program;
     program.vertex_shader = [](const SceneUniform&, const VertexAttributes& v) {
         Varying out;
         out.position = Eigen::Vector4f(v.position.x(), v.position.y(),
                                        v.position.z(), 1.0f);
-        out.color = v.color;
+        out.color = v.color.cast<float>();
         return out;
     };
     program.fragment_shader = [](const SceneUniform&, const Varying& v) {
-        return v.color;
+        return v.color.cast<int>();
     };
 
     Options options;
