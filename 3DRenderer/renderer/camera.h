@@ -57,35 +57,30 @@ class Camera {
 
     /**
      * @brief Runs the vertex shader over every vertex, producing the
-     * Varyings the rest of the pipeline works with.
+     * TVaryings the rest of the pipeline works with.
      */
-    template <typename TUniform>
-    std::vector<Varying> process_vertices(
+    template <typename TUniform, typename TVarying>
+    std::vector<TVarying> process_vertices(
         const std::vector<VertexAttributes>& vertices,
-        const Program<TUniform>& program,
-        const Options& options) const {
-        std::vector<Varying> out;
-
+        const Program<TUniform, TVarying>& program) const {
+        std::vector<TVarying> out;
         out.reserve(vertices.size());
         for (const VertexAttributes& v : vertices) {
             out.push_back(program.vertex_shader(program.uniform, v));
         }
-
         return out;
     }
 
     /**
-     * @brief Rasterizes each triangle with the program's fragment
-     * shader.
+     * @brief Rasterizes each triangle with the program's fragment shader.
      */
-    template <typename TUniform>
+    template <typename TUniform, typename TVarying>
     void process_triangles(
-        const std::vector<std::array<Varying, 3>>& triangles,
-        const Program<TUniform>& program, const Options& options,
+        const std::vector<std::array<TVarying, 3>>& triangles,
+        const Program<TUniform, TVarying>& program,
         Buffers& buffers) const {
-        for (const std::array<Varying, 3>& tri : triangles) {
-            rasterize(tri, program.uniform, program.fragment_shader,
-                      buffers);
+        for (const std::array<TVarying, 3>& tri : triangles) {
+            rasterize(tri, program.uniform, program.fragment_shader, buffers);
         }
     }
 
@@ -123,7 +118,7 @@ class Camera {
      * @param h Height in pixels
      */
     void setPictureWidthHeight(int w, int h) {
-        width = w;
+        width  = w;
         height = h;
     }
 
@@ -135,27 +130,21 @@ class Camera {
      * then rasterizes each triangle with the program's shaders.
      *
      * @param entity  The entity to render
-     * @param program The vertex/fragment shaders and uniform to render
-     * with
+     * @param program The vertex/fragment shaders and uniform to render with
      * @param options Rendering settings for this draw call
      * @param buffers The frame and depth buffers to test and write into
      */
-    template <typename TUniform>
-    void draw(Entity* entity, const Program<TUniform>& program,
+    template <typename TUniform, typename TVarying>
+    void draw(Entity* entity, const Program<TUniform, TVarying>& program,
               const Options& options, Buffers& buffers) {
         static constexpr float NEAR_Z = 0.1f;
 
-        // Build the view matrix from the camera mount's world
-        // transform.
-        Eigen::Matrix4f view = mount->getWorldMatrix().inverse();
+        Eigen::Matrix4f view  = mount->getWorldMatrix().inverse();
         Eigen::Matrix4f model = entity->getWorldMatrix();
 
         for (const Mesh& mesh : entity->model->getMeshes()) {
-            const std::vector<Vertex3>& mesh_vertices =
-                mesh.getVertices();
+            const std::vector<Vertex3>& mesh_vertices = mesh.getVertices();
 
-            // Transform each vertex into camera space before handing it
-            // to the vertex shader.
             std::vector<VertexAttributes> vertex_attributes;
             vertex_attributes.reserve(mesh_vertices.size());
             for (const Vertex3& v : mesh_vertices) {
@@ -163,34 +152,27 @@ class Camera {
                     view * model *
                     Eigen::Vector4f(v.position.x(), v.position.y(),
                                     v.position.z(), 1.0f);
-                vertex_attributes.push_back(
-                    {cam_pos.head<3>(), v.color});
+                vertex_attributes.push_back({cam_pos.head<3>(), v.color});
             }
 
-            std::vector<Varying> processed_vertices =
-                process_vertices(vertex_attributes, program, options);
+            std::vector<TVarying> processed_vertices =
+                process_vertices(vertex_attributes, program);
 
-            // Assemble each face, clip against the frustum, and project
-            // to screen space.
-            std::vector<std::array<Varying, 3>> raster_triangles;
-
+            std::vector<std::array<TVarying, 3>> raster_triangles;
             for (const Face& face : mesh.getFaces()) {
-                std::array<Varying, 3> cam_tri = {
+                std::array<TVarying, 3> cam_tri = {
                     processed_vertices[face.v1],
                     processed_vertices[face.v2],
                     processed_vertices[face.v3],
                 };
-
-                for (const std::array<Varying, 3>& clipped :
-                     clipTriangle(cam_tri, focal_length, width, height,
-                                  NEAR_Z)) {
-                    raster_triangles.push_back(projectTriangle(
-                        clipped, focal_length, width, height));
+                for (const std::array<TVarying, 3>& clipped :
+                     clip_triangle(cam_tri, focal_length, width, height, NEAR_Z)) {
+                    raster_triangles.push_back(
+                        project_triangle(clipped, focal_length, width, height));
                 }
             }
 
-            process_triangles(raster_triangles, program, options,
-                              buffers);
+            process_triangles(raster_triangles, program, buffers);
         }
     }
 };
