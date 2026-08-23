@@ -9,6 +9,12 @@
 #include "renderer/rasterizer/rasterizer.h"
 #include "renderer/types.h"
 
+struct Varying {
+    Eigen::Vector4f position = Eigen::Vector4f::Zero();
+    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    VARYING(position, color)
+};
+
 int main() {
     Viewport::init();
 
@@ -35,8 +41,8 @@ int main() {
 
     struct SmileyUniform {};
     SmileyUniform uniform;
-    FragmentShader<SmileyUniform> circle_shader = [&](const SmileyUniform&,
-                                               const Varying& varying) {
+    FragmentShader<SmileyUniform, Varying> circle_shader =
+        [&](const SmileyUniform&, const Varying& varying) {
         // Normalize to [-0.5, 0.5] centered UV coordinates
         float u =  varying.position.x() / width  - 0.5f;
         float v = -varying.position.y() / height + 0.5f;

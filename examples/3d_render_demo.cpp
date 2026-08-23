@@ -15,6 +15,12 @@
 #include "utils/load_cobj_file.h"
 #include "utils/transform.h"
 
+struct Varying {
+    Eigen::Vector4f position = Eigen::Vector4f::Zero();
+    Eigen::Vector3f color    = Eigen::Vector3f::Zero();
+    VARYING(position, color)
+};
+
 struct SceneUniform {
     Eigen::Matrix4f model = Eigen::Matrix4f::Identity();
     Eigen::Matrix4f view  = Eigen::Matrix4f::Identity();
@@ -51,17 +57,17 @@ int main() {
     camera.setFovLength(250);
     camera.setPictureWidthHeight(width, height);
 
-    Program<SceneUniform> program;
+    Program<SceneUniform, Varying> program;
     program.vertex_shader = [](const SceneUniform&,
                                 const VertexAttributes& v) {
         Varying out;
         out.position = Eigen::Vector4f(v.position.x(), v.position.y(),
                                        v.position.z(), 1.0f);
-        out.color    = v.color;
+        out.color    = v.color.cast<float>();
         return out;
     };
     program.fragment_shader = [](const SceneUniform&, const Varying& v) {
-        return v.color;
+        return v.color.cast<int>();
     };
 
     Options options;
