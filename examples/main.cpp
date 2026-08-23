@@ -1,19 +1,40 @@
-#include "display/viewport.h"
-#include "display/frame_buffer.h"
 #include "display/depth_buffer.h"
-#include "renderer/camera.h"
+#include "display/frame_buffer.h"
+#include "display/viewport.h"
 #include "forms/entity.h"
-#include "forms/model.h"
 #include "forms/mesh.h"
-#include "utils/transform.h"
+#include "forms/model.h"
+#include "renderer/camera.h"
+#include "renderer/shaders/cel_fragment.h"
+#include "renderer/shaders/color_fragment.h"
+#include "renderer/shaders/fog_fragment.h"
+#include "renderer/shaders/default_uniform.h"
+#include "renderer/shaders/default_varying.h"
+#include "renderer/shaders/default_vertex.h"
 #include "utils/load_cobj_file.h"
+#include "utils/transform.h"
 #include <Eigen/Dense>
-#include <iostream>
-#include <cmath>
-#include <thread>
 #include <chrono>
+#include <cmath>
+#include <iostream>
+#include <string>
+#include <thread>
 
-int main() {
+int main(int argc, char* argv[]) {
+    std::string fragment_shader_name = (argc > 1) ? argv[1] : "color";
+
+    FragmentShader<DefaultUniform, DefaultVarying> selected_fragment_shader;
+    if (fragment_shader_name == "color") {
+        selected_fragment_shader = color_fragment_shader;
+    } else if (fragment_shader_name == "fog") {
+        selected_fragment_shader = fog_fragment_shader;
+    } else if (fragment_shader_name == "cel") {
+        selected_fragment_shader = cel_fragment_shader;
+    } else {
+        std::cerr << "Unknown shader: " << fragment_shader_name << "\n";
+        std::cerr << "Available fragment shaders: color, fog, cel\n";
+        return 1;
+    }
     
     // Initialize Viewport
     Viewport::init();
@@ -66,12 +87,10 @@ int main() {
             case W:  // Move forward
                 cam_x += move_speed * std::sin(rotation_y);
                 cam_z += move_speed * std::cos(rotation_y);
-                std::cout << "W\n";
                 break;
             case S:  // Move backward
                 cam_x -= move_speed * std::sin(rotation_y);
                 cam_z -= move_speed * std::cos(rotation_y);
-                std::cout << "S\n";
                 break;
             case D:  // Strafe right
                 cam_x += move_speed * std::cos(rotation_y);
@@ -89,19 +108,15 @@ int main() {
                 break;
             case Left:  // Rotate left
                 rotation_y += rotate_speed;
-                std::cout << "Left\n";
                 break;
             case Right:  // Rotate right
                 rotation_y -= rotate_speed;
-                std::cout << "Right\n";
                 break;
             case Up:  // Look up
                 rotation_x += rotate_speed;
-                std::cout << "Up\n";
                 break;
             case Down:  // Look down
                 rotation_x -= rotate_speed;
-                std::cout << "Down\n";
                 break;
             default:
                 break;
@@ -111,24 +126,9 @@ int main() {
     // Start the view port
     view.start();
 
-    struct Varying {
-        Eigen::Vector4f position = Eigen::Vector4f::Zero();
-        Eigen::Vector3f color    = Eigen::Vector3f::Zero();
-        VARYING(position, color)
-    };
-
-    struct SceneUniform {};
-    Program<SceneUniform, Varying> program;
-    program.vertex_shader = [](const SceneUniform&, const VertexAttributes& v) {
-        Varying out;
-        out.position = Eigen::Vector4f(v.position.x(), v.position.y(),
-                                       v.position.z(), 1.0f);
-        out.color = v.color.cast<float>();
-        return out;
-    };
-    program.fragment_shader = [](const SceneUniform&, const Varying& v) {
-        return v.color.cast<int>();
-    };
+    Program<DefaultUniform, DefaultVarying> program;
+    program.vertex_shader = default_vertex_shader;
+    program.fragment_shader = selected_fragment_shader;
 
     Options options;
     options.cull_mode = CullMode::None;
@@ -155,8 +155,6 @@ int main() {
         std::this_thread::sleep_for(std::chrono::milliseconds(16));
 
     }
-    
-    std::cout << "Animation complete. Close window to exit.\n";
     
     view.join();
     
