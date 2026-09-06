@@ -9,7 +9,9 @@
 /**
  * @brief Returns the interpolated vertex color as the fragment color.
  */
-inline FragmentShader<DefaultUniform, DefaultVarying> color_fragment_shader =
-    [](const DefaultUniform&, const DefaultVarying& v) -> Eigen::Vector3i {
+inline FragmentShader<DefaultUniform, DefaultVarying>
+    color_fragment_shader =
+        [](const DefaultUniform&,
+           const DefaultVarying& v) -> Eigen::Vector3i {
     return v.color.cast<int>();
 };
