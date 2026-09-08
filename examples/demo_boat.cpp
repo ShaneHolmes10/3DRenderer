@@ -7,12 +7,16 @@
 #include "forms/mesh.h"
 #include "utils/transform.h"
 #include "utils/load_cobj_file.h"
+#include "utils/load_obj_file.h"
 #include "utils/load_texture.h"
 #include <Eigen/Dense>
-#include <iostream>
+#include <array>
 #include <cmath>
-#include <thread>
 #include <chrono>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <thread>
 
 
 // Create water related pipeline data structures
@@ -63,6 +67,85 @@ FragmentShader<WaterUniform, WaterVarying> water_fragment_shader =
             u.texture->pixels[idx + 2]};
 };
 
+
+struct BoatUniform {
+    const FrameBuffer* texture = nullptr;
+};
+
+struct BoatVarying {
+    Eigen::Vector4f position = Eigen::Vector4f::Zero();
+    Eigen::Vector2f uv = Eigen::Vector2f::Zero();
+    VARYING(position, uv)
+};
+
+Mesh load_boat_mesh(const std::string& path) {
+    std::vector<Eigen::Vector3f> raw_verts;
+    std::vector<std::array<int, 3>> raw_faces;
+
+    std::ifstream file(path);
+    std::string line;
+    while (std::getline(file, line)) {
+        std::istringstream iss(line);
+        std::string prefix;
+        iss >> prefix;
+        if (prefix == "v") {
+            Eigen::Vector3f pos;
+            iss >> pos.x() >> pos.y() >> pos.z();
+            raw_verts.push_back(pos);
+        } else if (prefix == "f") {
+            std::array<int, 3> f;
+            for (int i = 0; i < 3; i++) {
+                std::string token;
+                iss >> token;
+                f[i] = std::stoi(token) - 1;
+            }
+            raw_faces.push_back(f);
+        }
+    }
+
+    Eigen::Vector3f centroid = Eigen::Vector3f::Zero();
+    for (auto& p : raw_verts) centroid += p;
+    centroid /= static_cast<float>(raw_verts.size());
+    for (auto& p : raw_verts) p -= centroid;
+
+    const Eigen::Vector3i uv_slots[3] = {
+        {0, 0, 0}, {255, 0, 0}, {0, 255, 0}};
+
+    Mesh mesh;
+    int idx = 0;
+    for (auto& f : raw_faces) {
+        for (int i = 0; i < 3; i++) {
+            Vertex3 v;
+            v.position = raw_verts[f[i]];
+            v.color = uv_slots[i];
+            mesh.addVertex(v);
+        }
+        mesh.addFace({idx, idx + 1, idx + 2});
+        idx += 3;
+    }
+    return mesh;
+}
+
+VertexShader<BoatUniform, BoatVarying> boat_vertex_shader =
+    [](const BoatUniform&, const VertexAttributes& v) {
+        BoatVarying out;
+        out.position = Eigen::Vector4f(
+            v.position.x(), v.position.y(), v.position.z(), 1.0f);
+        out.uv = Eigen::Vector2f(
+            v.color.x() / 255.0f, v.color.y() / 255.0f);
+        return out;
+    };
+
+FragmentShader<BoatUniform, BoatVarying> boat_fragment_shader =
+    [](const BoatUniform& u, const BoatVarying& v) -> Eigen::Vector3i {
+    float u_coord = v.uv.x() - std::floor(v.uv.x());
+    float v_coord = v.uv.y() - std::floor(v.uv.y());
+    size_t x = static_cast<size_t>(u_coord * (u.texture->width - 1));
+    size_t y = static_cast<size_t>(v_coord * (u.texture->height - 1));
+    size_t idx = (y * u.texture->width + x) * 4;
+    return {u.texture->pixels[idx], u.texture->pixels[idx + 1],
+            u.texture->pixels[idx + 2]};
+};
 
 // Generate grid mesh dynamically
 Mesh build_grid(int n, float size) {
@@ -124,6 +207,18 @@ int main() {
 
     world.addChild(water_entity);
 
+    Entity boat;
+    Entity hull;
+    Model hull_model;
+    hull_model.addMesh(load_boat_mesh(std::string(SRC_DIR) + "/data/simple_boat.obj"));
+    hull.model = &hull_model;
+    hull.setTransform(Transform(
+        Eigen::Vector3f(0, 0, 0),
+        Eigen::Vector3f(M_PI / 2, 0, 0),
+        Eigen::Vector3f(70, 70, 70)));
+    boat.addChild(hull);
+    world.addChild(boat);
+
 
     // Create the camera mount
     Entity camera_mount;
@@ -131,13 +226,13 @@ int main() {
 
     Camera camera;
     camera.attachTo(camera_mount);
-    camera.setFovLength(250);
+    camera.setFovLength(500);
     camera.setPictureWidthHeight(width, height);
 
     // Set initial camera mount position
     float cam_x = 0.0f;
     float cam_y = -150.0f;
-    float cam_z = 300.0f;
+    float cam_z = 0.0f;
 
     float rotation_x =  0.0f;
     float rotation_y =  M_PI;
@@ -199,10 +294,24 @@ int main() {
     program.fragment_shader = water_fragment_shader;
     program.uniform.texture = &water_texture;
 
+    FrameBuffer wood_texture = load_texture(
+        std::string(SRC_DIR) + "/data/textures/wood_texture.jpg");
+
+    Program<BoatUniform, BoatVarying> boat_program;
+    boat_program.vertex_shader = boat_vertex_shader;
+    boat_program.fragment_shader = boat_fragment_shader;
+    boat_program.uniform.texture = &wood_texture;
+
     Options options;
     options.cull_mode = CullMode::CounterClockwise;
 
+    Options boat_options;
+    boat_options.cull_mode = CullMode::CounterClockwise;
+
     float time = 0.0f;
+    float boat_angle = 0.0f;
+    const float orbit_radius = 1200.0f;
+    const float orbit_speed = 0.002f;
 
     // Define data buffers
     FrameBuffer frame_buffer(width, height);
@@ -221,11 +330,19 @@ int main() {
 
         Buffers buffers{frame_buffer, depth_buffer};
 
+        float boat_x = orbit_radius * std::sin(boat_angle);
+        float boat_z = orbit_radius * std::cos(boat_angle);
+        boat.setTransform(Transform(
+            Eigen::Vector3f(boat_x, -550, boat_z),
+            Eigen::Vector3f(0, boat_angle, 0)));
+        boat_angle += orbit_speed;
+
         program.uniform.time = time;
         program.uniform.view_inverse = camera_mount.getWorldMatrix();
         time += 0.05f;
 
         camera.draw(&water_entity, program, options, buffers);
+        camera.draw(&hull, boat_program, boat_options, buffers);
 
         view.setFrame(frame_buffer);
         view.update();
