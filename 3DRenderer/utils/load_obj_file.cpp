@@ -26,13 +26,13 @@ Mesh LoadObjFile::load(const std::string& filepath) {
                 vertex.position.z();
             vertices.push_back(vertex);
         } else if (prefix == "f") {
-            Face face;
-            iss >> face.v1 >> face.v2 >> face.v3;
-            // OBJ indices are 1-based, convert to 0-based
-            face.v1--;
-            face.v2--;
-            face.v3--;
-            faces.push_back(face);
+            int indices[3];
+            for (int i = 0; i < 3; i++) {
+                std::string token;
+                iss >> token;
+                indices[i] = std::stoi(token) - 1;
+            }
+            faces.push_back({indices[0], indices[1], indices[2]});
         }
     }
 
