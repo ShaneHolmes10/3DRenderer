@@ -1,6 +1,7 @@
 
 #include "load_obj_file.h"
 
+#include <array>
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
@@ -26,11 +27,11 @@ Mesh LoadObjFile::load(const std::string& filepath) {
                 vertex.position.z();
             vertices.push_back(vertex);
         } else if (prefix == "f") {
-            int indices[3];
-            for (int & indice : indices) {
+            std::array<int, 3> indices{};
+            for (int& index : indices) {
                 std::string token;
                 iss >> token;
-                indice = std::stoi(token) - 1;
+                index = std::stoi(token) - 1;
             }
             faces.push_back({indices[0], indices[1], indices[2]});
         }
