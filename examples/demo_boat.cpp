@@ -216,16 +216,21 @@ int main() {
         Eigen::Vector3f(0, 0, 0),
         Eigen::Vector3f(M_PI / 2, 0, 0),
         Eigen::Vector3f(70, 70, 70)));
+    Entity boat_camera_mount;
+    boat_camera_mount.setTransform(Transform(
+        Eigen::Vector3f(0, 100, 200),
+        Eigen::Vector3f(0, M_PI, 0)));
     boat.addChild(hull);
+    boat.addChild(boat_camera_mount);
     world.addChild(boat);
 
-
-    // Create the camera mount
+    // Create the free camera mount
     Entity camera_mount;
     world.addChild(camera_mount);
 
     Camera camera;
     camera.attachTo(camera_mount);
+    bool use_boat_camera = false;
     camera.setFovLength(500);
     camera.setPictureWidthHeight(width, height);
 
@@ -241,42 +246,61 @@ int main() {
     float move_speed = 10.0f;
     float rotate_speed = 0.1f;
 
+    float boat_cam_rotation_x = 0.0f;
+    float boat_cam_rotation_y = 0.0f;
+    float boat_cam_x = 0.0f;
+    float boat_cam_y = 100.0f;
+    float boat_cam_z = 200.0f;
+
     // Set the key value callback
     view.setKeyCallback([&](Key key) {
         switch(key) {
-            case W:  // Move forward
-                cam_x += move_speed * std::sin(rotation_y);
-                cam_z += move_speed * std::cos(rotation_y);
+            case W:
+                if (use_boat_camera) { boat_cam_x -= move_speed * std::sin(boat_cam_rotation_y); boat_cam_z -= move_speed * std::cos(boat_cam_rotation_y); }
+                else { cam_x += move_speed * std::sin(rotation_y); cam_z += move_speed * std::cos(rotation_y); }
                 break;
-            case S:  // Move backward
-                cam_x -= move_speed * std::sin(rotation_y);
-                cam_z -= move_speed * std::cos(rotation_y);
+            case S:
+                if (use_boat_camera) { boat_cam_x += move_speed * std::sin(boat_cam_rotation_y); boat_cam_z += move_speed * std::cos(boat_cam_rotation_y); }
+                else { cam_x -= move_speed * std::sin(rotation_y); cam_z -= move_speed * std::cos(rotation_y); }
                 break;
-            case D:  // Strafe right
-                cam_x += move_speed * std::cos(rotation_y);
-                cam_z -= move_speed * std::sin(rotation_y);
+            case D:
+                if (use_boat_camera) { boat_cam_x -= move_speed * std::cos(boat_cam_rotation_y); boat_cam_z += move_speed * std::sin(boat_cam_rotation_y); }
+                else { cam_x += move_speed * std::cos(rotation_y); cam_z -= move_speed * std::sin(rotation_y); }
                 break;
-            case A:  // Strafe left
-                cam_x -= move_speed * std::cos(rotation_y);
-                cam_z += move_speed * std::sin(rotation_y);
+            case A:
+                if (use_boat_camera) { boat_cam_x += move_speed * std::cos(boat_cam_rotation_y); boat_cam_z -= move_speed * std::sin(boat_cam_rotation_y); }
+                else { cam_x -= move_speed * std::cos(rotation_y); cam_z += move_speed * std::sin(rotation_y); }
                 break;
-            case Q:  // Move up
-                cam_y += move_speed;
+            case Q:
+                if (use_boat_camera) boat_cam_y += move_speed;
+                else cam_y += move_speed;
                 break;
-            case E:  // Move down
-                cam_y -= move_speed;
+            case E:
+                if (use_boat_camera) boat_cam_y -= move_speed;
+                else cam_y -= move_speed;
                 break;
-            case Left:  // Rotate left
-                rotation_y -= rotate_speed;
+            case Left:
+                if (use_boat_camera) boat_cam_rotation_y -= rotate_speed;
+                else rotation_y -= rotate_speed;
                 break;
-            case Right:  // Rotate right
-                rotation_y += rotate_speed;
+            case Right:
+                if (use_boat_camera) boat_cam_rotation_y += rotate_speed;
+                else rotation_y += rotate_speed;
                 break;
-            case Up:  // Look up
-                rotation_x += rotate_speed;
+            case Up:
+                if (use_boat_camera) boat_cam_rotation_x += rotate_speed;
+                else rotation_x += rotate_speed;
                 break;
-            case Down:  // Look down
-                rotation_x -= rotate_speed;
+            case Down:
+                if (use_boat_camera) boat_cam_rotation_x -= rotate_speed;
+                else rotation_x -= rotate_speed;
+                break;
+            case C:
+                use_boat_camera = !use_boat_camera;
+                if (use_boat_camera)
+                    camera.attachTo(boat_camera_mount);
+                else
+                    camera.attachTo(camera_mount);
                 break;
             default:
                 break;
@@ -324,6 +348,9 @@ int main() {
                         Eigen::Vector3f(rotation_x, rotation_y, rotation_z));
 
         camera_mount.setTransform(t_cam);
+        boat_camera_mount.setTransform(Transform(
+            Eigen::Vector3f(boat_cam_x, boat_cam_y, boat_cam_z),
+            Eigen::Vector3f(boat_cam_rotation_x, M_PI + boat_cam_rotation_y, 0)));
 
         frame_buffer.clear();
         depth_buffer.clear();
@@ -338,7 +365,7 @@ int main() {
         boat_angle += orbit_speed;
 
         program.uniform.time = time;
-        program.uniform.view_inverse = camera_mount.getWorldMatrix();
+        program.uniform.view_inverse = camera.getMount()->getWorldMatrix();
         time += 0.05f;
 
         camera.draw(&water_entity, program, options, buffers);
