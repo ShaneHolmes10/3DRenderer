@@ -27,10 +27,10 @@ Mesh LoadObjFile::load(const std::string& filepath) {
             vertices.push_back(vertex);
         } else if (prefix == "f") {
             int indices[3];
-            for (int i = 0; i < 3; i++) {
+            for (int & indice : indices) {
                 std::string token;
                 iss >> token;
-                indices[i] = std::stoi(token) - 1;
+                indice = std::stoi(token) - 1;
             }
             faces.push_back({indices[0], indices[1], indices[2]});
         }
